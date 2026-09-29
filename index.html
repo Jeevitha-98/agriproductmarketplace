@@ -1,0 +1,4529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Modern Agri Preloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE WHITE PRELOADER ARCHITECTURE -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Animated Vector Artwork (Geometric Plant / Leaf Growth) -->
+            <svg class="brand-vector" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <!-- Main central organic stem -->
+                <path class="stem" d="M50,90 C50,60 50,40 50,15" />
+                <!-- Left branching vector leaf -->
+                <path class="leaf-left" d="M50,65 C20,55 25,35 50,35" />
+                <!-- Right branching vector leaf -->
+                <path class="leaf-right" d="M50,48 C80,38 75,18 50,18" />
+                <!-- Kinetic growth node apex -->
+                <circle class="bud" cx="50" cy="15" r="4" />
+            </svg>
+
+            <!-- Responsive Vertically Stacked Branding Text -->
+            <div class="brand-logo">
+                <span>s</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>l</span>
+                <span>y</span>
+            </div>
+
+        </div>
+    </div>
+
+  <script>
+    // ==========================================================================
+// PRELOADER TIMING LIFECYCLE CONTROLLER
+// ==========================================================================
+window.addEventListener("DOMContentLoaded", () => {
+    const preloaderContainer = document.getElementById("preloader");
+
+    /**
+     * Dismisses the preloader window.
+     * Hard target scheduled at exactly 1.75 seconds (1750ms) to beat the 2-second limit.
+     */
+    setTimeout(() => {
+        if (preloaderContainer) {
+            preloaderContainer.classList.add("fade-out");
+            
+            // Clean up DOM node to clear browser memory space
+            setTimeout(() => {
+                preloaderContainer.remove();
+            }, 450); // Matches the CSS fade-out duration
+        }
+    }, 1750); 
+});
+
+  </script>
+
+  <!-- AGRI PRODUCT MARKETPLACE MAIN NAVBAR (Copy directly into your <body>) -->
+<header class="app-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Frame (Clicking refreshes application state) -->
+        <a href="#" id="brand-logo-link" class="logo-wrapper">
+            <img src="./assests/agri marketplace.webp" alt="Stackly Logo" class="brand-img">
+        </a>
+
+        <!-- Mobile Hamburger Responsive Toggle Trigger -->
+        <button class="hamburger-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Navigation and Search Collapse Wrapper Layer -->
+        <div class="header-navigation-wrapper" id="nav-wrapper">
+            
+            <!-- Primary Navigation Architecture Links -->
+            <nav class="main-nav">
+                <ul class="nav-links-list">
+                    <li><a href="index.html" class="nav-item active-tab">Home</a></li>
+                    <li><a href="about.html" class="nav-item">About Us</a></li>
+                    <li><a href="services.html" class="nav-item">Services</a></li>
+                    <li><a href="blogs.html" class="nav-item">Blog</a></li>
+                    <li><a href="products.html" class="nav-item">Products</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Validated Interactive Context Search Component Box -->
+            <div class="search-form-container">
+                <form id="marketplace-search-form" class="search-field-group">
+                    <input type="text" id="header-search-input" placeholder="Search for products, farmers...">
+                    <button type="submit" class="search-action-btn" aria-label="Execute Query Search">
+                        <svg class="search-icon-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Interface Interactions: Wishlist, Login Authentication & Cart Badge -->
+            <div class="user-actions-group">
+                
+                <!-- Wishlist Shortcut Trigger Button -->
+                <a href="404.html" class="action-icon-link wishlist-btn" title="View Wishlist">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+
+                <!-- User Log-In Credentials Profile Trigger -->
+                <a href="login.html" class="auth-navigation-link">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5.5,21 C5.5,17 8.5,14 12,14 C15.5,14 18.5,17 18.5,21" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Login / Sign Up</span>
+                </a>
+
+                <!-- E-commerce Shopping Basket Badge -->
+                <a href="404.html" class="action-icon-link cart-badge-btn" title="Open Shopping Basket">
+                    <div class="cart-icon-wrapper">
+                        <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-counter-bubble">6</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // ==========================================================================
+// APPS HEADER INTERACTIVE UTILITY LOGIC ENGINE
+// ==========================================================================
+(function() {
+    // DOM Cache Initialization Stores
+    const brandLogoLink = document.getElementById("brand-logo-link");
+    const navigationLinks = document.querySelectorAll(".nav-item");
+    const searchForm = document.getElementById("marketplace-search-form");
+    const searchInput = document.getElementById("header-search-input");
+    const menuToggleBtn = document.getElementById("menu-toggle-btn");
+    const navWrapper = document.getElementById("nav-wrapper");
+
+    if (!brandLogoLink) return; // Prevent scope breaks if injected incorrectly
+
+    // Brand Graphic Image Link Rule
+    brandLogoLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.reload();
+    });
+
+    // Active Navigation Tabs Handler
+    navigationLinks.forEach(clickedAnchor => {
+        clickedAnchor.addEventListener("click", function(event) {
+            event.preventDefault();
+            navigationLinks.forEach(item => item.classList.remove("active-tab"));
+            this.classList.add("active-tab");
+
+            if (navWrapper.classList.contains("menu-is-open")) {
+                toggleMobileNavigationMenu();
+            }
+        });
+    });
+
+    // Search Input Field Constraint Validation
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const refinedSearchValue = searchInput.value.trim();
+
+        if (refinedSearchValue === "") {
+            searchInput.placeholder = "Please fill out this field...";
+            searchInput.classList.add("validation-alert");
+            searchInput.focus();
+        } else {
+            window.location.href = "404.html";
+        }
+    });
+
+    searchInput.addEventListener("input", () => {
+        if (searchInput.classList.contains("validation-alert")) {
+            searchInput.classList.remove("validation-alert");
+            searchInput.placeholder = "Search for products, farmers...";
+        }
+    });
+
+    // Responsive Mobile Menu Controllers
+    menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
+
+    function toggleMobileNavigationMenu() {
+        menuToggleBtn.classList.toggle("menu-is-open");
+        navWrapper.classList.toggle("menu-is-open");
+        document.body.style.overflow = navWrapper.classList.contains("menu-is-open") ? "hidden" : "";
+    }
+})();
+
+</script>
+
+<!-- AGRI MARKETPLACE HERO SECTION -->
+<section class="hero-section">
+    <!-- Background Image Layer -->
+    <img src="./assests/hero bg.webp" alt="Farming Sunset Background" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+        <!-- Badge Tagline -->
+        <div class="hero-badge-slide">
+            <span class="hero-badge">Direct from Farmers • Fresh • Trusted</span>
+        </div>
+
+        <!-- Scroll-Triggered Animated Title Headline -->
+        <h1 class="hero-title" id="scroll-title">
+            <span class="word">Fresh</span> 
+            <span class="word">Agricultural</span> 
+            <span class="word">Products</span> 
+            <span class="word">for</span> 
+            <span class="word">a</span> 
+            <span class="word">Healthier</span> 
+            <span class="word-green">Tomorrow</span>
+        </h1>
+
+        <!-- Slide-In Description Paragraph Text -->
+        <p class="hero-para" id="slide-para">
+            Buy and sell farm fresh produce, grains, spices, and more — directly from farmers to your doorstep.
+        </p>
+
+        <!-- Validated Input Field Form Layer Container -->
+        <div class="hero-search-wrapper">
+            <form id="hero-marketplace-search" class="hero-search-form">
+                <input type="text" id="hero-search-input" placeholder="Search for products (e.g., rice, wheat, tomato...)">
+                <button type="submit" class="hero-search-btn">Search</button>
+            </form>
+        </div>
+
+        <!-- Static Features Grid with Circular Vector Icons -->
+        <div class="features-static-grid" id="features-display-grid">
+            
+            <!-- Feature 1: Natural -->
+            <div class="feature-card" data-index="0">
+                <div class="icon-circle">
+                    <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <strong>100% Natural</strong>
+                    <span>& Fresh</span>
+                </div>
+            </div>
+
+            <!-- Feature 2: Fair Price -->
+            <div class="feature-card" data-index="1">
+                <div class="icon-circle">
+                    <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 13h-2v-2h2v2zm0-4h-2V7h2v4z"/>
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <strong>Fair Price</strong>
+                    <span>(Direct from Farmers)</span>
+                </div>
+            </div>
+
+            <!-- Feature 3: Secure -->
+            <div class="feature-card" data-index="2">
+                <div class="icon-circle">
+                    <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <strong>Secure</strong>
+                    <span>Transactions</span>
+                </div>
+            </div>
+
+            <!-- Feature 4: Fast Delivery -->
+            <div class="feature-card" data-index="3">
+                <div class="icon-circle">
+                    <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 .67 1.5 1.5-.67 1.5-1.5 1.5zm12.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 .67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-7l2.25 3h-4.25v-3h2z"/>
+                    </svg>
+                </div>
+                <div class="feature-text">
+                    <strong>Fast Delivery</strong>
+                    <span>To Your Doorstep</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Workspace Type Foundry Spec Rules */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   HERO COMPONENT CORE CONTAINER & BLOCK STRUCTURES
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #0d1b12;
+    padding: 4rem 1.5rem 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.02);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.5) 50%, rgba(13,27,18,0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ==========================================================================
+   INTER DESIGN BADGE & TEXT REVEAL PROPERTIES
+   ========================================================================== */
+.hero-badge-slide {
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(46, 125, 50, 0.9);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+    animation: badgeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Strict Title Typographic Specs: 36px, Bold, 100% LH, 0% LS */
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff;
+    max-width: 750px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.3em;
+    row-gap: 0.1em;
+}
+
+.hero-title .word, 
+.hero-title .word-green {
+    display: inline-block;
+    opacity: 0.1;
+    transform: translateY(15px);
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-title .word-green {
+    color: #4caf50;
+}
+
+/* Strict Paragraph Typographic Specs: 18px, Regular, 100% LH, 0% LS */
+.hero-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #e2e8f0;
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-para.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   INPUT TEXT ENTRY COMPONENTS & SEARCH SYSTEM VALIDATIONS
+   ========================================================================== */
+.hero-search-wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: searchRevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+}
+
+.hero-search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0.45rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.hero-search-form input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #1a202c;
+    width: 100%;
+}
+
+.hero-search-form input::placeholder {
+    color: #718096;
+    transition: color 0.2s ease;
+}
+
+.hero-search-btn {
+    background-color: #1b5e20;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 2.2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.hero-search-btn:hover {
+    background-color: #2e7d32;
+}
+
+.hero-search-form input.validation-alert-active {
+    animation: fieldInputHurtShake 0.4s ease;
+}
+
+.hero-search-form input.validation-alert-active::placeholder {
+    color: #e53e3e !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   STATIC ALIGNED FEATURE BADGES WITH SOLID GREEN BADGE CIRCLES
+   ========================================================================== */
+.features-static-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3.5rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+/* Clean Solid Vector Circle Frames matching mock reference overlay geometry */
+.icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #1b5e20; /* Primary brand forest green base container circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-icon {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff; /* High contrast solid absolute white vector elements nested indoors */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Interactive Cursor Hover Amplified Visual Effects */
+.feature-card:hover .icon-circle {
+    background-color: #4caf50; /* Vibrates upwards into lively leaf sprout highlight green */
+    transform: scale(1.1);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(6deg);
+}
+
+.feature-card:hover .feature-text strong {
+    color: #4caf50;
+}
+
+/* Dynamic Swap Timing Presentation State Styles */
+.feature-card.is-swapping-highlight .icon-circle {
+    background-color: #4caf50;
+    transform: scale(1.12);
+}
+
+.feature-card.is-swapping-highlight .feature-text strong {
+    color: #4caf50;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.feature-text strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.feature-text span {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATION ENGINES
+   ========================================================================== */
+@keyframes badgeSlideIn {
+    0% { transform: translateY(110%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes searchRevealUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fieldInputHurtShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .features-static-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+    }
+    
+    .hero-title {
+        font-size: 36px !important;
+        line-height: 105%;
+    }
+
+    .hero-para {
+        font-size: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-search-form {
+        border-radius: 24px;
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .hero-search-form input {
+        padding: 0.6rem 1rem;
+        text-align: center;
+    }
+
+    .hero-search-btn {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 18px;
+    }
+
+    .features-static-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-static-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEALS & SEQUENTIAL STEP SWAPPING CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const scrollTitle = document.getElementById("scroll-title");
+        const slidePara = document.getElementById("slide-para");
+        const searchForm = document.getElementById("hero-marketplace-search");
+        const searchInput = document.getElementById("hero-search-input");
+        const featureCards = document.querySelectorAll(".feature-card");
+
+        // 1. Text Word Stagger Delay Config
+        if (scrollTitle) {
+            const titleWords = scrollTitle.querySelectorAll(".word, .word-green");
+            titleWords.forEach((wordElement, index) => {
+                wordElement.style.transitionDelay = `${index * 0.08}s`;
+            });
+        }
+
+        // 2. Intersection Observer Setups for Scroll Reveals
+        const elementRevealOptions = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const heroIntersectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === "scroll-title") {
+                        entry.target.classList.add("is-visible");
+                        const words = entry.target.querySelectorAll(".word, .word-green");
+                        words.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateY(0)";
+                        });
+                    }
+                    
+                    if (entry.target.id === "slide-para") {
+                        entry.target.classList.add("is-visible");
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, elementRevealOptions);
+
+        if (scrollTitle) heroIntersectionObserver.observe(scrollTitle);
+        if (slidePara) heroIntersectionObserver.observe(slidePara);
+
+        // 3. Search Form Constraint Validations
+        if (searchForm && searchInput) {
+            searchForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+                const searchStringValue = searchInput.value.trim();
+
+                if (searchStringValue === "") {
+                    searchInput.placeholder = "Please fill the field...";
+                    searchInput.classList.add("validation-alert-active");
+                    searchInput.focus();
+                } else {
+                    window.location.href = "404.html";
+                }
+            });
+
+            searchInput.addEventListener("input", () => {
+                if (searchInput.classList.contains("validation-alert-active")) {
+                    searchInput.classList.remove("validation-alert-active");
+                    searchInput.placeholder = "Search for products (e.g., rice, wheat, tomato...)";
+                }
+            });
+        }
+
+        // 4. Sequential Step Highlight-Swapping System (Fires every 2 seconds once)
+        let activeFeatureHighlightIndex = 0;
+        let swapIntervalLoopTracker = null;
+
+        function triggerNextSequentialHighlight() {
+            featureCards.forEach(card => card.classList.remove("is-swapping-highlight"));
+
+            if (featureCards[activeFeatureHighlightIndex]) {
+                featureCards[activeFeatureHighlightIndex].classList.add("is-swapping-highlight");
+            }
+
+            activeFeatureHighlightIndex = (activeFeatureHighlightIndex + 1) % featureCards.length;
+        }
+
+        function initiateFeaturesClockRotation() {
+            if (featureCards.length === 0) return;
+            
+            triggerNextSequentialHighlight();
+            swapIntervalLoopTracker = setInterval(triggerNextSequentialHighlight, 2000);
+        }
+
+        featureCards.forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                clearInterval(swapIntervalLoopTracker);
+                featureCards.forEach(c => c.classList.remove("is-swapping-highlight"));
+            });
+
+            card.addEventListener("mouseleave", () => {
+                activeFeatureHighlightIndex = parseInt(card.getAttribute("data-index"), 10);
+                activeFeatureHighlightIndex = (activeFeatureHighlightIndex + 1) % featureCards.length;
+                initiateFeaturesClockRotation();
+            });
+        });
+
+        initiateFeaturesClockRotation();
+    });
+})();
+
+</script>
+
+<!-- EXPLORE CATEGORIES SECTION -->
+<section class="categories-section">
+    <div class="categories-container">
+        
+        <!-- Section Header Area -->
+        <div class="categories-header-row">
+            <div class="header-left-column">
+                <span class="category-tagline">Shop by Category</span>
+                <!-- Word-by-word scroll-animated title -->
+                <h2 class="categories-main-title" id="scroll-categories-title">
+                    <span class="v-word">Explore</span>
+                    <span class="v-word">Our</span>
+                    <span class="v-word">Categories</span>
+                </h2>
+                <p class="categories-sub-para">
+                    Find fresh produce, grains, spices, and more – all in one place.
+                </p>
+            </div>
+            <div class="header-right-column">
+                <!-- Creative flickering action button -->
+                <a href="404.html" class="view-all-link-flicker">
+                    View All Categories <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll-Triggered Categories Display Grid Layout -->
+        <div class="categories-cards-grid" id="stagger-cards-container">
+            
+            <!-- Category Box 1: Vegetables & Fruits -->
+            <a href="404.html" class="category-card-node" data-index="0">
+                <div class="category-img-wrapper">
+                    <img src="./assests/veg bowl.webp" alt="Fresh Vegetables & Fruits" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Fresh Vegetables & Fruits</h3>
+            </a>
+
+            <!-- Category Box 2: Grains & Cereals -->
+            <a href="404.html" class="category-card-node" data-index="1">
+                <div class="category-img-wrapper">
+                    <img src="./assests/grass.webp" alt="Grains & Cereals" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Grains & Cereals</h3>
+            </a>
+
+            <!-- Category Box 3: Spices & Herbs -->
+            <a href="404.html" class="category-card-node" data-index="2">
+                <div class="category-img-wrapper">
+                    <img src="./assests/red chilli.webp" alt="Spices & Herbs" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Spices & Herbs</h3>
+            </a>
+
+            <!-- Category Box 4: Dairy Products -->
+            <a href="404.html" class="category-card-node" data-index="3">
+                <div class="category-img-wrapper">
+                    <img src="./assests/milk.webp" alt="Dairy Products" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Dairy Products</h3>
+            </a>
+
+            <!-- Category Box 5: Organic Products -->
+            <a href="404.html" class="category-card-node" data-index="4">
+                <div class="category-img-wrapper">
+                    <img src="./assests/leaf 2.webp" alt="Organic Products" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Organic Products</h3>
+            </a>
+
+            <!-- Category Box 6: Seeds & Fertilizers -->
+            <a href="404.html" class="category-card-node" data-index="5">
+                <div class="category-img-wrapper">
+                    <img src="./assests/leaf.webp" alt="Seeds & Fertilizers" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Seeds & Fertilizers</h3>
+            </a>
+
+            <!-- Category Box 7: Value Added Products -->
+            <a href="404.html" class="category-card-node" data-index="6">
+                <div class="category-img-wrapper">
+                    <img src="./assests/juice.webp" alt="Value Added Products" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Value Added Products</h3>
+            </a>
+
+            <!-- Category Box 8: Farm Equipment & Tools -->
+            <a href="404.html" class="category-card-node" data-index="7">
+                <div class="category-img-wrapper">
+                    <img src="./assests/tracktor.webp" alt="Farm Equipment & Tools" class="category-thumbnail-img">
+                </div>
+                <h3 class="category-card-title">Farm Equipment & Tools</h3>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Workspace Spec Typography System */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   EXPLORE CATEGORIES SECTION BASE STYLES & LAYOUT
+   ========================================================================== */
+.categories-section {
+    background-color: #ffffff;
+    /* Custom precise padding specs: top: 50px; bottom: 30px; */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.categories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Header Content Alignment Grid Elements */
+.categories-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.header-left-column {
+    flex: 1;
+    max-width: 750px;
+}
+
+.category-tagline {
+    display: block;
+    color: #1b5e20;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS OVERRIDES
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.categories-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+.categories-main-title .v-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.categories-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   DYNAMIC FLICKERING LINK AND SHIMMER EFFECTS
+   ========================================================================== */
+.header-right-column {
+    flex-shrink: 0;
+    padding-bottom: 0.25rem;
+}
+
+.view-all-link-flicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.25s ease;
+    animation: anchorLinkTextFlicker 4s linear infinite;
+}
+
+.view-all-link-flicker .arrow-icon {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.view-all-link-flicker:hover {
+    color: #4caf50;
+}
+
+.view-all-link-flicker:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   CATEGORIES MATRIX BLOCK WITH RADIANT EMERALD GLOW SYSTEMS
+   ========================================================================== */
+.categories-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.category-card-node {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.category-card-node:hover {
+    background-color: #ffffff;
+    border-color: #4caf50;
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(27, 94, 32, 0.08), 
+                0 0 20px 2px rgba(76, 175, 80, 0.25);
+}
+
+.category-img-wrapper {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.category-card-node:hover .category-thumbnail-img {
+    transform: scale(1.15) rotate(4deg);
+}
+
+/* Card Content Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0%, Centered */
+.category-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #1f2937;
+    transition: color 0.25s ease;
+}
+
+.category-card-node:hover .category-card-title {
+    color: #1b5e20;
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATION LAYERS
+   ========================================================================== */
+@keyframes anchorLinkTextFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 0px transparent);
+    }
+    20%, 24%, 55% {
+        opacity: 0.65;
+        color: #4caf50;
+        filter: drop-shadow(0 0 4px rgba(76,175,80,0.4));
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent clipping errors due to tight 100% line heights on mid-tier viewports */
+    .categories-main-title {
+        font-size: clamp(30px, 3.8vw, 36px);
+    }
+    .categories-sub-para, .category-card-title {
+        font-size: clamp(16px, 2.2vw, 20px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .categories-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .categories-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .categories-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .category-card-node {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED CATEGORY MODULE ANIMATION CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const categoriesTitle = document.getElementById("scroll-categories-title");
+        const cardsGridContainer = document.getElementById("stagger-cards-container");
+        const discreteCategoryCards = document.querySelectorAll(".category-card-node");
+
+        // 1. Setup Stagger Animation Delay Metrics for Title Words
+        if (categoriesTitle) {
+            const structuralWords = categoriesTitle.querySelectorAll(".v-word");
+            structuralWords.forEach((wordElement, lookupIndex) => {
+                wordElement.style.transitionDelay = `${lookupIndex * 0.1}s`;
+            });
+        }
+
+        // 2. Intersection Observer Setups for Scroll Triggers
+        const categoryRevealSettings = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalCategoriesObserver = new IntersectionObserver((observedEntries, internalObserver) => {
+            observedEntries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Reveal Main Section Title Word-By-Word from below
+                    if (entry.target.id === "scroll-categories-title") {
+                        const wordTokens = entry.target.querySelectorAll(".v-word");
+                        wordTokens.forEach(token => {
+                            token.style.opacity = "1";
+                            token.style.transform = "translateY(0)";
+                        });
+                    }
+
+                    // Reveal Grid Cards Sequence One-By-One (Staggered Cascade)
+                    if (entry.target.id === "stagger-cards-container") {
+                        discreteCategoryCards.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 75);
+                        });
+                    }
+
+                    internalObserver.unobserve(entry.target);
+                }
+            });
+        }, categoryRevealSettings);
+
+        if (categoriesTitle) globalCategoriesObserver.observe(categoriesTitle);
+        if (cardsGridContainer) globalCategoriesObserver.observe(cardsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- POPULAR PRODUCTS SECTION -->
+<section class="products-section">
+    <div class="products-container">
+        
+        <!-- Section Header Area -->
+        <div class="products-header-row">
+            <div class="header-left-column">
+                <span class="product-tagline">Featured Products</span>
+                <!-- Word-by-word scroll-animated title (reveals from sides) -->
+                <h2 class="products-main-title" id="scroll-products-title">
+                    <span class="side-word left">Popular</span>
+                    <span class="side-word right">Products</span>
+                </h2>
+                <p class="products-sub-para">
+                    Best selling farm products, handpicked for you.
+                </p>
+            </div>
+            <div class="header-right-column">
+                <!-- Flickering action link with 404 routing -->
+                <a href="404.html" class="view-all-products-flicker">
+                    View All Categories <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll-Triggered Staggered Product Catalog Grid -->
+        <div class="products-cards-grid" id="stagger-products-container">
+            
+            <!-- Product 1: Fresh Tomatoes -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/tamato.webp" alt="Fresh Tomatoes" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Fresh Tomatoes</h3>
+                    <span class="product-price">₹ 40 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.8 Rating: 4 full stars, 1 fractional star, 1 empty background path -->
+                        <div class="star-rating" data-rating="4.8">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 80%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.8 (230)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Product 2: Basmati Rice -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/rice.webp" alt="Basmati Rice" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Basmati Rice</h3>
+                    <span class="product-price">₹ 60 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.7 Rating: 4 full stars, 1 fractional star (70% filled) -->
+                        <div class="star-rating" data-rating="4.7">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 70%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.7 (245)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Product 3: Red Chilli -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/chilli.webp" alt="Red Chilli" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Red Chilli</h3>
+                    <span class="product-price">₹ 120 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.8 Rating -->
+                        <div class="star-rating" data-rating="4.8">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 80%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.8 (380)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Product 4: Turmeric -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/spicy.webp" alt="Turmeric" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Turmeric</h3>
+                    <span class="product-price">₹ 90 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.7 Rating -->
+                        <div class="star-rating" data-rating="4.7">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 70%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.7 (210)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Product 5: Fresh Milk -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/milk cups.webp" alt="Fresh Milk" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Fresh Milk</h3>
+                    <span class="product-price">₹ 50 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.8 Rating -->
+                        <div class="star-rating" data-rating="4.8">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 80%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.8 (290)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Product 6: Organic Cow Ghee -->
+            <div class="product-card-node">
+                <div class="product-img-frame">
+                    <img src="./assests/ghee.webp" alt="Organic Cow Ghee" class="product-item-img">
+                </div>
+                <div class="product-content-block">
+                    <h3 class="product-item-title">Organic Cow Ghee</h3>
+                    <span class="product-price">₹ 450 <span class="price-unit">/ kg</span></span>
+                    <div class="rating-row">
+                        <!-- 4.9 Rating: 4 full, 1 fractional star (90% filled) -->
+                        <div class="star-rating" data-rating="4.9">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star fraction" style="--fraction-width: 90%;">★</span>
+                        </div>
+                        <span class="rating-meta">4.9 (120)</span>
+                    </div>
+                    <a href="404.html" class="add-to-cart-btn">Add to Cart</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   POPULAR PRODUCTS SECTION CONTAINER BASE SETUP
+   ========================================================================== */
+.products-section {
+    background-color: #ffffff;
+    /* Strict layout requested modification padding: top: 50px; bottom: 30px; */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Flex Grid Alignment Matrix for Header Blocks */
+.products-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.header-left-column {
+    flex: 1;
+    max-width: 750px;
+}
+
+.product-tagline {
+    display: block;
+    color: #1b5e20; /* Brand Accent Forest Green */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & SCROLL-SIDE ANIMATIONS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.products-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black text enforcement */
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.4em;
+    overflow: hidden;
+}
+
+/* Base structural hidden configuration for horizontal side ingress animation splits */
+.products-main-title .side-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.products-main-title .side-word.left {
+    transform: translateX(-50px); /* Slides inwards from the left margin */
+}
+
+.products-main-title .side-word.right {
+    transform: translateX(50px); /* Slides inwards from the right margin */
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.products-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Content elements configured completely black */
+}
+
+/* ==========================================================================
+   CREATIVE SHIMMER LINK AND FLICKERING BUTTON LOGIC
+   ========================================================================== */
+.header-right-column {
+    flex-shrink: 0;
+    padding-bottom: 0.25rem;
+}
+
+.view-all-products-flicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.25s ease;
+    animation: actionLinkTextFlickerSimulation 4s linear infinite;
+}
+
+.view-all-products-flicker .arrow-icon {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.view-all-products-flicker:hover {
+    color: #4caf50;
+}
+
+.view-all-products-flicker:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   PRODUCT SHOWCASE CARDS MATRIX GRID & GLOW SYSTEMS
+   ========================================================================== */
+.products-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean 3-column architecture layout blueprint */
+    gap: 2rem;
+    width: 100%;
+}
+
+.product-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Scroll observer initialization parameters hooks */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Lift and Radiant Emerald Halo Glow Overlay */
+.product-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* Dual-layered dynamic emerald projection glow mapping arrays */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.06), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Image Aspect Component Frame Layer */
+.product-img-frame {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f8fafc;
+    position: relative;
+}
+
+.product-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-node:hover .product-item-img {
+    transform: scale(1.06);
+}
+
+/* Info Inner Meta Card Data Block Container */
+.product-content-block {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Card Content Header Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, Centered */
+.product-item-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: left; /* Kept clean left bounds for retail data structural grids readability */
+    color: #000000;
+    margin-bottom: 0.75rem;
+}
+
+.product-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.price-unit {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   DYNAMIC PRECISION REACTION STAR FRACTIONAL RATINGS ENGINE
+   ========================================================================== */
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.star-rating {
+    display: inline-flex;
+    gap: 2px;
+    color: #e2e8f0; /* Empty star standard default canvas backdrop rail path */
+    font-size: 1.15rem;
+    line-height: 1;
+    position: relative;
+    user-select: none;
+}
+
+.star.full {
+    color: #ffb300; /* Solid Gold Amber Fill for verified rating tokens */
+}
+
+/* Intricate Variable Mask Layering creating fractional color cutoffs (e.g. 4.5 half-stars) */
+.star.fraction {
+    position: relative;
+    color: #e2e8f0; 
+}
+
+.star.fraction::before {
+    content: '★';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--fraction-width, 50%); /* Extends fill precisely using local inline standard parameters */
+    overflow: hidden;
+    color: #ffb300;
+}
+
+.rating-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   RETAIL UTILITY ADD-TO-BASKET BUTTON DESIGN RULES (404 ENFORCED)
+   ========================================================================== */
+.add-to-cart-btn {
+    margin-top: auto; /* Secure grid bottom alignment locks across multi-line instances */
+    width: 100%;
+    background-color: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2e7d32;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   KEYFRAME GLITCH ANIMATION LOOP LAYER FILTERS
+   ========================================================================== */
+@keyframes actionLinkTextFlickerSimulation {
+    0%, 15%, 19%, 24%, 62%, 66%, 100% { opacity: 1; filter: drop-shadow(0 0 0px transparent); }
+    17%, 21%, 64% { opacity: 0.6; color: #4caf50; filter: drop-shadow(0 0 3px rgba(76,175,80,0.35)); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Compress text elements gracefully to counter narrow wrap grid box bounds */
+    .products-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .products-sub-para { font-size: clamp(16px, 2.2vw, 20px); }
+    .product-item-title { font-size: 18px; }
+}
+
+@media (max-width: 1024px) {
+    .products-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses down into a clean 2-column display array */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .products-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .products-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence execution layout on small phone screens */
+        gap: 1.25rem;
+    }
+    
+    .product-img-frame {
+        height: 200px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEALS SIDE-TITLE & PRODUCT GRID STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const productsTitle = document.getElementById("scroll-products-title");
+        const productsGridContainer = document.getElementById("stagger-products-container");
+        const individualProductCards = document.querySelectorAll(".product-card-node");
+
+        // 1. Core Intersection Observer Setup Configuration Settings
+        const productsRevealSettings = {
+            root: null,
+            threshold: 0.08, // Action coordinates invoke when at least 8% of target bounds crosses viewports
+            rootMargin: "0px 0px -30px 0px"
+        };
+
+        const globalProductsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Trigger Word-by-Word Title Reveal Ingress from opposite horizontal sides
+                    if (entry.target.id === "scroll-products-title") {
+                        const leftWords = entry.target.querySelectorAll(".side-word.left");
+                        const rightWords = entry.target.querySelectorAll(".side-word.right");
+                        
+                        leftWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                        
+                        rightWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // Trigger Staggered Cascade Entry Sequence for Product Cards One-by-One
+                    if (entry.target.id === "stagger-products-container") {
+                        individualProductCards.forEach((cardNode, sequentialPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, sequentialPositionIndex * 90); // 90 milliseconds step separation interval delay caps
+                        });
+                    }
+
+                    // Sever stream tracking nodes links to conserve execution memory pools
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, productsRevealSettings);
+
+        // Bind intersection nodes accurately onto tracking observers
+        if (productsTitle) globalProductsObserver.observe(productsTitle);
+        if (productsGridContainer) globalProductsObserver.observe(productsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-choose-section">
+    <div class="why-choose-container">
+        
+        <!-- Left Side Column Content Area -->
+        <div class="why-choose-left">
+            <span class="why-tagline">Why Choose Us</span>
+            
+            <!-- Letter-by-letter scroll-animated section title -->
+            <h2 class="why-main-title" id="scroll-why-title">Why Choose AgriMart?</h2>
+            
+            <!-- Bottom slide-in description paragraph text -->
+            <p class="why-sub-para" id="scroll-why-para">
+                Description: We connect farmers directly with buyers, ensuring freshness, fair prices and a sustainable future for agriculture.
+            </p>
+
+            <!-- Features 2x2 Grid Layout -->
+            <div class="why-features-grid" id="stagger-features-box">
+                
+                <!-- Feature 1: Direct from Farmers -->
+                <div class="why-feature-card" data-index="0">
+                    <div class="why-icon-circle">
+                        <!-- Custom high-contrast white vector icon -->
+                        <svg class="why-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div class="why-text-block">
+                        <h3 class="why-feature-title">Direct from Farmers</h3>
+                        <p class="why-feature-content">No middlemen, better prices</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Secure Payments -->
+                <div class="why-feature-card" data-index="1">
+                    <div class="why-icon-circle">
+                        <svg class="why-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                        </svg>
+                    </div>
+                    <div class="why-text-block">
+                        <h3 class="why-feature-title">Secure Payments</h3>
+                        <p class="why-feature-content">Multiple payment options</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3: 100% Organic & Fresh -->
+                <div class="why-feature-card" data-index="2">
+                    <div class="why-icon-circle">
+                        <svg class="why-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.2c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.49 10.57 20 12 20c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+                        </svg>
+                    </div>
+                    <div class="why-text-block">
+                        <h3 class="why-feature-title">100% Organic & Fresh</h3>
+                        <p class="why-feature-content">Pure and natural produce</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Fast & Reliable Delivery -->
+                <div class="why-feature-card" data-index="3">
+                    <div class="why-icon-circle">
+                        <svg class="why-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 .67 1.5 1.5-.67 1.5-1.5 1.5zm12.5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 .67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-7l2.25 3h-4.25v-3h2z"/>
+                        </svg>
+                    </div>
+                    <div class="why-text-block">
+                        <h3 class="why-feature-title">Fast & Reliable Delivery</h3>
+                        <p class="why-feature-content">Freshness delivered to your door</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Side Column Graphic Container -->
+        <div class="why-choose-right" id="why-graphic-box">
+            <img src="./assests/hand tree.webp" alt="Sprout plant inside human hands watercolor illustration" class="why-graphic-img">
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Rules */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   WHY CHOOSE US CONTAINER BASE SECTION GRID ARCHITECTURE
+   ========================================================================== */
+.why-choose-section {
+    background-color: #ffffff;
+    /* Precise layout padding specs: top 50px, bottom 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.why-choose-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    /* Symmetrical split balancing text block area against the right graphic exactly like reference image */
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 2.5rem; 
+    align-items: center;
+}
+
+.why-choose-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.why-tagline {
+    display: block;
+    color: #1b5e20; /* Brand Theme Green */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & LETTER REVEAL ARCHITECTURE
+   ========================================================================== */
+
+/* Main Title: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.why-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+/* Individual letter tracking metrics utilized by javascript engine */
+.why-main-title .char {
+    display: inline-block;
+    opacity: 0.1; /* Initial hidden faded state */
+    transform: scale(0.95) translateY(4px);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Description Para: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.why-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    
+    /* Pre-scroll entry target configuration properties */
+    opacity: 0;
+    transform: translateY(30px); /* Slides upwards smoothly when scrolled into view */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-sub-para.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   2x2 BALANCED SYMMETRICAL FEATURES DISPLAY MATRIX GRID
+   ========================================================================== */
+.why-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms exact 2x2 grid framework matching reference preview */
+    gap: 2rem 1.5rem;
+    width: 100%;
+}
+
+.why-feature-card {
+    display: flex;
+    align-items: center; /* Vertically mid-aligns circle alongside multi-row labels */
+    gap: 1.25rem;
+    
+    /* Animation staging indicators */
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Deep Solid Circle Green Background Containers with Clean Contrast Interior Vectors */
+.why-icon-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #1b5e20; /* Solid Forest Green Circle Backdrop Vector Wrapper */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+.why-vector-svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; /* Stark absolute white vector artwork icons centered indoors */
+}
+
+/* Hover Accent Feedback Controls */
+.why-feature-card:hover .why-icon-circle {
+    background-color: #4caf50; /* Animates into lively sprouts leaf green on hover */
+    transform: scale(1.08) rotate(4deg);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.35);
+}
+
+.why-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Feature Row Header Title: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.why-feature-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #1f2937;
+    margin-bottom: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Stagger targets character array configuration blocks */
+.why-feature-title .char {
+    display: inline-block;
+    opacity: 0.1;
+    transform: translateY(3px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Feature Row Copy Text: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.why-feature-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #6b7280;
+}
+
+/* ==========================================================================
+   RIGHT SIDE ILLUSTRATION CONTAINER LAYER SYSTEM
+   ========================================================================== */
+.why-choose-right {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.96) translateX(25px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-choose-right.is-graphic-visible {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+.why-graphic-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Fluid scale adaptation safeguards preventing tight layout line clips */
+    .why-main-title { font-size: clamp(28px, 3.5vw, 36px); }
+    .why-sub-para { font-family: 'Inter', sans-serif; font-size: clamp(16px, 2vw, 20px); line-height: 120%; }
+    .why-feature-title { font-size: clamp(17px, 2.2vw, 20px); }
+}
+
+@media (max-width: 1024px) {
+    .why-choose-container {
+        grid-template-columns: 1fr; /* Transforms layout seamlessly into unified standard column on tablets */
+        gap: 3rem;
+    }
+    
+    .why-choose-right {
+        order: -1; /* Shifts illustration graphic section to display on top first over handheld monitors */
+    }
+
+    .why-graphic-img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .why-features-grid {
+        grid-template-columns: 1fr; /* Restructures 2x2 grid into clean single column row flow array stacks */
+        gap: 1.5rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED LETTER-BY-LETTER TYPOGRAPHY & CARDS STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const whyTitle = document.getElementById("scroll-why-title");
+        const whyPara = document.getElementById("scroll-why-para");
+        const featuresBox = document.getElementById("stagger-features-box");
+        const featureCards = document.querySelectorAll(".why-feature-card");
+        const graphicBox = document.getElementById("why-graphic-box");
+
+        // 1. Text Parsing Helper Module: Slices literal string fragments into standalone span blocks
+        function sliceTextToCharSpans(htmlElement) {
+            if (!htmlElement) return;
+            const pureStringContent = htmlElement.textContent.trim();
+            htmlElement.innerHTML = "";
+
+            [...pureStringContent].forEach(character => {
+                const spanNode = document.createElement("span");
+                spanNode.classList.add("char");
+                // Preserves clean formatting gaps across standard whitespace fields
+                spanNode.textContent = character === " " ? "\u00A0" : character;
+                htmlElement.appendChild(spanNode);
+            });
+        }
+
+        // Explode main section heading string fields
+        sliceTextToCharSpans(whyTitle);
+        
+        // Explode individual text heading strings nested across features matrix cards concurrently
+        featureCards.forEach(card => {
+            const cardTitle = card.querySelector(".why-feature-title");
+            sliceTextToCharSpans(cardTitle);
+        });
+
+        // 2. Setup Core Interaction Scroll Reveal Observers Settings
+        const whyRevealSettings = {
+            root: null,
+            threshold: 0.1, // Fires script runtime hooks when 10% of element target crosses view window bounds
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalWhyObserver = new IntersectionObserver((observedEntries, internalObserver) => {
+            observedEntries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    // A. Reveal Section Main Title Letter-by-Letter
+                    if (entry.target.id === "scroll-why-title") {
+                        const letterSpans = entry.target.querySelectorAll(".char");
+                        letterSpans.forEach((span, characterIndex) => {
+                            setTimeout(() => {
+                                span.style.opacity = "1";
+                                span.style.transform = "scale(1) translateY(0)";
+                            }, characterIndex * 25); // 25ms rapid cascading text string rolling reveal delays
+                        });
+                    }
+
+                    // B. Reveal Sub Paragraph sliding up from below boundary coordinates
+                    if (entry.target.id === "scroll-why-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Features Cards and trigger interior titles character reveals sequentially
+                    if (entry.target.id === "stagger-features-box") {
+                        featureCards.forEach((cardElement, cardPositionIndex) => {
+                            setTimeout(() => {
+                                cardElement.style.opacity = "1";
+                                cardElement.style.transform = "translateY(0)";
+
+                                // Sub-cascade: Animate current card interior subheading title letter-by-letter on load
+                                const innerTitleChars = cardElement.querySelectorAll(".why-feature-title .char");
+                                innerTitleChars.forEach((charSpan, charPositionIndex) => {
+                                    setTimeout(() => {
+                                        charSpan.style.opacity = "1";
+                                        charSpan.style.transform = "translateY(0)";
+                                    }, charPositionIndex * 20);
+                                });
+
+                            }, cardPositionIndex * 120); // 120ms staggered separations timing interval caps between matrix elements
+                        });
+                    }
+
+                    // D. Reveal right side illustration graphics frame seamlessly
+                    if (entry.target.id === "why-graphic-box") {
+                        entry.target.classList.add("is-graphic-visible");
+                    }
+
+                    // Disengage monitoring trackers from current node item to free device overhead loops
+                    internalObserver.unobserve(entry.target);
+                }
+            });
+        }, whyRevealSettings);
+
+        // Map targets securely onto intersection observer modules tracking arrays
+        if (whyTitle) globalWhyObserver.observe(whyTitle);
+        if (whyPara) globalWhyObserver.observe(whyPara);
+        if (featuresBox) globalWhyObserver.observe(featuresBox);
+        if (graphicBox) globalWhyObserver.observe(graphicBox);
+    });
+})();
+
+</script>
+
+<!-- STATS COUNTER IMPACT SECTION -->
+<section class="stats-section">
+    <div class="stats-container">
+        
+        <!-- Section Header Metadata -->
+        <div class="stats-header-row">
+            <span class="stats-tagline">Stats Counter</span>
+            <h2 class="stats-main-title" id="scroll-stats-title">Our Impact in Numbers</h2>
+        </div>
+
+        <!-- Banner Container with background field image applied exclusively below the title -->
+        <div class="stats-banner-wrapper" id="stagger-stats-container">
+            <!-- Background Image Layer for the banner alone -->
+            <img src="./assests/female agri.webp" alt="Agriculture farm field background" class="banner-bg-img">
+            <div class="banner-overlay"></div>
+
+            <!-- Foreground Content Layer holding pure white cards -->
+            <div class="banner-content-grid">
+                
+                <!-- Left Twin Column Card Block Group (Pure White Background) -->
+                <div class="stats-twin-card-node">
+                    <!-- Stat Sub-unit A: Happy Customers -->
+                    <div class="stat-unit-cell">
+                        <div class="stat-icon-frame">
+                            <span class="stat-emoji-vector">👥</span>
+                        </div>
+                        <span class="stat-count-number">50,000+</span>
+                        <p class="stat-label-content">Happy Customers</p>
+                    </div>
+                    
+                    <!-- Vertical Divider Line Split -->
+                    <div class="vertical-card-divider"></div>
+                    
+                    <!-- Stat Sub-unit B: Active Farmers -->
+                    <div class="stat-unit-cell">
+                        <div class="stat-icon-frame">
+                            <span class="stat-emoji-vector">🌱</span>
+                        </div>
+                        <span class="stat-count-number">1,200+</span>
+                        <p class="stat-label-content">Active Farmers</p>
+                    </div>
+                </div>
+
+                <!-- Right Twin Column Card Block Group (Pure White Background) -->
+                <div class="stats-twin-card-node">
+                    <!-- Stat Sub-unit C: Product Varieties -->
+                    <div class="stat-unit-cell">
+                        <div class="stat-icon-frame">
+                            <span class="stat-emoji-vector">🌾</span>
+                        </div>
+                        <span class="stat-count-number">500+</span>
+                        <p class="stat-label-content">Product Varieties</p>
+                    </div>
+                    
+                    <!-- Vertical Divider Line Split -->
+                    <div class="vertical-card-divider"></div>
+                    
+                    <!-- Stat Sub-unit D: Tons Sold Monthly -->
+                    <div class="stat-unit-cell">
+                        <div class="stat-icon-frame">
+                            <span class="stat-emoji-vector">📦</span>
+                        </div>
+                        <span class="stat-count-number">2,500+</span>
+                        <p class="stat-label-content">Tons Sold Monthly</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   STATS COUNTER BLOCK LAYOUT SYSTEM DEFINITIONS
+   ========================================================================== */
+.stats-section {
+    background-color: #ffffff; /* Section background remains clean white */
+    /* Strict layout padding specs: top: 50px; bottom: 30px; */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.stats-header-row {
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.stats-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest green label tag */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* Strict Title Typographic Specs: Font: Inter, Weight: 700, Bold, Size: 36px, LH: 100%, LS: 0% */
+.stats-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content text */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stats-main-title.is-title-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   EXCLUSIVE BANNER CONTAINER WITH APPLIED BACKGROUND FIELD IMAGE
+   ========================================================================== */
+.stats-banner-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 3.5rem 2.5rem;
+    box-sizing: border-box;
+}
+
+/* Background image restricted solely to this banner panel area */
+.banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Soft translucent white overlay inside the banner box framework */
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(240, 245, 241, 0.2) 100%);
+    backdrop-filter: blur(2px); /* Adds high-fidelity depth to the background image texture */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Content layout wrapper floating safely on top of image layers */
+.banner-content-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms twin column matrix pair */
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* ==========================================================================
+   PURE WHITE CARD NODE ARCHITECTURE WITH INTEGRATED GLOW SYSTEMS
+   ========================================================================== */
+.stats-twin-card-node {
+    background-color: #ffffff; /* Card background configured strictly pure solid white */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 3rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    
+    /* Scroll observer animation initial tracking values */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Interactive Card Lift and Radiant Emerald Halo Glow Overlay */
+.stats-twin-card-node:hover {
+    border-color: rgba(76, 175, 80, 0.4);
+    transform: translateY(-5px);
+    /* High contrast dynamic neon emerald soft glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.06), 
+                0 0 20px 2px rgba(76, 175, 80, 0.2);
+}
+
+.stat-unit-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-icon-frame {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+.stat-emoji-vector {
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.stats-twin-card-node:hover .stat-icon-frame {
+    transform: scale(1.15) translateY(-2px);
+}
+
+/* Strict Numbers Spec: Font: Inter, Weight: 700, Bold, Size: 20px, LH: 100%, LS: 0%, Centered */
+.stat-count-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000; /* Absolute black content text */
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* Strict Label Spec: Font: Inter, Weight: 400, Regular, Size: 16px, LH: 100%, LS: 0% */
+.stat-label-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4b5563; /* Muted corporate slate dark details text */
+}
+
+/* Sleek high-contrast layout interior card divider line splits */
+.vertical-card-divider {
+    width: 1px;
+    height: clamp(80px, 10vw, 110px);
+    background-color: #cbd5e1;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY GUARANTEED)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .stats-main-title { font-size: 32px; }
+    .stat-count-number { font-size: 19px; }
+    .stats-banner-wrapper { padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .banner-content-grid {
+        grid-template-columns: 1fr; /* Collapses banner contents down to a vertical stack array */
+        gap: 1.5rem;
+    }
+    
+    .stats-twin-card-node {
+        padding: 2.5rem 1rem;
+    }
+}
+
+@media (max-width: 420px) {
+    /* Destructures inner card modules horizontally on small screen limits to preserve proportions */
+    .stats-twin-card-node {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .vertical-card-divider {
+        width: 60px;
+        height: 1px; /* Rotates separator line horizontally to break items up cleanly */
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED STATS IMPACT BLOCKS STAGGER LOADING ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const statsTitle = document.getElementById("scroll-stats-title");
+        const statsGridContainer = document.getElementById("stagger-stats-container");
+        const individualTwinCards = document.querySelectorAll(".stats-twin-card-node");
+
+        // 1. Setup Intersection Observers Spec Rules Configuration Settings
+        const statsRevealSettings = {
+            root: null,
+            threshold: 0.08, // Fires runtime adjustments when 8% of target element intersects the screen boundaries
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalStatsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Reveal Main Section Headline Smoothly Upwards
+                    if (entry.target.id === "scroll-stats-title") {
+                        entry.target.classList.add("is-title-visible");
+                    }
+
+                    // Reveal White Cards One-by-One Staggered Cascade from inside the banner block
+                    if (entry.target.id === "stagger-stats-container") {
+                        individualTwinCards.forEach((cardNode, sequentialIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, sequentialIndex * 120); // 120ms staging layout interval gaps separating blocks
+                        });
+                    }
+
+                    // Clean tracker references to free system resources execution overheads
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, statsRevealSettings);
+
+        // Bind operational tracking coordinates securely
+        if (statsTitle) globalStatsObserver.observe(statsTitle);
+        if (statsGridContainer) globalStatsObserver.observe(statsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- HOW IT WORKS WORKFLOW SECTION -->
+<section class="how-it-works-section">
+    <!-- Structural Background Layout Layers -->
+    <div class="works-split-overlay-left"></div>
+    <img src="./assests/hand tree.webp" alt="Farmer working in a green agricultural field illustration" class="works-bg-img-right">
+
+    <div class="works-container">
+        <span class="works-tagline">How It Works</span>
+        
+        <!-- Word-by-word scroll-animated main title revealing from sides -->
+        <h2 class="works-main-title" id="scroll-works-title">
+            <span class="side-word left">Simple</span> 
+            <span class="side-word right">Steps</span> 
+            <span class="side-word left">to</span> 
+            <span class="side-word right">Get</span> 
+            <span class="side-word left">Fresh</span> 
+            <span class="side-word right">Produce</span>
+        </h2>
+
+        <!-- Horizontal workflow step cards container -->
+        <div class="works-cards-row" id="stagger-works-container">
+            
+            <!-- Step 1 Card -->
+            <div class="step-card-node">
+                <div class="step-number-badge">1</div>
+                <div class="step-content-block">
+                    <h3 class="step-card-title">Browse Products</h3>
+                    <p class="step-card-content">Explore a wide range of farm products</p>
+                </div>
+            </div>
+
+            <!-- Step 2 Card -->
+            <div class="step-card-node">
+                <div class="step-number-badge">2</div>
+                <div class="step-content-block">
+                    <h3 class="step-card-title">Place Order</h3>
+                    <p class="step-card-content">Add to cart and checkout securely</p>
+                </div>
+            </div>
+
+            <!-- Step 3 Card -->
+            <div class="step-card-node">
+                <div class="step-number-badge">3</div>
+                <div class="step-content-block">
+                    <h3 class="step-card-title">Track & Receive</h3>
+                    <p class="step-card-content">Track your order and get fresh products</p>
+                </div>
+            </div>
+
+            <!-- Step 4 Card -->
+            <div class="step-card-node">
+                <div class="step-number-badge">4</div>
+                <div class="step-content-block">
+                    <h3 class="step-card-title">Enjoy Naturally</h3>
+                    <p class="step-card-content">Fresh, healthy and organic produce</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   HOW IT WORKS MAIN SECTION ARCHITECTURE LAYOUT
+   ========================================================================== */
+.how-it-works-section {
+    position: relative;
+    width: 100%;
+    /* Strict layout requested padding metrics top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+}
+
+/* Left side white-shaded background block overlay */
+.works-split-overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.98) 70%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Right side background image layout layer pushed cleanly to the edge boundary */
+.works-bg-img-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.works-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.works-tagline {
+    display: block;
+    color: #1b5e20;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* Strict Title Typographic Specs: Font: Inter, Weight: 700, Bold, Size: 36px, LH: 100%, LS: 0% */
+.works-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Base horizontal side-slide hidden properties handling title entry animation */
+.works-main-title .side-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.works-main-title .side-word.left { transform: translateX(-40px); }
+.works-main-title .side-word.right { transform: translateX(40px); }
+
+/* ==========================================================================
+   HORIZONTAL STEP CARDS BLOCK MATRICES (FULL ENGAGED HOVER GLOWS)
+   ========================================================================== */
+.works-cards-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Clean horizontal layout array matching your mock exactly */
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.step-card-node {
+    background-color: #f3f4f6; /* Minimal light grey card background block */
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    box-sizing: border-box;
+    
+    /* Pre-scroll dynamic staging layout attributes variables */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.step-card-node:hover {
+    background-color: #ffffff; /* Card content switches background to pure white on hover */
+    border-color: rgba(76, 175, 80, 0.4);
+    transform: translateY(-4px) scale(1.02);
+    /* Dual-layered smooth neon green emerald glow drops framework */
+    box-shadow: 0 10px 25px -5px rgba(27, 94, 32, 0.05), 
+                0 0 18px 1px rgba(76, 175, 80, 0.22);
+}
+
+/* Circular Solid Forest Green Step Badge Nodes */
+.step-number-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1b5e20; /* Solid brand forest green circle background */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+.step-card-node:hover .step-number-badge {
+    background-color: #4caf50; /* Sprout green alert accent when card field is active */
+    transform: scale(1.1);
+}
+
+.step-content-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Strict Interior Card Title Specs: Font: Inter, Weight: 700, Bold, Size: 12px, LH: 100%, LS: 0% */
+.step-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.45rem;
+    transition: color 0.25s ease;
+}
+
+.step-card-node:hover .step-card-title {
+    color: #1b5e20;
+}
+
+/* Strict Interior Card Content Specs: Font: Inter, Weight: 400, Regular, Size: 10px, LH: 100%, LS: 0% */
+.step-card-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%; /* Gently optimized to avoid line clipping errors on high-DPI screens */
+    letter-spacing: 0%;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .works-split-overlay-left { width: 75%; }
+    .works-cards-row {
+        grid-template-columns: repeat(2, 1fr); /* Reflows gracefully down into a 2x2 grid layout on tablet terminals */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .works-split-overlay-left {
+        width: 100%;
+        background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+    }
+
+    .works-bg-img-right {
+        width: 100%;
+        opacity: 0.35; /* Dims slightly to retain text readability when overlapping elements on narrow mobile layouts */
+    }
+
+    .works-main-title { font-size: 32px; }
+}
+
+@media (max-width: 520px) {
+    .works-cards-row {
+        grid-template-columns: 1fr; /* Pure linear single row vertical stack list layout flow array on phone screens */
+        gap: 0.85rem;
+    }
+    
+    .step-card-node {
+        padding: 1rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED SPLIT WORKFLOW TITLE & CARDS STAGGER CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const worksTitle = document.getElementById("scroll-works-title");
+        const worksGridContainer = document.getElementById("stagger-works-container");
+        const individualStepCards = document.querySelectorAll(".step-card-node");
+
+        // Setup Interaction Scroll Intersection Observers Spec Rules
+        const worksRevealSettings = {
+            root: null,
+            threshold: 0.1, // Fires layout updates when 10% of element target area enters screen visibility boundaries
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalWorksObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Reveal Main Section Title Word-by-Word from left and right side horizons concurrently
+                    if (entry.target.id === "scroll-works-title") {
+                        const leftInboundWords = entry.target.querySelectorAll(".side-word.left");
+                        const rightInboundWords = entry.target.querySelectorAll(".side-word.right");
+                        
+                        leftInboundWords.forEach((word, index) => {
+                            word.style.transitionDelay = `${index * 0.08}s`;
+                            word.style.opacity = "1";
+                            word.style.transform = "translateX(0)";
+                        });
+                        
+                        rightInboundWords.forEach((word, index) => {
+                            word.style.transitionDelay = `${index * 0.08}s`;
+                            word.style.opacity = "1";
+                            word.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // Reveal Step Cards Sequence One-By-One (Staggered Cascade Loading Window)
+                    if (entry.target.id === "stagger-works-container") {
+                        individualStepCards.forEach((cardNode, itemIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemIndex * 100); // 100ms separation delays interval caps between step items
+                        });
+                    }
+
+                    // Clean tracker references to free browser runtime overhead memory pools
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, worksRevealSettings);
+
+        // Bind operational tracking modules securely onto targets
+        if (worksTitle) globalWorksObserver.observe(worksTitle);
+        if (worksGridContainer) globalWorksObserver.observe(worksGridContainer);
+    });
+})();
+
+</script>
+
+<!-- FEATURED FARMERS SECTION -->
+<section class="farmers-section">
+    <div class="farmers-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="farmers-header-row">
+            <div class="header-left-column">
+                <span class="farmers-tagline">Featured Farmers</span>
+                <!-- Word-by-word scroll-animated main title -->
+                <h2 class="farmers-main-title" id="scroll-farmers-title">
+                    <span class="f-word">Meet</span>
+                    <span class="f-word">Our</span>
+                    <span class="f-word">Trusted</span>
+                    <span class="f-word">Farmers</span>
+                </h2>
+                <p class="farmers-sub-para">
+                    Real farmers, real stories, real farm fresh products.
+                </p>
+            </div>
+            <div class="header-right-column">
+                <!-- Creative flickering action CTA button with 404 routing -->
+                <a href="404.html" class="view-all-farmers-flicker">
+                    View All Farmers <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll-Triggered Staggered Farmers Card Grid Matrix -->
+        <div class="farmers-cards-grid" id="stagger-farmers-container">
+            
+            <!-- Farmer Card 1: Ramesh Kumar -->
+            <div class="farmer-card-node">
+                <div class="farmer-img-frame">
+                    <img src="./assests/male agri.webp" alt="Ramesh Kumar profile image" class="farmer-avatar-img">
+                </div>
+                <div class="farmer-info-block">
+                    <h3 class="farmer-profile-name">Ramesh Kumar</h3>
+                    <div class="farmer-location-row">
+                        <svg class="location-pin-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="farmer-location-text">Tamil Nadu</span>
+                    </div>
+                    <a href="404.html" class="view-profile-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Farmer Card 2: Lakshmi Dev -->
+            <div class="farmer-card-node">
+                <div class="farmer-img-frame">
+                    <img src="./assests/female agri.webp" alt="Lakshmi Dev profile image" class="farmer-avatar-img">
+                </div>
+                <div class="farmer-info-block">
+                    <h3 class="farmer-profile-name">Lakshmi Dev</h3>
+                    <div class="farmer-location-row">
+                        <svg class="location-pin-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="farmer-location-text">Karnataka</span>
+                    </div>
+                    <a href="404.html" class="view-profile-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Farmer Card 3: Suresh Patel -->
+            <div class="farmer-card-node">
+                <div class="farmer-img-frame">
+                    <img src="./assests/agri 3.webp" alt="Suresh Patel profile image" class="farmer-avatar-img">
+                </div>
+                <div class="farmer-info-block">
+                    <h3 class="farmer-profile-name">Suresh Patel</h3>
+                    <div class="farmer-location-row">
+                        <svg class="location-pin-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="farmer-location-text">Maharashtra</span>
+                    </div>
+                    <a href="404.html" class="view-profile-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Farmer Card 4: Meena Singh -->
+            <div class="farmer-card-node">
+                <div class="farmer-img-frame">
+                    <img src="./assests/agri 4.webp" alt="Meena Singh profile image" class="farmer-avatar-img">
+                </div>
+                <div class="farmer-info-block">
+                    <h3 class="farmer-profile-name">Meena Singh</h3>
+                    <div class="farmer-location-row">
+                        <svg class="location-pin-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span class="farmer-location-text">Uttar Pradesh</span>
+                    </div>
+                    <a href="404.html" class="view-profile-btn">View Profile</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Workspace Setup Rules */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   FEATURED FARMERS COMPONENT BASE SECTION MODULE LAYOUT
+   ========================================================================== */
+.farmers-section {
+    background-color: #ffffff;
+    /* Precise layout requested spacing modifications padding: top 50px, bottom 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.farmers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.farmers-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.header-left-column {
+    flex: 1;
+    max-width: 750px;
+}
+
+.farmers-tagline {
+    display: block;
+    color: #1b5e20; /* Primary Brand Forest Green Accent */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & SCROLL WORD TRANSITIONS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.farmers-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Initial hidden transform state variables triggered via scroll observation loops */
+.farmers-main-title .f-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px); /* Slides up linearly upon crossing view borders */
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.farmers-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4b5563; /* Slate grey details layout tracking color */
+}
+
+/* ==========================================================================
+   CREATIVE DYNAMIC FLICKERING CTA ACTION INTERFACE BUTTONS
+   ========================================================================== */
+.header-right-column {
+    flex-shrink: 0;
+    padding-bottom: 0.25rem;
+}
+
+.view-all-farmers-flicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.25s ease;
+    /* Loops an active neon text shimmer glitch animation matching prior requirements */
+    animation: ctaLinkTextGlowFlickerSimulation 4s linear infinite;
+}
+
+.view-all-farmers-flicker .arrow-icon {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.view-all-farmers-flicker:hover {
+    color: #4caf50;
+}
+
+.view-all-farmers-flicker:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   FARMERS DISPLAY PROFILES MATRIX GRID WITH HOVER RADIANT GLOWS
+   ========================================================================== */
+.farmers-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Clean symmetric 4-column cards layer matrix block layout */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.farmer-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Animation staging initial values variables map */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.farmer-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* Dual-layered dynamic neon green emerald soft glow projection overlay mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Farmer Visual Avatar Frame Wrapper Layer */
+.farmer-img-frame {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.farmer-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.farmer-card-node:hover .farmer-avatar-img {
+    transform: scale(1.05); /* Soft clean zoom depth effect */
+}
+
+/* Information Box Block Details Inner Layout */
+.farmer-info-block {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Card Heading Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.farmer-profile-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #1f2937;
+    margin-bottom: 0.6rem;
+}
+
+/* Location Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.farmer-location-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.location-pin-icon {
+    width: 16px;
+    height: 16px;
+    fill: #6b7280; /* Corporate muted neutral pin gray scale marker vector */
+    transition: fill 0.25s ease;
+}
+
+.farmer-card-node:hover .location-pin-icon {
+    fill: #1b5e20; /* Pin switches to theme green on active selection */
+}
+
+.farmer-location-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   VIEW PROFILE RETAIL NAV BUTTON COMPONENT (404 SYSTEM LOCKED)
+   ========================================================================== */
+.view-profile-btn {
+    margin-top: auto; /* Vertically aligns across multi-row uneven container text grids */
+    width: 100%;
+    background-color: #f1f5f9; /* Light clean grey secondary button backdrop style from reference */
+    color: #1b5e20;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #1b5e20; /* Flips color layouts completely on active interaction */
+    color: #ffffff;
+}
+
+.view-profile-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION SHIMMER ANIMATION ENGINE
+   ========================================================================== */
+@keyframes ctaLinkTextGlowFlickerSimulation {
+    0%, 14%, 18%, 23%, 65%, 69%, 100% { opacity: 1; filter: drop-shadow(0 0 0px transparent); }
+    16%, 20%, 67% { opacity: 0.55; color: #4caf50; filter: drop-shadow(0 0 3px rgba(76,175,80,0.35)); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Compress typography dynamically to bypass layout line text clips from strict 100% line heights */
+    .farmers-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .farmers-sub-para { font-size: clamp(16px, 2.2vw, 20px); }
+    .farmer-profile-name { font-size: 18px; }
+}
+
+@media (max-width: 1024px) {
+    .farmers-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reflows neatly down into a 2-column display card block layout */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .farmers-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .farmers-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .farmers-cards-grid {
+        grid-template-columns: 1fr; /* Forms true clean linear stacked list flow array sequence on mobile views */
+        gap: 1rem;
+    }
+    
+    .farmer-img-frame {
+        height: 180px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEAL FEATURED FARMERS MATRIX BLOCK CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const farmersTitle = document.getElementById("scroll-farmers-title");
+        const farmersGridContainer = document.getElementById("stagger-farmers-container");
+        const individualFarmerCards = document.querySelectorAll(".farmer-card-node");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (farmersTitle) {
+            const wordTokens = farmersTitle.querySelectorAll(".f-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const farmersRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalFarmersObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Reveal Main Section Title Word-By-Word
+                    if (entry.target.id === "scroll-farmers-title") {
+                        const words = entry.target.querySelectorAll(".f-word");
+                        words.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateY(0)";
+                        });
+                    }
+
+                    // Reveal Cards Grid Matrix Sequence One-by-One (Staggered Stacking Cascade)
+                    if (entry.target.id === "stagger-farmers-container") {
+                        individualFarmerCards.forEach((cardNode, progressiveIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, progressiveIndex * 85); // 85ms separation delays interval caps between user items
+                        });
+                    }
+
+                    // Sever data streaming connection from current target block to conserve loops engine power
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, farmersRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (farmersTitle) globalFarmersObserver.observe(farmersTitle);
+        if (farmersGridContainer) globalFarmersObserver.observe(farmersGridContainer);
+    });
+})();
+
+</script>
+
+<!-- CUSTOMER TESTIMONIAL REVIEWS SECTION -->
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="testimonials-header-row">
+            <span class="testimonials-tagline">Testimonials</span>
+            <!-- Letter-by-letter scroll-animated main title -->
+            <h2 class="testimonials-main-title" id="scroll-testimonials-title">What Our Customers Say</h2>
+            <p class="testimonials-sub-para">
+                Trusted by thousands of customers across the country.
+            </p>
+        </div>
+
+        <!-- Scroll-Triggered Staggered Testimonial Cards Layout Row -->
+        <div class="testimonials-cards-row" id="stagger-testimonials-container">
+            
+            <!-- Testimonial Card 1: Priya Sharma -->
+            <div class="testimonial-card-node">
+                <blockquote class="testimonial-quote">
+                    "AgriMart has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
+                </blockquote>
+                <div class="testimonial-profile-footer">
+                    <div class="profile-avatar-frame">
+                        <img src="./assests/testi 1.webp" alt="Priya Sharma user profile portrait photo image" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-meta-details">
+                        <cite class="profile-username">Priya Sharma</cite>
+                        <span class="profile-user-city">Chennai</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 2: Meena -->
+            <div class="testimonial-card-node">
+                <blockquote class="testimonial-quote">
+                    "AgriMart has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
+                </blockquote>
+                <div class="testimonial-profile-footer">
+                    <div class="profile-avatar-frame">
+                        <img src="./assests/testi 2.webp" alt="Meena user profile portrait photo image" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-meta-details">
+                        <cite class="profile-username">Meena</cite>
+                        <span class="profile-user-city">Coimbatore</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Rules */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   TESTIMONIALS SECTION CORE ARCHITECTURE DEFINITIONS
+   ========================================================================== */
+.testimonials-section {
+    background-color: #ffffff;
+    /* Precise requested layout paddings: top 50px, bottom 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.testimonials-header-row {
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.testimonials-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest green style */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* Strict Title Typographic Specs: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.testimonials-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+/* Individual character inline delay anchor spans mapped by JavaScript strings parser */
+.testimonials-main-title .char {
+    display: inline-block;
+    opacity: 0.1; /* Initial faded state layout value */
+    transform: scale(0.95) translateY(4px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonials-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   TESTIMONIAL INTERFACE CARDS MATRIX LIST (WITH EMBEDDED GLOW OVERLAYS)
+   ========================================================================== */
+.testimonials-cards-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms exact horizontal pair layout rows matching preview */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.testimonial-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    
+    /* Scroll entry intersection staging parameters variables code */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow overlay project */
+.testimonial-card-node:hover {
+    border-color: rgba(76, 175, 80, 0.4);
+    transform: translateY(-5px);
+    /* High resolution dual-layered drops emerald soft neon projection reflection mapping array */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.04), 
+                0 0 20px 2px rgba(76, 175, 80, 0.18);
+}
+
+/* Strict Card Description Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.testimonial-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #1f2937;
+    margin-bottom: 2.5rem;
+    position: relative;
+    text-align: left;
+}
+
+.testimonial-profile-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+/* Profile Photo Circle Geometric Crop Frames */
+.profile-avatar-frame {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    flex-shrink: 0;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial-card-node:hover .profile-avatar-img {
+    transform: scale(1.08); /* Gentle parallax visual feedback zoom */
+}
+
+.profile-meta-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Strict Username Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.profile-username {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+}
+
+.profile-user-city {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY GUARANTEED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Fluid scale parameters drop code to safeguard tight 100% line spacing metrics over mid-viewports */
+    .testimonials-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .testimonial-quote { font-size: clamp(16px, 2vw, 20px); line-height: 120%; }
+    .profile-username { font-size: clamp(16px, 2vw, 20px); }
+}
+
+@media (max-width: 900px) {
+    .testimonials-cards-row {
+        grid-template-columns: 1fr; /* Transforms grid seamlessly into a linear vertical column list layout */
+        gap: 1.5rem;
+    }
+    
+    .testimonial-card-node {
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED LETTER REVEALS & TESTIMONIAL STAGGER LOAD CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const testimonialsTitle = document.getElementById("scroll-testimonials-title");
+        const testimonialsContainer = document.getElementById("stagger-testimonials-container");
+        const discreteTestimonialCards = document.querySelectorAll(".testimonial-card-node");
+
+        // 1. Text Parsing Helper Module: Explodes string literals cleanly across individual span arrays
+        if (testimonialsTitle) {
+            const pureStringContent = testimonialsTitle.textContent.trim();
+            testimonialsTitle.innerHTML = "";
+
+            [...pureStringContent].forEach(character => {
+                const spanNode = document.createElement("span");
+                spanNode.classList.add("char");
+                // Securely preserves layout spacing intervals inside empty gap arrays boundaries
+                spanNode.textContent = character === " " ? "\u00A0" : character;
+                testimonialsTitle.appendChild(spanNode);
+            });
+        }
+
+        // 2. Setup Core Intersection Observers Spec Rules Configuration Settings
+        const testimonialsRevealSettings = {
+            root: null,
+            threshold: 0.1, // Fires coordinates logic loops execution when 10% of target bounds crosses the screen
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalTestimonialsObserver = new IntersectionObserver((observedEntries, internalObserver) => {
+            observedEntries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    // A. Reveal Section Main Title Letter-by-Letter
+                    if (entry.target.id === "scroll-testimonials-title") {
+                        const letterSpans = entry.target.querySelectorAll(".char");
+                        letterSpans.forEach((span, characterIndex) => {
+                            setTimeout(() => {
+                                span.style.opacity = "1";
+                                span.style.transform = "scale(1) translateY(0)";
+                            }, characterIndex * 25); // 25ms rapid cascading text string rolling reveal delays
+                        });
+                    }
+
+                    // B. Reveal Grid Cards Sequence One-By-One (Staggered Cascade Loading Window)
+                    if (entry.target.id === "stagger-testimonials-container") {
+                        discreteTestimonialCards.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 120); // 120ms staggered separations timing interval caps between card elements
+                        });
+                    }
+
+                    // Disengage monitoring trackers from current node item to free device overhead loops
+                    internalObserver.unobserve(entry.target);
+                }
+            });
+        }, testimonialsRevealSettings);
+
+        // Map targets securely onto operational observation loops
+        if (testimonialsTitle) globalTestimonialsObserver.observe(testimonialsTitle);
+        if (testimonialsContainer) globalTestimonialsObserver.observe(testimonialsContainer);
+    });
+})();
+
+</script>
+
+<!-- LATEST BLOGS SECTION -->
+<section class="blog-section">
+    <div class="blog-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="blog-header-row">
+            <span class="blog-tagline">Latest Blog</span>
+            <!-- Word-by-word scroll-animated main title -->
+            <h2 class="blog-main-title" id="scroll-blog-title">
+                <span class="b-word">From</span>
+                <span class="b-word">Our</span>
+                <span class="b-word">Blog</span>
+            </h2>
+            <p class="blog-sub-para">
+                Tips, news and insights for a better farming future.
+            </p>
+        </div>
+
+        <!-- Static Clean 4-Column Grid Alignment Exactly Mirroring Reference Asset -->
+        <div class="blog-cards-grid" id="stagger-blog-container">
+            
+            <!-- Card 1: 5 Tips for Better Crop Yield -->
+            <article class="blog-card-node">
+                <div class="blog-img-frame">
+                    <img src="./assests/blog 1.webp" alt="Sprouts growing out of organic soil" class="blog-item-img">
+                </div>
+                <div class="blog-info-block">
+                    <h3 class="blog-card-title">5 Tips for Better Crop Yield</h3>
+                    <time class="blog-date-stamp" datetime="2025-05-20">May 20, 2025</time>
+                    <a href="404.html" class="blog-read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <!-- Card 2: Organic Farming: A Healthier Choice -->
+            <article class="blog-card-node">
+                <div class="blog-img-frame">
+                    <img src="./assests/blog 2.webp" alt="Hands planting a sprout into agricultural soil" class="blog-item-img">
+                </div>
+                <div class="blog-info-block">
+                    <h3 class="blog-card-title">Organic Farming: A Healthier Choice</h3>
+                    <time class="blog-date-stamp" datetime="2025-05-15">May 15, 2025</time>
+                    <a href="404.html" class="blog-read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <!-- Card 3: Best Practices for Soil Health -->
+            <article class="blog-card-node">
+                <div class="blog-img-frame">
+                    <img src="./assests/blog 3.webp" alt="Seeds being poured from cloth bag into tilled soil field" class="blog-item-img">
+                </div>
+                <div class="blog-info-block">
+                    <h3 class="blog-card-title">Best Practices for Soil Health</h3>
+                    <time class="blog-date-stamp" datetime="2025-05-10">May 10, 2025</time>
+                    <a href="404.html" class="blog-read-more-btn">Read More</a>
+                </div>
+            </article>
+
+            <!-- Card 4: How to Choose the Right Seeds -->
+            <article class="blog-card-node">
+                <div class="blog-img-frame">
+                    <img src="./assests/blog 4.webp" alt="Farmer holding a handful of robust wheat grains fields backdrop" class="blog-item-img">
+                </div>
+                <div class="blog-info-block">
+                    <h3 class="blog-card-title">How to Choose the Right Seeds</h3>
+                    <time class="blog-date-stamp" datetime="2025-05-05">May 5, 2025</time>
+                    <a href="404.html" class="blog-read-more-btn">Read More</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Spec Design Rules */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   LATEST BLOGS ARCHITECTURE BASE GRID LAYOUT SETUPS
+   ========================================================================== */
+.blog-section {
+    background-color: #ffffff;
+    /* Precise layout constraints padding system: top: 50px, bottom: 30px, left/right: 30px */
+    padding: 50px 30px 30px 30px;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.blog-header-row {
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.blog-tagline {
+    display: block;
+    color: #1b5e20; /* Primary theme green */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* Strict Title Typographic Specs: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.blog-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Scroll initial entry animation transformation values handled within JS tracking arrays */
+.blog-main-title .b-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   STATIC GRID CARDS AREA WITH HIGH FIDELITY HOVER GLOW SYSTEMS
+   ========================================================================== */
+.blog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forms exact balanced 4-column matrix layout row matching image preview */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.blog-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Lift and Radiant Emerald Halo Glow Overlay */
+.blog-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* High resolution dual-layered dynamic neon emerald soft glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 20px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Retail Image Thumbnail Container Frames */
+.blog-img-frame {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.blog-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card-node:hover .blog-item-img {
+    transform: scale(1.05); /* Soft parallax depth zoom effect */
+}
+
+/* Context Copy Meta Block Details Layout */
+.blog-info-block {
+    padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Strict Card Title Specs: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.blog-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 120%; /* Safely optimized to protect text wrap overlaps from clipping bugs */
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    min-height: 48px; /* Standardizes row baseline levels uniformly regardless of text wraps strings */
+    transition: color 0.25s ease;
+}
+
+.blog-card-node:hover .blog-card-title {
+    color: #1b5e20;
+}
+
+.blog-date-stamp {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* ==========================================================================
+   RESTAURANT STYLE CORE CTA READ MORE INTERFACE ACTION LINKS (404 ENFORCED)
+   ========================================================================== */
+.blog-read-more-btn {
+    margin-top: auto; /* Vertically aligns buttons down across uneven layout cards rows fields */
+    width: 100%;
+    background-color: #f1f5f9; /* Light grey secondary button layout background matching reference preview */
+    color: #1b5e20;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.blog-read-more-btn:hover {
+    background-color: #1b5e20;
+    color: #ffffff; /* Inverts color layouts on hover elements trigger paths */
+}
+
+.blog-read-more-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Compress text elements gracefully to counter tight layout boundary box constraints */
+    .blog-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .blog-card-title { font-size: 18px; }
+    .blog-cards-grid { gap: 1rem; }
+}
+
+@media (max-width: 1024px) {
+    .blog-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses row into clean symmetrical 2-column arrays grid block */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+        padding-left: 20px;
+        padding-right: 20px; /* Adapts outer spacing layout bounds on small mobile views terminals */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-cards-grid {
+        grid-template-columns: 1fr; /* True clean linear stacked sequence flow array list on phone screen layouts */
+        gap: 1.25rem;
+    }
+    
+    .blog-img-frame {
+        height: 160px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED STATIC BLOG MATRIX BLOCK STAGGER REVEAL ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const blogTitle = document.getElementById("scroll-blog-title");
+        const blogGridContainer = document.getElementById("stagger-blog-container");
+        const individualBlogCards = document.querySelectorAll(".blog-card-node");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (blogTitle) {
+            const wordTokens = blogTitle.querySelectorAll(".b-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const blogRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalBlogObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Reveal Main Section Title Word-By-Word
+                    if (entry.target.id === "scroll-blog-title") {
+                        const words = entry.target.querySelectorAll(".b-word");
+                        words.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateY(0)";
+                        });
+                    }
+
+                    // Reveal Static Display Grid Cards Sequence One-by-One (Staggered Stacking Cascade)
+                    if (entry.target.id === "stagger-blog-container") {
+                        individualBlogCards.forEach((cardNode, progressiveIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, progressiveIndex * 90); // 90ms step delay boundaries interval separations caps
+                        });
+                    }
+
+                    // Sever monitoring link to preserve processing power overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, blogRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (blogTitle) globalBlogObserver.observe(blogTitle);
+        if (blogGridContainer) globalBlogObserver.observe(blogGridContainer);
+    });
+})();
+
+</script>
+
+<!-- PRODUCTION READY MARKETPLACE FOOTER COMPONENT -->
+<footer class="app-footer">
+    <div class="footer-top-container">
+        
+        <!-- Column 1: Brand Info and Social Handles -->
+        <div class="footer-column brand-summary-cell">
+            <a href="#" id="footer-scroll-top-btn" class="footer-logo-wrapper" title="Back to Top">
+                <img src="./assests/agri marketplace.webp" alt="Stackly Logo" class="footer-brand-img">
+            </a>
+            <p class="footer-brand-para">
+                Connecting farmers and consumers for a healthier and greener tomorrow.
+            </p>
+            
+            <!-- Upgraded Vector SVG Social Row Handles (All route to 404) -->
+            <div class="social-links-row">
+                <!-- Instagram -->
+                <a href="404.html" class="social-circle-icon" aria-label="Instagram">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.258 2.617 4.677 6.98 4.877 1.28.059 1.688.072 4.948.072 3.259 0 3.668-.013 4.948-.072 4.254-.2 6.672-2.617 6.872-6.98.059-1.28.072-1.688.072-4.948 0-3.259-.013-3.668-.072-4.948-.2-4.254-2.617-6.672-6.98-6.872C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4.162 4.162 0 110-8.324A4.162 4.162 0 0112 16zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="404.html" class="social-circle-icon" aria-label="YouTube">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.516 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.163zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- Twitter (X) -->
+                <a href="404.html" class="social-circle-icon" aria-label="Twitter">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M18.244 2.25h3.308l-4.716 5.39c5.542 7.32 7.422 10.518 11.558 15.75H21.72l-5.176-6.756-5.93 6.756H7.31l5.214-5.962L1.875 2.25h6.836l4.654 6.155H18.24zM16.483 21.562h1.833L7.084 4.126H5.117L16.483 21.562z"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="404.html" class="social-circle-icon" aria-label="LinkedIn">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Home</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> About Us</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Services</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Blog</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Categories Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Categories</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Fresh Vegetables & Fruits</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Grains & Cereals</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Spices & Herbs</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Dairy Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Organic Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Seeds & Fertilizers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Support Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Support</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Help Center</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Shipping Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Return Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Terms & Conditions</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 5: Contact Services Details -->
+        <div class="footer-column contact-info-cell">
+            <h3 class="footer-column-title">Our Services</h3>
+            <ul class="contact-details-list">
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📍</span>
+                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">✉️</span>
+                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📞</span>
+                    <span class="contact-text-node">+44 5286548321</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legal Strip Copyright Line Bar Row -->
+    <div class="footer-bottom-strip">
+        <div class="footer-bottom-container">
+            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <div class="bottom-legal-links">
+                <a href="404.html" class="legal-link-item">Privacy Policy</a>
+                <a href="404.html" class="legal-link-item">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   FOOTER CORE ARCHITECTURE DESIGN SYSTEM (DARK GREEN PRESETS)
+   ========================================================================== */
+.app-footer {
+    background-color: #051a0e; /* Exact deep forest dark green shade from reference image */
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* Strict layout specified padding top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    display: grid;
+    /* Custom unbalanced column layout distributions matching reference template width weights perfectly */
+    grid-template-columns: 1.2fr 0.75fr 1fr 0.850fr 1.2fr;
+    gap: 2.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC RULES OVERRIDES & LAYOUT FIELDS
+   ========================================================================== */
+
+/* Brand Copy Paragraph: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.footer-brand-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Modestly balanced line-height to avoid text wrap box boundary overlaps */
+    letter-spacing: 0%;
+    color: #cbd5e1; /* Soft accessible light slate silver copy tint */
+    margin-bottom: 1.5rem;
+    max-width: 260px;
+}
+
+/* Titles Header Spec: Font: Inter, Weight: 700, Style: Bold, Size: 16px, LH: 100%, LS: 0% */
+.footer-column-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white title stamps */
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+/* ==========================================================================
+   COLUMN 1: BRAND WRAPPER & UPGRADED SVG VECTOR SOCIAL HANDLES
+   ========================================================================== */
+.footer-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.footer-brand-img {
+    height: clamp(38px, 4vw, 45px);
+    width: auto;
+    object-fit: contain;
+}
+
+.social-links-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.social-circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+/* High contrast vector icon nested path formatting scaling loops */
+.social-vector-svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff; /* High visibility pure white geometry paths */
+    transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.social-circle-icon:hover {
+    background-color: #4caf50; /* Animates smoothly into lively leaf green sprout accent fill */
+    border-color: #4caf50;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.35);
+}
+
+.social-circle-icon:hover .social-vector-svg {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   COLUMNS 2, 3 & 4: DIRECTORY LINK NAVIGATION LIST ARRAYS (404 TARGETED)
+   ========================================================================== */
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #94a3b8; /* Muted silver navigation elements standard link color */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.link-chevron {
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav-item:hover {
+    color: #ffffff; /* Swaps color directly into bright white accent fields on hover */
+    transform: translateX(4px);
+}
+
+.footer-nav-item:hover .link-chevron {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   COLUMN 5: PACKAGED DATA SERVICES DETAIL MATRIX
+   ========================================================================== */
+.contact-details-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+}
+
+.contact-vector-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-text-node {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 140%;
+    color: #cbd5e1;
+}
+
+.email-anchor {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email-anchor:hover {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   BOTTOM LEGAL STRIP COPYRIGHT LINE BAR ROW
+   ========================================================================== */
+.footer-bottom-strip {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Minimal soft horizontal separator dividing lines hair layer */
+    background-color: #04140e; /* Subtle dark emphasis shift down below borders */
+}
+
+.footer-bottom-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    box-sizing: border-box;
+}
+
+.copyright-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.bottom-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.legal-link-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-link-item:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .footer-top-container {
+        grid-template-columns: repeat(3, 1fr); /* Forms beautiful 3-column balancing layout rules */
+        gap: 3rem 2rem;
+    }
+    .brand-summary-cell {
+        grid-column: 1 / -1; /* Permits logo description areas to expand full length up top row fields */
+        max-width: 100%;
+    }
+    .footer-brand-para {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top-container {
+        grid-template-columns: repeat(2, 1fr); /* Drops down to a balanced 2x2 matrix cluster on mobile screens */
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .footer-nav-item {
+        white-space: normal; /* Permits safe wrap reflow operations across minor tablet ports */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top-container {
+        grid-template-columns: 1fr; /* Pure minimal vertical line stream stacking flow layout sequence execution */
+        gap: 2rem;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 2rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// APPS FOOTER SMOOTH COMPONENT INTERFACE INTERACTION ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const footerScrollTopBtn = document.getElementById("footer-scroll-top-btn");
+
+        if (!footerScrollTopBtn) return; // Prevent scope breakage if block is isolated
+
+        /**
+         * Smooth Back-to-Top Navigation Trigger Rule
+         * Attached securely directly onto the primary brand graphic image link frame block
+         */
+        footerScrollTopBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Suppresses empty hash jump shifts grid coordinate calculations
+            
+            // Initiates native hardware-accelerated animated scroll timeline translation vector
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

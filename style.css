@@ -1,0 +1,544 @@
+/* ==========================================================================
+   DESIGN VARIABLES & SYSTEM CONFIG
+   ========================================================================== */
+:root {
+    --bg-white: #ffffff;
+    --brand-green: #1b5e20;        /* Deep Premium Forest Green */
+    --brand-green-light: #4caf50;  /* Vibrant Sprouts Leaf Green */
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-white);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ==========================================================================
+   PRELOADER CORE FRAME LAYOUT
+   ========================================================================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1), 
+                visibility 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ==========================================================================
+   VECTOR INFOGRAPHIC ANIMATION ENGINE
+   ========================================================================== */
+.brand-vector {
+    width: clamp(80px, 15vw, 120px);
+    height: clamp(80px, 15vw, 120px);
+}
+
+.brand-vector path {
+    fill: none;
+    stroke: var(--brand-green);
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: drawVectorPath 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.brand-vector .stem { animation-delay: 0.0s; }
+.brand-vector .leaf-left { animation-delay: 0.3s; }
+.brand-vector .leaf-right { animation-delay: 0.5s; }
+
+.brand-vector .bud {
+    fill: var(--brand-green-light);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50px 15px;
+    animation: scaleGrowthNode 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+/* ==========================================================================
+   RESPONSIVE VERTICAL STACKED TYPOGRAPHY LAYOUT
+   ========================================================================== */
+.brand-logo {
+    display: flex;
+    flex-direction: column;    /* Locks letters stacked directly on top of each other */
+    align-items: center;
+    justify-content: center;
+    line-height: 0.82;         /* Pulls letters tightly together vertically */
+}
+
+.brand-logo span {
+    font-size: clamp(2.5rem, 10vw, 4.2rem); /* Dynamic fluid scaling for tall stacked letters */
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--brand-green);
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: revealLetterBlock 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Timeline staggering delays creating a top-to-bottom falling wave presentation */
+.brand-logo span:nth-child(1) { animation-delay: 0.15s; }
+.brand-logo span:nth-child(2) { animation-delay: 0.22s; }
+.brand-logo span:nth-child(3) { animation-delay: 0.29s; }
+.brand-logo span:nth-child(4) { animation-delay: 0.36s; }
+.brand-logo span:nth-child(5) { animation-delay: 0.43s; }
+.brand-logo span:nth-child(6) { animation-delay: 0.50s; }
+.brand-logo span:nth-child(7) { animation-delay: 0.57s; }
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINES
+   ========================================================================== */
+@keyframes drawVectorPath {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes scaleGrowthNode {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealLetterBlock {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   DESIGN ARCHITECTURE VARIABLES & SYSTEM DEFINITIONS
+   ========================================================================== */
+:root {
+    --bg-white: #ffffff;
+    --brand-green-primary: #1b5e20; /* Elite Forest Green tone from original logo asset */
+    --brand-green-hover: #144316;
+    --text-charcoal: #212121;
+    --text-slate: #4a4a4a;
+    --border-grey-light: #e2e8f0;
+    --input-placeholder: #718096;
+    --alert-red: #d32f2f;
+    --font-suite: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --transition-speed: 0.25s;
+}
+
+/* ==========================================================================
+   HEADER COMPONENT BASE CONTAINER ARCHITECTURE
+   ========================================================================== */
+.app-header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-grey-light);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 70px;
+    box-sizing: border-box;
+}
+
+/* Brand Graphic Image Link Block Frame */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: clamp(1rem, 3vw, 3.5rem); /* Generates distinct spatial gap right after logo */
+}
+
+.brand-img {
+    height: clamp(32px, 4vw, 42px);
+    width: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   DESKTOP CORE NAVIGATION DESIGNS
+   ========================================================================== */
+.header-navigation-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the subsequent elements (search) away to create isolation spacing */
+}
+
+.nav-links-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: clamp(12px, 2vw, 32px); /* Spacious clean layout array distribution handles gaps between menu tabs */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-slate);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0.1rem;
+    transition: color var(--transition-speed) ease;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    color: var(--brand-green-primary);
+}
+
+/* Dedicated Active Menu Interactive Presentation State Styles */
+.nav-item.active-tab {
+    color: var(--brand-green-primary) !important;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Decorative visual accent hint line underneath active context tabs */
+.nav-item.active-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--brand-green-primary);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   DYNAMIC FORM COMPONENT - SEARCH UTILITY FIELD
+   ========================================================================== */
+.search-form-container {
+    flex: 1;
+    max-width: 360px;
+    margin-right: clamp(1rem, 3vw, 3.5rem); /* Generates spacing between search field and trailing interaction action panel */
+}
+
+.search-field-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.search-field-group input {
+    width: 100%;
+    padding: 0.65rem 2.5rem 0.65rem 1.2rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    color: var(--text-charcoal);
+    outline: none;
+    background-color: #f8fafc;
+    transition: all var(--transition-speed) ease;
+    box-sizing: border-box;
+}
+
+.search-field-group input:focus {
+    border-color: var(--brand-green-primary);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+}
+
+.search-action-btn {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--text-slate);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-speed) ease;
+}
+
+.search-action-btn:hover {
+    color: var(--brand-green-primary);
+}
+
+.search-icon-svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Custom visual warning state for search input */
+.search-field-group input.validation-alert {
+    border-color: var(--alert-red);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+/* ==========================================================================
+   USER PROFILE ACTION GROUP
+   ========================================================================== */
+.user-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+.action-icon-link {
+    color: var(--text-charcoal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-speed) ease;
+}
+
+.action-icon-link:hover {
+    color: var(--brand-green-primary);
+}
+
+.action-svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Profile Credentials Navigation Trigger Text Block Link */
+.auth-navigation-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-slate);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+    white-space: nowrap;
+}
+
+.auth-navigation-link:hover {
+    color: var(--brand-green-primary);
+}
+
+/* E-Commerce Shopping Cart Absolute Structural Layout Badge */
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.cart-counter-bubble {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: var(--brand-green-primary);
+    color: var(--bg-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT OVERRIDES (HAMBURGER PATTERNS)
+   ========================================================================== */
+.hamburger-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 0;
+}
+
+.hamburger-toggle .bar {
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--text-charcoal);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Tablet & Mobile Breakpoints Viewport Processing Rules */
+@media (max-width: 1024px) {
+    .logo-wrapper {
+        margin-right: 0; /* Clear desktop spacer context on smaller screen widths */
+    }
+
+    .hamburger-toggle {
+        display: flex;
+    }
+
+    /* Core Collapse Module Drawer Menu Transformation Layer */
+    .header-navigation-wrapper {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        transform: translateY(-120%);
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    /* Active open configuration triggered securely via JavaScript */
+    .header-navigation-wrapper.menu-is-open {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .main-nav {
+        margin-right: 0;
+    }
+
+    .nav-links-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .nav-item {
+        font-size: 1.2rem;
+        display: block;
+        width: 100%;
+    }
+
+    .nav-item.active-tab::after {
+        bottom: -4px;
+        width: 40px;
+    }
+
+    .search-form-container {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .search-field-group input {
+        padding: 0.8rem 3rem 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .user-actions-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        border-top: 1px solid var(--border-grey-light);
+        padding-top: 1.5rem;
+        width: 100%;
+    }
+
+    .auth-navigation-link {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    /* Interactive UI Crossbars */
+    .hamburger-toggle.menu-is-open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-toggle.menu-is-open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-toggle.menu-is-open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* =========================================================
+   GLOBAL PAGE SCROLL FIX
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+}
+
+/* Never allow the mobile menu to permanently lock the page */
+body:not(.mobile-menu-open) {
+    overflow-y: auto !important;
+}
+
+/* Mobile menu open state */
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* Make sure sections can extend naturally */
+.hero-section,
+.categories-section {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Categories must remain reachable below hero */
+.categories-section {
+    display: block;
+    min-height: auto;
+}
