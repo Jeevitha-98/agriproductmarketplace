@@ -1,0 +1,2911 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Modern Agri Preloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE WHITE PRELOADER ARCHITECTURE -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Animated Vector Artwork (Geometric Plant / Leaf Growth) -->
+            <svg class="brand-vector" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <!-- Main central organic stem -->
+                <path class="stem" d="M50,90 C50,60 50,40 50,15" />
+                <!-- Left branching vector leaf -->
+                <path class="leaf-left" d="M50,65 C20,55 25,35 50,35" />
+                <!-- Right branching vector leaf -->
+                <path class="leaf-right" d="M50,48 C80,38 75,18 50,18" />
+                <!-- Kinetic growth node apex -->
+                <circle class="bud" cx="50" cy="15" r="4" />
+            </svg>
+
+            <!-- Responsive Vertically Stacked Branding Text -->
+            <div class="brand-logo">
+                <span>s</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>l</span>
+                <span>y</span>
+            </div>
+
+        </div>
+    </div>
+
+  <script>
+    // ==========================================================================
+// PRELOADER TIMING LIFECYCLE CONTROLLER
+// ==========================================================================
+window.addEventListener("DOMContentLoaded", () => {
+    const preloaderContainer = document.getElementById("preloader");
+
+    /**
+     * Dismisses the preloader window.
+     * Hard target scheduled at exactly 1.75 seconds (1750ms) to beat the 2-second limit.
+     */
+    setTimeout(() => {
+        if (preloaderContainer) {
+            preloaderContainer.classList.add("fade-out");
+            
+            // Clean up DOM node to clear browser memory space
+            setTimeout(() => {
+                preloaderContainer.remove();
+            }, 450); // Matches the CSS fade-out duration
+        }
+    }, 1750); 
+});
+
+  </script>
+
+  <!-- AGRI PRODUCT MARKETPLACE MAIN NAVBAR (Copy directly into your <body>) -->
+<header class="app-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Frame (Clicking refreshes application state) -->
+        <a href="#" id="brand-logo-link" class="logo-wrapper">
+            <img src="./assests/agri marketplace.webp" alt="Stackly Logo" class="brand-img">
+        </a>
+
+        <!-- Mobile Hamburger Responsive Toggle Trigger -->
+        <button class="hamburger-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Navigation and Search Collapse Wrapper Layer -->
+        <div class="header-navigation-wrapper" id="nav-wrapper">
+            
+            <!-- Primary Navigation Architecture Links -->
+            <nav class="main-nav">
+                <ul class="nav-links-list">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about.html" class="nav-item active-tab">About Us</a></li>
+                    <li><a href="services.html" class="nav-item">Services</a></li>
+                    <li><a href="blogs.html" class="nav-item">Blog</a></li>
+                    <li><a href="products.html" class="nav-item">Products</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Validated Interactive Context Search Component Box -->
+            <div class="search-form-container">
+                <form id="marketplace-search-form" class="search-field-group">
+                    <input type="text" id="header-search-input" placeholder="Search for products, farmers...">
+                    <button type="submit" class="search-action-btn" aria-label="Execute Query Search">
+                        <svg class="search-icon-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Interface Interactions: Wishlist, Login Authentication & Cart Badge -->
+            <div class="user-actions-group">
+                
+                <!-- Wishlist Shortcut Trigger Button -->
+                <a href="404.html" class="action-icon-link wishlist-btn" title="View Wishlist">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+
+                <!-- User Log-In Credentials Profile Trigger -->
+                <a href="login.html" class="auth-navigation-link">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5.5,21 C5.5,17 8.5,14 12,14 C15.5,14 18.5,17 18.5,21" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Login / Sign Up</span>
+                </a>
+
+                <!-- E-commerce Shopping Basket Badge -->
+                <a href="404.html" class="action-icon-link cart-badge-btn" title="Open Shopping Basket">
+                    <div class="cart-icon-wrapper">
+                        <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-counter-bubble">6</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // ==========================================================================
+// APPS HEADER INTERACTIVE UTILITY LOGIC ENGINE
+// ==========================================================================
+(function() {
+    // DOM Cache Initialization Stores
+    const brandLogoLink = document.getElementById("brand-logo-link");
+    const navigationLinks = document.querySelectorAll(".nav-item");
+    const searchForm = document.getElementById("marketplace-search-form");
+    const searchInput = document.getElementById("header-search-input");
+    const menuToggleBtn = document.getElementById("menu-toggle-btn");
+    const navWrapper = document.getElementById("nav-wrapper");
+
+    if (!brandLogoLink) return; // Prevent scope breaks if injected incorrectly
+
+    // Brand Graphic Image Link Rule
+    brandLogoLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.reload();
+    });
+
+    // Active Navigation Tabs Handler
+  navigationLinks.forEach(clickedAnchor => {
+    clickedAnchor.addEventListener("click", function() {
+
+        // Allow the browser to navigate to the href normally
+        navigationLinks.forEach(item => {
+            item.classList.remove("active-tab");
+        });
+
+        this.classList.add("active-tab");
+
+        // Close mobile menu before navigation
+        if (navWrapper && navWrapper.classList.contains("menu-is-open")) {
+            toggleMobileNavigationMenu();
+        }
+
+        // DO NOT use event.preventDefault()
+    });
+});
+
+    // Search Input Field Constraint Validation
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const refinedSearchValue = searchInput.value.trim();
+
+        if (refinedSearchValue === "") {
+            searchInput.placeholder = "Please fill out this field...";
+            searchInput.classList.add("validation-alert");
+            searchInput.focus();
+        } else {
+            window.location.href = "404.html";
+        }
+    });
+
+    searchInput.addEventListener("input", () => {
+        if (searchInput.classList.contains("validation-alert")) {
+            searchInput.classList.remove("validation-alert");
+            searchInput.placeholder = "Search for products, farmers...";
+        }
+    });
+
+    // Responsive Mobile Menu Controllers
+    menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
+
+    function toggleMobileNavigationMenu() {
+        menuToggleBtn.classList.toggle("menu-is-open");
+        navWrapper.classList.toggle("menu-is-open");
+        document.body.style.overflow = navWrapper.classList.contains("menu-is-open") ? "hidden" : "";
+    }
+})();
+
+</script>
+
+<!-- ABOUT US HERO BANNER SECTION -->
+<section class="about-hero-section">
+    <!-- Main Background Banner Image -->
+    <img src="https://unsplash.com" alt="Farmer driving a green tractor through cultivated crop fields" class="about-hero-bg">
+    <div class="about-hero-overlay"></div>
+
+    <div class="about-hero-container">
+        <!-- Interactive Pill Breadcrumb Navigation Strip -->
+        <div class="about-breadcrumb-box">
+            <nav class="about-breadcrumb">
+                <a href="404.html" class="crumb-link">Home</a>
+                <span class="crumb-separator">&gt;</span>
+                <span class="crumb-current">About Us</span>
+            </nav>
+        </div>
+
+        <!-- Scroll Letter-by-Letter Animated Heading Title -->
+        <h1 class="about-hero-title" id="scroll-about-title">About Us</h1>
+
+        <!-- Slide-In From Sides Multi-Paragraph Block Layout -->
+        <div class="about-hero-content-group">
+            <p class="about-hero-para side-left" id="scroll-about-para-1">
+                Connecting farmers and consumers for a healthier tomorrow.
+            </p>
+            <p class="about-hero-para side-right" id="scroll-about-para-2">
+                Stackly is more than just a marketplace — it's a movement to support farmers, promote fresh and organic produce, and build a sustainable future for agriculture.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Workspace Type Foundry Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   ABOUT US HERO BANNER WINDOW LAYOUT DEFINITIONS
+   ========================================================================== */
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: clamp(400px, 45vh, 600px); /* Symmetrically balanced perspective height matching image context */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: #0c1a0f;
+    /* Strict layout specified padding parameters top/bottom: 50px/30px, left/right: 30px */
+    padding: 50px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+/* Hardware-Accelerated High Resolution Graphic Image Backdrop Background Layer */
+.about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.01);
+}
+
+/* Cinematic Balanced Vignette Shader Shadow Layer Mapping */
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.3) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.about-hero-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   INTERACTIVE PILL BREADCRUMB CAPSULE STRIP
+   ========================================================================== */
+.about-breadcrumb-box {
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.about-breadcrumb {
+    background-color: #ffffff; /* Solid stark white backdrop pill capsule */
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px; /* Clean structured micro radius border fields */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.crumb-link {
+    color: #1b5e20; /* Primary brand leaf green text */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.crumb-link:hover {
+    color: #4caf50;
+}
+
+.crumb-separator {
+    color: #94a3b8;
+    user-select: none;
+    font-size: 0.75rem;
+}
+
+.crumb-current {
+    color: #64748b; /* Neutral slate dark grey active link identifier placeholder */
+    user-select: none;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC RULES OVERRIDES & KINETIC REVEALS ARCHITECTURE
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.about-hero-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white title layer stamps */
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+/* Individual continuous character tracking loops managed under script engine lifecycles */
+.about-hero-title .char {
+    display: inline-block;
+    opacity: 0.1; /* Initial hidden dim value revealed letter-by-letter on scroll triggers */
+    transform: scale(0.92) translateY(5px);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-content-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 680px;
+    width: 100%;
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.about-hero-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 135%; /* Elevated moderately to counter narrow cross rows block overlapping clipping bugs */
+    letter-spacing: 0%;
+    color: #f1f5f9; /* Translucent cream silver body texts from reference visual layer */
+    
+    /* Pre-scroll observer horizontal side ingress staging initial states definitions */
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-para.side-left {
+    transform: translateX(-40px); /* Slides horizontally inwards from the left margin horizon boundary */
+}
+
+.about-hero-para.side-right {
+    transform: translateX(40px); /* Slides horizontally inwards from the right margin horizon boundary */
+}
+
+/* Intersection active target states attached seamlessly inside JavaScript observation streams */
+.about-hero-para.is-para-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .about-hero-section {
+        /* Drop padding layouts to fit handheld device view widths */
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: auto;
+    }
+    
+    .about-hero-title {
+        font-size: 32px; /* Adaptive scale drop prevents overflow wrapper clips on tiny screens */
+    }
+
+    .about-hero-content-group {
+        max-width: 100%;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED ABOUT HERO KINETIC REVEALS LIFECYCLE CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const aboutTitle = document.getElementById("scroll-about-title");
+        const aboutPara1 = document.getElementById("scroll-about-para-1");
+        const aboutPara2 = document.getElementById("scroll-about-para-2");
+
+        // 1. Text Parsing Helper Module: Explodes heading strings into tracked standalone span tokens
+        if (aboutTitle) {
+            const literalString = aboutTitle.textContent.trim();
+            aboutTitle.innerHTML = ""; // Clear baseline children
+
+            [...literalString].forEach(character => {
+                const spanCharNode = document.createElement("span");
+                spanCharNode.classList.add("char");
+                // Safely maps and locks wide empty gap characters inside browser spacing bounds
+                spanCharNode.textContent = character === " " ? "\u00A0" : character;
+                aboutTitle.appendChild(spanCharNode);
+            });
+        }
+
+        // 2. Setup Intersection Observers Spec Rules Configuration Settings
+        const aboutRevealSettings = {
+            root: null,
+            threshold: 0.1, // Triggers runtime changes when 10% of element block intersects the screen view
+            rootMargin: "0px 0px -30px 0px"
+        };
+
+        const globalAboutObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Heading Section Title Letter-by-Letter Rolling Cascades
+                    if (entry.target.id === "scroll-about-title") {
+                        const characterSpans = entry.target.querySelectorAll(".char");
+                        characterSpans.forEach((span, elementIndex) => {
+                            setTimeout(() => {
+                                span.style.opacity = "1";
+                                span.style.transform = "scale(1) translateY(0)";
+                            }, elementIndex * 35); // 35ms rapid velocity rolling character delays
+                        });
+                    }
+
+                    // B. Reveal Sub Paragraph Details Sliding Inwards from opposite horizontal side margins
+                    if (entry.target.id === "scroll-about-para-1" || entry.target.id === "scroll-about-para-2") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // Sever data tracking pipeline from current item node to clear browser loop footprints
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, aboutRevealSettings);
+
+        // Bind operational tracking coordinates securely onto monitoring streams
+        if (aboutTitle) globalAboutObserver.observe(aboutTitle);
+        if (aboutPara1) globalAboutObserver.observe(aboutPara1);
+        if (aboutPara2) globalAboutObserver.observe(aboutPara2);
+    });
+})();
+
+</script>
+
+<!-- OUR STORY SECTION -->
+<section class="about-story-section">
+    <div class="story-container">
+        
+        <!-- Left Side Column: Copy Narrative Details Block Area -->
+        <div class="story-left-content">
+            <span class="story-tagline">Our Story</span>
+            
+            <!-- Word-by-word scroll-animated main title -->
+            <h2 class="story-main-title" id="scroll-story-title">
+                <span class="s-word left">From</span>
+                <span class="s-word right">Farm</span>
+                <span class="s-word left">to</span>
+                <span class="s-word right">Your</span>
+                <span class="s-word left">Table</span>
+            </h2>
+            
+            <!-- Bottom slide-in description paragraph text block groups -->
+            <div class="story-paragraphs-stack" id="scroll-story-paras">
+                <p class="story-content-para">
+                    Stackly was founded with a simple vision — to bridge the gap between farmers and consumers. We believe that every farmer deserves a fair price for their hard work, and every family deserves access to fresh, healthy and safe food.
+                </p>
+                <p class="story-content-para">
+                    What started as a small initiative has now grown into a trusted agriculture marketplace, empowering thousands of farmers and delivering farm-fresh products to households across the country.
+                </p>
+            </div>
+
+            <!-- Floating Continuous Kinetic Hover-Reactive CTA Action Button -->
+            <div class="story-cta-box">
+                <a href="404.html" class="story-journey-cta-floating">
+                    Our Journey <span class="cta-arrow-vector">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Side Ingress Graphic Photo Banner Frame -->
+        <div class="story-right-graphic" id="scroll-story-graphic">
+            <div class="graphic-glow-mesh-wrapper">
+                <img src="https://unsplash.com" alt="Asian farmer walking through bright green agricultural rice terrace field carrying crops harvest bundle bars" class="story-banner-img">
+                
+                <!-- Graphic Typography Overlay -->
+                <div class="graphic-text-overlay">
+                    <p class="overlay-text-line">Supporting</p>
+                    <p class="overlay-text-line accent-bold">Farmers</p>
+                    <p class="overlay-text-line">Building a</p>
+                    <p class="overlay-text-line accent-green">Greener Future</p>
+                    
+                    <!-- Decorative hand-drawn minimal arc stroke vector -->
+                    <svg class="overlay-arc-svg" viewBox="0 0 100 20" xmlns="http://w3.org">
+                        <path d="M5,15 Q50,0 95,15" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   OUR STORY COMPONENT BASE SECTION MODULE LAYOUT
+   ========================================================================== */
+.about-story-section {
+    background-color: #ffffff;
+    /* Strict precise requested layout padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    /* Grid system split balancing content details area symmetrically against image graphic */
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.story-left-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.story-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest green accent */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & SCROLL REVEAL CONFIGURATIONS
+   ========================================================================== */
+
+/* Main Title: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.story-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+    overflow: hidden;
+}
+
+/* Horizontal side ingress hidden properties layout targets applied via JavaScript loop modules */
+.story-main-title .s-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-main-title .s-word.left { transform: translateX(-45px); }
+.story-main-title .s-word.right { transform: translateX(45px); }
+
+.story-paragraphs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
+    max-width: 580px;
+    
+    /* Pre-scroll bottom trigger initial state parameters definitions code */
+    opacity: 0;
+    transform: translateY(35px); /* Slides upwards smoothly when scrolled visible */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-paragraphs-stack.is-stack-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Narrative Details Paragraph Copy: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0%, Solid Black Color */
+.story-content-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%; 
+    letter-spacing: 0%;
+    color: #000000; /* Fully adjusted to strict absolute black color */
+}
+
+/* ==========================================================================
+   KINETIC FLOATING BUTTON SYSTEM WITH HOVER RADIANT EMERALD GLOWS
+   ========================================================================== */
+.story-cta-box {
+    width: 100%;
+    display: flex;
+}
+
+.story-journey-cta-floating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.15);
+    
+    /* Automated infinite dynamic hovering engine tracking simulation */
+    animation: anchorButtonKineticFloat 3.5s ease-in-out infinite;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.cta-arrow-vector {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.story-journey-cta-floating:hover {
+    background-color: #2e7d32; 
+    box-shadow: 0 10px 25px -5px rgba(27, 94, 32, 0.25), 
+                0 0 20px 2px rgba(76, 175, 80, 0.4);
+    animation-play-state: paused; 
+}
+
+.story-journey-cta-floating:hover .cta-arrow-vector {
+    transform: translateX(4px) scale(1.05);
+}
+
+/* ==========================================================================
+   RIGHT SIDE COLUMN PHOTO FRAME WITH SIDE INGRESS ANIMATIONS
+   ========================================================================== */
+.story-right-graphic {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+    /* Pre-scroll horizontal side ingress initial state properties code maps */
+    opacity: 0;
+    transform: translateX(50px); /* Slides inwards gracefully from the far right screen wall boundary */
+    transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-right-graphic.is-graphic-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.graphic-glow-mesh-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Radiant glow map shifts also onto graphic block frame boundary on hover context */
+.graphic-glow-mesh-wrapper:hover {
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08), 
+                0 0 22px 2px rgba(76, 175, 80, 0.18);
+}
+
+.story-banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.graphic-glow-mesh-wrapper:hover .story-banner-img {
+    transform: scale(1.03); 
+}
+
+/* High Fidelity Graphics Typography Overlay System Layer */
+.graphic-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0) 100%);
+    z-index: 5;
+    pointer-events: none; 
+}
+
+.overlay-text-line {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 110%;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.overlay-text-line.accent-bold {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.overlay-text-line.accent-green {
+    font-weight: 700;
+    color: #81c784; 
+}
+
+.overlay-arc-svg {
+    width: clamp(120px, 15vw, 200px);
+    height: auto;
+    margin-top: 0.75rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINE LAYERS
+   ========================================================================== */
+@keyframes anchorButtonKineticFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); } 
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .story-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .story-container {
+        grid-template-columns: 1fr; 
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-story-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .graphic-text-overlay {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-journey-cta-floating {
+        width: 100%;
+        justify-content: center; 
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// OUR STORY INTERACTION SCROLL SIDE-INGREES & STAGGER CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const storyTitle = document.getElementById("scroll-story-title");
+        const storyParasStack = document.getElementById("scroll-story-paras");
+        const rightSideGraphic = document.getElementById("scroll-story-graphic");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (storyTitle) {
+            const wordTokens = storyTitle.querySelectorAll(".s-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const storyRevealSettings = {
+            root: null,
+            threshold: 0.1, 
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalStoryObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Section Title Word-by-Word Ingress from opposite horizontal sides
+                    if (entry.target.id === "scroll-story-title") {
+                        const leftInboundWords = entry.target.querySelectorAll(".s-word.left");
+                        const rightInboundWords = entry.target.querySelectorAll(".s-word.right");
+                        
+                        leftInboundWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                        
+                        rightInboundWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // B. Reveal Paragraphs Stack sliding upwards smoothly from below
+                    if (entry.target.id === "scroll-story-paras") {
+                        entry.target.classList.add("is-stack-visible");
+                    }
+
+                    // C. Reveal Right Side Graphic Image Banner frame from right side horizon boundary
+                    if (entry.target.id === "scroll-story-graphic") {
+                        entry.target.classList.add("is-graphic-visible");
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, storyRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (storyTitle) globalStoryObserver.observe(storyTitle);
+        if (storyParasStack) globalStoryObserver.observe(storyParasStack);
+        if (rightSideGraphic) globalStoryObserver.observe(rightSideGraphic);
+    });
+})();
+
+</script>
+
+<!-- WHY CHOOSE US ECOSYSTEM SECTION -->
+<section class="about-features-section">
+    <div class="features-container">
+        
+        <!-- Upper Layout Grid Split -->
+        <div class="features-upper-row">
+            <!-- Left Side Layout Layer: Main Headline copy blocks -->
+            <div class="features-left-header">
+                <span class="features-tagline">Why Choose Us</span>
+                
+                <!-- Word-by-word scroll animation revealing from horizontal sides -->
+                <h2 class="features-main-title" id="scroll-features-title">
+                    <span class="fe-word left">More</span>
+                    <span class="fe-word right">Than</span>
+                    <span class="fe-word left">Just</span>
+                    <span class="fe-word right">a</span>
+                    <span class="fe-word left">Marketplace</span>
+                </h2>
+                
+                <!-- Paragraph text sliding horizontally from left margin on scroll -->
+                <p class="features-sub-para" id="scroll-features-para">
+                    We are committed to creating a transparent, secure and sustainable ecosystem for farmers and customers.
+                </p>
+            </div>
+
+            <!-- Right Side Element: Aesthetic Artistic Leaf & Fruit Basket Illustration -->
+            <div class="features-right-illustration">
+                <img src="https://unsplash.com" alt="Fresh organic fruits basket watercolor stroke vector graphic illustration" class="illustration-art-img">
+            </div>
+        </div>
+
+        <!-- Lower Layout Grid Split holding 5 item columns -->
+        <div class="features-cards-row-grid" id="stagger-features-cards">
+            
+            <!-- Card 1: Fresh & Organic Products -->
+            <div class="feature-column-node" data-index="0">
+                <div class="feature-icon-box">
+                    <img src="https://placehold.co🌱" alt="Fresh & Organic Products Icon" class="feature-vector-icon">
+                </div>
+                <h3 class="feature-card-title">Fresh & Organic Products</h3>
+                <p class="feature-card-para">Pure and natural from trusted farms.</p>
+            </div>
+
+            <!-- Vertical Divider Line Split Layer -->
+            <div class="column-vertical-line-divider"></div>
+
+            <!-- Card 2: Direct from Farmers -->
+            <div class="feature-column-node" data-index="1">
+                <div class="feature-icon-box">
+                    <img src="https://placehold.co🤝" alt="Direct from Farmers Icon" class="feature-vector-icon">
+                </div>
+                <h3 class="feature-card-title">Direct from Farmers</h3>
+                <p class="feature-card-para">Fair prices, better livelihoods.</p>
+            </div>
+
+            <!-- Vertical Divider Line Split Layer -->
+            <div class="column-vertical-line-divider"></div>
+
+            <!-- Card 3: Secure Transactions -->
+            <div class="feature-column-node" data-index="2">
+                <div class="feature-icon-box">
+                    <img src="https://placehold.co🛡️" alt="Secure Transactions Icon" class="feature-vector-icon">
+                </div>
+                <h3 class="feature-card-title">Secure Transactions</h3>
+                <p class="feature-card-para">Safe and reliable payment system.</p>
+            </div>
+
+            <!-- Vertical Divider Line Split Layer -->
+            <div class="column-vertical-line-divider"></div>
+
+            <!-- Card 4: Fast & Reliable Delivery -->
+            <div class="feature-column-node" data-index="3">
+                <div class="feature-icon-box">
+                    <img src="https://placehold.co🚚" alt="Fast & Reliable Delivery Icon" class="feature-vector-icon">
+                </div>
+                <h3 class="feature-card-title">Fast & Reliable Delivery</h3>
+                <p class="feature-card-para">Freshness delivered to your door.</p>
+            </div>
+
+            <!-- Vertical Divider Line Split Layer -->
+            <div class="column-vertical-line-divider"></div>
+
+            <!-- Card 5: 24/7 Customer Support -->
+            <div class="feature-column-node" data-index="4">
+                <div class="feature-icon-box">
+                    <img src="https://placehold.co🎧" alt="24/7 Customer Support Icon" class="feature-vector-icon">
+                </div>
+                <h3 class="feature-card-title">24/7 Customer Support</h3>
+                <p class="feature-card-para">Always here to help you.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   WHY CHOOSE US ECOSYSTEM BASE LAYOUT SYSTEM DEFINITIONS
+   ========================================================================== */
+.about-features-section {
+    background-color: #f9fbfd; /* Bright background tone matching source reference exactly */
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.features-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Symmetrical Upper Split Framework */
+.features-upper-row {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+.features-left-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.features-tagline {
+    display: block;
+    color: #2e7d32; /* Primary brand theme green accent */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & SCROLL REVEAL TRANSFORMATIONS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.features-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black heading text execution */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Hidden property fields managed under JavaScript horizontal side ingress timeline loops */
+.features-main-title .fe-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.features-main-title.is-title-visible .fe-word {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.features-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Boosted modestly to balance 100% boundary string cross row overlaps wrap bugs */
+    letter-spacing: 0%;
+    color: #2c3e50; /* Clean dark tone body text matching visual weight */
+    max-width: 680px;
+    
+    /* Pre-scroll horizontal side ingress configuration parameters */
+    opacity: 0;
+    transform: translateX(-40px); /* Slides smoothly inwards from left margin boundary */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.features-sub-para.is-para-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   RIGHT SIDE GRAPHIC ILLUSTRATION CONTAINER LAYER
+   ========================================================================== */
+.features-right-illustration {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.illustration-art-img {
+    width: 100%;
+    max-width: 360px; /* Constrained modestly to balance spatial weighting exactly like mockup image */
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   5-COLUMN FEATURES ROW GRID MATRIX CONTAINER WITH HOVER GLOW SYSTEM
+   ========================================================================== */
+.features-cards-row-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.feature-column-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
+    
+    /* Scroll observer stagger initiation properties hooks */
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Rounded Soft Green Icon Capsule Boxes matching preview mockup geometries exactly */
+.feature-icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background-color: #e8f5e9; /* Light soft green pastel container background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.feature-vector-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Halo Glow Overlay */
+.feature-column-node:hover .feature-icon-box {
+    background-color: #ffffff;
+    transform: scale(1.1) translateY(-3px);
+    /* High resolution dual-layered neon green glowing drop framework */
+    box-shadow: 0 10px 20px -5px rgba(46, 125, 50, 0.1), 
+                0 0 15px 2px rgba(76, 175, 80, 0.3);
+}
+
+/* Card Heading Spec: Font: Inter, Weight: 700, Bold, Size: 20px, LH: 100%, LS: 0% */
+.feature-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 120%; /* Boosted modestly to safeguard text wrap bounds from clipping bug collisions */
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content text */
+    margin-bottom: 0.85rem;
+}
+
+/* Card Para Spec: Font: Inter, Weight: 400, Regular, Size: 16px, LH: 100%, LS: 0% */
+.feature-card-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #566573; /* Corporate dark neutral slate gray description text */
+    max-width: 90%;
+}
+
+/* Clean minimal vertical line separators splitting cards exactly like the reference mockup photo */
+.column-vertical-line-divider {
+    width: 1px;
+    height: 140px;
+    background-color: #d5dbdb;
+    margin: 2rem 1.25rem 0 1.25rem;
+    align-self: flex-start;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Fluid typography scales reduction parameters protecting bounds from line overrides */
+    .features-main-title { font-size: clamp(30px, 3.5vw, 36px); }
+    .features-sub-para { font-size: clamp(17px, 2.2vw, 20px); }
+    .feature-card-title { font-size: clamp(17px, 2.2vw, 20px); }
+}
+
+@media (max-width: 1024px) {
+    .features-upper-row {
+        grid-template-columns: 1fr; /* Demotes upper block layout seamlessly into a linear stacked column on tablet screens */
+        gap: 2rem;
+    }
+    
+    .features-right-illustration {
+        justify-content: center;
+        order: -1; /* Elevates fruit watercolor illustration graphic to top positions over handheld screens */
+    }
+
+    .illustration-art-img {
+        max-width: 260px;
+    }
+
+    .features-cards-row-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Smooth reflow down to 3 columns on mid-tier monitors view bounds */
+        gap: 2rem;
+    }
+
+    .column-vertical-line-divider {
+        display: none; /* Strip vertical bars layer when elements reflow into multi-row structures */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-features-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .features-cards-row-grid {
+        grid-template-columns: repeat(2, 1fr); /* Forms balanced 2 column cells pairs on small mobile displays */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-cards-row-grid {
+        grid-template-columns: 1fr; /* Pure linear stack list flow array sequence on tiny smartphone panels view grids */
+        gap: 1.5rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED FEATURES REVEALS AND CARDS CASCADE STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const featuresTitle = document.getElementById("scroll-features-title");
+        const featuresPara = document.getElementById("scroll-features-para");
+        const cardsGridContainer = document.getElementById("stagger-features-cards");
+        const individualFeatureCards = document.querySelectorAll(".feature-column-node");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (featuresTitle) {
+            const wordTokens = featuresTitle.querySelectorAll(".fe-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const featuresRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -30px 0px"
+        };
+
+        const globalFeaturesObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Heading Title Word-by-Word Ingress
+                    if (entry.target.id === "scroll-features-title") {
+                        entry.target.classList.add("is-title-visible");
+                        const words = entry.target.querySelectorAll(".fe-word");
+                        words.forEach(w => w.style.opacity = "1");
+                    }
+
+                    // B. Reveal Sub Paragraph description label sliding inwards horizontally
+                    if (entry.target.id === "scroll-features-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Feature Cards Sequence One-by-One (Staggered Cascade)
+                    if (entry.target.id === "stagger-features-cards") {
+                        individualFeatureCards.forEach((cardNode, progressiveIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, progressiveIndex * 90); // 90ms step separation delays interval caps separating items blocks
+                        });
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, featuresRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (featuresTitle) globalFeaturesObserver.observe(featuresTitle);
+        if (featuresPara) globalFeaturesObserver.observe(featuresPara);
+        if (cardsGridContainer) globalFeaturesObserver.observe(cardsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- GROWING TOGETHER FULL-WIDTH IMPACT SECTION -->
+<section class="growing-together-section-fullwidth">
+    <div class="growing-main-container-fluid">
+        
+        <!-- Left Column Sidebar Photo Banner Frame -->
+        <div class="growing-left-graphic" id="scroll-growing-graphic">
+            <img src="https://unsplash.com" alt="Smiling elderly farmer harvesting fresh organic tomatoes into a basket outdoors" class="growing-banner-img">
+        </div>
+
+        <!-- Right Column Green Banner Layout Layer Container -->
+        <div class="growing-right-banner">
+            <div class="growing-content-wrapper">
+                <span class="growing-tagline">Growing Together</span>
+                
+                <!-- Word-by-word scroll animation revealing from horizontal sides -->
+                <h2 class="growing-main-title" id="scroll-growing-title">
+                    <span class="gt-word left">Growing</span>
+                    <span class="gt-word right">Together</span>
+                </h2>
+                
+                <!-- Paragraph text sliding horizontally from left margin on scroll -->
+                <p class="growing-sub-para" id="scroll-growing-para">
+                    We are proud to be part of a larger movement that supports farmers, nourishes communities and protects the environment.
+                </p>
+
+                <!-- Scroll-Triggered Impact Staggered Cards Layout Row -->
+                <div class="growing-cards-grid" id="stagger-growing-cards">
+                    
+                    <!-- Box 1: Farmers Connected -->
+                    <div class="growing-impact-card" data-index="0">
+                        <div class="growing-icon-frame">
+                            <span class="growing-emoji-vector">🧑‍🌾</span>
+                        </div>
+                        <span class="growing-count-number">50,000+</span>
+                        <p class="growing-label-content">Farmers Connected</p>
+                    </div>
+
+                    <!-- Box 2: Happy Customers -->
+                    <div class="growing-impact-card" data-index="1">
+                        <div class="growing-icon-frame">
+                            <span class="growing-emoji-vector">🌱</span>
+                        </div>
+                        <span class="growing-count-number">1.2M+</span>
+                        <p class="growing-label-content">Happy Customers</p>
+                    </div>
+
+                    <!-- Box 3: Products Listed -->
+                    <div class="growing-impact-card" data-index="2">
+                        <div class="growing-icon-frame">
+                            <span class="growing-emoji-vector">🌾</span>
+                        </div>
+                        <span class="growing-count-number">500+</span>
+                        <p class="growing-label-content">Products Listed</p>
+                    </div>
+
+                    <!-- Box 4: Kgs of Fresh Produce -->
+                    <div class="growing-impact-card" data-index="3">
+                        <div class="growing-icon-frame">
+                            <span class="growing-emoji-vector">📦</span>
+                        </div>
+                        <span class="growing-count-number">2.5 M+</span>
+                        <p class="growing-label-content">Kgs of Fresh Produce</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   GROWING TOGETHER IMPACT BLOCK ARCHITECTURE FULL WIDTH LAYOUT
+   ========================================================================== */
+.growing-together-section-fullwidth {
+    width: 100vw; /* Breaks layout bounds completely to lock viewport outer walls edge-to-edge */
+    margin-left: calc(-50vw + 50%); /* Centers full length block stream symmetrically over container bounds */
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 0 30px 0; /* Stripped left/right padding to allow absolute fluid bleeding */
+    background-color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.growing-main-container-fluid {
+    width: 100%;
+    display: grid;
+    /* Clean horizontal layout coupling split spanning absolute full viewport extension */
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT COLUMN PHOTO SIDE INGRESS FRAMING LAYOUTS
+   ========================================================================== */
+.growing-left-graphic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    /* Pre-scroll side ingress horizontal initial state definitions */
+    opacity: 0;
+    transform: translateX(-50px); /* Slides smoothly inwards from far left screen edge boundary */
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growing-left-graphic.is-image-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.growing-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN SOLID GREEN BLOCK INFRASTRUCTURE LAYER
+   ========================================================================== */
+.growing-right-banner {
+    background-color: #0c6a30; /* Solid high contrast organic dark theme green backdrop */
+    padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4.5rem); /* Scalable padding matrix respects broad widths fields */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.growing-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 960px; /* Safeguards data grids content line readability spreads across extreme resolutions */
+}
+
+.growing-tagline {
+    display: block;
+    color: #a3e4d7; /* Soft high contrast clean pastel tint tagline label stamp */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & KINETIC SCROLL REVEALS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.growing-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Stark absolute white heading elements */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Title word nodes controlled via horizontal kinetic side entries curves */
+.growing-main-title .gt-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growing-main-title .gt-word.left { transform: translateX(-40px); }
+.growing-main-title .gt-word.right { transform: translateX(40px); }
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.growing-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Safely elevated line spacing to counteract wrap clipping box collisions */
+    letter-spacing: 0%;
+    color: #e8f5e9; /* Pastel high readability light cream contrast text */
+    max-width: 780px;
+    margin-bottom: 3.5rem;
+    
+    /* Pre-scroll side ingress initial parameters definitions */
+    opacity: 0;
+    transform: translateX(45px); /* Slides smoothly inwards from right screen boundary */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.growing-sub-para.is-para-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==========================================================================
+   4-COLUMN RECTANGULAR WIRE BORDER IMPACT CARDS GRID MATRIX
+   ========================================================================== */
+.growing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forms exact 4 cell matrix grid path matching reference visual */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.growing-impact-card {
+    border: 1.5px solid #2ecc71; /* Thin energetic neon green line wire borders matching blueprint image */
+    border-radius: 12px;
+    padding: 2.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    box-sizing: border-box;
+    
+    /* Staggered load initiation tracking indicators values */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.growing-impact-card:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: #ffffff; /* Highlights crisp white on active pointer focal triggers */
+    transform: translateY(-5px);
+    /* High contrast dual-layered dynamic neon emerald glow mapping project drops */
+    box-shadow: 0 10px 25px -5px rgba(46, 204, 113, 0.15), 
+                0 0 18px 2px rgba(46, 204, 113, 0.35);
+}
+
+.growing-icon-frame {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+.growing-emoji-vector {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.growing-impact-card:hover .growing-icon-frame {
+    transform: scale(1.15) rotate(4deg);
+}
+
+/* Strict Numbers Spec: Font: Inter, Weight: 700, Bold, Size: 20px, LH: 100%, LS: 0%, Centered */
+.growing-count-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* Strict Inside Label Spec: Font: Inter, Weight: 400, Regular, Size: 16px, LH: 100%, LS: 0%, Centered */
+.growing-label-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #a3e4d7; /* Light high visibility description copy metrics */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent character row wrap cuts inside narrow responsive boxes fields profiles */
+    .growing-main-title { font-size: clamp(30px, 3.5vw, 36px); }
+    .growing-sub-para { font-size: clamp(16px, 2.2vw, 20px); line-height: 120%; }
+    .growing-count-number { font-size: 19px; }
+    .growing-label-content { font-size: 15px; }
+}
+
+@media (max-width: 1024px) {
+    .growing-main-container-fluid {
+        grid-template-columns: 1fr; /* Demotes main grid container completely to single layout column stacking on tablets */
+    }
+    
+    .growing-left-graphic {
+        height: 360px; /* Locks moderate height threshold caps over hand display systems screens */
+    }
+
+    .growing-right-banner {
+        padding: 4rem 2rem;
+    }
+
+    .growing-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Regroups 4 cells rows into clean 2-column balancing pairs blocks */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .growing-together-section-fullwidth {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .growing-sub-para {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .growing-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stream stack array flow sequence list execution on smartphone devices */
+        gap: 1.15rem;
+    }
+    
+    .growing-left-graphic {
+        height: 250px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED GROWING IMPACT OBSERVATION AND CARDS STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const growingTitle = document.getElementById("scroll-growing-title");
+        const growingPara = document.getElementById("scroll-growing-para");
+        const cardsGridContainer = document.getElementById("stagger-growing-cards");
+        const individualImpactCards = document.querySelectorAll(".growing-impact-card");
+        const leftGraphicFrame = document.getElementById("scroll-growing-graphic");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (growingTitle) {
+            const wordTokens = growingTitle.querySelectorAll(".gt-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const growingRevealSettings = {
+            root: null,
+            threshold: 0.08, // Runtime triggers invoke when 8% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalGrowingObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Left Sidebar Photo Frame from left side horizon wall boundary coordinates
+                    if (entry.target.id === "scroll-growing-graphic") {
+                        entry.target.classList.add("is-image-visible");
+                    }
+
+                    // B. Reveal Main Heading Section Title Word-by-Word Ingress
+                    if (entry.target.id === "scroll-growing-title") {
+                        const words = entry.target.querySelectorAll(".gt-word");
+                        words.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // C. Reveal Sub Paragraph description label sliding inwards horizontally from right side margin
+                    if (entry.target.id === "scroll-growing-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // D. Reveal 4 Wire Green Framework Impact Cards Sequence One-by-One (Staggered Stacking Cascade)
+                    if (entry.target.id === "stagger-growing-cards") {
+                        individualImpactCards.forEach((cardNode, progressiveIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, progressiveIndex * 100); // 100ms separation delays interval caps separating items blocks
+                        });
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, growingRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (leftGraphicFrame) globalGrowingObserver.observe(leftGraphicFrame);
+        if (growingTitle) globalGrowingObserver.observe(growingTitle);
+        if (growingPara) globalGrowingObserver.observe(growingPara);
+        if (cardsGridContainer) globalGrowingObserver.observe(cardsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- OUR VALUES SECTION -->
+<section class="about-values-section">
+    <div class="values-container">
+        
+        <!-- Left Side Column: Text Narrative & Values Cards Matrix -->
+        <div class="values-left-content">
+            <span class="values-tagline">Our Values</span>
+            
+            <!-- Dual-direction scroll animated main title -->
+            <h2 class="values-main-title" id="scroll-values-title">
+                <span class="v-dir-word split-left">What</span>
+                <span class="v-dir-word split-right">Drives</span>
+                <span class="v-dir-word split-left">Us</span>
+            </h2>
+            
+            <p class="values-sub-para" id="scroll-values-para">
+                We are guided by values that help us create a positive impact for farmers, customers and the planet.
+            </p>
+
+            <!-- Multi-direction staggered entry values matrix grid -->
+            <div class="values-cards-matrix" id="stagger-values-box">
+                
+                <!-- Card 1: Integrity (Enters from Left Horizon) -->
+                <div class="value-matrix-card enter-from-left" data-index="0">
+                    <div class="value-icon-circle-green">
+                        <span class="value-emoji-vector">🌱</span>
+                    </div>
+                    <div class="value-text-block">
+                        <h3 class="value-card-title">Integrity</h3>
+                        <p class="value-card-content">We do what's right, always.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Empowerment (Enters from Right Horizon) -->
+                <div class="value-matrix-card enter-from-right" data-index="1">
+                    <div class="value-icon-circle-green">
+                        <span class="value-emoji-vector">👥</span>
+                    </div>
+                    <div class="value-text-block">
+                        <h3 class="value-card-title">Empowerment</h3>
+                        <p class="value-card-content">Support farmers and local communities.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Sustainability (Enters from Bottom Horizon) -->
+                <div class="value-matrix-card enter-from-bottom" data-index="2">
+                    <div class="value-icon-circle-green">
+                        <span class="value-emoji-vector">🌾</span>
+                    </div>
+                    <div class="value-text-block">
+                        <h3 class="value-card-title">Sustainability</h3>
+                        <p class="value-card-content">For a greener and healthier planet.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Customer First (Enters from Top Horizon) -->
+                <div class="value-matrix-card enter-from-top" data-index="3">
+                    <div class="value-icon-circle-green">
+                        <span class="value-emoji-vector">🤍</span>
+                    </div>
+                    <div class="value-text-block">
+                        <h3 class="value-card-title">Customer First</h3>
+                        <p class="value-card-content">Freshness, quality and trust.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Side Column: Automated Cyclic 1-Second Rotational Image Banner Layer -->
+        <div class="values-right-graphic" id="scroll-values-graphic">
+            <div class="graphic-glow-mesh-wrapper">
+                <!-- Rotational Image Node Stack Elements -->
+                <img src="https://unsplash.com" alt="Hands planting a fresh sprout seedling in rich dark agricultural soil" class="value-cyclic-img active-slide">
+                <img src="https://unsplash.com" alt="Farmer examining crop leaves field backdrop" class="value-cyclic-img">
+                <img src="https://unsplash.com" alt="Fresh green crops rows agriculture fields" class="value-cyclic-img">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   OUR VALUES SECTION CONTAINER BASE LAYOUT ARCHITECTURE
+   ========================================================================== */
+.about-values-section {
+    background-color: #ffffff;
+    /* Strict layout requested custom padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    /* Clean grid matrix split matching user mockup configuration exactly */
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.values-left-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.values-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest green label tag */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & DUAL-SIDE SCROLL REVEALS
+   ========================================================================== */
+
+/* Main Title: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.values-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content text */
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Title word segments split animation ingress handlers configured via script triggers */
+.values-main-title .v-dir-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.values-main-title .v-dir-word.split-left { transform: translateX(-40px); }
+.values-main-title .v-dir-word.split-right { transform: translateX(40px); }
+
+/* Sub Paragraph Descriptive: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.values-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Boosted modestly to safeguard text wrap bounds from clipping bug collisions */
+    letter-spacing: 0%;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    max-width: 620px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.values-sub-para.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MULTI-DIRECTION CARDS ARCHITECTURE MATRIX GRID WITH INTEGRATED GLOWS
+   ========================================================================== */
+.values-cards-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms exact 2x2 grid path matching mockup blueprint */
+    gap: 2.5rem 1.5rem;
+    width: 100%;
+}
+
+.value-matrix-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    position: relative;
+    
+    /* Pre-scroll directional ingress staging variables initial state configurations */
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Multi-direction initial stage offset assignments requested by blueprint criteria */
+.value-matrix-card.enter-from-left { transform: translateX(-60px); }
+.value-matrix-card.enter-from-right { transform: translateX(60px); }
+.value-matrix-card.enter-from-bottom { transform: translateY(60px); }
+.value-matrix-card.enter-from-top { transform: translateY(-60px); }
+
+/* Solid Circular Organic Forest Green Icon Backdrop Containers */
+.value-icon-circle-green {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #1b5e20; /* Solid brand theme dark forest green background circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25), box-shadow 0.3s ease;
+}
+
+.value-emoji-vector {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Halo Glow Overlay */
+.value-matrix-card:hover .value-icon-circle-green {
+    background-color: #4caf50; /* Vibrates up into lively leaf spring green on active selection */
+    transform: scale(1.1) rotate(4deg);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 10px 20px -5px rgba(27, 94, 32, 0.2), 
+                0 0 18px 2px rgba(76, 175, 80, 0.35);
+}
+
+.value-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Heading Title Spec: Font: Inter, Weight: 700, Bold, Size: 20px, LH: 100%, LS: 0% */
+.value-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+/* Card Content Details Spec: Font: Inter, Weight: 400, Regular, Size: 16px, LH: 100%, LS: 0% */
+.value-card-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #566573;
+}
+
+/* ==========================================================================
+   RIGHT SIDE COLUMN ROTATIONAL PHOTO CONTAINER LAYERS SYSTEM
+   ========================================================================== */
+.values-right-graphic {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.graphic-glow-mesh-wrapper {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 35vh, 420px); /* Secure geometric aspect box constraints */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
+    background-color: #f2f4f4;
+}
+
+/* Rotational sliding node layers stacked absolute inside the wrapper mesh box */
+.value-cyclic-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    /* Embedded custom keyframe trigger hooks processing automated 1-second rotative sweeps */
+    transform: scale(0.9) rotate(-15deg); 
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
+}
+
+/* High visibility declaration attached over active cyclic index loops via scripts */
+.value-cyclic-img.active-slide {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Smoothly snaps flat into view on cycle triggers */
+    z-index: 2;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent character row cuts inside narrow responsive boxes fields profiles */
+    .values-main-title { font-size: clamp(30px, 3.5vw, 36px); }
+    .values-sub-para { font-size: clamp(16px, 2.2vw, 20px); }
+    .value-card-title { font-size: clamp(17px, 2.2vw, 20px); }
+}
+
+@media (max-width: 1024px) {
+    .values-container {
+        grid-template-columns: 1fr; /* Transforms main split container completely onto single column column grid stack layouts */
+        gap: 3rem;
+    }
+    
+    .values-right-graphic {
+        order: -1; /* Elevates rotational crop picture banner fields up top on tablet systems screen bounds */
+    }
+
+    .graphic-glow-mesh-wrapper {
+        height: 320px;
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-values-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .values-cards-matrix {
+        grid-template-columns: 1fr; /* Forms single file linear stream row list arrays on mobile screen views */
+        gap: 1.75rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED MULTI-DIRECTION INGRESS & 1s AUTOMATED ROTATION ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const valuesTitle = document.getElementById("scroll-values-title");
+        const valuesPara = document.getElementById("scroll-values-para");
+        const cardsGridMatrix = document.getElementById("stagger-values-box");
+        const individualMatrixCards = document.querySelectorAll(".value-matrix-card");
+        const rotationalImageSlides = document.querySelectorAll(".value-cyclic-img");
+
+        // 1. Setup Interaction Scroll Intersection Observers Spec Rules Configuration Settings
+        const valuesRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalValuesObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Heading Title words sliding from opposite dual directions split points
+                    if (entry.target.id === "scroll-values-title") {
+                        const splitWords = entry.target.querySelectorAll(".v-dir-word");
+                        splitWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // B. Reveal Sub Paragraph description label sliding upwards smoothly
+                    if (entry.target.id === "scroll-values-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal 2x2 Matrix Cards converging inwards concurrently from ALL 4 directional horizons
+                    if (entry.target.id === "stagger-values-box") {
+                        individualMatrixCards.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                // Erases multi-direction offset values completely to restore natural layout vectors positions
+                                cardNode.style.transform = "translate(0)";
+                            }, itemPositionIndex * 120); // Stagger separation interval delays gaps separating cards entries
+                        });
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, valuesRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (valuesTitle) globalValuesObserver.observe(valuesTitle);
+        if (valuesPara) globalValuesObserver.observe(valuesPara);
+        if (cardsGridMatrix) globalValuesObserver.observe(cardsGridMatrix);
+
+        // 2. Automated Cyclic 1-Second Rotational Image Slide Controller Block Loop Engine
+        let activeImageSlideIndex = 0;
+
+        function advanceRotationalImageSlide() {
+            if (rotationalImageSlides.length === 0) return;
+
+            // Strip active indicators class layers from all slides entries
+            rotationalImageSlides.forEach(slide => slide.classList.remove("active-slide"));
+
+            // Attach active priority layout class properties onto current target pointer position index item
+            rotationalImageSlides[activeImageSlideIndex].classList.add("active-slide");
+
+            // Advance counting pointer onwards to loop back around seamlessly upon limits exhaustion boundaries
+            activeImageSlideIndex = (activeImageSlideIndex + 1) % rotationalImageSlides.length;
+        }
+
+        // Initialize 1000 Milliseconds hard-interval scheduling timeline clocks loop tracker task
+        if (rotationalImageSlides.length > 0) {
+            setInterval(advanceRotationalImageSlide, 1000); // Rotates and updates slide images every 1 seconds once precisely
+        }
+
+    });
+})();
+
+</script>
+
+<!-- OUR TEAM SECTION -->
+<section class="about-team-section">
+    <div class="team-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="team-header-row">
+            <span class="team-tagline">Our Team</span>
+            <!-- Word-by-word scroll animation revealing from horizontal sides -->
+            <h2 class="team-main-title" id="scroll-team-title">
+                <span class="t-word left">The</span>
+                <span class="t-word right">People</span>
+                <span class="t-word left">Behind</span>
+                <span class="t-word right">AgriMart</span>
+            </h2>
+            <p class="team-sub-para" id="scroll-team-para">
+                A passionate team working together to connect farmers and consumers, create value and build a sustainable future.
+            </p>
+        </div>
+
+        <!-- Scroll-Triggered Staggered Team Cards Grid Layout -->
+        <div class="team-cards-grid" id="stagger-team-cards">
+            
+            <!-- Member 1: Ramesh Kumar -->
+            <div class="team-card-node">
+                <div class="team-img-frame">
+                    <img src="https://unsplash.com" alt="Ramesh Kumar profile photo" class="team-avatar-img">
+                </div>
+                <div class="team-info-block">
+                    <div class="meta-left-group">
+                        <h3 class="team-member-name">Ramesh Kumar</h3>
+                        <p class="team-member-role">Founder & CEO</p>
+                    </div>
+                    <!-- Vector LinkedIn Icon Button with 404 Routing -->
+                    <a href="404.html" class="linkedin-vector-anchor" title="View Ramesh Kumar's LinkedIn Profile">
+                        <svg class="linkedin-svg-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7zM6.5 8.37a1.37 1.47 0 1 0 0-2.94 1.37 1.47 0 0 0 0 2.94M8 18.5V10.13H5.13V18.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Member 2: Priya Nair -->
+            <div class="team-card-node">
+                <div class="team-img-frame">
+                    <img src="https://unsplash.com" alt="Priya Nair profile photo" class="team-avatar-img">
+                </div>
+                <div class="team-info-block">
+                    <div class="meta-left-group">
+                        <h3 class="team-member-name">Priya Nair</h3>
+                        <p class="team-member-role">Operations Manager</p>
+                    </div>
+                    <a href="404.html" class="linkedin-vector-anchor" title="View Priya Nair's LinkedIn Profile">
+                        <svg class="linkedin-svg-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7zM6.5 8.37a1.37 1.47 0 1 0 0-2.94 1.37 1.47 0 0 0 0 2.94M8 18.5V10.13H5.13V18.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Member 3: Suresh Babu -->
+            <div class="team-card-node">
+                <div class="team-img-frame">
+                    <img src="https://unsplash.com" alt="Suresh Babu profile photo" class="team-avatar-img">
+                </div>
+                <div class="team-info-block">
+                    <div class="meta-left-group">
+                        <h3 class="team-member-name">Suresh Babu</h3>
+                        <p class="team-member-role">Farmer Relations Head</p>
+                    </div>
+                    <a href="404.html" class="linkedin-vector-anchor" title="View Suresh Babu's LinkedIn Profile">
+                        <svg class="linkedin-svg-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7zM6.5 8.37a1.37 1.47 0 1 0 0-2.94 1.37 1.47 0 0 0 0 2.94M8 18.5V10.13H5.13V18.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Member 4: Lakshmi Devi -->
+            <div class="team-card-node">
+                <div class="team-img-frame">
+                    <img src="https://unsplash.com" alt="Lakshmi Devi profile photo" class="team-avatar-img">
+                </div>
+                <div class="team-info-block">
+                    <div class="meta-left-group">
+                        <h3 class="team-member-name">Lakshmi Devi</h3>
+                        <p class="team-member-role">Quality Manager</p>
+                    </div>
+                    <a href="404.html" class="linkedin-vector-anchor" title="View Lakshmi Devi's LinkedIn Profile">
+                        <svg class="linkedin-svg-icon" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7zM6.5 8.37a1.37 1.47 0 1 0 0-2.94 1.37 1.47 0 0 0 0 2.94M8 18.5V10.13H5.13V18.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   TEAM SECTION BASE STYLES & CONTAINER ARCHITECTURE
+   ========================================================================== */
+.about-team-section {
+    background-color: #ffffff;
+    /* Strict precise requested layout padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.team-header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.team-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest green accent line marker */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & KINETIC SCROLL REVEALS
+   ========================================================================== */
+
+/* Main Title: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.team-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #111827;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+}
+
+/* Horizontal side sliding elements handled smoothly by layout observer timelines */
+.team-main-title .t-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-main-title .t-word.left { transform: translateX(-40px); }
+.team-main-title .t-word.right { transform: translateX(40px); }
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 20px, LH: 100%, LS: 0% */
+.team-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 135%; /* Elevated marginally to insulate tightly wrapped strings from box wrap overlaps */
+    letter-spacing: 0%;
+    color: #4b5563;
+    max-width: 680px;
+}
+
+/* ==========================================================================
+   4-COLUMN PROFILE STAGGERED GRIDS WITH RADIANT HOVER GLOW SYSTEM
+   ========================================================================== */
+.team-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forms exact 4 card layout horizon matching mockup reference */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.team-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Scroll entry animation initialization values variables */
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.team-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Portrait Crop Aspect Frame Containers */
+.team-img-frame {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.team-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card-node:hover .team-avatar-img {
+    transform: scale(1.04); /* Clean macro parallax focus zoom depth cues */
+}
+
+/* Lower Profile Identity Meta Block Data Fields */
+.team-info-block {
+    padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #ffffff;
+}
+
+.meta-left-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.team-member-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.team-member-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+/* ==========================================================================
+   VECTOR SVG LINKED-IN ACTION INTERFACE ICONS (404 ENFORCED)
+   ========================================================================== */
+.linkedin-vector-anchor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #0077b5; /* LinkedIn corporate theme base signature color token from mock image */
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.2), color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.linkedin-svg-icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor; /* Inherits parent block color properties seamlessly */
+}
+
+.linkedin-vector-anchor:hover {
+    color: #005582; /* Deepens tone on active hover contexts triggers */
+    transform: scale(1.12);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent character row cuts inside narrow responsive boxes fields profiles */
+    .team-main-title { font-size: clamp(30px, 3.5vw, 36px); }
+    .team-sub-para { font-size: clamp(16px, 2.2vw, 20px); }
+    .team-member-name { font-size: 0.95rem; }
+}
+
+@media (max-width: 1024px) {
+    .team-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Forms beautiful 2 column cells pairs over tablet screens profiles */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-team-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence list execution on phone screen sizes */
+        gap: 1.25rem;
+    }
+    
+    .team-img-frame {
+        height: 220px;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEALS SIDE-TITLE & TEAM GRIDS CASCADE STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const teamTitle = document.getElementById("scroll-team-title");
+        const teamGridContainer = document.getElementById("stagger-team-cards");
+        const individualTeamCards = document.querySelectorAll(".team-card-node");
+
+        // 1. Setup Core Interaction Scroll Ingress Observers Settings
+        const teamRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalTeamObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Heading Section Title word-by-word sliding from opposite sides
+                    if (entry.target.id === "scroll-team-title") {
+                        const leftInboundWords = entry.target.querySelectorAll(".t-word.left");
+                        const rightInboundWords = entry.target.querySelectorAll(".t-word.right");
+                        
+                        leftInboundWords.forEach((word, index) => {
+                            word.style.transitionDelay = `${index * 0.08}s`;
+                            word.style.opacity = "1";
+                            word.style.transform = "translateX(0)";
+                        });
+                        
+                        rightInboundWords.forEach((word, index) => {
+                            word.style.transitionDelay = `${index * 0.08}s`;
+                            word.style.opacity = "1";
+                            word.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // B. Reveal Profile Member Cards Sequence One-by-One (Staggered Cascade Loading Window)
+                    if (entry.target.id === "stagger-team-cards") {
+                        individualTeamCards.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 90); // 90ms staging layout interval gaps separating blocks
+                        });
+                    }
+
+                    // Sever monitoring link to preserve processing power overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, teamRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (teamTitle) globalTeamObserver.observe(teamTitle);
+        if (teamGridContainer) globalTeamObserver.observe(teamGridContainer);
+    });
+})();
+
+</script>
+
+<!-- ABOUT PAGE CTA BANNER SECTION -->
+<section class="about-cta-banner-section">
+    <!-- Immersive Agricultural Field Backdrop Layer -->
+    <img src="https://unsplash.com" alt="Green agricultural field texture backdrop" class="cta-banner-bg-img">
+    <div class="cta-banner-shader-overlay"></div>
+
+    <div class="cta-banner-container">
+        <!-- Letter-by-letter scroll-animated heading title -->
+        <h2 class="cta-banner-title" id="scroll-cta-title">Together for a Better Tomorrow</h2>
+        
+        <!-- Center descriptor content paragraph text -->
+        <p class="cta-banner-para" id="scroll-cta-para">
+            Join AgriMart today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
+        </p>
+
+        <!-- Floating Kinetic Hover-Reactive Action Button Frame (404 Locked) -->
+        <div class="cta-button-box" id="scroll-cta-btn-box">
+            <a href="404.html" class="cta-explore-floating-btn">
+                Explore Products <span class="btn-arrow-vector">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   ABOUT PAGE CTA BANNER WINDOW LAYOUT DEFINITIONS
+   ========================================================================== */
+.about-cta-banner-section {
+    position: relative;
+    width: 100%;
+    /* Strict layout specified padding top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    overflow: hidden;
+    background-color: #0c4e2b; /* Solid fallback organic green base */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* Slim geometric profile matching blueprint image banner context */
+}
+
+/* Hardware-Accelerated High Resolution Graphic Background Image Layer */
+.cta-banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.02);
+}
+
+/* Translucent Deep Forest Green Shader Overlay Tint */
+.cta-banner-shader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 78, 43, 0.88); /* Merges field texture with brand green overlay layer */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Flexible Horizon Aligned Interactive Core Container */
+.cta-banner-container {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Links logo content text on the left away from right button */
+    gap: 2.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & KINETIC REVEALS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.cta-banner-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 110%; /* Boosted selectively to shield multi-word stack breaks overlays */
+    letter-spacing: 0%;
+    color: #ffffff; /* Stark absolute white heading text */
+    max-width: 380px; /* Constrained neatly to execute dual-row layouts matching mockup exactly */
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+/* Letter-by-letter kinetic spin targets inserted via script engine strings parsing */
+.cta-banner-title .char {
+    display: inline-block;
+    opacity: 0.1; /* Initial faded hidden state values */
+    transform: scale(0.95) translateY(4px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Content Para Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% (From prior reference specs) */
+.cta-banner-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Balanced line height safeguards multi-line flows on tablet reflow ports */
+    letter-spacing: 0%;
+    color: #e8f5e9; /* Light high visibility cream contrast copy */
+    max-width: 480px;
+    flex: 1;
+    
+    /* Pre-scroll animation hidden properties variables */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.cta-banner-para.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   FLOATING KINETIC BUTTON CONTAINER MODULE (404 ROUTED) WITH GLOW ACCENTS
+   ========================================================================== */
+.cta-button-box {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-button-box.is-btn-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cta-explore-floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #000000; /* Rich solid absolute black backdrop button cell from mockup image */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: 8px; /* High crisp precision micro radius border curves */
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    
+    /* Automated infinite dynamic hovering loop timeline track simulation */
+    animation: anchorButtonKineticFloat 3.2s ease-in-out infinite;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-arrow-vector {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.cta-explore-floating-btn:hover {
+    background-color: #111111;
+    /* High resolution dual-layered drops emerald soft neon glowing mesh projection overlay mapping */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 0 18px 2px rgba(46, 204, 113, 0.4);
+    animation-play-state: paused; /* Halts automated floating drift cycle instantly upon pointer hover triggers */
+}
+
+.cta-explore-floating-btn:hover .btn-arrow-vector {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINE LAYERS
+   ========================================================================== */
+@keyframes anchorButtonKineticFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Automated vertical anti-gravity suspension drift cycles */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent character row cuts inside narrow responsive boxes fields profiles */
+    .cta-banner-title { font-size: clamp(28px, 3.2vw, 36px); max-width: 300px; }
+    .cta-banner-para { font-size: 15px; }
+    .cta-banner-container { gap: 1.5rem; }
+}
+
+@media (max-width: 1024px) {
+    /* Transforms horizontal rows array seamlessly into a clean central stacked block on tablet screen ports */
+    .cta-banner-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1.75rem;
+    }
+
+    .cta-banner-title {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .cta-banner-para {
+        max-width: 640px;
+        flex: none;
+    }
+    
+    .cta-button-box {
+        transform: translateY(20px);
+    }
+    
+    .cta-button-box.is-btn-visible {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-cta-banner-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-explore-floating-btn {
+        width: 100%;
+        justify-content: center; /* Expands button cell full length across handheld display grids bounds */
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED CTA BANNER TYPOGRAPHY & CARDS STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const ctaTitle = document.getElementById("scroll-cta-title");
+        const ctaPara = document.getElementById("scroll-cta-para");
+        const ctaBtnBox = document.getElementById("scroll-cta-btn-box");
+
+        // 1. Text Parsing Helper Module: Explodes literal strings into tracked character component segments
+        if (ctaTitle) {
+            const pureString = ctaTitle.textContent.trim();
+            ctaTitle.innerHTML = ""; // Flushes raw children nodes
+
+            [...pureString].forEach(character => {
+                const charSpanNode = document.createElement("span");
+                charSpanNode.classList.add("char");
+                // Securely preserves layout spacing fields gaps inside browser viewport tracking loops
+                charSpanNode.textContent = character === " " ? "\u00A0" : character;
+                ctaTitle.appendChild(charSpanNode);
+            });
+        }
+
+        // 2. Setup Core Interaction Scroll Ingress Observers Settings
+        const ctaRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -20px 0px"
+        };
+
+        const globalCtaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Title Heading Letter-by-Letter rolling sequence waves
+                    if (entry.target.id === "scroll-cta-title") {
+                        const letterTokens = entry.target.querySelectorAll(".char");
+                        letterTokens.forEach((token, elementIndex) => {
+                            setTimeout(() => {
+                                token.style.opacity = "1";
+                                token.style.transform = "scale(1) translateY(0)";
+                            }, elementIndex * 25); // 25ms rapid cascading text string rolling reveal delays
+                        });
+                    }
+
+                    // B. Reveal Content Paragraph sliding smoothly up from below bounds
+                    if (entry.target.id === "scroll-cta-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Right Side Black Floating CTA Button frame wrapper
+                    if (entry.target.id === "scroll-cta-btn-box") {
+                        entry.target.classList.add("is-btn-visible");
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, ctaRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (ctaTitle) globalCtaObserver.observe(ctaTitle);
+        if (ctaPara) globalCtaObserver.observe(ctaPara);
+        if (ctaBtnBox) globalCtaObserver.observe(ctaBtnBox);
+    });
+})();
+
+</script>

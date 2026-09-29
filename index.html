@@ -167,17 +167,24 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Active Navigation Tabs Handler
-    navigationLinks.forEach(clickedAnchor => {
-        clickedAnchor.addEventListener("click", function(event) {
-            event.preventDefault();
-            navigationLinks.forEach(item => item.classList.remove("active-tab"));
-            this.classList.add("active-tab");
+  navigationLinks.forEach(clickedAnchor => {
+    clickedAnchor.addEventListener("click", function() {
 
-            if (navWrapper.classList.contains("menu-is-open")) {
-                toggleMobileNavigationMenu();
-            }
+        // Allow the browser to navigate to the href normally
+        navigationLinks.forEach(item => {
+            item.classList.remove("active-tab");
         });
+
+        this.classList.add("active-tab");
+
+        // Close mobile menu before navigation
+        if (navWrapper && navWrapper.classList.contains("menu-is-open")) {
+            toggleMobileNavigationMenu();
+        }
+
+        // DO NOT use event.preventDefault()
     });
+});
 
     // Search Input Field Constraint Validation
     searchForm.addEventListener("submit", (event) => {
