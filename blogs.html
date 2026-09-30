@@ -1,0 +1,2227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Modern Agri Preloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE WHITE PRELOADER ARCHITECTURE -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Animated Vector Artwork (Geometric Plant / Leaf Growth) -->
+            <svg class="brand-vector" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <!-- Main central organic stem -->
+                <path class="stem" d="M50,90 C50,60 50,40 50,15" />
+                <!-- Left branching vector leaf -->
+                <path class="leaf-left" d="M50,65 C20,55 25,35 50,35" />
+                <!-- Right branching vector leaf -->
+                <path class="leaf-right" d="M50,48 C80,38 75,18 50,18" />
+                <!-- Kinetic growth node apex -->
+                <circle class="bud" cx="50" cy="15" r="4" />
+            </svg>
+
+            <!-- Responsive Vertically Stacked Branding Text -->
+            <div class="brand-logo">
+                <span>s</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>l</span>
+                <span>y</span>
+            </div>
+
+        </div>
+    </div>
+
+  <script>
+    // ==========================================================================
+// PRELOADER TIMING LIFECYCLE CONTROLLER
+// ==========================================================================
+window.addEventListener("DOMContentLoaded", () => {
+    const preloaderContainer = document.getElementById("preloader");
+
+    /**
+     * Dismisses the preloader window.
+     * Hard target scheduled at exactly 1.75 seconds (1750ms) to beat the 2-second limit.
+     */
+    setTimeout(() => {
+        if (preloaderContainer) {
+            preloaderContainer.classList.add("fade-out");
+            
+            // Clean up DOM node to clear browser memory space
+            setTimeout(() => {
+                preloaderContainer.remove();
+            }, 450); // Matches the CSS fade-out duration
+        }
+    }, 1750); 
+});
+
+  </script>
+
+  <!-- AGRI PRODUCT MARKETPLACE MAIN NAVBAR (Copy directly into your <body>) -->
+<header class="app-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Frame (Clicking refreshes application state) -->
+        <a href="#" id="brand-logo-link" class="logo-wrapper">
+            <img src="./assests/agri marketplace.webp" alt="Stackly Logo" class="brand-img">
+        </a>
+
+        <!-- Mobile Hamburger Responsive Toggle Trigger -->
+        <button class="hamburger-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Navigation and Search Collapse Wrapper Layer -->
+        <div class="header-navigation-wrapper" id="nav-wrapper">
+            
+            <!-- Primary Navigation Architecture Links -->
+            <nav class="main-nav">
+                <ul class="nav-links-list">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about.html" class="nav-item active-tab">About Us</a></li>
+                    <li><a href="services.html" class="nav-item">Services</a></li>
+                    <li><a href="blogs.html" class="nav-item">Blog</a></li>
+                    <li><a href="products.html" class="nav-item">Products</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Validated Interactive Context Search Component Box -->
+            <div class="search-form-container">
+                <form id="marketplace-search-form" class="search-field-group">
+                    <input type="text" id="header-search-input" placeholder="Search for products, farmers...">
+                    <button type="submit" class="search-action-btn" aria-label="Execute Query Search">
+                        <svg class="search-icon-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Interface Interactions: Wishlist, Login Authentication & Cart Badge -->
+            <div class="user-actions-group">
+                
+                <!-- Wishlist Shortcut Trigger Button -->
+                <a href="404.html" class="action-icon-link wishlist-btn" title="View Wishlist">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+
+                <!-- User Log-In Credentials Profile Trigger -->
+                <a href="login.html" class="auth-navigation-link">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5.5,21 C5.5,17 8.5,14 12,14 C15.5,14 18.5,17 18.5,21" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Login / Sign Up</span>
+                </a>
+
+                <!-- E-commerce Shopping Basket Badge -->
+                <a href="404.html" class="action-icon-link cart-badge-btn" title="Open Shopping Basket">
+                    <div class="cart-icon-wrapper">
+                        <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-counter-bubble">6</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // ==========================================================================
+// APPS HEADER INTERACTIVE UTILITY LOGIC ENGINE
+// ==========================================================================
+(function() {
+    // DOM Cache Initialization Stores
+    const brandLogoLink = document.getElementById("brand-logo-link");
+    const navigationLinks = document.querySelectorAll(".nav-item");
+    const searchForm = document.getElementById("marketplace-search-form");
+    const searchInput = document.getElementById("header-search-input");
+    const menuToggleBtn = document.getElementById("menu-toggle-btn");
+    const navWrapper = document.getElementById("nav-wrapper");
+
+    if (!brandLogoLink) return; // Prevent scope breaks if injected incorrectly
+
+    // Brand Graphic Image Link Rule
+    brandLogoLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.reload();
+    });
+
+    // Active Navigation Tabs Handler
+  navigationLinks.forEach(clickedAnchor => {
+    clickedAnchor.addEventListener("click", function() {
+
+        // Allow the browser to navigate to the href normally
+        navigationLinks.forEach(item => {
+            item.classList.remove("active-tab");
+        });
+
+        this.classList.add("active-tab");
+
+        // Close mobile menu before navigation
+        if (navWrapper && navWrapper.classList.contains("menu-is-open")) {
+            toggleMobileNavigationMenu();
+        }
+
+        // DO NOT use event.preventDefault()
+    });
+});
+
+    // Search Input Field Constraint Validation
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const refinedSearchValue = searchInput.value.trim();
+
+        if (refinedSearchValue === "") {
+            searchInput.placeholder = "Please fill out this field...";
+            searchInput.classList.add("validation-alert");
+            searchInput.focus();
+        } else {
+            window.location.href = "404.html";
+        }
+    });
+
+    searchInput.addEventListener("input", () => {
+        if (searchInput.classList.contains("validation-alert")) {
+            searchInput.classList.remove("validation-alert");
+            searchInput.placeholder = "Search for products, farmers...";
+        }
+    });
+
+    // Responsive Mobile Menu Controllers
+    menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
+
+    function toggleMobileNavigationMenu() {
+        menuToggleBtn.classList.toggle("menu-is-open");
+        navWrapper.classList.toggle("menu-is-open");
+        document.body.style.overflow = navWrapper.classList.contains("menu-is-open") ? "hidden" : "";
+    }
+})();
+
+</script>
+
+<!-- BLOGS PAGE HERO BANNER MODULE -->
+<section class="blog-hero-section">
+    <!-- Immersive Agricultural Field Backdrop Layer -->
+    <img src="https://unsplash.com" alt="Agronomist with digital tablet advising a farmer in a lush green cultivated crop field" class="blog-hero-bg-img">
+    <div class="blog-hero-vignette-overlay"></div>
+
+    <div class="blog-hero-container">
+        <!-- Pill Breadcrumb Capsule Navigation Strip -->
+        <div class="blog-breadcrumb-box">
+            <nav class="blog-breadcrumb">
+                <a href="404.html" class="b-crumb-link">Home</a>
+                <span class="b-crumb-separator">&gt;</span>
+                <span class="b-crumb-current">Blog</span>
+            </nav>
+        </div>
+
+        <!-- Word-by-word scroll-animated main title heading -->
+        <h1 class="blog-hero-main-title" id="scroll-blog-hero-title">
+            <span class="bh-word">AgriMart</span>
+            <span class="bh-word title-accent-green">Blog</span>
+        </h1>
+
+        <!-- Center descriptive content paragraph text block -->
+        <p class="blog-hero-description" id="scroll-blog-hero-para">
+            Get the latest farming tips, market updates, expert advice and sustainable agriculture insights.
+        </p>
+
+        <!-- Horizontal Features Stack Row Split (Appears one by one when scroll) -->
+        <div class="blog-hero-features-row" id="stagger-blog-hero-features">
+            <!-- Circular Solid Forest Green Sprout Badge Anchor -->
+            <div class="blog-hero-badge-circle">
+                <span class="blog-badge-emoji">🌱</span>
+            </div>
+            
+            <!-- Staggered Entry Feature Meta Items -->
+            <div class="bh-feature-item-node" data-index="0">
+                <span class="bh-feature-text">Better Farming</span>
+            </div>
+            
+            <!-- Minimal vertical timeline white line hair separators splitting items fields -->
+            <div class="bh-feature-line-divider"></div>
+            
+            <div class="bh-feature-item-node" data-index="1">
+                <span class="bh-feature-text">Healthier Food</span>
+            </div>
+            
+            <div class="bh-feature-line-divider"></div>
+            
+            <div class="bh-feature-item-node" data-index="2">
+                <span class="bh-feature-text">A Greener Tomorrow</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   BLOGS PAGE HERO BANNER FULL IMMERSIVE WINDOW LAYOUT DEFINITIONS
+   ========================================================================== */
+.blog-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: clamp(450px, 55vh, 650px); /* Balanced viewpoint perspective matching background context */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: #081a0e;
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    box-sizing: border-box;
+}
+
+/* Hardware-Accelerated Graphic Image Backdrop Background Layer */
+.blog-hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.01);
+}
+
+/* Dark Balanced Shadow Vignette Layer Mapping */
+.blog-hero-vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dense gradient layer shields text contrast limits against high exposure backdrops fields */
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 50%, rgba(8,26,14,0.75) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.blog-hero-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   INTERACTIVE PILL BREADCRUMB CAPSULE STRIP MATCHING MOCKUP
+   ========================================================================== */
+.blog-breadcrumb-box {
+    margin-bottom: 2.25rem;
+    overflow: hidden;
+}
+
+.blog-breadcrumb {
+    background-color: #ffffff; /* Solid stark white backdrop pill capsule matching reference precisely */
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.b-crumb-link {
+    color: #1b5e20; /* Primary identity theme green text */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.b-crumb-link:hover {
+    color: #4caf50;
+}
+
+.b-crumb-separator {
+    color: #94a3b8;
+    user-select: none;
+    font-size: 0.75rem;
+}
+
+.b-crumb-current {
+    color: #64748b;
+    user-select: none;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & SCROLL REVEALS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.blog-hero-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white title stamp */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+    overflow: hidden;
+}
+
+/* Title word nodes controlled under horizontal kinetic side entry curves */
+.blog-hero-main-title .bh-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px); /* Slides upwards smoothly when crossing visible margins */
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-hero-main-title .bh-word.title-accent-green {
+    color: #2ecc71; /* High contrast energetic neon green brand accent word fill */
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% (Optimized for lines stack flows) */
+.blog-hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%; /* Sized to protect multi-line text strings from cross box overlapping clips */
+    letter-spacing: 0%;
+    color: #f1f5f9; /* Translucent cream silver text layer from preview image */
+    max-width: 480px;
+    margin-bottom: 3.5rem;
+    
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+
+.blog-hero-description.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   HORIZONTAL FEATURES STACK ROW DISPLAY MATRIX WITH HOVER ACCENTS
+   ========================================================================== */
+.blog-hero-features-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    position: relative;
+}
+
+/* Solid Circle Forest Green Sprout Badge Anchor Container */
+.blog-hero-badge-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #1b5e20; /* Solid organic brand green circle background asset */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.25);
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+.blog-badge-emoji {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.blog-hero-features-row:hover .blog-hero-badge-circle {
+    background-color: #4caf50; /* Morphs beautifully into light sprout green on track hover focus */
+    transform: scale(1.1) rotate(6deg);
+}
+
+.bh-feature-item-node {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Feature Meta Labels: Font: Inter, Weight: 700, Bold, Size: 18px (Sized cleanly for horizontal lines context) */
+.bh-feature-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 100%;
+    white-space: nowrap;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.bh-feature-item-node:hover .bh-feature-text {
+    color: #2ecc71; /* Highlights neon green on individual user target focal triggers */
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.25);
+}
+
+/* Symmetrical minimal vertical hairline divider line splits from mockup photo */
+.bh-feature-line-divider {
+    width: 1px;
+    height: 18px;
+    background-color: #ffffff;
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .blog-hero-main-title { font-size: clamp(30px, 3.5vw, 36px); }
+    .blog-hero-features-row {
+        flex-wrap: wrap; /* Reflows features tags safely inside bounds over tablet view channels */
+        gap: 1rem;
+    }
+    .bh-feature-line-divider {
+        display: none; /* Strip hairlines split nodes when items start tracking wrap adjustments rows */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-hero-section {
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .blog-hero-description {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-hero-features-row {
+        flex-direction: column;
+        align-items: flex-start; /* Drops tags array cleanly into unified vertical menu list stacks on phones */
+        gap: 1.25rem;
+    }
+    
+    .blog-hero-badge-circle {
+        display: none; /* Removes sprout badge to streamline linear vertical layouts on small screens */
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEALS BLOGS HERO HEADLINE WORD-BY-WORD & METAS STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const blogHeroTitle = document.getElementById("scroll-blog-hero-title");
+        const blogHeroPara = document.getElementById("scroll-blog-hero-para");
+        const featuresTrackRow = document.getElementById("stagger-blog-hero-features");
+        const individualMetaNodes = document.querySelectorAll(".bh-feature-item-node");
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const blogHeroSettings = {
+            root: null,
+            threshold: 0.1, /* Runtime triggers invoke when 10% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalBlogHeroObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Section Title Word-By-Word moving upwards from below bounds
+                    if (entry.target.id === "scroll-blog-hero-title") {
+                        const words = entry.target.querySelectorAll(".bh-word");
+                        words.forEach((w, index) => {
+                            setTimeout(() => {
+                                w.style.opacity = "1";
+                                w.style.transform = "translateY(0)";
+                            }, index * 90); // 90ms step delay boundaries interval separations caps separating words
+                        });
+                    }
+
+                    // B. Reveal Sub Description Paragraph text block cleanly
+                    if (entry.target.id === "scroll-blog-hero-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Meta Features Stack Tags items layout elements One-by-One sequentially
+                    if (entry.target.id === "stagger-blog-hero-features") {
+                        individualMetaNodes.forEach((nodeItem, progressivePositionIndex) => {
+                            setTimeout(() => {
+                                nodeItem.style.opacity = "1";
+                                nodeItem.style.transform = "translateX(0)";
+                            }, progressivePositionIndex * 120); // Stagger interval delay separations caps separating features text
+                        });
+                    }
+
+                    // Sever data tracking loops pipeline reference streams to clear footprint cycles
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, blogHeroSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (blogHeroTitle) globalBlogHeroObserver.observe(blogHeroTitle);
+        if (blogHeroPara) globalBlogHeroObserver.observe(blogHeroPara);
+        if (featuresTrackRow) globalBlogHeroObserver.observe(featuresTrackRow);
+    });
+})();
+
+</script>
+
+<!-- LATEST ARTICLES & INSIGHTS BLOG SECTION -->
+<section class="blog-insights-section">
+    <div class="insights-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="insights-header-row">
+            <span class="insights-tagline">Our Blog</span>
+            <!-- Word-by-word scroll-animated main title -->
+            <h2 class="insights-main-title" id="scroll-insights-title">
+                <span class="bi-word">Latest</span>
+                <span class="bi-word">Articles</span>
+                <span class="bi-word">&</span>
+                <span class="bi-word">Insights</span>
+            </h2>
+            <p class="insights-sub-para" id="scroll-insights-para">
+                Stay informed with expert tips, farming guides, market trends and real stories from farmers across the country.
+            </p>
+        </div>
+
+        <!-- Scroll-Triggered Staggered Articles Card Grid Matrix -->
+        <div class="insights-cards-grid" id="stagger-insights-cards">
+            
+            <!-- Article Card 1: Healthy Soil -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Hands holding green sprout seedling inside rich dark soil pile" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <!-- Pill Category Badge Label -->
+                    <div class="insight-category-pill">Farming Tips</div>
+                    
+                    <h3 class="insight-card-title">10 Best Practices for Healthy Soil</h3>
+                    
+                    <!-- Metadata Info Row Group -->
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 28, 2025</span>
+                        <span class="meta-read-time">⏱️ 5 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Healthy soil is the foundation of better crops. Learn simple and effective ways to improve soil health naturally.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 2: Tomato Plants -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Lush green rows of agricultural tomato plants vine bearing abundant ripe red tomatoes" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Crop Guide</div>
+                    
+                    <h3 class="insight-card-title">How to Grow High-Yield Tomato Plants</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 24, 2025</span>
+                        <span class="meta-read-time">⏱️ 6 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        From seed to harvest, follow these essential steps to get the best yield from your tomato plants.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 3: Smart Farming -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Agritech drone flying over automated irrigation sprinkler pipes lines farm field expert holding tablet" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Technology</div>
+                    
+                    <h3 class="insight-card-title">Smart Farming: The Future of Agriculture</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 20, 2025</span>
+                        <span class="meta-read-time">⏱️ 7 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Discover how technology is transforming agriculture and helping farmers work smarter, not harder.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   LATEST INSIGHTS BLOG SECTION CORE ARCHITECTURE LAYOUT
+   ========================================================================== */
+.blog-insights-section {
+    background-color: #ffffff;
+    /* Strict layout requested custom padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.insights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.insights-header-row {
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.insights-tagline {
+    display: block;
+    color: #1b5e20; /* Primary brand forest theme dark green indicator label tag */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+/* Strict Section Heading Title Spec: Font: Inter, Weight: 700, Bold, Size: 36px, LH: 100%, LS: 0% */
+.insights-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute solid black heading text */
+    margin-bottom: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+    overflow: hidden;
+}
+
+/* Word-by-word bottom reveal transform variables hooks managed by layout scroll animation observers */
+.insights-main-title .bi-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px); /* Slides upwards smoothly upon scroll crossing borders */
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insights-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: #4b5563; /* Slate grey details tracking color */
+    max-width: 680px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.insights-sub-para.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   3-COLUMN SYMMETRICAL ARTICLES CATALOG ROW MATRIX GRID SPEC
+   ========================================================================== */
+.insights-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forms exact 3-column architecture row matching mockup reference precisely */
+    gap: 1.75rem 1.5rem;
+    width: 100%;
+}
+
+.insight-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Scroll entry intersection stagger parameters initialization */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Halo Glow Overlay */
+.insight-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Image Thumbnail Container Frame Layout Split */
+.insight-img-frame {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.insight-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insight-card-node:hover .insight-item-img {
+    transform: scale(1.04); /* Soft clean focus parallax zoom depth zoom feedback */
+}
+
+/* Context Card Details Inner Layout */
+.insight-info-block {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Symmetrical Pill Category Badge Labels matching mockup geometry precisely */
+.insight-category-pill {
+    width: max-content;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.95rem;
+    border-radius: 20px; /* High radius smooth capsule borders */
+    margin-bottom: 1.25rem;
+    transition: all 0.25s ease;
+}
+
+.insight-card-node:hover .insight-category-pill {
+    border-color: #4caf50;
+    background-color: #e8f5e9;
+    color: #1b5e20; /* High visibility identity green shifts badge theme colors on card hover */
+}
+
+/* Strict Card Heading Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.insight-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 130%; /* Protected lines padding insulation prevents wrap text clips collisions */
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content name titles */
+    margin-bottom: 0.85rem;
+    min-height: 52px; /* Standardizes row horizontal baseline thresholds uniformly across varying title scales */
+    transition: color 0.25s ease;
+}
+
+.insight-card-node:hover .insight-card-title {
+    color: #1b5e20;
+}
+
+/* Symmetrical Metadata Horizon Block Timeline Information Rows */
+.insight-meta-timeline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.meta-date, .meta-read-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+/* Strict Description Details Body Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.insight-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%;
+    letter-spacing: 0%;
+    color: #4b5563;
+    margin-bottom: 1.75rem;
+    min-height: 70px; /* Synchronizes layout metrics block sizes cleanly before footer action paths links */
+}
+
+/* Retail Action Read More Hyperlink Controls Layout */
+.insight-read-more-link {
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: max-content;
+    transition: color 0.25s ease;
+}
+
+.insight-read-more-link .link-arrow {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.insight-read-more-link:hover {
+    color: #4caf50; /* Highlights lively sprout green on trigger paths */
+}
+
+.insight-read-more-link:hover .link-arrow {
+    transform: translateX(4px) scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent title headings line collisions inside narrow responsive container bounds fields */
+    .insights-main-title { font-size: clamp(30px, 3.8vw, 36px); }
+    .insight-card-title { font-size: 18px; min-height: 48px; }
+    .insight-card-description { font-size: 15px; min-height: 64px; }
+}
+
+@media (max-width: 1024px) {
+    .insights-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reflows cards grid row cleanly down into 2-columns on tablets */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-insights-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 620px) {
+    .insights-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence layout list flow on mobile view ports terminals */
+        gap: 1.5rem;
+    }
+    .insight-card-title, .insight-card-description {
+        min-height: auto;
+    }
+}
+
+</style>
+
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED ARTICLES REVEAL AND MATRIX GRIDS CARDS CASCADE ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const insightsTitle = document.getElementById("scroll-insights-title");
+        const insightsPara = document.getElementById("scroll-insights-para");
+        const cardsGridContainer = document.getElementById("stagger-insights-cards");
+        const individualArticleCards = document.querySelectorAll(".insight-card-node");
+
+        // Stagger Animation Setup Timing Intervals Metrics for Title Words
+        if (insightsTitle) {
+            const wordTokens = insightsTitle.querySelectorAll(".bi-word");
+            wordTokens.forEach((wordElement, itemPositionIndex) => {
+                wordElement.style.transitionDelay = `${itemPositionIndex * 0.08}s`;
+            });
+        }
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const insightsRevealSettings = {
+            root: null,
+            threshold: 0.1, /* Runtime triggers invoke when 10% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalInsightsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Section Title Word-by-Word moving upwards from below bounds
+                    if (entry.target.id === "scroll-insights-title") {
+                        const words = entry.target.querySelectorAll(".bi-word");
+                        words.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateY(0)";
+                        });
+                    }
+
+                    // B. Reveal Sub Paragraph description content label sliding upwards smoothly
+                    if (entry.target.id === "scroll-insights-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Article Cards Sequence One-by-One (Staggered Cascade Loading Window)
+                    if (entry.target.id === "stagger-insights-cards") {
+                        individualArticleCards.forEach((cardNode, progressiveIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, progressiveIndex * 95); // 95ms staging layout interval gaps separating blocks frames
+                        });
+                    }
+
+                    // Sever data tracking loops pipeline reference streams to clear footprint cycles
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, insightsRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (insightsTitle) globalInsightsObserver.observe(insightsTitle);
+        if (insightsPara) globalInsightsObserver.observe(insightsPara);
+        if (cardsGridContainer) globalInsightsObserver.observe(cardsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- ADDITIONAL ARTICLES INSIGHTS CATALOG GRID SECTION -->
+<section class="extended-insights-section">
+    <div class="extended-insights-container">
+        
+        <!-- Scroll-Triggered Staggered Catalog Cards Grid Matrix (Next 3 Cards) -->
+        <div class="insights-cards-grid" id="stagger-extended-insights">
+            
+            <!-- Article Card 4: Crop Prices -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Farmer sitting in crop field analyzing market rates data metrics on laptop" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <!-- Pill Category Badge Label -->
+                    <div class="insight-category-pill">Market Updates</div>
+                    
+                    <h3 class="insight-card-title">Current Crop Prices in India (2025)</h3>
+                    
+                    <!-- Metadata Info Row Group -->
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 14, 2025</span>
+                        <span class="meta-read-time">⏱️ 3 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Get the latest market rates for major crops and make informed decisions for better profits.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 5: Organic Farming -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Fresh abundant organic red tomatoes display stall setup layout outdoors market" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Organic Farming</div>
+                    
+                    <h3 class="insight-card-title">Benefits of Organic Farming for a Healthier Future</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 12, 2025</span>
+                        <span class="meta-read-time">⏱️ 6 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Explore how organic farming improves soil health, food quality and supports a sustainable environment.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 6: Pest Management -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Farmer spraying natural eco friendly crop protection formulas outdoors field" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Pest Management</div>
+                    
+                    <h3 class="insight-card-title">Natural Ways to Control Pests in Crops</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 08, 2025</span>
+                        <span class="meta-read-time">⏱️ 7 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Learn eco-friendly methods to protect your crops from pests without harming the environment.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   ADDITIONAL EXTENDED INSIGHTS SECTION LAYOUT DESIGN
+   ========================================================================== */
+.extended-insights-section {
+    background-color: #ffffff;
+    /* Reduced layout padding structure top: 0px to flow seamlessly underneath prior row grid; bottom: 30px */
+    padding: 0 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.extended-insights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+   3-COLUMN SYMMETRICAL ARTICLES CATALOG ROW MATRIX GRID SPEC
+   ========================================================================== */
+.insights-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forms exact horizontal 3-column rows array matching reference asset precisely */
+    gap: 1.75rem 1.5rem;
+    width: 100%;
+}
+
+.insight-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Scroll entry intersection stagger parameters initialization */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Halo Glow Overlay */
+.insight-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Image Thumbnail Container Frame Layout Split */
+.insight-img-frame {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.insight-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insight-card-node:hover .insight-item-img {
+    transform: scale(1.04); /* Soft clean focus parallax zoom depth zoom feedback */
+}
+
+/* Context Card Details Inner Layout */
+.insight-info-block {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Symmetrical Pill Category Badge Labels matching mockup geometry precisely */
+.insight-category-pill {
+    width: max-content;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.95rem;
+    border-radius: 20px; /* High radius smooth capsule borders */
+    margin-bottom: 1.25rem;
+    transition: all 0.25s ease;
+}
+
+.insight-card-node:hover .insight-category-pill {
+    border-color: #4caf50;
+    background-color: #e8f5e9;
+    color: #1b5e20; /* High visibility identity green shifts badge theme colors on card hover */
+}
+
+/* Strict Card Heading Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.insight-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 130%; /* Protected lines padding insulation prevents wrap text clips collisions */
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content name titles */
+    margin-bottom: 0.85rem;
+    min-height: 52px; /* Standardizes row horizontal baseline thresholds uniformly across varying title scales */
+    transition: color 0.25s ease;
+}
+
+.insight-card-node:hover .insight-card-title {
+    color: #1b5e20;
+}
+
+/* Symmetrical Metadata Horizon Block Timeline Information Rows */
+.insight-meta-timeline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.meta-date, .meta-read-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+/* Strict Description Details Body Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.insight-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%;
+    letter-spacing: 0%;
+    color: #4b5563;
+    margin-bottom: 1.75rem;
+    min-height: 70px; /* Synchronizes layout metrics block sizes cleanly before footer action paths links */
+}
+
+/* Retail Action Read More Hyperlink Controls Layout */
+.insight-read-more-link {
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: max-content;
+    transition: color 0.25s ease;
+}
+
+.insight-read-more-link .link-arrow {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.insight-read-more-link:hover {
+    color: #4caf50;
+}
+
+.insight-read-more-link:hover .link-arrow {
+    transform: translateX(4px) scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .insight-card-title { font-size: 18px; min-height: 48px; }
+    .insight-card-description { font-size: 15px; min-height: 64px; }
+}
+
+@media (max-width: 1024px) {
+    .insights-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reflows cards grid row cleanly down into 2-columns on tablets */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .insights-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence layout list flow on mobile view ports terminals */
+        gap: 1.5rem;
+    }
+    .insight-card-title, .insight-card-description {
+        min-height: auto;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED EXTENDED BLOG REVEAL SEQUENCE STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const extendedGridContainer = document.getElementById("stagger-extended-insights");
+        const individualExtendedCards = document.querySelectorAll(".extended-insights-section .insight-card-node");
+
+        // Setup Intersection Observers Spec Rules Configuration Settings
+        const extendedRevealSettings = {
+            root: null,
+            threshold: 0.08, /* Runtime triggers invoke when 8% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const extendedInsightsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    // Trigger Staggered Cascade Entry Sequence for Next 3 Cards One-by-One
+                    if (entry.target.id === "stagger-extended-insights") {
+                        individualExtendedCards.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 95); // Stagger interval delay separations caps separating frames
+                        });
+                    }
+
+                    // Sever data tracking loops pipeline reference streams to clear footprint cycles
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, extendedRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (extendedGridContainer) extendedInsightsObserver.observe(extendedGridContainer);
+    });
+})();
+
+</script>
+
+<!-- ADDITIONAL INSIGHTS CATALOG GRID SECTION -->
+<section class="extended-insights-section">
+    <div class="extended-insights-container">
+        
+        <!-- Scroll-Triggered Staggered Catalog Cards Grid Matrix -->
+        <div class="insights-cards-grid" id="stagger-extended-insights-row3">
+            
+            <!-- Article Card 7: Seed Selection -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Cupped hands holding a rich variety of mixed agricultural seeds and grains over grass background" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <!-- Pill Category Badge Label -->
+                    <div class="insight-category-pill">Farming Tips</div>
+                    
+                    <h3 class="insight-card-title">Seed Selection Guide for Better Yields</h3>
+                    
+                    <!-- Metadata Info Row Group -->
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 04, 2025</span>
+                        <span class="meta-read-time">⏱️ 3 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Choose the right seeds for your soil, climate and crop type to get maximum productivity.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 8: Success Stories -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Smiling Indian woman farmer holding a bunch of fresh green leafy vegetable crops in her farm field" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Success Stories</div>
+                    
+                    <h3 class="insight-card-title">From Struggle to Success: A Farmer's Journey</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 21, 2025</span>
+                        <span class="meta-read-time">⏱️ 6 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Read how a small farmer turned challenges into opportunities and built a sustainable future.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article Card 9: Drip Irrigation -->
+            <article class="insight-card-node">
+                <div class="insight-img-frame">
+                    <img src="https://unsplash.com" alt="Automated drip irrigation system lines watering lush green crop rows on a modern agriculture field" class="insight-item-img">
+                </div>
+                <div class="insight-info-block">
+                    <div class="insight-category-pill">Farming Tips</div>
+                    
+                    <h3 class="insight-card-title">Drip Irrigation: Save Water, Increase Yield</h3>
+                    
+                    <div class="insight-meta-timeline">
+                        <span class="meta-date">📅 May 28, 2025</span>
+                        <span class="meta-read-time">⏱️ 7 min read</span>
+                    </div>
+                    
+                    <p class="insight-card-description">
+                        Learn how drip irrigation can help you save water, reduce costs and boost crop production.
+                    </p>
+                    
+                    <a href="404.html" class="insight-read-more-link">
+                        Read More <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   ADDITIONAL EXTENDED INSIGHTS SECTION LAYOUT DESIGN
+   ========================================================================== */
+.extended-insights-section {
+    background-color: #ffffff;
+    /* Clean fluid padding stack flow tracking directly underneath previous rows */
+    padding: 0 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.extended-insights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+   3-COLUMN SYMMETRICAL ARTICLES CATALOG ROW MATRIX GRID SPEC
+   ========================================================================== */
+.insights-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forms exact horizontal 3-column rows array matching reference asset precisely */
+    gap: 1.75rem 1.5rem;
+    width: 100%;
+}
+
+.insight-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    /* Scroll entry intersection stagger parameters initialization */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Halo Glow Overlay */
+.insight-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-6px);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+/* Image Thumbnail Container Frame Layout Split */
+.insight-img-frame {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.insight-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insight-card-node:hover .insight-item-img {
+    transform: scale(1.04); /* Soft clean focus parallax zoom depth zoom feedback */
+}
+
+/* Context Card Details Inner Layout */
+.insight-info-block {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Symmetrical Pill Category Badge Labels matching mockup geometry precisely */
+.insight-category-pill {
+    width: max-content;
+    border: 1px solid #cbd5e1;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.95rem;
+    border-radius: 20px; /* High radius smooth capsule borders */
+    margin-bottom: 1.25rem;
+    transition: all 0.25s ease;
+}
+
+.insight-card-node:hover .insight-category-pill {
+    border-color: #4caf50;
+    background-color: #e8f5e9;
+    color: #1b5e20; /* High visibility identity green shifts badge theme colors on card hover */
+}
+
+/* Strict Card Heading Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 20px, LH: 100%, LS: 0% */
+.insight-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 130%; /* Protected lines padding insulation prevents wrap text clips collisions */
+    letter-spacing: 0%;
+    color: #000000; /* Absolute black content name titles */
+    margin-bottom: 0.85rem;
+    min-height: 52px; /* Standardizes row horizontal baseline thresholds uniformly across varying title scales */
+    transition: color 0.25s ease;
+}
+
+.insight-card-node:hover .insight-card-title {
+    color: #1b5e20;
+}
+
+/* Symmetrical Metadata Horizon Block Timeline Information Rows */
+.insight-meta-timeline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.meta-date, .meta-read-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+/* Strict Description Details Body Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.insight-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%;
+    letter-spacing: 0%;
+    color: #4b5563;
+    margin-bottom: 1.75rem;
+    min-height: 70px; /* Synchronizes layout metrics block sizes cleanly before footer action paths links */
+}
+
+/* Retail Action Read More Hyperlink Controls Layout */
+.insight-read-more-link {
+    margin-top: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1b5e20;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: max-content;
+    transition: color 0.25s ease;
+}
+
+.insight-read-more-link .link-arrow {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.insight-read-more-link:hover {
+    color: #4caf50;
+}
+
+.insight-read-more-link:hover .link-arrow {
+    transform: translateX(4px) scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .insight-card-title { font-size: 18px; min-height: 48px; }
+    .insight-card-description { font-size: 15px; min-height: 64px; }
+}
+
+@media (max-width: 1024px) {
+    .insights-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reflows cards grid row cleanly down into 2-columns on tablets */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 620px) {
+    .insights-cards-grid {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence layout list flow on mobile view ports terminals */
+        gap: 1.5rem;
+    }
+    .insight-card-title, .insight-card-description {
+        min-height: auto;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED EXTENDED ROW 3 BLOG CASCADE STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const extendedGridContainerRow3 = document.getElementById("stagger-extended-insights-row3");
+        const individualExtendedCardsRow3 = document.querySelectorAll("#stagger-extended-insights-row3 .insight-card-node");
+
+        // Setup Intersection Observers Spec Rules Configuration Settings
+        const extendedRevealSettings = {
+            root: null,
+            threshold: 0.08, /* Runtime triggers invoke when 8% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const extendedInsightsObserverRow3 = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    // Trigger Staggered Cascade Entry Sequence for Row 3 Cards One-by-One
+                    if (entry.target.id === "stagger-extended-insights-row3") {
+                        individualExtendedCardsRow3.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 95); // Stagger interval delay separations caps separating frames
+                        });
+                    }
+
+                    // Sever data tracking loops pipeline reference streams to clear footprint cycles
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, extendedRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (extendedGridContainerRow3) extendedInsightsObserverRow3.observe(extendedGridContainerRow3);
+    });
+})();
+
+</script>
+
+<!-- PRODUCTION READY MARKETPLACE FOOTER COMPONENT -->
+<footer class="app-footer">
+    <div class="footer-top-container">
+        
+        <!-- Column 1: Brand Info and Social Handles -->
+        <div class="footer-column brand-summary-cell">
+            <a href="#" id="footer-scroll-top-btn" class="footer-logo-wrapper" title="Back to Top">
+                <img src="./assests/footer logo agri products.webp" alt="Stackly Logo" class="footer-brand-img">
+            </a>
+            <p class="footer-brand-para">
+                Connecting farmers and consumers for a healthier and greener tomorrow.
+            </p>
+            
+            <!-- Upgraded Vector SVG Social Row Handles (All route to 404) -->
+            <div class="social-links-row">
+                <!-- Instagram -->
+                <a href="404.html" class="social-circle-icon" aria-label="Instagram">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.258 2.617 4.677 6.98 4.877 1.28.059 1.688.072 4.948.072 3.259 0 3.668-.013 4.948-.072 4.254-.2 6.672-2.617 6.872-6.98.059-1.28.072-1.688.072-4.948 0-3.259-.013-3.668-.072-4.948-.2-4.254-2.617-6.672-6.98-6.872C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4.162 4.162 0 110-8.324A4.162 4.162 0 0112 16zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="404.html" class="social-circle-icon" aria-label="YouTube">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.516 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.163zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- Twitter (X) -->
+                <a href="404.html" class="social-circle-icon" aria-label="Twitter">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M18.244 2.25h3.308l-4.716 5.39c5.542 7.32 7.422 10.518 11.558 15.75H21.72l-5.176-6.756-5.93 6.756H7.31l5.214-5.962L1.875 2.25h6.836l4.654 6.155H18.24zM16.483 21.562h1.833L7.084 4.126H5.117L16.483 21.562z"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="404.html" class="social-circle-icon" aria-label="LinkedIn">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Home</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> About Us</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Services</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Blog</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Categories Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Categories</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Fresh Vegetables & Fruits</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Grains & Cereals</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Spices & Herbs</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Dairy Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Organic Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Seeds & Fertilizers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Support Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Support</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Help Center</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Shipping Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Return Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Terms & Conditions</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 5: Contact Services Details -->
+        <div class="footer-column contact-info-cell">
+            <h3 class="footer-column-title">Our Services</h3>
+            <ul class="contact-details-list">
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📍</span>
+                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">✉️</span>
+                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📞</span>
+                    <span class="contact-text-node">+44 5286548321</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legal Strip Copyright Line Bar Row -->
+    <div class="footer-bottom-strip">
+        <div class="footer-bottom-container">
+            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <div class="bottom-legal-links">
+                <a href="404.html" class="legal-link-item">Privacy Policy</a>
+                <a href="404.html" class="legal-link-item">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   FOOTER CORE ARCHITECTURE DESIGN SYSTEM (DARK GREEN PRESETS)
+   ========================================================================== */
+.app-footer {
+    background-color: #051a0e; /* Exact deep forest dark green shade from reference image */
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* Strict layout specified padding top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    display: grid;
+    /* Custom unbalanced column layout distributions matching reference template width weights perfectly */
+    grid-template-columns: 1.2fr 0.75fr 1fr 0.850fr 1.2fr;
+    gap: 2.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC RULES OVERRIDES & LAYOUT FIELDS
+   ========================================================================== */
+
+/* Brand Copy Paragraph: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.footer-brand-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Modestly balanced line-height to avoid text wrap box boundary overlaps */
+    letter-spacing: 0%;
+    color: #cbd5e1; /* Soft accessible light slate silver copy tint */
+    margin-bottom: 1.5rem;
+    max-width: 260px;
+}
+
+/* Titles Header Spec: Font: Inter, Weight: 700, Style: Bold, Size: 16px, LH: 100%, LS: 0% */
+.footer-column-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white title stamps */
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+/* ==========================================================================
+   COLUMN 1: BRAND WRAPPER & UPGRADED SVG VECTOR SOCIAL HANDLES
+   ========================================================================== */
+.footer-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.footer-brand-img {
+    height: clamp(38px, 4vw, 45px);
+    width: auto;
+    object-fit: contain;
+}
+
+.social-links-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.social-circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+/* High contrast vector icon nested path formatting scaling loops */
+.social-vector-svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff; /* High visibility pure white geometry paths */
+    transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.social-circle-icon:hover {
+    background-color: #4caf50; /* Animates smoothly into lively leaf green sprout accent fill */
+    border-color: #4caf50;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.35);
+}
+
+.social-circle-icon:hover .social-vector-svg {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   COLUMNS 2, 3 & 4: DIRECTORY LINK NAVIGATION LIST ARRAYS (404 TARGETED)
+   ========================================================================== */
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #94a3b8; /* Muted silver navigation elements standard link color */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.link-chevron {
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav-item:hover {
+    color: #ffffff; /* Swaps color directly into bright white accent fields on hover */
+    transform: translateX(4px);
+}
+
+.footer-nav-item:hover .link-chevron {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   COLUMN 5: PACKAGED DATA SERVICES DETAIL MATRIX
+   ========================================================================== */
+.contact-details-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+}
+
+.contact-vector-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-text-node {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 140%;
+    color: #cbd5e1;
+}
+
+.email-anchor {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email-anchor:hover {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   BOTTOM LEGAL STRIP COPYRIGHT LINE BAR ROW
+   ========================================================================== */
+.footer-bottom-strip {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Minimal soft horizontal separator dividing lines hair layer */
+    background-color: #04140e; /* Subtle dark emphasis shift down below borders */
+}
+
+.footer-bottom-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    box-sizing: border-box;
+}
+
+.copyright-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.bottom-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.legal-link-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-link-item:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .footer-top-container {
+        grid-template-columns: repeat(3, 1fr); /* Forms beautiful 3-column balancing layout rules */
+        gap: 3rem 2rem;
+    }
+    .brand-summary-cell {
+        grid-column: 1 / -1; /* Permits logo description areas to expand full length up top row fields */
+        max-width: 100%;
+    }
+    .footer-brand-para {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top-container {
+        grid-template-columns: repeat(2, 1fr); /* Drops down to a balanced 2x2 matrix cluster on mobile screens */
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .footer-nav-item {
+        white-space: normal; /* Permits safe wrap reflow operations across minor tablet ports */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top-container {
+        grid-template-columns: 1fr; /* Pure minimal vertical line stream stacking flow layout sequence execution */
+        gap: 2rem;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 2rem;
+    }
+}
+
+</style>
+<script>
+(function () {
+
+    function scrollPageToTop() {
+
+        // Scroll the normal document
+        document.documentElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        document.body.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Also scroll any common custom scroll container
+        document.querySelectorAll("*").forEach(function (element) {
+
+            const style = window.getComputedStyle(element);
+
+            if (
+                (style.overflowY === "auto" ||
+                 style.overflowY === "scroll") &&
+                element.scrollHeight > element.clientHeight
+            ) {
+                element.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+
+        const logo = event.target.closest("#footer-scroll-top-btn");
+
+        if (!logo) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        scrollPageToTop();
+
+    });
+
+})();
+</script>
+<script>
+    // ==========================================================================
+// APPS FOOTER SMOOTH COMPONENT INTERFACE INTERACTION ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const footerScrollTopBtn = document.getElementById("footer-scroll-top-btn");
+
+        if (!footerScrollTopBtn) return; // Prevent scope breakage if block is isolated
+
+        /**
+         * Smooth Back-to-Top Navigation Trigger Rule
+         * Attached securely directly onto the primary brand graphic image link frame block
+         */
+        footerScrollTopBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Suppresses empty hash jump shifts grid coordinate calculations
+            
+            // Initiates native hardware-accelerated animated scroll timeline translation vector
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

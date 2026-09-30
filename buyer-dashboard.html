@@ -1,0 +1,4111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly - Buyer Dashboard</title>
+
+    <link rel="stylesheet" href="buyer-dashboard.css">
+</head>
+
+<body>
+
+    <div class="buyer-dashboard-root">
+
+        <!-- =========================================================
+             BUYER SIDEBAR
+        ========================================================== -->
+        <aside class="buyer-sidebar" id="buyerSidebar">
+
+            <!-- Sidebar Brand -->
+            <div class="buyer-sidebar-brand">
+
+                <a href="javascript:void(0);"
+                   class="buyer-brand-link"
+                   id="buyerBrandHome">
+
+                   
+
+                    <span>Stackly</span>
+
+                </a>
+
+                <!-- Mobile Close -->
+                <button
+                    type="button"
+                    class="buyer-sidebar-close"
+                    id="buyerSidebarClose"
+                    aria-label="Close menu">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar Navigation -->
+            <nav class="buyer-sidebar-navigation">
+
+                <button
+                    class="buyer-nav-item active"
+                    data-section="buyer-overview">
+
+                    <span class="buyer-nav-icon">▦</span>
+                    <span>Overview</span>
+
+                </button>
+
+
+                <button
+                    class="buyer-nav-item"
+                    data-section="buyer-browse">
+
+                    <span class="buyer-nav-icon">◈</span>
+                    <span>Browse Crops</span>
+
+                </button>
+
+
+                <button
+                    class="buyer-nav-item"
+                    data-section="buyer-orders">
+
+                    <span class="buyer-nav-icon">▤</span>
+                    <span>My Orders</span>
+
+                </button>
+
+
+                <button
+                    class="buyer-nav-item"
+                    data-section="buyer-payments">
+
+                    <span class="buyer-nav-icon">₹</span>
+                    <span>Payments</span>
+
+                </button>
+
+
+                <button
+                    class="buyer-nav-item"
+                    data-section="buyer-support">
+
+                    <span class="buyer-nav-icon">?</span>
+                    <span>Support</span>
+
+                </button>
+
+
+            
+
+            </nav>
+
+
+            <!-- Sidebar Logout -->
+            <div class="buyer-sidebar-footer">
+
+                <button
+                    type="button"
+                    class="buyer-logout-button"
+                    id="buyerLogoutButton">
+
+                    <span class="buyer-logout-icon">↪</span>
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================================
+             MAIN DASHBOARD AREA
+        ========================================================== -->
+        <main class="buyer-main-area">
+
+            <!-- =====================================================
+                 HEADER
+            ====================================================== -->
+            <header class="buyer-header">
+
+                <div class="buyer-header-left">
+
+                    <!-- Mobile Hamburger -->
+                    <button
+                        type="button"
+                        class="buyer-hamburger"
+                        id="buyerHamburger"
+                        aria-label="Open menu">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+
+                    <div>
+
+                        <h1 class="buyer-header-title">
+                            Buyer Management Console
+                        </h1>
+
+                        <p class="buyer-header-subtitle">
+                            Manage your agricultural purchases
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="buyer-header-right">
+
+                    <!-- Notification -->
+                  
+
+<button
+    type="button"
+    class="buyer-notification-button"
+    aria-label="Notifications"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        class="buyer-notification-vector-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5a6 6 0 0 0-4.5-5.82V4a1.5 1.5 0 0 0-3 0v1.18A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z"/>
+    </svg>
+
+    <i class="buyer-notification-unread-dot"></i>
+</button>
+
+
+
+
+
+
+                    <!-- Profile -->
+                    <div class="buyer-profile-header">
+
+                        <div class="buyer-avatar">
+                            <span id="buyerAvatarLetter">B</span>
+                        </div>
+
+                        <div class="buyer-profile-text">
+
+                            <small>Welcome Back</small>
+
+                            <strong id="buyerUserName">
+                                Buyer
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =====================================================
+                 MAIN CONTENT
+            ====================================================== -->
+            <div
+                class="buyer-content-area"
+                id="buyerContentArea">
+
+
+                <!-- =================================================
+                     OVERVIEW
+                ================================================== -->
+              <!-- ENHANCED BUYER DASHBOARD OVERVIEW SECTION -->
+<section class="buyer-section active" id="buyer-overview">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">BUYER CONSOLE MANAGEMENT</span>
+            <h2 class="buyer-main-heading">Overview Analytics Workspace</h2>
+            <p class="buyer-subheading-para">
+                Track your active agricultural procurement contracts, evaluate real-time order processing pipelines, and monitor financial distribution matrix data.
+            </p>
+        </div>
+    </div>
+
+    <!-- Statistics Analytics Ribbon Grid (Zero Horizontal Scroll Layout) -->
+    <div class="buyer-stat-grid">
+        
+        <!-- Metric Card 1: Total Orders -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-green">🛒</div>
+                <span class="buyer-trend-badge trend-positive">↑ 14.2%</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Total Procured Orders</span>
+                <strong class="buyer-stat-value-display">24 Batches</strong>
+                <small class="buyer-stat-sub-metadata">All historical business purchases</small>
+            </div>
+        </div>
+
+        <!-- Metric Card 2: Active Orders -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-orange">📦</div>
+                <span class="buyer-trend-badge trend-warning">6 Transit</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Active Order Pipelines</span>
+                <strong class="buyer-stat-value-display">06 Batches</strong>
+                <small class="buyer-stat-sub-metadata">Currently in logistics processing</small>
+            </div>
+        </div>
+
+        <!-- Metric Card 3: Total Spent -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-blue">₹</div>
+                <span class="buyer-trend-badge trend-positive">↑ 22.4%</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Gross Capital Expenditure</span>
+                <strong class="buyer-stat-value-display">₹48,650</strong>
+                <small class="buyer-stat-sub-metadata">Accumulated fiscal year expenditure</small>
+            </div>
+        </div>
+
+        <!-- Metric Card 4: Saved Crops -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-purple">🌾</div>
+                <span class="buyer-trend-badge trend-neutral">Saved</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Bookmarked Harvest Cultivars</span>
+                <strong class="buyer-stat-value-display">12 Crops</strong>
+                <small class="buyer-stat-sub-metadata">Monitored crop wishlist items</small>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Orders Card Board Panel Base -->
+    <div class="buyer-card-board-panel">
+        
+        <div class="buyer-card-header-strip">
+            <div class="buyer-card-heading-block">
+                <span class="buyer-card-label-tag">B2B CONTRACT ACTIVITY LOG</span>
+                <h3 class="buyer-panel-card-title">Recent Harvest Order Form History</h3>
+            </div>
+            <!-- Dynamic view-all action trigger switches to order tab via main script hooks -->
+           
+<button
+    type="button"
+    class="buyer-text-button-link"
+    onclick="window.location.href='404.html';"
+    title="View absolute historical order listings table"
+>
+    View Comprehensive History
+    <span class="link-arrow-vector">→</span>
+</button>
+
+
+        </div>
+
+        <!-- Fully Scalable Fluid Responsive Matrix Table Wrapper -->
+        <div class="buyer-table-responsive-overflow-wrapper">
+            <table class="buyer-native-grid-table">
+                <thead>
+                    <tr>
+                        <th>ORDER TRACKING ID</th>
+                        <th>HARVEST CULTIVAR</th>
+                        <th>NET VOLUME CAPACITY</th>
+                        <th>TRANSACTION VALUE</th>
+                        <th>FULFILLMENT STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <!-- Order 1: Organic Rice -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1024</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Premium Organic Rice</span>
+                                <span class="buyer-crop-meta-sub">Grains • Batch R-2</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">50 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹3,250</span></td>
+                        <td><span class="buyer-status-token bg-delivered">Delivered Securely</span></td>
+                    </tr>
+
+                    <!-- Order 2: Fresh Tomato -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1025</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Fresh Tomatoes (Grafted)</span>
+                                <span class="buyer-crop-meta-sub">Vegetables • Batch T-4</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">25 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,875</span></td>
+                        <td><span class="buyer-status-token bg-processing">In Cold-Storage Processing</span></td>
+                    </tr>
+
+                    <!-- Order 3: Green Chilli -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1026</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Hot Guntur Green Chilli</span>
+                                <span class="buyer-crop-meta-sub">Spices • Batch C-1</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">10 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,200</span></td>
+                        <td><span class="buyer-status-token bg-shipped">Dispatched & Shipped</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================================
+   ENHANCED BUYER DASHBOARD HEADER AND TYPOGRAPHIC LAYOUT
+   ========================================================================== */
+.buyer-page-heading {
+    margin-bottom: 2.25rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-heading-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.buyer-page-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1b5e20; /* Primary brand forest green tone */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.buyer-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-subheading-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #475569;
+    max-width: 680px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   4-COLUMN METRICS RIBBON DECK SYSTEMS (ZERO HORIZONTAL VIEWPORT SCROLLS)
+   ========================================================================== */
+.buyer-stat-grid {
+    display: grid;
+    /* Aligns 4 symmetrical analytical summary deck cards across the panel row width fluidly */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    box-sizing: border-box;
+}
+
+.buyer-stat-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow Overlay */
+.buyer-stat-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -8px rgba(27, 94, 32, 0.04), 
+                0 0 18px 1px rgba(76, 175, 80, 0.12);
+}
+
+.buyer-stat-visual-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buyer-stat-icon-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-sizing: border-box;
+}
+
+/* Local Shaded Color Accents Filled Matrix Sets */
+.color-green { background-color: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
+.color-orange { background-color: #fff8e1; color: #e65100; border: 1px solid #ffe082; }
+.color-blue { background-color: #e0f2f1; color: #004d40; border: 1px solid #b2dfdb; }
+.color-purple { background-color: #f3e5f5; color: #4a148c; border: 1px solid #e1bee7; }
+
+.buyer-trend-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+}
+
+.trend-positive { background-color: #e8f5e9; color: #1b5e20; }
+.trend-warning { background-color: #fff7ed; color: #c2410c; }
+.trend-neutral { background-color: #f1f5f9; color: #475569; }
+
+.buyer-stat-numeric-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.buyer-stat-label-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.buyer-stat-value-display {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin: 2px 0 4px 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-stat-sub-metadata {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   RECENT TRANSACTION RECORDS LAYOUT SHEET CARD BOARD
+   ========================================================================== */
+.buyer-card-board-panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.buyer-card-header-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.buyer-card-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.buyer-card-label-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.04em;
+}
+
+.buyer-panel-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-text-button-link {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #1b5e20;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.link-arrow-vector {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.buyer-text-button-link:hover {
+    color: #2e7d32;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
+}
+
+.buyer-text-button-link:hover .link-arrow-vector {
+    transform: translateX(4px);
+}
+
+/* Fluid Horizontal Sub-viewport Grid Shell Wrapper Elements */
+.buyer-table-responsive-overflow-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Handles cross browser desktop layout adjustments scroll isolation natively */
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+.buyer-native-grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.buyer-native-grid-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.buyer-native-grid-table td {
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    font-size: 0.92rem;
+    vertical-align: middle;
+    white-space: nowrap; /* Protects characters rows alignment strings from multi-line wrap clips broken layouts */
+}
+
+.buyer-native-grid-table tr:last-child td {
+    border-bottom: none; /* Strips final border line rail boundary */
+}
+
+.buyer-cell-id-monospaced {
+    font-family: monospace !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+    background-color: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.buyer-cell-crop-composite {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.buyer-crop-name-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.buyer-crop-meta-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.buyer-weight-bold-copy, .buyer-revenue-bold-copy {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.buyer-revenue-bold-copy { color: #111827; }
+
+/* Advanced Custom Pill Token Status Labels Array Mapping */
+.buyer-status-token {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-sizing: border-box;
+}
+
+.bg-delivered { background-color: #e8f5e9; color: #1b5e20; }
+.bg-processing { background-color: #fff7ed; color: #c2410c; }
+.bg-shipped { background-color: #eff6ff; color: #1d4ed8; }
+
+.bg-delivered::before { content: "●"; color: #2ecc71; font-size: 0.65rem; }
+.bg-processing::before { content: "●"; color: #f59e0b; font-size: 0.65rem; }
+.bg-shipped::before { content: "●"; color: #3b82f6; font-size: 0.65rem; }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .buyer-stat-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses row cleanly into pairs matrix layout blocks on tablets views */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .buyer-card-board-panel {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    .buyer-card-header-strip {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .buyer-text-button-link {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .buyer-stat-grid {
+        grid-template-columns: 1fr; /* Pure linear stack list flow layout row matrix elements on handheld smartphones viewport frames */
+        gap: 1rem;
+    }
+}
+
+</style>
+
+                <!-- ENHANCED BROWSE CROPS MARKETPLACE SECTION -->
+<section class="buyer-section" id="buyer-browse">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">MARKETPLACE BROWSER</span>
+            <h2 class="buyer-main-heading">Explore Fresh Cultivars</h2>
+            <p class="buyer-subheading-para">
+                Purchase fresh, high-quality agricultural produce directly from verified local farm gates with end-to-end escrow logistics protection.
+            </p>
+        </div>
+    </div>
+
+    <!-- Active Harvest Product Listings Grid Row Matrix Array -->
+    <div class="buyer-product-grid">
+
+        <!-- Product Card 1: Organic Rice -->
+        <article class="buyer-product-card">
+            <div class="buyer-product-media-frame">
+                <img src="./assests/grass.webp" alt="Premium long grain white basmati rice stacked inside organic burlap sacks" class="buyer-thumbnail-img">
+                <span class="buyer-ribbon-badge bg-organic-fill">Organic Certified</span>
+            </div>
+            <div class="buyer-product-body">
+                <div class="buyer-product-meta-top">
+                    <span class="buyer-category-tag">Grains & Cereals</span>
+                    <div class="buyer-fractional-star-rating">
+                        <span class="star-glyph-icon">★</span>
+                        <span class="score-numerical-text">4.7</span>
+                    </div>
+                </div>
+                <h3 class="buyer-product-title">Premium Organic Rice</h3>
+                <p class="buyer-product-description">
+                    Freshly harvested unrefined premium long-grain rice insulated perfectly for storage.
+                </p>
+                <div class="buyer-product-bottom-row">
+                    <div class="buyer-price-matrix">
+                        <span class="wholesale-tag">WHOLESALE RATE</span>
+                        <strong class="price-value-display">₹65 <small>/ Kg</small></strong>
+                    </div>
+                    <!-- Buy Now Button Capsule Frame (404 Routed) -->
+                    <a href="404.html" class="buyer-buy-button-link">
+                        Buy Now <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 2: Fresh Tomato -->
+        <article class="buyer-product-card">
+            <div class="buyer-product-media-frame">
+                <img src="./assests/veg bowl.webp" alt="Lush fresh rows of agricultural tomato plants vine bearing abundant ripe red tomatoes" class="buyer-thumbnail-img">
+                <span class="buyer-ribbon-badge bg-fresh-fill">Farm Fresh</span>
+            </div>
+            <div class="buyer-product-body">
+                <div class="buyer-product-meta-top">
+                    <span class="buyer-category-tag">Vegetables</span>
+                    <div class="buyer-fractional-star-rating">
+                        <span class="star-glyph-icon">★</span>
+                        <span class="score-numerical-text">4.8</span>
+                    </div>
+                </div>
+                <h3 class="buyer-product-title">Fresh Tomatoes (Batch T-4)</h3>
+                <p class="buyer-product-description">
+                    Juicy farm-fresh red tomatoes sorted symmetrically by size and sugar content indices.
+                </p>
+                <div class="buyer-product-bottom-row">
+                    <div class="buyer-price-matrix">
+                        <span class="wholesale-tag">WHOLESALE RATE</span>
+                        <strong class="price-value-display">₹75 <small>/ Kg</small></strong>
+                    </div>
+                    <a href="404.html" class="buyer-buy-button-link">
+                        Buy Now <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 3: Green Chilli -->
+        <article class="buyer-product-card">
+            <div class="buyer-product-media-frame">
+                <img src="./assests/red chilli.webp" alt="Fresh spicy organic green chilli harvest bundle display setup layout outdoors" class="buyer-thumbnail-img">
+                <span class="buyer-ribbon-badge bg-popular-fill">High Demand</span>
+            </div>
+            <div class="buyer-product-body">
+                <div class="buyer-product-meta-top">
+                    <span class="buyer-category-tag">Vegetables</span>
+                    <div class="buyer-fractional-star-rating">
+                        <span class="star-glyph-icon">★</span>
+                        <span class="score-numerical-text">4.5</span>
+                    </div>
+                </div>
+                <h3 class="buyer-product-title">Spicy Green Chilli</h3>
+                <p class="buyer-product-description">
+                    Pungent, freshly harvested emerald green chillies perfect for premium spice extractions.
+                </p>
+                <div class="buyer-product-bottom-row">
+                    <div class="buyer-price-matrix">
+                        <span class="wholesale-tag">WHOLESALE RATE</span>
+                        <strong class="price-value-display">₹120 <small>/ Kg</small></strong>
+                    </div>
+                    <a href="404.html" class="buyer-buy-button-link">
+                        Buy Now <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 4: Fresh Potato -->
+        <article class="buyer-product-card">
+            <div class="buyer-product-media-frame">
+                <img src="./assests/tamato.webp" alt="Fresh clean organic brown potatoes harvested inside a local farm storage background" class="buyer-thumbnail-img">
+                <span class="buyer-ribbon-badge bg-organic-fill">Organic Certified</span>
+            </div>
+            <div class="buyer-product-body">
+                <div class="buyer-product-meta-top">
+                    <span class="buyer-category-tag">Vegetables</span>
+                    <div class="buyer-fractional-star-rating">
+                        <span class="star-glyph-icon">★</span>
+                        <span class="score-numerical-text">4.6</span>
+                    </div>
+                </div>
+                <h3 class="buyer-product-title">Quality Farm Tomatos</h3>
+                <p class="buyer-product-description">
+                    Starchy, highgrade farm harvested brown potatoes clean washed and ready for transit.
+                </p>
+                <div class="buyer-product-bottom-row">
+                    <div class="buyer-price-matrix">
+                        <span class="wholesale-tag">WHOLESALE RATE</span>
+                        <strong class="price-value-display">₹45 <small>/ Kg</small></strong>
+                    </div>
+                    <a href="404.html" class="buyer-buy-button-link">
+                        Buy Now <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================================
+   BUYER BROWSE CROPS NAVIGATION PANEL HEADINGS TYPOGRAPHY
+   ========================================================================== */
+.buyer-page-heading {
+    margin-bottom: 2.25rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-heading-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.buyer-page-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1b5e20; /* Primary brand forest green accent */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.buyer-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-subheading-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #475569;
+    max-width: 680px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   4-COLUMN COMPACT B2B PRODUCT CATALOG SUB-VIEW SHIFT MATRIX CARDS GRID
+   ========================================================================== */
+.buyer-product-grid {
+    display: grid;
+    /* Aligns 4 symmetrical crop catalog listing cards inside a unified grid block row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-product-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow Overlay */
+.buyer-product-card:hover {
+    border-color: #4caf50;
+    transform: translateY(-5px);
+    /* High resolution dual-layered dynamic neon emerald glow mapping drop projection */
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.04), 
+                0 0 22px 2px rgba(76, 175, 80, 0.18);
+}
+
+/* Media Image Frame Block Systems layout */
+.buyer-product-media-frame {
+    position: relative;
+    width: 100%;
+    height: 180px; /* Perfectly aspect-balanced width constraints system */
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.buyer-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.buyer-product-card:hover .buyer-thumbnail-img {
+    transform: scale(1.035); /* Soft crisp zoom parallax depth cue */
+}
+
+/* Ribbon Overlay Badges */
+.buyer-ribbon-badge {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    padding: 0.4rem 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #ffffff;
+    border-radius: 4px;
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.bg-organic-fill { background-color: #1b5e20; }
+.bg-fresh-fill { background-color: #0c6a30; }
+.bg-popular-fill { background-color: #3e2723; }
+
+/* Details Inside Info Box Block */
+.buyer-product-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.buyer-product-meta-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.buyer-category-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.buyer-fractional-star-rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.star-glyph-icon { font-size: 0.95rem; color: #fbbf24; line-height: 1; }
+.score-numerical-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.82rem; color: #1e293b; }
+
+/* Strict Card Heading Title Spec: Font: Inter, Weight: 700, Bold, Size: 18px, LH: 120% */
+.buyer-product-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 120%;
+    margin: 0 0 0.45rem 0;
+    transition: color 0.25s ease;
+}
+
+.buyer-product-card:hover .buyer-product-title {
+    color: #1b5e20;
+}
+
+.buyer-product-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 140%;
+    color: #475569;
+    margin-bottom: 1.25rem;
+    min-height: 38px; /* Standardizes cell tracking layers uniform baseline heights */
+}
+
+/* Price Value Layout Layers Bottom Row Matrix */
+.buyer-product-bottom-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto; /* Vertically pushes baseline locks uniform levels */
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 1rem;
+}
+
+.buyer-price-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.wholesale-tag { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700; color: #94a3b8; letter-spacing: 0.02em; }
+.price-value-display { font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 700; color: #0f172a; line-height: 100%; }
+.price-value-display small { font-size: 0.82rem; color: #64748b; font-weight: 400; }
+
+/* Primary Button Capsule Anchor Link (404 Routed) */
+.buyer-buy-button-link {
+    background-color: #1b5e20; /* Solid brand green base container */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(27, 94, 32, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.buyer-buy-button-link span {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.buyer-buy-button-link:hover {
+    background-color: #2e7d32; /* Transitions light sprouting values on hover contexts */
+    box-shadow: 0 6px 15px -2px rgba(27, 94, 32, 0.25);
+}
+
+.buyer-buy-button-link:hover span {
+    transform: translateX(3px);
+}
+
+.buyer-buy-button-link:active { transform: scale(0.97); }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .buyer-product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Collapses row into pairs grid matrix block layers on tablets viewports */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .buyer-product-grid {
+        grid-template-columns: 1fr; /* Pure linear single row stream stack flow layouts on mobile screen monitors */
+        gap: 1.25rem;
+    }
+    
+    .buyer-product-title, .buyer-product-description { min-height: auto; }
+}
+
+</style>
+
+
+            <!-- ENHANCED MY ORDERS MANAGEMENT SECTION -->
+<section class="buyer-section" id="buyer-orders">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">PURCHASE MANAGEMENT</span>
+            <h2 class="buyer-main-heading">My Procurement Orders</h2>
+            <p class="buyer-subheading-para">
+                Review and audit comprehensive transactional history, download verified payout receipts, and monitor logistics fulfillment status maps.
+            </p>
+        </div>
+    </div>
+
+    <!-- Live Order Metrics Fast Overview Panel -->
+    <div class="orders-metrics-summary-bar">
+        <div class="order-mini-stat">
+            <span class="order-stat-label">TOTAL FULFILLED</span>
+            <span class="order-stat-value text-green">22 Orders</span>
+        </div>
+        <div class="order-mini-stat">
+            <span class="order-stat-label">TRANSIT & LOGISTICS</span>
+            <span class="order-stat-value text-blue">02 Active</span>
+        </div>
+        <div class="order-mini-stat">
+            <span class="order-stat-label">TOTAL ESCROW COMMITTED</span>
+            <span class="order-stat-value">₹8,125</span>
+        </div>
+    </div>
+
+    <!-- Orders Tabular Registry Card Board Base -->
+    <div class="buyer-orders-card-panel">
+        
+        <div class="buyer-card-header-strip">
+            <div class="buyer-card-heading-block">
+                <span class="buyer-card-label-tag">B2B CONTRACT ACTIVITY LOG</span>
+                <h3 class="buyer-panel-card-title">Comprehensive Order Form Ledger</h3>
+            </div>
+            <!-- Export CSV Action Trigger (404 Routed) -->
+            <a href="404.html" class="buyer-export-ledger-btn" title="Download spreadsheet history">
+                <span>📥</span> Export Orders CSV
+            </a>
+        </div>
+
+        <!-- Fully Scalable Fluid Responsive Matrix Table Wrapper -->
+        <div class="buyer-table-responsive-overflow-wrapper">
+            <table class="buyer-native-grid-table">
+                <thead>
+                    <tr>
+                        <th>TRACKING ID</th>
+                        <th>HARVEST CULTIVAR</th>
+                        <th>PRODUCER GATE (FARMER)</th>
+                        <th>VOLUME</th>
+                        <th>NET REVENUE</th>
+                        <th>FULFILLMENT STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <!-- Order 1: Organic Rice -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1024</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Premium Organic Rice</span>
+                                <span class="buyer-crop-meta-sub">Grains • Batch R-2</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buyer-cell-producer-block">
+                                <span class="producer-title-name">Green Farm Atelier</span>
+                                <span class="producer-location-sub">Salem, TN</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">50 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹3,250</span></td>
+                        <td><span class="buyer-status-token bg-delivered">Delivered Securely</span></td>
+                    </tr>
+
+                    <!-- Order 2: Fresh Tomato -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1025</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Fresh Tomatoes (Grafted)</span>
+                                <span class="buyer-crop-meta-sub">Vegetables • Batch T-4</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buyer-cell-producer-block">
+                                <span class="producer-title-name">Sunrise Farm Gates</span>
+                                <span class="producer-location-sub">Chittoor, AP</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">25 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,875</span></td>
+                        <td><span class="buyer-status-token bg-processing">In Cold-Storage Processing</span></td>
+                    </tr>
+
+                    <!-- Order 3: Green Chilli -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1026</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Hot Guntur Green Chilli</span>
+                                <span class="buyer-crop-meta-sub">Spices • Batch C-1</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buyer-cell-producer-block">
+                                <span class="producer-title-name">Agri Farm Hub</span>
+                                <span class="producer-location-sub">Guntur, AP</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">10 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,200</span></td>
+                        <td><span class="buyer-status-token bg-shipped">Dispatched & Shipped</span></td>
+                    </tr>
+
+                    <!-- Order 4: Potato -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">#AGR-1027</span></td>
+                        <td>
+                            <div class="buyer-cell-crop-composite">
+                                <span class="buyer-crop-name-title">Farm Starchy Potatoes</span>
+                                <span class="buyer-crop-meta-sub">Vegetables • Batch P-9</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="buyer-cell-producer-block">
+                                <span class="producer-title-name">Fresh Fields Ltd</span>
+                                <span class="producer-location-sub">Hassan, KA</span>
+                            </div>
+                        </td>
+                        <td><span class="buyer-weight-bold-copy">40 Kg</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,800</span></td>
+                        <td><span class="buyer-status-token bg-delivered">Delivered Securely</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================================
+   BUYER MY ORDERS SECTION LAYOUT TYPOGRAPHY
+   ========================================================================== */
+.buyer-page-heading {
+    margin-bottom: 2.25rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-heading-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.buyer-page-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.buyer-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-subheading-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #475569;
+    max-width: 680px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   ORDERS METRICS OVERVIEW MINI STAT TILES RIBBON
+   ========================================================================== */
+.orders-metrics-summary-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.order-mini-stat {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.order-mini-stat:hover {
+    border-color: #4caf50;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.order-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.04em;
+}
+
+.order-stat-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 100%;
+}
+
+.text-green { color: #1b5e20 !important; }
+.text-blue { color: #1d4ed8 !important; }
+
+/* ==========================================================================
+   MY ORDERS TABLE CARD BOARD COMPONENT
+   ========================================================================== */
+.buyer-orders-card-panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.buyer-card-header-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.buyer-card-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.buyer-card-label-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.04em;
+}
+
+.buyer-panel-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.015em;
+}
+
+.buyer-export-ledger-btn {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0.6rem 1.15rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    white-space: nowrap;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.buyer-export-ledger-btn:hover {
+    border-color: #1b5e20;
+    color: #1b5e20;
+    background-color: #f4fbf6;
+}
+
+/* Fluid Horizontal Sub-viewport Grid Shell Wrapper Elements */
+.buyer-table-responsive-overflow-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+}
+
+.buyer-native-grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.buyer-native-grid-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.buyer-native-grid-table td {
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    color: #0f172a;
+    font-size: 0.92rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.buyer-native-grid-table tr:last-child td {
+    border-bottom: none;
+}
+
+.buyer-cell-id-monospaced {
+    font-family: monospace !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+    background-color: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.buyer-cell-crop-composite, .buyer-cell-producer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.buyer-crop-name-title, .producer-title-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.buyer-crop-meta-sub, .producer-location-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.buyer-weight-bold-copy, .buyer-revenue-bold-copy {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.buyer-revenue-bold-copy { color: #111827; }
+
+/* Custom Pill Token Status Labels Array Mapping */
+.buyer-status-token {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-sizing: border-box;
+}
+
+.bg-delivered { background-color: #e8f5e9; color: #1b5e20; }
+.bg-processing { background-color: #fff7ed; color: #c2410c; }
+.bg-shipped { background-color: #eff6ff; color: #1d4ed8; }
+
+.bg-delivered::before { content: "●"; color: #2ecc71; font-size: 0.65rem; }
+.bg-processing::before { content: "●"; color: #f59e0b; font-size: 0.65rem; }
+.bg-shipped::before { content: "●"; color: #3b82f6; font-size: 0.65rem; }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .orders-metrics-summary-bar {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .buyer-orders-card-panel {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    .buyer-card-header-strip {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .buyer-export-ledger-btn {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+</style>
+
+
+     <!-- =================================================
+     ENHANCED PAYMENTS SECTION
+================================================== -->
+<section class="buyer-section" id="buyer-payments">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">TRANSACTION CENTER</span>
+            <h2 class="buyer-main-heading">Payment Ledger Matrix</h2>
+            <p class="buyer-subheading-para">
+                Review your end-to-end payment clearances, verified merchant billing breakdowns, and current escrow funds distributions.
+            </p>
+        </div>
+    </div>
+
+    <!-- Symmetrical Revenue Mini Stats Ribbon Row -->
+    <div class="buyer-stat-grid spec-two-columns">
+        
+        <!-- Total Payments Card -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-blue">₹</div>
+                <span class="buyer-trend-badge trend-positive">↑ 18.4%</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Total Outbound Payments</span>
+                <strong class="buyer-stat-value-display">₹48,650</strong>
+                <small class="buyer-stat-sub-metadata">Gross completed transaction value</small>
+            </div>
+        </div>
+
+        <!-- Completed Payments Card -->
+        <div class="buyer-stat-card-node">
+            <div class="buyer-stat-visual-header">
+                <div class="buyer-stat-icon-avatar color-green">✓</div>
+                <span class="buyer-trend-badge trend-positive">93.5% Ratio</span>
+            </div>
+            <div class="buyer-stat-numeric-block">
+                <span class="buyer-stat-label-text">Settled & Cleared Balance</span>
+                <strong class="buyer-stat-value-display">₹45,500</strong>
+                <small class="buyer-stat-sub-metadata">Successfully credited to farmer accounts</small>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Payments Card Board Panel Base -->
+    <div class="buyer-card-board-panel">
+        
+        <div class="buyer-card-header-strip">
+            <div class="buyer-card-heading-block">
+                <span class="buyer-card-label-tag">FINANCIAL TRANSPARENCY SHIELD</span>
+                <h3 class="buyer-panel-card-title">Recent Settlement History</h3>
+            </div>
+            <a href="404.html" class="buyer-export-ledger-btn">
+                <span>📥</span> Export Receipts PDF
+            </a>
+        </div>
+
+        <!-- Fully Scalable Fluid Responsive Matrix Table Wrapper -->
+        <div class="buyer-table-responsive-overflow-wrapper">
+            <table class="buyer-native-grid-table">
+                <thead>
+                    <tr>
+                        <th>TRANSACTION REFERENCE ID</th>
+                        <th>CROSS LINKED CONTRACT ID</th>
+                        <th>SETTLEMENT TIMELINE DATE</th>
+                        <th>TRANSACTION VALUE</th>
+                        <th>ESCROW TRANSIT STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <!-- Txn 1 -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">TXN-78421</span></td>
+                        <td><a href="404.html" class="buyer-inline-link">#AGR-1024</a></td>
+                        <td><span class="buyer-date-stamp-copy">28 Sep 2026</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹3,250</span></td>
+                        <td><span class="buyer-status-token bg-delivered">Paid & Settled</span></td>
+                    </tr>
+
+                    <!-- Txn 2 -->
+                    <tr>
+                        <td><span class="buyer-cell-id-monospaced">TXN-78422</span></td>
+                        <td><a href="404.html" class="buyer-inline-link">#AGR-1025</a></td>
+                        <td><span class="buyer-date-stamp-copy">29 Sep 2026</span></td>
+                        <td><span class="buyer-revenue-bold-copy">₹1,875</span></td>
+                        <td><span class="buyer-status-token bg-delivered">Paid & Settled</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     ENHANCED SUPPORT CENTER SECTION
+================================================== -->
+<section class="buyer-section" id="buyer-support">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">CUSTOMER SERVICE ATELIER</span>
+            <h2 class="buyer-main-heading">Ecosystem Support Center</h2>
+            <p class="buyer-subheading-para">
+                Encountering transit anomalies or transactional bugs? Connect immediately with dedicated support managers.
+            </p>
+        </div>
+    </div>
+
+    <!-- High-Performance Support Cards Matrix Grid (Appears one by one when scroll) -->
+    <div class="buyer-support-grid-matrix">
+        
+        <!-- Support Card 1: Order Dispute Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-sprout">❓</div>
+            <h3 class="support-card-heading-title">Order Logistics Support</h3>
+            <p class="support-card-description">
+                Dispute procurement quantities, damage reports, or schedule milestone cancellations.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Initialize Ticket <span>→</span>
+            </a>
+        </div>
+
+        <!-- Support Card 2: Payment Escrow Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-earnings">₹</div>
+            <h3 class="support-card-heading-title">Payment & Gateway Support</h3>
+            <p class="support-card-description">
+                Resolve gateway timed-out issues, missing settlement receipts, or wallet verification lags.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Connect Gateway Desk <span>→</span>
+            </a>
+        </div>
+
+        <!-- Support Card 3: Freight Dispatch Tracking Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-wind">🚚</div>
+            <h3 class="support-card-heading-title">Delivery & Freight Tracking</h3>
+            <p class="support-card-description">
+                Locate freight trucks coordinates, temperature-controlled transit metrics, or delayed arrivals logs.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Track Shipment Route <span>→</span>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ==========================================================================
+   PAYMENTS MODULAR SPLIT MODIFIER INTERFACE RULES
+   ========================================================================== */
+.buyer-stat-grid.spec-two-columns {
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces strict horizontal balancing columns row split layout */
+}
+
+.buyer-inline-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1b5e20;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.buyer-inline-link:hover {
+    color: #2e7d32;
+}
+
+.buyer-date-stamp-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+/* ==========================================================================
+   ECOSYSTEM 3-COLUMN SUPPORT MATRIX GRID WITH RADIANT GLOWS
+   ========================================================================== */
+.buyer-support-grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean horizontal layout rows split exactly matching layout framework */
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-support-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Card Pop and Radiant Emerald Soft Halo Glow Drops Projection Layer Node */
+.buyer-support-card-node:hover {
+    border-color: #4caf50;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.04), 
+                0 0 22px 2px rgba(76, 175, 80, 0.18);
+}
+
+.support-avatar-badge-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.layer-sprout { background-color: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
+.layer-earnings { background-color: #e0f2f1; color: #004d40; border: 1px solid #b2dfdb; }
+.layer-wind { background-color: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+
+.support-card-heading-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 120%;
+    margin: 0 0 0.65rem 0;
+    letter-spacing: -0.01em;
+}
+
+.buyer-support-card-node:hover .support-card-heading-title {
+    color: #1b5e20; /* Identity theme green shifts text titles on active support selection focus */
+}
+
+.support-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #64748b;
+    margin: 0 0 1.75rem 0;
+    max-width: 90%;
+    min-height: 58px; /* Synchronizes component layout block heights evenly across varying monitor screens scales */
+}
+
+/* Interactive Action Buttons Capsules (404 Routed) */
+.support-action-capsule-btn {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: auto; /* Secure bottom locks uniform alignment thresholds */
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.support-action-capsule-btn span {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.buyer-support-card-node:hover .support-action-capsule-btn {
+    background-color: #1b5e20; /* Transforms completely solid forest green on card component element hover triggers */
+    border-color: #1b5e20;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.buyer-support-card-node:hover .support-action-capsule-btn span {
+    transform: translateX(4px);
+}
+
+.support-action-capsule-btn:active { transform: scale(0.98); }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .buyer-stat-grid.spec-two-columns {
+        grid-template-columns: 1fr !important; /* Stacks revenue overview stats into a single stacked column structure */
+        gap: 1rem;
+    }
+    
+    .buyer-support-grid-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Regroups support elements beautifully into pairs grid layout modules arrays */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .buyer-support-grid-matrix {
+        grid-template-columns: 1fr; /* True pure linear list stack flow execution on phone monitors screens */
+        gap: 1.25rem;
+    }
+    .support-card-description { min-height: auto; }
+}
+
+</style>
+
+
+           <!-- =================================================
+     ENHANCED EXPERT SUPPORT CENTER PORTAL PANEL
+================================================== -->
+<section class="buyer-section" id="buyer-support">
+
+    <!-- Premium Page Heading Layout Panel -->
+    <div class="buyer-page-heading">
+        <div class="buyer-heading-copy">
+            <span class="buyer-page-label">CUSTOMER SERVICE ATELIER</span>
+            <h2 class="buyer-main-heading">Ecosystem Support Center</h2>
+            <p class="buyer-subheading-para">
+                Encountering procurement transit anomalies, payment gateway timeouts, or cargo weight discrepancies? Connect immediately with dedicated support managers.
+            </p>
+        </div>
+    </div>
+
+    <!-- Live Communication Help Desk Banner Card -->
+    <div class="support-hotline-banner-card">
+        <div class="hotline-badge-avatar">🎧</div>
+        <div class="hotline-text-block">
+            <h4 class="hotline-heading">Need Direct Personal Assistance?</h4>
+            <p class="hotline-description">Our specialized agricultural help desk coordinators are active online to fast-track your B2B wholesale harvest inquiries.</p>
+        </div>
+        <a href="mailto:design@stacklystudio.com" class="hotline-action-anchor-link" title="Launch Outlook Email Client">
+            <span>✉️</span> Open Outlook Client
+        </a>
+    </div>
+
+    <!-- High-Performance Support Cards Matrix Grid (Appears one by one when scroll) -->
+    <div class="buyer-support-grid-matrix">
+        
+        <!-- Support Card 1: Order Dispute Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-sprout">❓</div>
+            <h3 class="support-card-heading-title">Order Logistics Support</h3>
+            <p class="support-card-description">
+                Dispute batch volume measurements, report perishable damage, or adjust custom packing requirements.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Initialize Ticket <span>→</span>
+            </a>
+        </div>
+
+        <!-- Support Card 2: Payment Escrow Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-earnings">₹</div>
+            <h3 class="support-card-heading-title">Payment & Escrow Support</h3>
+            <p class="support-card-description">
+                Resolve gateway timed-out issues, missing settlement receipts, or wallet verification lags.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Connect Gateway Desk <span>→</span>
+            </a>
+        </div>
+
+        <!-- Support Card 3: Freight Dispatch Tracking Panel -->
+        <div class="buyer-support-card-node">
+            <div class="support-avatar-badge-circle layer-wind">🚚</div>
+            <h3 class="support-card-heading-title">Delivery & Freight Tracking</h3>
+            <p class="support-card-description">
+                Locate cold-storage freight trucks, check delivery delays, or request instant route adjustments.
+            </p>
+            <a href="404.html" class="support-action-capsule-btn">
+                Track Shipment Route <span>→</span>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    /* ==========================================================================
+   LIVE COMMUNICATION HELP DESK UPPER HOTLINE BANNER
+   ========================================================================== */
+.support-hotline-banner-card {
+    background-color: #0c1a10; /* Solid branding dark forest green container backdrop */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hotline-badge-avatar {
+    width: 46px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.hotline-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.hotline-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.hotline-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #cbd5e1;
+    margin: 0;
+    max-width: 600px;
+}
+
+.hotline-action-anchor-link {
+    background-color: #ffffff; /* Stark absolute white action button capsule */
+    color: #0c1a10;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.hotline-action-anchor-link:hover {
+    background-color: #f1f5f9;
+    /* High contrast dual-layered dynamic halo glow projection mapping */
+    box-shadow: 0 8px 20px -4px rgba(255, 255, 255, 0.2), 
+                0 0 15px 1px rgba(76, 175, 80, 0.35);
+    transform: translateY(-1px);
+}
+
+.hotline-action-anchor-link:active { transform: scale(0.98); }
+
+/* ==========================================================================
+   ECOSYSTEM 3-COLUMN SUPPORT MATRIX GRID WITH DUAL GLOW HOVERS
+   ========================================================================== */
+.buyer-support-grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Clean 3-column split grid matching mockup layout perfectly */
+    gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buyer-support-card-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Card Pop and Radiant Emerald Soft Halo Glow Overlay */
+.buyer-support-card-node:hover {
+    border-color: #4caf50; /* Animates into energetic spring sprout green on user cursor selection focus */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px -5px rgba(27, 94, 32, 0.04), 
+                0 0 22px 2px rgba(76, 175, 80, 0.18);
+}
+
+.support-avatar-badge-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.layer-sprout { background-color: #e8f5e9; color: #1b5e20; border: 1px solid #c8e6c9; }
+.layer-earnings { background-color: #e0f2f1; color: #004d40; border: 1px solid #b2dfdb; }
+.layer-wind { background-color: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+
+.support-card-heading-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 120%;
+    margin: 0 0 0.65rem 0;
+    letter-spacing: -0.01em;
+}
+
+.buyer-support-card-node:hover .support-card-heading-title {
+    color: #1b5e20;
+}
+
+.support-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #64748b;
+    margin: 0 0 1.75rem 0;
+    max-width: 90%;
+    min-height: 58px; /* Standardizes uniform row baseline thresholds across varying scale monitors */
+}
+
+/* Secondary Action Buttons Capsules Configuration */
+.support-action-capsule-btn {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: auto; 
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.support-action-capsule-btn span {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Complete color inversion mapping profile on active card hover triggers */
+.buyer-support-card-node:hover .support-action-capsule-btn {
+    background-color: #1b5e20;
+    border-color: #1b5e20;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.buyer-support-card-node:hover .support-action-capsule-btn span {
+    transform: translateX(4px);
+}
+
+.support-action-capsule-btn:active { transform: scale(0.98); }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .buyer-support-grid-matrix {
+        grid-template-columns: repeat(2, 1fr); /* Reflows cards matrix cleanly into symmetric pairs on tablets viewports */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 890px) {
+    .support-hotline-banner-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.15rem;
+    }
+    .hotline-action-anchor-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .buyer-support-grid-matrix {
+        grid-template-columns: 1fr; /* Pure linear stack list flow architecture on mobile smartphone screen terminals */
+        gap: 1.25rem;
+    }
+    .support-card-description { min-height: auto; }
+}
+
+</style>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Mobile Overlay -->
+    <div
+        class="buyer-mobile-overlay"
+        id="buyerMobileOverlay">
+    </div>
+
+
+   <style>
+    /* ================================================================
+   AGRIMART BUYER DASHBOARD
+   RESPONSIVE / FIXED SIDEBAR / SCROLLABLE CONTENT
+================================================================ */
+
+
+/* ================================================================
+   RESET
+================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8f7;
+    color: #0f172a;
+}
+
+
+/* ================================================================
+   ROOT DASHBOARD
+================================================================ */
+
+.buyer-dashboard-root {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+
+    overflow: hidden;
+
+    background: #f6f8f7;
+}
+
+
+/* ================================================================
+   SIDEBAR
+================================================================ */
+
+.buyer-sidebar {
+    width: 280px;
+    min-width: 280px;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #0c1a10;
+
+    position: relative;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+
+/* ================================================================
+   SIDEBAR BRAND
+================================================================ */
+
+.buyer-sidebar-brand {
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+
+    flex-shrink: 0;
+}
+
+
+.buyer-brand-link {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+
+.buyer-brand-logo {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1b5e20;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+
+.buyer-brand-link > span {
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ================================================================
+   SIDEBAR NAVIGATION
+================================================================ */
+
+.buyer-sidebar-navigation {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 22px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+/* Scrollbar */
+
+.buyer-sidebar-navigation::-webkit-scrollbar {
+    width: 4px;
+}
+
+.buyer-sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+}
+
+
+/* ================================================================
+   NAV ITEMS
+================================================================ */
+
+.buyer-nav-item {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 0 15px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.buyer-nav-item:hover {
+    background: rgba(255,255,255,0.05);
+
+    color: #ffffff;
+}
+
+
+.buyer-nav-item.active {
+    background: #1b5e20;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(27,94,32,0.25);
+}
+
+
+.buyer-nav-icon {
+    width: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+
+/* ================================================================
+   SIDEBAR FOOTER
+================================================================ */
+
+.buyer-sidebar-footer {
+    width: 100%;
+
+    padding: 16px 14px 20px;
+
+    flex-shrink: 0;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+
+.buyer-logout-button {
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(239,68,68,0.2);
+
+    background: rgba(239,68,68,0.07);
+
+    color: #f87171;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.buyer-logout-button:hover {
+    background: #dc2626;
+
+    color: #ffffff;
+
+    border-color: #dc2626;
+}
+
+
+.buyer-logout-icon {
+    font-size: 19px;
+}
+
+
+/* ================================================================
+   MOBILE CLOSE BUTTON
+================================================================ */
+
+.buyer-sidebar-close {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+/* ================================================================
+   MAIN AREA
+================================================================ */
+
+.buyer-main-area {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #f6f8f7;
+}
+
+
+/* ================================================================
+   HEADER
+================================================================ */
+
+.buyer-header {
+    width: 100%;
+
+    height: 72px;
+    min-height: 72px;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+.buyer-header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+.buyer-header-title {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    line-height: 1.2;
+}
+
+
+.buyer-header-subtitle {
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ================================================================
+   HAMBURGER
+================================================================ */
+
+.buyer-hamburger {
+    display: none;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 8px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 4px;
+}
+
+
+.buyer-hamburger span {
+    width: 100%;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: #0f172a;
+}
+
+
+/* ================================================================
+   HEADER RIGHT
+================================================================ */
+
+.buyer-header-right {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.buyer-notification-button {
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    position: relative;
+
+    font-size: 18px;
+}
+
+
+.buyer-notification-button:hover {
+    background: #f1f5f3;
+}
+
+
+.buyer-notification-button i {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    top: 7px;
+    right: 7px;
+
+    border: 2px solid #ffffff;
+}
+
+
+.buyer-profile-header {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 20px;
+
+    border-left: 1px solid #e2e8f0;
+}
+
+
+.buyer-avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    border: 1px solid #c8e6c9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #1b5e20;
+
+    font-weight: 800;
+}
+
+
+.buyer-profile-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.buyer-profile-text small {
+    font-size: 10px;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+}
+
+
+.buyer-profile-text strong {
+    font-size: 13px;
+
+    color: #0f172a;
+}
+
+
+/* ================================================================
+   CONTENT AREA
+================================================================ */
+
+.buyer-content-area {
+    flex: 1;
+
+    min-height: 0;
+
+    width: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 30px;
+
+    position: relative;
+}
+
+
+/* Content scrollbar */
+
+.buyer-content-area::-webkit-scrollbar {
+    width: 7px;
+}
+
+.buyer-content-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+
+/* ================================================================
+   SECTIONS
+================================================================ */
+
+.buyer-section {
+    display: none;
+
+    width: 100%;
+
+    animation: buyerSectionFade 0.25s ease;
+}
+
+
+.buyer-section.active {
+    display: block;
+}
+
+
+@keyframes buyerSectionFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================================================================
+   PAGE HEADING
+================================================================ */
+
+.buyer-page-heading {
+    margin-bottom: 26px;
+}
+
+
+.buyer-page-label {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border: 1px solid #dbe4dd;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+.buyer-page-heading h2 {
+    margin-top: 12px;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    color: #0f172a;
+}
+
+
+.buyer-page-heading p {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ================================================================
+   STATISTICS
+================================================================ */
+
+.buyer-stat-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+
+.buyer-stat-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+    box-shadow:
+        0 2px 7px rgba(15,23,42,0.03);
+}
+
+
+.buyer-stat-icon {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.buyer-stat-icon.green {
+    background: #e8f5e9;
+}
+
+.buyer-stat-icon.orange {
+    background: #fff3e0;
+}
+
+.buyer-stat-icon.blue {
+    background: #e3f2fd;
+}
+
+.buyer-stat-icon.purple {
+    background: #f3e8ff;
+}
+
+
+.buyer-stat-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+.buyer-stat-card strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #0f172a;
+
+    font-size: 23px;
+}
+
+
+.buyer-stat-card small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* ================================================================
+   CARD
+================================================================ */
+
+.buyer-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 2px 7px rgba(15,23,42,0.03);
+
+    margin-bottom: 24px;
+}
+
+
+.buyer-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.buyer-card-label {
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+.buyer-card-header h3 {
+    margin-top: 6px;
+
+    font-size: 19px;
+
+    color: #0f172a;
+}
+
+
+.buyer-text-button {
+    border: 0;
+
+    background: transparent;
+
+    color: #1b5e20;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================================================================
+   TABLE
+================================================================ */
+
+.buyer-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.buyer-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+
+.buyer-table th {
+    padding: 13px 12px;
+
+    text-align: left;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.buyer-table td {
+    padding: 15px 12px;
+
+    border-bottom: 1px solid #eef2f4;
+
+    color: #334155;
+
+    font-size: 13px;
+}
+
+
+.buyer-table tbody tr:hover {
+    background: #fafcfb;
+}
+
+
+/* ================================================================
+   STATUS
+================================================================ */
+
+.buyer-status {
+    display: inline-flex;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.buyer-status.delivered {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.buyer-status.processing {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.buyer-status.shipped {
+    background: #dbeafe;
+
+    color: #1e40af;
+}
+
+
+/* ================================================================
+   PRODUCT GRID
+================================================================ */
+
+.buyer-product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.buyer-product-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.buyer-product-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(15,23,42,0.08);
+}
+
+
+.buyer-product-image {
+    height: 150px;
+
+    background: #f1f8f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+
+.buyer-product-body {
+    padding: 18px;
+}
+
+
+.buyer-product-body > span {
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.buyer-product-body h3 {
+    margin-top: 7px;
+
+    font-size: 17px;
+}
+
+
+.buyer-product-body p {
+    margin-top: 7px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.buyer-product-bottom {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+
+.buyer-product-bottom strong {
+    font-size: 15px;
+}
+
+
+.buyer-buy-button {
+    border: 0;
+
+    background: #1b5e20;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    padding: 8px 11px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================================================================
+   SUPPORT
+================================================================ */
+
+.buyer-support-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.buyer-support-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+
+.buyer-support-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    color: #1b5e20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+
+.buyer-support-card h3 {
+    font-size: 17px;
+}
+
+
+.buyer-support-card p {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.buyer-support-card button {
+    margin-top: 18px;
+
+    padding: 9px 14px;
+
+    border-radius: 6px;
+
+    border: 1px solid #1b5e20;
+
+    background: #ffffff;
+
+    color: #1b5e20;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================================================================
+   PROFILE
+================================================================ */
+
+.buyer-profile-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.buyer-large-avatar {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    color: #1b5e20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+
+.buyer-profile-details h3 {
+    font-size: 22px;
+}
+
+
+.buyer-profile-details p {
+    margin-top: 6px;
+
+    color: #64748b;
+}
+
+
+.buyer-account-badge {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 5px 10px;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* ================================================================
+   MOBILE OVERLAY
+================================================================ */
+
+.buyer-mobile-overlay {
+    display: none;
+}
+
+
+/* ================================================================
+   TABLET
+================================================================ */
+
+@media (max-width: 1100px) {
+
+    .buyer-stat-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .buyer-product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .buyer-support-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ================================================================
+   MOBILE / RESPONSIVE SIDEBAR
+================================================================ */
+
+@media (max-width: 900px) {
+
+    .buyer-sidebar {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 280px;
+
+        height: 100vh;
+
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.3s ease;
+
+        box-shadow:
+            15px 0 40px rgba(0,0,0,0.25);
+    }
+
+
+    .buyer-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+
+    .buyer-sidebar-close {
+        display: block;
+    }
+
+
+    .buyer-hamburger {
+        display: flex;
+    }
+
+
+    .buyer-mobile-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(15,23,42,0.45);
+
+        backdrop-filter: blur(4px);
+
+        z-index: 900;
+
+        display: none;
+    }
+
+
+    .buyer-mobile-overlay.active {
+        display: block;
+    }
+
+
+    body.buyer-menu-open {
+        overflow: hidden;
+        touch-action: none;
+    }
+
+
+    .buyer-header {
+        padding: 0 18px;
+    }
+
+
+    .buyer-content-area {
+        padding: 22px;
+    }
+
+}
+
+
+/* ================================================================
+   SMALL MOBILE
+================================================================ */
+
+@media (max-width: 600px) {
+
+    .buyer-header {
+        height: 64px;
+        min-height: 64px;
+    }
+
+
+    .buyer-header-title {
+        font-size: 16px;
+    }
+
+
+    .buyer-header-subtitle {
+        display: none;
+    }
+
+
+    .buyer-header-right {
+        gap: 7px;
+    }
+
+
+    .buyer-profile-header {
+        border-left: 0;
+
+        padding-left: 0;
+    }
+
+
+    .buyer-profile-text {
+        display: none;
+    }
+
+
+    .buyer-content-area {
+        padding: 18px;
+    }
+
+
+    .buyer-page-heading h2 {
+        font-size: 23px;
+    }
+
+
+    .buyer-page-heading p {
+        font-size: 12px;
+    }
+
+
+    .buyer-stat-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .buyer-stat-card {
+        padding: 16px;
+    }
+
+
+    .buyer-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .buyer-support-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .buyer-card {
+        padding: 16px;
+    }
+
+
+    .buyer-card-header {
+        align-items: flex-start;
+    }
+
+
+    .buyer-profile-card {
+        padding: 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ================================================================
+   VERY SMALL MOBILE
+================================================================ */
+
+@media (max-width: 380px) {
+
+    .buyer-sidebar {
+        width: 270px;
+    }
+
+
+    .buyer-header {
+        padding: 0 12px;
+    }
+
+
+    .buyer-content-area {
+        padding: 14px;
+    }
+
+
+    .buyer-header-title {
+        font-size: 14px;
+    }
+
+}
+   </style>
+
+   <script>
+    /* ================================================================
+   AGRIMART BUYER DASHBOARD
+   NAVIGATION + RESPONSIVE SIDEBAR + SESSION HANDLING
+================================================================ */
+
+(function () {
+
+    "use strict";
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+        /* =========================================================
+           ELEMENT REFERENCES
+        ========================================================== */
+
+        const sidebar =
+            document.getElementById("buyerSidebar");
+
+        const hamburger =
+            document.getElementById("buyerHamburger");
+
+        const sidebarClose =
+            document.getElementById("buyerSidebarClose");
+
+        const mobileOverlay =
+            document.getElementById("buyerMobileOverlay");
+
+        const logoutButton =
+            document.getElementById("buyerLogoutButton");
+
+        const brandHome =
+            document.getElementById("buyerBrandHome");
+
+        const navItems =
+            document.querySelectorAll(".buyer-nav-item");
+
+        const sections =
+            document.querySelectorAll(".buyer-section");
+
+        const userName =
+            document.getElementById("buyerUserName");
+
+        const avatarLetter =
+            document.getElementById("buyerAvatarLetter");
+
+        const profileName =
+            document.getElementById("buyerProfileName");
+
+        const profileLetter =
+            document.getElementById("buyerProfileLetter");
+
+        const profileEmail =
+            document.getElementById("buyerProfileEmail");
+
+
+
+        /* =========================================================
+           USER SESSION
+        ========================================================== */
+
+        function loadBuyerUser() {
+
+            let email =
+                localStorage.getItem("authenticated_user_email");
+
+            if (!email) {
+                email = "buyer@example.com";
+            }
+
+
+            let buyerNameValue = "Buyer";
+
+
+            if (email.includes("@")) {
+
+                const emailPrefix =
+                    email.split("@")[0].trim();
+
+
+                if (emailPrefix.length > 0) {
+
+                    buyerNameValue =
+                        emailPrefix
+                            .replace(/[._-]+/g, " ")
+                            .replace(/\b\w/g, function (letter) {
+                                return letter.toUpperCase();
+                            });
+
+                }
+
+            }
+
+
+            const firstLetter =
+                buyerNameValue.charAt(0).toUpperCase();
+
+
+            if (userName) {
+                userName.textContent =
+                    buyerNameValue;
+            }
+
+
+            if (avatarLetter) {
+                avatarLetter.textContent =
+                    firstLetter;
+            }
+
+
+            if (profileName) {
+                profileName.textContent =
+                    buyerNameValue;
+            }
+
+
+            if (profileLetter) {
+                profileLetter.textContent =
+                    firstLetter;
+            }
+
+
+            if (profileEmail) {
+                profileEmail.textContent =
+                    email;
+            }
+
+        }
+
+
+        loadBuyerUser();
+
+
+
+        /* =========================================================
+           MOBILE SIDEBAR OPEN
+        ========================================================== */
+
+        function openBuyerSidebar() {
+
+            if (!sidebar) return;
+
+            sidebar.classList.add("mobile-open");
+
+            if (mobileOverlay) {
+                mobileOverlay.classList.add("active");
+            }
+
+            document.body.classList.add("buyer-menu-open");
+
+        }
+
+
+
+        /* =========================================================
+           MOBILE SIDEBAR CLOSE
+        ========================================================== */
+
+        function closeBuyerSidebar() {
+
+            if (!sidebar) return;
+
+            sidebar.classList.remove("mobile-open");
+
+            if (mobileOverlay) {
+                mobileOverlay.classList.remove("active");
+            }
+
+            document.body.classList.remove("buyer-menu-open");
+
+        }
+
+
+
+        /* =========================================================
+           HAMBURGER
+        ========================================================== */
+
+        if (hamburger) {
+
+            hamburger.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    openBuyerSidebar();
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           CLOSE BUTTON
+        ========================================================== */
+
+        if (sidebarClose) {
+
+            sidebarClose.addEventListener(
+                "click",
+                function () {
+
+                    closeBuyerSidebar();
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           OVERLAY CLICK
+        ========================================================== */
+
+        if (mobileOverlay) {
+
+            mobileOverlay.addEventListener(
+                "click",
+                function () {
+
+                    closeBuyerSidebar();
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           SIDEBAR NAVIGATION
+        ========================================================== */
+
+        navItems.forEach(function (navItem) {
+
+            navItem.addEventListener(
+                "click",
+                function () {
+
+                    const targetSection =
+                        navItem.getAttribute("data-section");
+
+
+                    if (!targetSection) {
+                        return;
+                    }
+
+
+                    /* Remove active state */
+
+                    navItems.forEach(function (item) {
+
+                        item.classList.remove("active");
+
+                    });
+
+
+                    /* Activate selected item */
+
+                    navItem.classList.add("active");
+
+
+                    /* Hide all sections */
+
+                    sections.forEach(function (section) {
+
+                        section.classList.remove("active");
+
+                    });
+
+
+                    /* Show selected section */
+
+                    const selectedSection =
+                        document.getElementById(targetSection);
+
+
+                    if (selectedSection) {
+
+                        selectedSection.classList.add("active");
+
+                    }
+
+
+                    /*
+                       Always return content area to top
+                       when switching dashboard pages.
+                    */
+
+                    const contentArea =
+                        document.getElementById("buyerContentArea");
+
+
+                    if (contentArea) {
+
+                        contentArea.scrollTop = 0;
+
+                    }
+
+
+                    /*
+                       Close sidebar on mobile
+                    */
+
+                    closeBuyerSidebar();
+
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================================
+           "VIEW ALL" BUTTONS
+        ========================================================== */
+
+        const textNavigationButtons =
+            document.querySelectorAll(
+                ".buyer-text-button[data-target]"
+            );
+
+
+        textNavigationButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const target =
+                        button.getAttribute("data-target");
+
+
+                    const targetNav =
+                        document.querySelector(
+                            '.buyer-nav-item[data-section="' +
+                            target +
+                            '"]'
+                        );
+
+
+                    if (targetNav) {
+
+                        targetNav.click();
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================================
+           BRAND CLICK
+        ========================================================== */
+
+        if (brandHome) {
+
+            brandHome.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    /*
+                       Always return to Overview
+                    */
+
+                    const overviewNav =
+                        document.querySelector(
+                            '.buyer-nav-item[data-section="buyer-overview"]'
+                        );
+
+
+                    if (overviewNav) {
+
+                        overviewNav.click();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           LOGOUT
+        ========================================================== */
+
+        if (logoutButton) {
+
+            logoutButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    /*
+                       Clear authentication session.
+                    */
+
+                    localStorage.removeItem(
+                        "authenticated_user_session_token"
+                    );
+
+
+                    localStorage.removeItem(
+                        "authenticated_user_email"
+                    );
+
+
+                    /*
+                       Redirect to login.
+                    */
+
+                    window.location.href =
+                        "login.html";
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           ESCAPE KEY CLOSE MOBILE MENU
+        ========================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeBuyerSidebar();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================================
+           RESIZE SAFETY
+        ========================================================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                /*
+                   When moving from mobile to desktop,
+                   remove mobile-only sidebar state.
+                */
+
+                if (window.innerWidth > 900) {
+
+                    closeBuyerSidebar();
+
+                }
+
+            }
+        );
+
+
+    });
+
+})();
+   </script>
+
+</body>
+</html>

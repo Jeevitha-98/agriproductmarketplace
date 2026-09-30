@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | AgriMart</title>
+    <link rel="stylesheet" href="404.css">
+</head>
+<body>
+
+    <!-- 404 ABSOLUTE SCREEN ERROR VIEWPORT CONTAINER -->
+    <main class="error-viewport-canvas">
+        <div class="error-content-wrapper">
+            
+            <!-- Big Factual Status Stamp -->
+            <h1 class="error-status-code">404</h1>
+            
+            <!-- Error Heading Content Strings Group -->
+            <h2 class="error-main-heading">Opps! Page Not Found</h2>
+            <p class="error-description-para">
+                The page you're looking for doesn't exist, has been moved, or the URL may be incorrect. Let's get you back on track.
+            </p>
+
+            <!-- Dual Interactive Functional Routing Navigation Buttons Row -->
+            <div class="error-actions-layout-row">
+                <!-- Smart Coordinate History Return Action Button -->
+                <button type="button" class="error-routing-btn btn-secondary-back" id="history-back-action-trigger">
+                    <span class="btn-vector-arrow">←</span> Go Back
+                </button>
+                
+                <!-- Absolute Home Portal Redirect Button Link -->
+                <a href="index.html" class="error-routing-btn btn-primary-home">
+                    <span>🏠</span> Return Home
+                </a>
+            </div>
+
+        </div>
+
+        <!-- DECORATIVE BOTANICAL LEAF GRAIN CORNER MESH GRAPHICS -->
+        <div class="botanical-corner-layer placement-bottom-left">
+            <svg viewBox="0 0 200 200" xmlns="http://w3.org" class="leaf-vector-svg">
+                <path d="M10,200 Q40,140 10,80 Q30,130 10,200 Z" fill="#000000"/>
+                <path d="M30,190 Q70,120 50,70 Q60,110 30,190 Z" fill="#000000"/>
+                <path d="M60,195 Q110,135 100,90 Q95,130 60,195 Z" fill="#000000"/>
+                <path d="M90,200 Q150,160 150,110 Q130,150 90,200 Z" fill="#000000"/>
+                <path d="M130,200 Q190,190 190,145 Q160,180 130,200 Z" fill="#000000"/>
+            </svg>
+        </div>
+
+        <div class="botanical-corner-layer placement-bottom-right">
+            <svg viewBox="0 0 200 200" xmlns="http://w3.org" class="leaf-vector-svg">
+                <path d="M190,200 Q160,140 190,80 Q170,130 190,200 Z" fill="#000000"/>
+                <path d="M170,190 Q130,120 150,70 Q140,110 170,190 Z" fill="#000000"/>
+                <path d="M140,195 Q90,135 100,90 Q105,130 140,195 Z" fill="#000000"/>
+                <path d="M110,200 Q50,160 50,110 Q70,150 110,200 Z" fill="#000000"/>
+                <path d="M70,200 Q10,190 10,145 Q40,180 70,200 Z" fill="#000000"/>
+            </svg>
+        </div>
+
+    </main>
+
+  <style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   404 SCREEN MASTER BASE CONSTRAINTS (ZERO HORIZONTAL/VERTICAL OVERFLOW)
+   ========================================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8fafc; /* Crisp clean layout canvas wash */
+    overflow: hidden; /* Strict layout bounds shielding prevents secondary scroll bar leaks */
+    box-sizing: border-box;
+}
+
+.error-viewport-canvas {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1.5rem;
+}
+
+.error-content-wrapper {
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    box-sizing: border-box;
+    animation: errorPaneAssemble 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS MATCHING UPLOADED IMAGE MOCKUP
+   ========================================================================== */
+
+/* Big Factual Status Stamp Size: ~160px bold */
+.error-status-code {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(100px, 15vw, 164px); /* Scales cleanly across fluid viewport widths */
+    font-weight: 700;
+    color: #000000; /* Absolute black text code enforcements */
+    line-height: 90%;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.04em;
+    user-select: none;
+}
+
+/* Heading Spec: Font: Inter, Weight: 700, Bold, Size: 32px, LH: 110% */
+.error-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    color: #000000;
+    line-height: 110%;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+/* Description Details Spec: Font: Inter, Weight: 400, Regular, Size: 14px, LH: 145% */
+.error-description-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 145%;
+    color: #333333;
+    max-width: 420px;
+    margin: 0 0 2.5rem 0;
+}
+
+/* ==========================================================================
+   DUAL ACTION INTERACTIVE CONTROL BUTTONS CONFIGURATIONS WITH HOVER GLOWS
+   ========================================================================== */
+.error-actions-layout-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.error-routing-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px; /* Precision micro radius border curves */
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+/* Primary Home Action Button Layout Node */
+.btn-primary-home {
+    background-color: #1b5e20; /* Solid branding forest green base container matching portal styles */
+    border: 1px solid #1b5e20;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+}
+
+.btn-primary-home:hover {
+    background-color: #2e7d32; /* Transitions light sprouting values on hover contexts */
+    border-color: #2e7d32;
+    /* High contrast dual-layered dynamic halo green emerald soft glow dropdown overlay mapping */
+    box-shadow: 0 10px 25px -6px rgba(27, 94, 32, 0.25), 
+                0 0 18px 2px rgba(76, 175, 80, 0.4);
+}
+
+/* Secondary History Returns Navigation Button */
+.btn-secondary-back {
+    background-color: #ffffff;
+    border: 1px solid #111111; /* Clean explicit single-pixel dark outline frame boundary lines */
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.btn-vector-arrow {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-secondary-back:hover {
+    background-color: #f8fafc;
+    border-color: #1b5e20;
+    color: #1b5e20;
+    box-shadow: 0 6px 16px rgba(27, 94, 32, 0.08);
+}
+
+.btn-secondary-back:hover .btn-vector-arrow {
+    transform: translateX(-3px);
+}
+
+.error-routing-btn:active {
+    transform: scale(0.975);
+}
+
+/* ==========================================================================
+   ORGANIC DECORATIVE LEAF VECTOR GRAPHICS SYSTEM CODES (IMAGE REPLICA)
+   ========================================================================== */
+.botanical-corner-layer {
+    position: absolute;
+    bottom: 0;
+    width: clamp(140px, 25vw, 320px); /* Proportional scaling prevents workspace overlap */
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.placement-bottom-left {
+    left: 0;
+    transform-origin: bottom left;
+    animation: cornerFloraGrowLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.placement-bottom-right {
+    right: 0;
+    transform-origin: bottom right;
+    animation: cornerFloraGrowRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.leaf-vector-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    fill: #000000; /* Absolute black solid silhouette tokens matching mockup graphic reference exactly */
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   KEYFRAME INTERACTION TIMELINE ENGINE LAYERS
+   ========================================================================== */
+@keyframes errorPaneAssemble {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cornerFloraGrowLeft {
+    0% { transform: scale(0.85) rotate(-5deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes cornerFloraGrowRight {
+    0% { transform: scale(0.85) rotate(5deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 520px) {
+    .error-actions-layout-row {
+        flex-direction: column; /* Collapses buttons cleanly into unified vertical stack column rows */
+        gap: 0.85rem;
+    }
+    
+    .error-routing-btn {
+        width: 100%; /* Scales button cells full width across portrait devices screens */
+    }
+    
+    .botanical-corner-layer {
+        width: 120px; /* Compresses corner foliage assets to preserve core content readability fields */
+    }
+}
+
+  </style>
+
+<script>
+/* =========================================================
+   AGRIMART 404 BACK NAVIGATION
+   RETURNS USER TO THE EXACT PREVIOUS PAGE + SCROLL POSITION
+   ========================================================= */
+
+(function () {
+
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const historyBackActionTriggerBtn =
+            document.getElementById(
+                "history-back-action-trigger"
+            );
+
+        if (!historyBackActionTriggerBtn) return;
+
+
+        /* =====================================================
+           BACK BUTTON
+           ===================================================== */
+
+        historyBackActionTriggerBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                /*
+                 * Return to the exact previous browser history entry.
+                 *
+                 * Example:
+                 *
+                 * about.html
+                 *      ↓
+                 * Section 3 / scroll position
+                 *      ↓
+                 * 404.html
+                 *      ↓
+                 * Go Back
+                 *
+                 * Result:
+                 * about.html → Section 3
+                 */
+
+                if (window.history.length > 1) {
+
+                    window.history.back();
+
+                } else {
+
+                    /*
+                     * If there is no usable browser history,
+                     * safely return to Home.
+                     */
+
+                    window.location.href = "index.html";
+
+                }
+
+            }
+        );
+
+    });
+
+})();
+</script>
+
+
+</body>
+</html>

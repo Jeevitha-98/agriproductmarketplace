@@ -221,9 +221,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
 <!-- AGRI MARKETPLACE HERO SECTION -->
 <section class="hero-section">
-    <!-- Background Image Layer -->
-    <img src="./assests/hero bg.webp" alt="Farming Sunset Background" class="hero-bg-img">
-    <div class="hero-overlay"></div>
+ 
+<video
+    class="hero-bg-img"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-label="Farming Sunset Background"
+>
+    <source src="./assests/hero bg home page.mp4" type="video/mp4">
+    Your browser does not support the video element.
+</video>
+
+<div class="hero-overlay"></div>
+
+
 
     <div class="hero-container">
         <!-- Badge Tagline -->
@@ -4503,7 +4517,61 @@ window.addEventListener("DOMContentLoaded", () => {
 }
 
 </style>
+<script>
+(function () {
 
+    function scrollPageToTop() {
+
+        // Scroll the normal document
+        document.documentElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        document.body.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Also scroll any common custom scroll container
+        document.querySelectorAll("*").forEach(function (element) {
+
+            const style = window.getComputedStyle(element);
+
+            if (
+                (style.overflowY === "auto" ||
+                 style.overflowY === "scroll") &&
+                element.scrollHeight > element.clientHeight
+            ) {
+                element.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+
+        const logo = event.target.closest("#footer-scroll-top-btn");
+
+        if (!logo) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        scrollPageToTop();
+
+    });
+
+})();
+</script>
 <script>
     // ==========================================================================
 // APPS FOOTER SMOOTH COMPONENT INTERFACE INTERACTION ENGINE

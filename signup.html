@@ -1,0 +1,725 @@
+
+<!-- SYSTEM AUTHENTICATION REGISTRATION PORTAL BANNER PANEL MODULE -->
+<section class="auth-portal-banner-container">
+    <div class="auth-banner-split-grid">
+        
+        <!-- Left Column Sidebar Photo Banner Frame -->
+        <div class="auth-left-graphic-panel">
+            <img src="https://unsplash.com" alt="Farmer carrying fresh rice crops crops harvest on an organic farm field background" class="auth-banner-img">
+            <div class="auth-sidebar-shade-overlay"></div>
+            
+            <div class="auth-sidebar-content">
+                <h2 class="auth-sidebar-title">Better Farming <br><span class="brand-highlight">Bigger Tomorrow</span></h2>
+                <p class="auth-sidebar-subtitle">Access fresh produce, high-quality seeds, tools and trusted services — all in one place.</p>
+                
+                <!-- Info Badges List Matrix Stack -->
+                <div class="auth-sidebar-features-list">
+                    <div class="auth-feature-row-node">
+                        <div class="feature-avatar-circle">🌱</div>
+                        <div class="feature-label-text">
+                            <span class="label-head">Fresh & Organic</span>
+                            <span class="label-sub">Products</span>
+                        </div>
+                    </div>
+                    <div class="auth-feature-row-node">
+                        <div class="feature-avatar-circle">🛡️</div>
+                        <div class="feature-label-text">
+                            <span class="label-head">Trusted Farmers</span>
+                            <span class="label-sub">& Sellers</span>
+                        </div>
+                    </div>
+                    <div class="auth-feature-row-node">
+                        <div class="feature-avatar-circle">🚚</div>
+                        <div class="feature-label-text">
+                            <span class="label-head">Fast & Safe</span>
+                            <span class="label-sub">Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Typography Overlay matching reference exactly -->
+                <div class="auth-sidebar-graphic-footer">
+                    <p class="graphic-footer-line">Grow Together</p>
+                    <svg class="graphic-footer-arc-svg" viewBox="0 0 100 20" xmlns="http://w3.org">
+                        <path d="M5,15 Q50,0 95,15" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column Form Workspace Layout Panel -->
+        <div class="auth-right-workspace-panel">
+            
+            <!-- Global Login Portal Navigation Shortcut Header Strip -->
+            <div class="auth-top-navigation-strip">
+                <a href="login.html" class="auth-login-shortcut-btn">
+                    <span class="login-btn-icon">🔐</span> Sign In
+                </a>
+            </div>
+
+            <div class="auth-form-card">
+                <h1 class="auth-main-heading">Create Your Account</h1>
+                <p class="auth-subheading-label">Sign up to get started with AgriMart and explore fresh products, services and more.</p>
+
+                <!-- Dynamic Form Submission Interface -->
+                <form id="agri-signup-form" class="auth-form-element" novalidate>
+                    
+                    <!-- Success Messaging Alert Component Container (Hidden Baseline State) -->
+                    <div id="signup-success-toast" class="auth-success-alert-message">
+                        🎉 Account successfully signed up! Redirecting to sign in layer...
+                    </div>
+
+                    <!-- Full Name Input Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">👤</span>
+                            <input type="text" id="auth-full-name" class="auth-input-box" placeholder="Enter your full name" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="name-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- Email Address Inbox Input Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">✉️</span>
+                            <input type="email" id="auth-email-address" class="auth-input-box" placeholder="Enter your email" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="email-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- Mobile Phone Number Input Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">📞</span>
+                            <input type="tel" id="auth-phone-number" class="auth-input-box" placeholder="Enter your phone number" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="phone-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- City Settlement Verification Input Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">📍</span>
+                            <input type="text" id="auth-city-location" class="auth-input-box" placeholder="Enter your city" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="city-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- Password Composition Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">🔒</span>
+                            <input type="password" id="auth-create-password" class="auth-input-box" placeholder="Create a password" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="password-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- Confirm Password Verification Field Group -->
+                    <div class="auth-field-node">
+                        <div class="auth-icon-wrapper">
+                            <span class="field-avatar-icon">🛡️</span>
+                            <input type="password" id="auth-confirm-password" class="auth-input-box" placeholder="Confirm your password" required>
+                        </div>
+                        <span class="auth-field-error-hint" id="confirm-error-msg">Please fill the field</span>
+                    </div>
+
+                    <!-- Options Flex Meta Horizon Row Area Links -->
+                    <div class="auth-options-meta-row">
+                        <label class="auth-remember-me-checkbox-label">
+                            <input type="checkbox" id="auth-remember-checkbox" class="native-hidden-checkbox">
+                            <span class="custom-checkbox-ui-box"></span>
+                            <span class="checkbox-label-text-copy">Remember Me</span>
+                        </label>
+                        <a href="404.html" class="auth-meta-link">Forgot Password?</a>
+                    </div>
+
+                    <!-- Terms & Conditions Compliance Requirement Toggle Checkbox Row -->
+                    <div class="auth-options-meta-row placement-terms-row">
+                        <label class="auth-remember-me-checkbox-label">
+                            <input type="checkbox" id="auth-terms-checkbox" class="native-hidden-checkbox" required>
+                            <span class="custom-checkbox-ui-box"></span>
+                            <span class="checkbox-label-text-copy">I agree to the <a href="404.html" class="auth-nested-inline-link">Terms & Conditions</a></span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Transaction Execute Button -->
+                    <button type="submit" class="auth-submit-transaction-btn">
+                        Create Account <span class="btn-arrow-vector">→</span>
+                    </button>
+
+                    <!-- Toggle Interface Footer Navigation Redirection Anchor Link -->
+                    <p class="auth-redirection-footer-copy">
+                        Already have an account? <a href="login.html" class="auth-footer-redirect-link">Sign In</a>
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   SYSTEM REGISTER PORTAL BANNER MODEL CONTAINER (ZERO HORIZONTAL SCROLL)
+   ========================================================================== */
+.auth-portal-banner-container {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: hidden; /* Hard cut protection prevents any horizontal scrollbars layout leakage */
+    box-sizing: border-box;
+}
+
+.auth-banner-split-grid {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT COLUMN PHOTO SIDE BANNER CODES FRAME WORK
+   ========================================================================== */
+.auth-left-graphic-panel {
+    position: relative;
+    width: 45%; /* Stable percentage baseline width protects horizontal scaling stability */
+    min-width: 45%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.auth-banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.auth-sidebar-shade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(12,26,14,0.75) 50%, rgba(5,15,8,0.92) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.auth-sidebar-content {
+    position: relative;
+    z-index: 3;
+    padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3.5rem);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.auth-sidebar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 115%;
+    margin: 0 0 1rem 0;
+}
+
+.auth-sidebar-title .brand-highlight {
+    color: #2ecc71; 
+}
+
+.auth-sidebar-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #f1f5f9;
+    max-width: 380px;
+    margin: 0 0 3rem 0;
+}
+
+.auth-sidebar-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: auto; 
+}
+
+.auth-feature-row-node {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+}
+
+.feature-avatar-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(27, 94, 32, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.feature-label-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.label-head {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 100%;
+}
+
+.label-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    line-height: 100%;
+}
+
+.auth-sidebar-graphic-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    align-self: center;
+    margin-top: 2rem;
+}
+
+.graphic-footer-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 110%;
+    margin: 0;
+}
+
+.graphic-footer-arc-svg {
+    width: 120px;
+    height: auto;
+    margin-top: 0.45rem;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN WORKSPACE FORM BLOCK LAYOUT PANEL
+   ========================================================================== */
+.auth-right-workspace-panel {
+    background-color: #ffffff;
+    flex: 1; /* Automatically digests remaining layout percentage parameters cleanly */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 75px 2.5rem 40px 2.5rem; 
+    box-sizing: border-box;
+}
+
+.auth-top-navigation-strip {
+    position: absolute;
+    top: 25px;
+    right: 2.5rem;
+    z-index: 10;
+}
+
+.auth-login-shortcut-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: color 0.25s, border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
+}
+
+.auth-login-shortcut-btn:hover {
+    color: #1b5e20; 
+    border-color: #1b5e20;
+    background-color: #e8f5e9;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.08);
+}
+
+.auth-form-card {
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.auth-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(24px, 2.8vw, 30px);
+    font-weight: 700;
+    color: #000000; 
+    line-height: 100%;
+    margin: 0 0 0.85rem 0;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.auth-subheading-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #333333;
+    text-align: center;
+    margin: 0 0 1.75rem 0;
+}
+
+.auth-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Success Toast Component Alert Box */
+.auth-success-alert-message {
+    display: none; /* Injected dynamically by verification runtime events handler loops */
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    color: #1b5e20;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Fields Inputs Styling */
+.auth-field-node {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.auth-icon-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.field-avatar-icon {
+    position: absolute;
+    left: 1.15rem;
+    font-size: 1rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.auth-input-box {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #111111; 
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem 0.75rem 2.75rem; 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #000000;
+    box-sizing: border-box;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.auth-input-box:focus {
+    border-color: #1b5e20;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+}
+
+.auth-field-error-hint {
+    display: none; 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #dc2626;
+    margin-top: 1px;
+}
+
+.auth-field-node.has-error-trigger .auth-input-box {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+}
+
+.auth-field-node.has-error-trigger .auth-field-error-hint { display: block; }
+
+/* Checkbox and Meta Links */
+.auth-options-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.placement-terms-row {
+    justify-content: flex-start !important;
+    margin-top: -4px;
+}
+
+.auth-remember-me-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.native-hidden-checkbox { display: none; }
+
+.custom-checkbox-ui-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #111111;
+    background-color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.custom-checkbox-ui-box::after {
+    content: "✓";
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0;
+}
+
+.native-hidden-checkbox:checked + .custom-checkbox-ui-box { background-color: #1b5e20; border-color: #1b5e20; }
+.native-hidden-checkbox:checked + .custom-checkbox-ui-box::after { opacity: 1; }
+.checkbox-label-text-copy { font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; color: #111827; }
+
+.auth-meta-link, .auth-nested-inline-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1b5e20; 
+    text-decoration: none;
+}
+
+.auth-nested-inline-link {
+    text-decoration: underline !important;
+}
+
+/* Submit Action Button */
+.auth-submit-transaction-btn {
+    width: 100%;
+    background-color: #1b5e20; 
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.btn-arrow-vector { transition: transform 0.25s; }
+.auth-submit-transaction-btn:hover { background-color: #2e7d32; }
+.auth-submit-transaction-btn:hover .btn-arrow-vector { transform: translateX(4px); }
+
+.auth-redirection-footer-copy { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #475569; text-align: center; margin-top: 0.75rem; }
+.auth-footer-redirect-link { color: #1b5e20; font-weight: 700; text-decoration: underline; }
+
+
+@media (max-width: 1024px) {
+.auth-left-graphic-panel {
+display: none; 
+}
+.auth-right-workspace-panel {
+padding: 95px 1.5rem 40px 1.5rem;
+}
+.auth-top-navigation-strip {
+right: 1.5rem;
+}
+}
+@media (max-width: 480px) {
+.auth-main-heading { font-size: 24px; }
+.auth-top-navigation-strip { top: 20px; }
+.auth-login-shortcut-btn {
+padding: 0.45rem 0.85rem;
+font-size: 0.8rem;
+}
+}
+
+</style>
+
+<script>
+    (function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const signupForm = document.getElementById("agri-signup-form");
+        const successToast = document.getElementById("signup-success-toast");
+        
+        const nameInput = document.getElementById("auth-full-name");
+        const emailInput = document.getElementById("auth-email-address");
+        const phoneInput = document.getElementById("auth-phone-number");
+        const cityInput = document.getElementById("auth-city-location");
+        const passwordInput = document.getElementById("auth-create-password");
+        const confirmInput = document.getElementById("auth-confirm-password");
+        const termsCheckbox = document.getElementById("auth-terms-checkbox");
+
+        if (!signupForm) return;
+
+        // ==========================================================================
+        // STAGE 1: REAL-TIME CHARACTER BLOCK KEYSTROKES LOCKS
+        // ==========================================================================
+
+        /**
+         * Rule A: Full Name & City fields won't allow number characters integers
+         */
+        nameInput.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/[0-9]/g, "");
+        });
+
+        cityInput.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/[0-9]/g, "");
+        });
+
+        /**
+         * Rule B: Mobile Phone field won't allow alphabet characters lines string wraps
+         */
+        phoneInput.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/g, "");
+        });
+
+
+        // ==========================================================================
+        // STAGE 2: FORM SUBMISSION INTERCEPT TRANSACTION ROUTING ENGINE
+        // ==========================================================================
+        signupForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+            
+            let formValidationIntegrityPasses = true;
+
+            // Compilation array holding validation targets tracking properties fields profiles
+            const validationTargetNodesList = [
+                { inputElement: nameInput, patternRegex: /^[a-zA-Z\s]{2,50}$/ },
+                { inputElement: emailInput, patternRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+                { inputElement: phoneInput, patternRegex: /^\d{10,15}$/ },
+                { inputElement: cityInput, patternRegex: /^[a-zA-Z\s]{2,50}$/ },
+                { inputElement: passwordInput, patternRegex: null },
+                { inputElement: confirmInput, patternRegex: null }
+            ];
+
+            // Core Inputs Validation Loop
+            validationTargetNodesList.forEach(target => {
+                const valueString = target.inputElement.value.trim();
+                let isCurrentFieldValid = true;
+
+                // Rule C: Before filling anything completely, display clear "Please fill the field" indicators
+                if (valueString === "") {
+                    isCurrentFieldValid = false;
+                } else if (target.patternRegex && !target.patternRegex.test(valueString)) {
+                    isCurrentFieldValid = false;
+                }
+
+                // Cross checks password string parameter alignments match matches
+                if (target.inputElement === confirmInput && valueString !== passwordInput.value.trim()) {
+                    isCurrentFieldValid = false;
+                }
+
+                const parentNodeFrame = target.inputElement.closest(".auth-field-node");
+                if (parentNodeFrame) {
+                    if (!isCurrentFieldValid) {
+                        parentNodeFrame.classList.add("has-error-trigger");
+                        formValidationIntegrityPasses = false;
+                    } else {
+                        parentNodeFrame.classList.remove("has-error-trigger");
+                    }
+                }
+            });
+
+            // Enforces Terms & Conditions compliance box state check checks
+            if (!termsCheckbox.checked) {
+                formValidationIntegrityPasses = false;
+                const termsRowNode = termsCheckbox.closest(".auth-options-meta-row");
+                if (termsRowNode) termsRowNode.style.outline = "1px auto #dc2626";
+            }
+
+            // ==========================================================================
+            // STAGE 3: ACCOUNT CREATED SUCCESS FEEDBACK REDIRECTION LOOP
+            // ==========================================================================
+            if (formValidationIntegrityPasses) {
+                // Rule D: After filled completely and validation passes, show success message toast and redirect to login page
+                if (successToast) {
+                    successToast.style.display = "block";
+                    signupForm.reset(); // Clear form values
+                    
+                    // Directs routing clocks to load login window after exactly 2000ms delay interval bounds
+                    setTimeout(() => {
+                        window.location.href = "login.html";
+                    }, 2000);
+                }
+            }
+        });
+
+        // Quick clean horizontal horizon listener to dismiss validation labels on click input re-focus
+        const allAuthInputFields = [nameInput, emailInput, phoneInput, cityInput, passwordInput, confirmInput];
+        allAuthInputFields.forEach(inputNode => {
+            inputNode.addEventListener("focus", () => {
+                const parentNodeFrame = inputNode.closest(".auth-field-node");
+                if (parentNodeFrame) {
+                    parentNodeFrame.classList.remove("has-error-trigger");
+                }
+            });
+        });
+
+        termsCheckbox.addEventListener("change", () => {
+            const termsRowNode = termsCheckbox.closest(".auth-options-meta-row");
+            if (termsRowNode && termsCheckbox.checked) termsRowNode.style.outline = "none";
+        });
+
+    });
+})();
+</script>

@@ -1,0 +1,2926 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Modern Agri Preloader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CREATIVE WHITE PRELOADER ARCHITECTURE -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Animated Vector Artwork (Geometric Plant / Leaf Growth) -->
+            <svg class="brand-vector" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <!-- Main central organic stem -->
+                <path class="stem" d="M50,90 C50,60 50,40 50,15" />
+                <!-- Left branching vector leaf -->
+                <path class="leaf-left" d="M50,65 C20,55 25,35 50,35" />
+                <!-- Right branching vector leaf -->
+                <path class="leaf-right" d="M50,48 C80,38 75,18 50,18" />
+                <!-- Kinetic growth node apex -->
+                <circle class="bud" cx="50" cy="15" r="4" />
+            </svg>
+
+            <!-- Responsive Vertically Stacked Branding Text -->
+            <div class="brand-logo">
+                <span>s</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>k</span>
+                <span>l</span>
+                <span>y</span>
+            </div>
+
+        </div>
+    </div>
+
+  <script>
+    // ==========================================================================
+// PRELOADER TIMING LIFECYCLE CONTROLLER
+// ==========================================================================
+window.addEventListener("DOMContentLoaded", () => {
+    const preloaderContainer = document.getElementById("preloader");
+
+    /**
+     * Dismisses the preloader window.
+     * Hard target scheduled at exactly 1.75 seconds (1750ms) to beat the 2-second limit.
+     */
+    setTimeout(() => {
+        if (preloaderContainer) {
+            preloaderContainer.classList.add("fade-out");
+            
+            // Clean up DOM node to clear browser memory space
+            setTimeout(() => {
+                preloaderContainer.remove();
+            }, 450); // Matches the CSS fade-out duration
+        }
+    }, 1750); 
+});
+
+  </script>
+
+  <!-- AGRI PRODUCT MARKETPLACE MAIN NAVBAR (Copy directly into your <body>) -->
+<header class="app-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Frame (Clicking refreshes application state) -->
+        <a href="#" id="brand-logo-link" class="logo-wrapper">
+            <img src="./assests/agri marketplace.webp" alt="Stackly Logo" class="brand-img">
+        </a>
+
+        <!-- Mobile Hamburger Responsive Toggle Trigger -->
+        <button class="hamburger-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Navigation and Search Collapse Wrapper Layer -->
+        <div class="header-navigation-wrapper" id="nav-wrapper">
+            
+            <!-- Primary Navigation Architecture Links -->
+            <nav class="main-nav">
+                <ul class="nav-links-list">
+                    <li><a href="index.html" class="nav-item active-tab">Home</a></li>
+                    <li><a href="about.html" class="nav-item">About Us</a></li>
+                    <li><a href="services.html" class="nav-item">Services</a></li>
+                    <li><a href="blogs.html" class="nav-item">Blog</a></li>
+                    <li><a href="products.html" class="nav-item">Products</a></li>
+                    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Validated Interactive Context Search Component Box -->
+            <div class="search-form-container">
+                <form id="marketplace-search-form" class="search-field-group">
+                    <input type="text" id="header-search-input" placeholder="Search for products, farmers...">
+                    <button type="submit" class="search-action-btn" aria-label="Execute Query Search">
+                        <svg class="search-icon-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Interface Interactions: Wishlist, Login Authentication & Cart Badge -->
+            <div class="user-actions-group">
+                
+                <!-- Wishlist Shortcut Trigger Button -->
+                <a href="404.html" class="action-icon-link wishlist-btn" title="View Wishlist">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </a>
+
+                <!-- User Log-In Credentials Profile Trigger -->
+                <a href="login.html" class="auth-navigation-link">
+                    <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M5.5,21 C5.5,17 8.5,14 12,14 C15.5,14 18.5,17 18.5,21" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Login / Sign Up</span>
+                </a>
+
+                <!-- E-commerce Shopping Basket Badge -->
+                <a href="404.html" class="action-icon-link cart-badge-btn" title="Open Shopping Basket">
+                    <div class="cart-icon-wrapper">
+                        <svg class="action-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="cart-counter-bubble">6</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // ==========================================================================
+// APPS HEADER INTERACTIVE UTILITY LOGIC ENGINE
+// ==========================================================================
+(function() {
+    // DOM Cache Initialization Stores
+    const brandLogoLink = document.getElementById("brand-logo-link");
+    const navigationLinks = document.querySelectorAll(".nav-item");
+    const searchForm = document.getElementById("marketplace-search-form");
+    const searchInput = document.getElementById("header-search-input");
+    const menuToggleBtn = document.getElementById("menu-toggle-btn");
+    const navWrapper = document.getElementById("nav-wrapper");
+
+    if (!brandLogoLink) return; // Prevent scope breaks if injected incorrectly
+
+    // Brand Graphic Image Link Rule
+    brandLogoLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.reload();
+    });
+
+    // Active Navigation Tabs Handler
+  navigationLinks.forEach(clickedAnchor => {
+    clickedAnchor.addEventListener("click", function() {
+
+        // Allow the browser to navigate to the href normally
+        navigationLinks.forEach(item => {
+            item.classList.remove("active-tab");
+        });
+
+        this.classList.add("active-tab");
+
+        // Close mobile menu before navigation
+        if (navWrapper && navWrapper.classList.contains("menu-is-open")) {
+            toggleMobileNavigationMenu();
+        }
+
+        // DO NOT use event.preventDefault()
+    });
+});
+
+    // Search Input Field Constraint Validation
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const refinedSearchValue = searchInput.value.trim();
+
+        if (refinedSearchValue === "") {
+            searchInput.placeholder = "Please fill out this field...";
+            searchInput.classList.add("validation-alert");
+            searchInput.focus();
+        } else {
+            window.location.href = "404.html";
+        }
+    });
+
+    searchInput.addEventListener("input", () => {
+        if (searchInput.classList.contains("validation-alert")) {
+            searchInput.classList.remove("validation-alert");
+            searchInput.placeholder = "Search for products, farmers...";
+        }
+    });
+
+    // Responsive Mobile Menu Controllers
+    menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
+
+    function toggleMobileNavigationMenu() {
+        menuToggleBtn.classList.toggle("menu-is-open");
+        navWrapper.classList.toggle("menu-is-open");
+        document.body.style.overflow = navWrapper.classList.contains("menu-is-open") ? "hidden" : "";
+    }
+})();
+
+</script>
+
+<!-- CONTACT US HERO BANNER MODULE -->
+<section class="contact-hero-section">
+    <!-- Immersive Farm Irrigation Field Background Layer -->
+    <img src="https://unsplash.com" alt="Modern automated sprinkler irrigation system watering lush rows of agricultural green crops on farm field" class="contact-hero-bg-img">
+    <div class="contact-hero-shader-overlay"></div>
+
+    <div class="contact-hero-container">
+        <!-- Pill Breadcrumb Capsule Navigation Strip -->
+        <div class="contact-breadcrumb-box">
+            <nav class="contact-breadcrumb">
+                <a href="404.html" class="c-crumb-link">Home</a>
+                <span class="c-crumb-separator">&gt;</span>
+                <span class="c-crumb-current">Contact Us</span>
+            </nav>
+        </div>
+
+        <!-- Word-by-word scroll-animated section main title -->
+        <h1 class="contact-hero-main-title" id="scroll-contact-hero-title">
+            <span class="ch-word left">Contact</span>
+            <span class="ch-word right title-accent-green">Us</span>
+        </h1>
+
+        <!-- Subheading Description Block -->
+        <p class="contact-hero-description" id="scroll-contact-hero-para">
+            We're here to help! Get in touch with us for any questions, support, or business inquiries.
+        </p>
+
+        <!-- Horizontal Features Badges Row (Appears one by one when scroll) -->
+        <div class="contact-hero-features-row" id="stagger-contact-hero-features">
+            
+            <!-- Feature 1: 100% Natural & Fresh -->
+            <div class="c-feature-item-node" data-index="0">
+                <div class="c-feature-badge-circle">
+                    <span class="c-badge-emoji">🌱</span>
+                </div>
+                <div class="c-feature-text-block">
+                    <span class="c-feature-title-line">100% Natural</span>
+                    <span class="c-feature-sub-line">& Fresh</span>
+                </div>
+            </div>
+
+            <!-- Feature 2: Fair Price -->
+            <div class="c-feature-item-node" data-index="1">
+                <div class="c-feature-badge-circle">
+                    <span class="c-badge-emoji">🤝</span>
+                </div>
+                <div class="c-feature-text-block">
+                    <span class="c-feature-title-line">Fair Price</span>
+                    <span class="c-feature-sub-line">(Direct from Farmers)</span>
+                </div>
+            </div>
+
+            <!-- Feature 3: Secure Transactions -->
+            <div class="c-feature-item-node" data-index="2">
+                <div class="c-feature-badge-circle">
+                    <span class="c-badge-emoji">🔒</span>
+                </div>
+                <div class="c-feature-text-block">
+                    <span class="c-feature-title-line">Secure</span>
+                    <span class="c-feature-sub-line">Transactions</span>
+                </div>
+            </div>
+
+            <!-- Feature 4: Fast Delivery -->
+            <div class="c-feature-item-node" data-index="3">
+                <div class="c-feature-badge-circle">
+                    <span class="c-badge-emoji">🚚</span>
+                </div>
+                <div class="c-feature-text-block">
+                    <span class="c-feature-title-line">Fast Delivery</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   CONTACT US HERO BANNER WIDESCREEN SYSTEM LAYOUT DEFINITIONS
+   ========================================================================== */
+.contact-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: clamp(480px, 55vh, 650px); /* Balanced viewpoint height mapping reference image exactly */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: #05140a;
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    box-sizing: border-box;
+}
+
+/* Hardware-Accelerated High Resolution Backdrop Image Layer */
+.contact-hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.01);
+}
+
+/* Translucent Dark Overlay Shader Layer */
+.contact-hero-shader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darkening shadow vignette preserves high-visibility text contrast limits edge-to-edge */
+    background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(5,20,10,0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.contact-hero-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   INTERACTIVE PILL BREADCRUMB CAPSULE STRIP MATCHING REFERENCE PREVIEW
+   ========================================================================== */
+.contact-breadcrumb-box {
+    margin-bottom: 2.25rem;
+    overflow: hidden;
+}
+
+.contact-breadcrumb {
+    background-color: #ffffff; /* Solid stark white backdrop pill capsule */
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.c-crumb-link {
+    color: #1b5e20; /* Primary brand forest theme dark green link */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.c-crumb-link:hover {
+    color: #4caf50;
+}
+
+.c-crumb-separator {
+    color: #94a3b8;
+    user-select: none;
+    font-size: 0.75rem;
+}
+
+.c-crumb-current {
+    color: #64748b;
+    user-select: none;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & KINETIC SIDE WORD REVEALS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.contact-hero-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white typography */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.35em;
+    overflow: hidden;
+}
+
+/* Horizontal side ingress hidden properties triggered via scroll observation loops */
+.contact-hero-main-title .ch-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-hero-main-title .ch-word.left { transform: translateX(-45px); }
+.contact-hero-main-title .ch-word.right { transform: translateX(45px); }
+
+.contact-hero-main-title .ch-word.title-accent-green {
+    color: #2ecc71; /* High contrast pastel light green text path accent overlay marker */
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.contact-hero-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%; /* Sized to insulate multi-line text wraps from clipping bug box overlaps */
+    letter-spacing: 0%;
+    color: #f1f5f9; /* Translucent cream silver text layer copy */
+    max-width: 480px;
+    margin-bottom: 4rem;
+    
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+}
+
+.contact-hero-description.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   HORIZONTAL FEATURES BADGES MATRIX ROW (WITH INTEGRATED GLOW ACCENTS)
+   ========================================================================== */
+.contact-hero-features-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem; /* Symmetrical spatial alignment buffers from image blueprint */
+    width: 100%;
+    position: relative;
+}
+
+.c-feature-item-node {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Solid White Circle Graphics Feature Badges Layer */
+.c-feature-badge-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Crisp pure white base circle container matching source image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25), box-shadow 0.3s ease;
+}
+
+.c-badge-emoji {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow projection */
+.c-feature-item-node:hover .c-feature-badge-circle {
+    background-color: #e8f5e9;
+    transform: scale(1.12) rotate(4deg);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 8px 20px -4px rgba(76, 175, 80, 0.3), 
+                0 0 15px 2px rgba(76, 175, 80, 0.45);
+}
+
+.c-feature-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.c-feature-title-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 100%;
+    white-space: nowrap;
+}
+
+.c-feature-sub-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #cbd5e1;
+    line-height: 100%;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .contact-hero-features-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Forms beautiful 2x2 grid cell block layout matrix on mid-tier screens */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero-section {
+        padding-top: 4rem;
+        padding-bottom: 2.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem; /* Adapts boundaries layout space cleanly over small handheld terminals view grids */
+    }
+    
+    .contact-hero-main-title { font-size: 32px; }
+    .contact-hero-description { margin-bottom: 2.5rem; }
+}
+
+@media (max-width: 520px) {
+    .contact-hero-features-row {
+        grid-template-columns: 1fr; /* Pure linear stack flow sequence lists array layouts on mobile screens ports */
+        gap: 1.25rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEALS CONTACT HEADLINE WORD-BY-WORD & BADGES STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const contactHeroTitle = document.getElementById("scroll-contact-hero-title");
+        const contactHeroPara = document.getElementById("scroll-contact-hero-para");
+        const featuresTrackRow = document.getElementById("stagger-contact-hero-features");
+        const individualBadgeNodes = document.querySelectorAll(".c-feature-item-node");
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const contactHeroSettings = {
+            root: null,
+            threshold: 0.1, /* Runtime triggers invoke when 10% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const globalContactHeroObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Main Section Title Word-By-Word sliding from opposite side margins
+                    if (entry.target.id === "scroll-contact-hero-title") {
+                        const leftInboundWords = entry.target.querySelectorAll(".ch-word.left");
+                        const rightInboundWords = entry.target.querySelectorAll(".ch-word.right");
+                        
+                        leftInboundWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                        
+                        rightInboundWords.forEach(w => {
+                            w.style.opacity = "1";
+                            w.style.transform = "translateX(0)";
+                        });
+                    }
+
+                    // B. Reveal Sub Description Paragraph text block cleanly up from below
+                    if (entry.target.id === "scroll-contact-hero-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal White Badge Features Items Matrix columns One-by-One sequentially (Staggered Cascade)
+                    if (entry.target.id === "stagger-contact-hero-features") {
+                        individualBadgeNodes.forEach((nodeItem, progressivePositionIndex) => {
+                            setTimeout(() => {
+                                nodeItem.style.opacity = "1";
+                                nodeItem.style.transform = "translateY(0)";
+                            }, progressivePositionIndex * 110); // 110ms staggered separations timing interval delays
+                        });
+                    }
+
+                    // Sever data tracking loops pipeline reference streams to clear footprint cycles
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, contactHeroSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (contactHeroTitle) globalContactHeroObserver.observe(contactHeroTitle);
+        if (contactHeroPara) globalContactHeroObserver.observe(contactHeroPara);
+        if (featuresTrackRow) globalContactHeroObserver.observe(featuresTrackRow);
+    });
+})();
+
+</script>
+
+<!-- INTERACTIVE CONTACT FORM & INFO COMPONENT -->
+<section class="contact-form-section">
+    <div class="contact-form-container">
+        
+        <!-- Left Side Column: Form Board Card Block -->
+        <div class="contact-form-card">
+            <span class="form-badge">Get In Touch</span>
+            <h2 class="form-main-heading">Configure Your Requirement Matrix</h2>
+            <p class="form-sub-para">
+                Fill out your details below. Our team will dynamically review your inquiry and compute a tailored agricultural solution proposal.
+            </p>
+
+            <!-- Dynamic Form Wrapper Layer -->
+            <form id="agri-contact-form" class="agri-form-element" novalidate>
+                
+                <!-- Fields Input Grid Row Split -->
+                <div class="form-inputs-grid">
+                    
+                    <!-- Full Name Field -->
+                    <div class="form-field-node">
+                        <label for="user-full-name" class="input-field-label">FULL NAME / CORPORATE TITLE</label>
+                        <div class="input-icon-wrapper">
+                            <span class="field-icon">👤</span>
+                            <input type="text" id="user-full-name" class="agri-input-box" placeholder="e.g. Vikram R" required>
+                        </div>
+                        <span class="field-error-msg" id="name-error-hint">Please fill the field (Letters only)</span>
+                    </div>
+
+                    <!-- Contact Mobile Handle -->
+                    <div class="form-field-node">
+                        <label for="user-mobile-handle" class="input-field-label">CONTACT MOBILE HANDLE</label>
+                        <div class="input-icon-wrapper">
+                            <span class="field-icon">📞</span>
+                            <input type="tel" id="user-mobile-handle" class="agri-input-box" placeholder="e.g. 9876543210" required>
+                        </div>
+                        <span class="field-error-msg" id="mobile-error-hint">Please fill the field (Numbers only)</span>
+                    </div>
+
+                    <!-- Email Inbox Address -->
+                    <div class="form-field-node">
+                        <label for="user-email-address" class="input-field-label">EMAIL INBOX ADDRESS</label>
+                        <div class="input-icon-wrapper">
+                            <span class="field-icon">✉️</span>
+                            <input type="email" id="user-email-address" class="agri-input-box" placeholder="e.g. design@stacklystudio.com" required>
+                        </div>
+                        <span class="field-error-msg" id="email-error-hint">Please fill the field with a valid email</span>
+                    </div>
+
+                    <!-- Estimated Volume / Quantity Need -->
+                    <div class="form-field-node">
+                        <label for="user-volume-need" class="input-field-label">ESTIMATED VOLUME NEED (KG / TONNES)</label>
+                        <div class="input-icon-wrapper">
+                            <span class="field-icon">⚖️</span>
+                            <input type="text" id="user-volume-need" class="agri-input-box" placeholder="e.g. 150 kg" required>
+                        </div>
+                        <span class="field-error-msg" id="volume-error-hint">Please fill the field</span>
+                    </div>
+
+                </div>
+
+                <!-- Textarea Message Notes Box Block -->
+                <div class="form-field-node textarea-full-span">
+                    <label for="user-message-notes" class="input-field-label">SPECIFIC PRODUCT PREFERENCES & ECOSYSTEM NOTES</label>
+                    <div class="input-icon-wrapper align-textarea">
+                        <span class="field-icon target-textarea-icon">📝</span>
+                        <textarea id="user-message-notes" class="agri-textarea-box" placeholder="Describe any tracking variety specifications, shipment milestones scheduling thresholds, or specific organic custom packing inclusions..." required></textarea>
+                    </div>
+                    <span class="field-error-msg" id="notes-error-hint">Please fill the field</span>
+                </div>
+
+                <!-- Submit Action Transaction Button -->
+                <button type="submit" class="form-submit-transaction-btn">
+                    <span class="btn-submit-icon">🚀</span> Transmit Requirement Request Blueprint
+                </button>
+
+            </form>
+        </div>
+
+        <!-- Right Side Column: Info Directories Cards Panel -->
+        <div class="contact-info-panel-col">
+            
+            <!-- Info Item Card 1: Visit Our Studio -->
+            <div class="info-directory-card">
+                <span class="info-pill-badge">AGRIMART HEADQUARTERS</span>
+                <h3 class="info-card-heading">Reach Our Market Architects</h3>
+                <p class="info-card-description">
+                    Connect directly with our corporate agricultural wellness staff to fast-track specialized harvest bookings, logistics packaging, and custom supply chain plans.
+                </p>
+            </div>
+
+            <!-- Address Block Node -->
+            <div class="info-detail-row-node">
+                <div class="info-vector-icon-avatar">📍</div>
+                <div class="info-detail-copy-block">
+                    <span class="info-detail-label">VISIT OUR STUDIO</span>
+                    <p class="info-detail-value">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                </div>
+            </div>
+
+            <!-- Hotline Phone Block Node -->
+            <div class="info-detail-row-node">
+                <div class="info-vector-icon-avatar">📞</div>
+                <div class="info-detail-copy-block">
+                    <span class="info-detail-label">DIRECT HOTLINES</span>
+                    <p class="info-detail-value">+91 7010792745</p>
+                </div>
+            </div>
+
+            <!-- Electronic Mail Block Node with Outlook Target Automation Link mapping specs perfectly -->
+            <div class="info-detail-row-node">
+                <div class="info-vector-icon-avatar">✉️</div>
+                <div class="info-detail-copy-block">
+                    <span class="info-detail-label">ELECTRONIC MAIL</span>
+                    <a href="mailto:design@stacklystudio.com" class="info-detail-value target-email-anchor" title="Launch Outlook Email Composition Client">
+                        design@stacklystudio.com
+                    </a>
+                </div>
+            </div>
+
+            <!-- Availability Block Node -->
+            <div class="info-detail-row-node">
+                <div class="info-vector-icon-avatar">🕒</div>
+                <div class="info-detail-copy-block">
+                    <span class="info-detail-label">ATELIER AVAILABILITY</span>
+                    <p class="info-detail-value">Mon - Sun: 9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   CONTACT FORM & INFO DIRECTORIES SECTION MODULE BASE
+   ========================================================================== */
+.contact-form-section {
+    background-color: #f8fafc; /* Soft minimalist slate gray wash background matching visual balance */
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.contact-form-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    /* Clean asymmetric side columns map layout weights perfectly */
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ==========================================================================
+   LEFT COLUMN CARD BLOCK CONFIGS
+   ========================================================================== */
+.contact-form-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* High Fidelity Dynamic Ambient Glow Project Drops Framing Layer Node On Selection Focus */
+.contact-form-card:hover {
+    border-color: #4caf50;
+    box-shadow: 0 12px 30px -8px rgba(27, 94, 32, 0.04), 
+                0 0 20px 1px rgba(76, 175, 80, 0.12);
+}
+
+.form-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #1b5e20; /* Identity corporate dark organic theme green accent values filled */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 0.95rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+}
+
+.form-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.form-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #475569;
+    margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   INPUT FIELDS GRID ELEMENTS ARCHITECTURE SPECIFICATIONS
+   ========================================================================== */
+.agri-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.form-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Clean aligned matrix layer rows */
+    gap: 1.5rem 1.25rem;
+    width: 100%;
+}
+
+.form-field-node {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: relative;
+}
+
+.textarea-full-span {
+    grid-column: 1 / -1; /* Forces message block to occupy absolute full row stretch width */
+}
+
+.input-field-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.02em;
+}
+
+/* Custom Interactive Micro Icon Nested Box Shells Systems */
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.field-icon {
+    position: absolute;
+    left: 1rem;
+    font-size: 1rem;
+    user-select: none;
+    pointer-events: none;
+    color: #94a3b8;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+/* Pure High Precision Input Enforcements */
+.agri-input-box {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.85rem 1rem 0.85rem 2.5rem; /* Offsets padding space cleanly to clear absolute floating micro icon vectors */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #0f172a;
+    box-sizing: border-box;
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.agri-textarea-box {
+    width: 100%;
+    min-height: 120px;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.85rem 1rem 0.85rem 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #0f172a;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.align-textarea {
+    align-items: flex-start;
+}
+
+.target-textarea-icon {
+    top: 0.9rem; /* Perfectly pins emoji icon down alongside first row character string boundary inside textareas */
+}
+
+/* Operational Field Interactivity Active Selection Focus States */
+.agri-input-box:focus, .agri-textarea-box:focus {
+    background-color: #ffffff;
+    border-color: #1b5e20;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.12);
+}
+
+.agri-input-box:focus + .field-icon, .agri-textarea-box:focus + .field-icon {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   VALIDATION WARNING POP LABELS (HIDDEN BASELINE STATES SYSTEM STANDARD)
+   ========================================================================== */
+.field-error-msg {
+    display: none; /* Controlled cleanly by parsing helper modules inside the validation script engine runtime */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #dc2626; /* Warning red color indicator */
+    margin-top: 1px;
+}
+
+/* Active error display state rules triggered via runtime verification hooks */
+.form-field-node.has-error-trigger .agri-input-box,
+.form-field-node.has-error-trigger .agri-textarea-box {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+}
+
+.form-field-node.has-error-trigger .field-error-msg {
+    display: block; /* Unveils error notification string explicitly when input values breakdown limits codes */
+}
+
+/* ==========================================================================
+   SOLID BRAND DENSE GREEN ACTION SUBMIT BUTTON DEFINITIONS
+   ========================================================================== */
+.form-submit-transaction-btn {
+    width: max-content;
+    background-color: #1b5e20; /* Solid branding forest green base container matching preview button */
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 1rem 1.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+    margin-top: 0.5rem;
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.form-submit-transaction-btn:hover {
+    background-color: #2e7d32; /* Transitions upwards into lighter energetic active sprout green illumination values */
+    box-shadow: 0 8px 22px -4px rgba(27, 94, 32, 0.25), 
+                0 0 15px 1px rgba(76, 175, 80, 0.3);
+}
+
+.form-submit-transaction-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RIGHT SIDE COLUMN INFO PANELS DIRECTORIES CONFIGURATIONS
+   ========================================================================== */
+.contact-info-panel-col {
+    background-color: transparent;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.info-directory-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.info-pill-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ea580c; /* Luminous warm copper carrot accent tone matching reference screenshot precisely */
+    letter-spacing: 0.03em;
+    margin-bottom: 0.85rem;
+    display: block;
+}
+
+.info-card-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 110%;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.info-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: #475569;
+    max-width: 90%;
+}
+
+/* Detail Info Rows Structures System Layers */
+.info-detail-row-node {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 92%; /* Slightly inset bounds profile matching exact layout spacing properties */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-detail-row-node:hover {
+    border-color: #cbd5e1;
+    transform: translateX(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.info-vector-icon-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.info-detail-copy-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.info-detail-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.info-detail-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 140%;
+    margin: 0;
+}
+
+/* Electronic Mail Target Outlook Action Anchor Link Override Styles */
+.target-email-anchor {
+text-decoration: underline;
+text-underline-offset: 3px;
+color: #1b5e20; /* Identity corporate dark organic theme green accent values filled */
+cursor: pointer;
+transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.target-email-anchor:hover {
+color: #2e7d32;
+text-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
+}
+/* ==========================================================================
+RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+========================================================================== /
+@media (max-width: 1100px) {
+.contact-form-container {
+grid-template-columns: 1fr; / Transforms main side-by-side grid split seamlessly onto vertical stack column */
+gap: 3rem;
+}
+.contact-info-panel-col {
+padding-left: 0; /* Align left margins flush matching layout borders system */
+}
+.info-detail-row-node {
+max-width: 100%; /* Expands info directory elements full width across layout workspace dimensions */
+}
+}
+@media (max-width: 768px) {
+.contact-form-section {
+padding-top: 40px;
+padding-bottom: 25px;
+}
+.contact-form-card {
+padding: 1.75rem 1.5rem; /* Compact responsive bounding boxes over hand portrait view grids */
+}
+.form-inputs-grid {
+grid-template-columns: 1fr; /* Demotes 2x2 matrix into unified linear single column row sequence list stack */
+gap: 1.25rem;
+}
+}
+@media (max-width: 480px) {
+.form-main-heading { font-size: 22px; }
+.info-card-heading { font-size: 20px; }
+.form-submit-transaction-btn {
+width: 100%;
+justify-content: center; /* Scales submit transaction button cell full width on ultra compact screens ports */
+}
+}
+
+</style>
+
+<script>
+    (function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const contactForm = document.getElementById("agri-contact-form");
+        const nameInput = document.getElementById("user-full-name");
+        const mobileInput = document.getElementById("user-mobile-handle");
+        const emailInput = document.getElementById("user-email-address");
+        const volumeInput = document.getElementById("user-volume-need");
+        const notesInput = document.getElementById("user-message-notes");
+
+        if (!contactForm) return; // Safeguard operational flow from runtime execution crashes inside scope isolation bubbles
+
+        // ==========================================================================
+        // STAGE 1: REAL-TIME CHARACTER BLOCK REGEX FILTER KEYSTROKES LOCKS
+        // ==========================================================================
+
+        /**
+         * Rule A: Name won't allow numbers characters keys strings
+         * Sanitizes and purges integer expressions immediately on input triggers
+         */
+        nameInput.addEventListener("input", (event) => {
+            const rawString = event.target.value;
+            // Purges numeric digits [0-9] from string value layout
+            event.target.value = rawString.replace(/[0-9]/g, "");
+        });
+
+        /**
+         * Rule B: Mobile won't allow alphabets or spacing strings components characters
+         * Enforces absolute strict integer chains parameters standard formats
+         */
+        mobileInput.addEventListener("input", (event) => {
+            const rawString = event.target.value;
+            // Purges all non-digit expressions [^0-9] from string value layout
+            event.target.value = rawString.replace(/[^0-9]/g, "");
+        });
+
+
+        // ==========================================================================
+        // STAGE 2: FORM SUBMISSION INTERCEPT TRANSACTION ROUTING ENGINE
+        // ==========================================================================
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Suppresses default browser submit hash parameter jumps tracking shifts
+            
+            let formValidationIntegrityPasses = true;
+
+            // Compilation array holding validation targets tracking properties nodes links
+            const validationTargetNodesList = [
+                { inputElement: nameInput, patternRegex: /^[a-zA-Z\s]{2,50}$/ }, // Simple letters and space verification criteria string matching
+                { inputElement: mobileInput, patternRegex: /^\d{10,15}$/ },      // Simple numeric chain limit range bounds configuration
+                { inputElement: emailInput, patternRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ }, // Standard email structure validation sequence filter
+                { inputElement: volumeInput, patternRegex: null }, // Validates simple structural presence fields loops
+                { inputElement: notesInput, patternRegex: null }   // Validates presence only requirements fields blocks
+            ];
+
+            // Core Validation Structural Iteration Task Loop
+            validationTargetNodesList.forEach(target => {
+                const valueString = target.inputElement.value.trim();
+                let isCurrentFieldValid = true;
+
+                // Check presence validation first
+                if (valueString === "") {
+                    isCurrentFieldValid = false;
+                } 
+                // Check regex criteria filters if assigned
+                else if (target.patternRegex && !target.patternRegex.test(valueString)) {
+                    isCurrentFieldValid = false;
+                }
+
+                // Process Field State Transformations Feedback based on validation outcomes rules
+                const parentNodeFrame = target.inputElement.closest(".form-field-node");
+                if (parentNodeFrame) {
+                    if (!isCurrentFieldValid) {
+                        parentNodeFrame.classList.add("has-error-trigger"); // Unveils hidden red pop warning error messaging text strings
+                        formValidationIntegrityPasses = false;
+                    } else {
+                        parentNodeFrame.classList.remove("has-error-trigger"); // Restores clean layout borders state
+                    }
+                }
+            });
+
+            // ==========================================================================
+            // STAGE 3: INTERFACE DEPLOYMENT ROUTING PATHWAYS (404 TARGET BOUNDARIES)
+            // ==========================================================================
+            if (formValidationIntegrityPasses) {
+                // Rule C: After filled completely and validation verification clears layout parameters, navigate safely onto 404 page
+                window.location.href = "404.html";
+            }
+        });
+
+        // Quick clean horizontal horizon listener to dismiss validation labels on click input re-focus
+        const allFormInputFields = [nameInput, mobileInput, emailInput, volumeInput, notesInput];
+        allFormInputFields.forEach(inputNode => {
+            inputNode.addEventListener("focus", () => {
+                const parentNodeFrame = inputNode.closest(".form-field-node");
+                if (parentNodeFrame) {
+                    parentNodeFrame.classList.remove("has-error-trigger"); // Clean styling feedback resets immediately on interaction indices
+                }
+            });
+        });
+
+    });
+})();
+</script>
+
+<!-- INTERACTIVE GOOGLE MAP ACCELERATOR SECTION -->
+<section class="contact-map-section">
+    <div class="map-main-container">
+        
+        <!-- Left Side Column: Interactive Content Card -->
+        <div class="map-content-card">
+            <span class="map-tagline">Locate Our Hub</span>
+            <h2 class="map-main-heading">Find Us on the Map Matrix</h2>
+            <p class="map-sub-para">
+                Our main distribution atelier and digital architecture hub is situated strategically in Salem, Tamil Nadu. Drop by to examine our cold storage logistics infrastructure first-hand.
+            </p>
+            
+            <!-- Google Maps External Deep Link Navigation Anchor Button -->
+            <div class="map-action-box">
+                <a href="https://google.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="map-navigator-floating-btn"
+                   title="Open coordinates directly inside real-time Google Maps Navigation client">
+                    <span class="map-btn-vector-icon">🗺️</span> Open Google Map
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Immersive Map Visual Container Box -->
+        <div class="map-graphic-frame-wrapper" id="scroll-map-viewport">
+            <div class="map-glow-mesh-mesh">
+                <!-- High Resolution Mock Satellite Geographical Map Backdrop Layer Overlay -->
+                <img src="https://unsplash.com" 
+                     alt="Top-down structural satellite overview roadmap rendering grid coordinates paths" 
+                     class="fallback-map-static-img">
+                     
+                <!-- Symmetrical Floating Pin Animation Overlay Anchor Point Node Element -->
+                <div class="map-marker-pulsing-avatar">
+                    <div class="radar-ping-wave"></div>
+                    <span class="avatar-marker-pin">📍</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   CONTACT MAP SECTION CORE ARCHITECTURE DESIGN SYSTEM
+   ========================================================================== */
+.contact-map-section {
+    background-color: #ffffff;
+    /* Strict precise requested layout padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.map-main-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    /* Inverted balancing column width split matches contact form dimensions cleanly */
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.map-content-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.map-tagline {
+    display: block;
+    color: #1b5e20; /* Primary corporate theme green accent */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+/* Strict Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.map-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 110%; /* Boosted modestly to avoid line wrapping collision overlaps */
+    letter-spacing: 0%;
+    color: #0f172a;
+    margin-bottom: 1.25rem;
+}
+
+/* Paragraph Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.map-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%; /* Adjusted selectively to safeguard multi-line blocks fields from text row overlapping clips */
+    letter-spacing: 0%;
+    color: #475569;
+    margin-bottom: 2.25rem;
+    padding: 0.5rem 0;
+    border-left: 0px solid transparent;
+    transition: color 0.3s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-left 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover & Typographic Glow Response Hooks */
+.map-sub-para:hover {
+    color: #000000;
+    padding-left: 1rem;
+    border-left: 3px solid #4caf50; /* Draws vibrant leaf green accent anchor indicator on hover */
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.15); /* Soft high fidelity typographical radiant drop focal glow */
+}
+
+/* ==========================================================================
+   FLOATING KINETIC DEEP-LINK BUTTON SYSTEM (GOOGLE MAPS TARGETS)
+   ========================================================================== */
+.map-action-box {
+    width: 100%;
+    display: flex;
+}
+
+.map-navigator-floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #1b5e20; /* Solid primary brand forest green base container matching user request button specs */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: 8px; /* High precision border radius curves layout */
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(27, 94, 32, 0.15);
+    
+    /* Automated infinite dynamic hovering loop timeline track simulation */
+    animation: mapBtnKineticFloat 3.4s ease-in-out infinite;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.map-btn-vector-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.map-navigator-floating-btn:hover {
+    background-color: #2e7d32; /* Transitions upwards into lighter sprouts green values on focus */
+    /* High resolution dual-layered dynamic neon green glowing mesh drops projection mapping */
+    box-shadow: 0 10px 25px -5px rgba(27, 94, 32, 0.25), 
+                0 0 20px 2px rgba(76, 175, 80, 0.4);
+    animation-play-state: paused; /* Halts automated floating drift cycle instantly upon pointer hover triggers */
+}
+
+.map-navigator-floating-btn:hover .map-btn-vector-icon {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* ==========================================================================
+   RIGHT SIDE IMMERSIVE ROADMAP IMAGE WORKSPACE GRID CODES
+   ========================================================================== */
+.map-graphic-frame-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+    /* Pre-scroll bottom trigger initial ingress states definitions code */
+    opacity: 0;
+    transform: translateY(35px); /* Slides upwards cleanly from below bottom boundary when visible */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-graphic-frame-wrapper.is-map-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-glow-mesh-mesh {
+    position: relative;
+    width: 100%;
+    height: clamp(280px, 35vh, 400px); /* Secure aspect container layout weights profiles */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Radiant glow map coordinates layer shifts onto graphic block frame boundary on hover context */
+.map-glow-mesh-mesh:hover {
+    border-color: #4caf50;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05), 
+                0 0 22px 2px rgba(76, 175, 80, 0.22);
+}
+
+.fallback-map-static-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%) contrast(105%); /* Stylized satellite tracking overview matrix coloring */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-glow-mesh-mesh:hover .fallback-map-static-img {
+    transform: scale(1.03); /* Soft macro translation depth cue */
+}
+
+/* ==========================================================================
+   INTERACTIVE SATELLITE RADAR PULSING MARKER PIN NODE OVERLAYS
+   ========================================================================== */
+.map-marker-pulsing-avatar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centered flat over focal intersection map grid points */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.avatar-marker-pin {
+    font-size: 2.25rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+    position: relative;
+    z-index: 2;
+    animation: markerPinBopping 2s ease-in-out infinite;
+}
+
+/* Radar ping shockwave ring expand loop engine */
+.radar-ping-wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.4);
+    border: 1.5px solid #4caf50;
+    z-index: 1;
+    animation: radarPingExpansion 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINE LAYERS
+   ========================================================================== */
+@keyframes mapBtnKineticFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Infinite cyclical vertical anti-gravity suspension waves */
+}
+
+@keyframes markerPinBopping {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.02); }
+}
+
+@keyframes radarPingExpansion {
+    0% { transform: scale(0.4); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .map-main-heading { font-size: clamp(30px, 3.8vw, 36px); }
+    .map-main-container {
+        grid-template-columns: 1fr; /* Transforms grid seamlessly into a linear vertical column list layout */
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-map-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .map-glow-mesh-mesh {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-navigator-floating-btn {
+        width: 100%;
+        justify-content: center; /* Expands button to full length on ultra-compact mobile grids ports */
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED MAP VIEWPORT ACCELERATOR INGRESS SYSTEM CONTROLLER
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache BOX Initialization Elements
+        const mapViewportFrame = document.getElementById("scroll-map-viewport");
+
+        if (!mapViewportFrame) return; // Prevent loop break footprint scope exceptions
+
+        // Setup Core Interaction Scroll Ingress Observers Settings
+        const mapRevealSettings = {
+            root: null,
+            threshold: 0.1, /* Runtime triggers invoke when 10% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -30px 0px"
+        };
+
+        const globalContactMapObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Unveils map container layer sliding upwards smoothly when visible thresholds pass
+                    if (entry.target.id === "scroll-map-viewport") {
+                        entry.target.classList.add("is-map-visible");
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, mapRevealSettings);
+
+        // Bind operational tracking coordinates securely onto monitoring streams
+        globalContactMapObserver.observe(mapViewportFrame);
+    });
+})();
+
+</script>
+
+<!-- INTERACTIVE QUICK ANSWERS FAQ ACCORDION SECTION -->
+<section class="contact-faq-section">
+    <div class="faq-main-container">
+        
+        <!-- Section Header Area Layout Block -->
+        <div class="faq-header-row">
+            <div class="header-left-col">
+                <span class="faq-tagline">Frequently Asked Questions</span>
+                <h2 class="faq-main-heading">Quick Answers</h2>
+                <p class="faq-sub-para">
+                    Find answers to the most common questions. Still need help? Contact our support team.
+                </p>
+            </div>
+            
+            <!-- Floating continuous kinetic action view button (404 Routed) -->
+            <div class="header-right-col" id="scroll-faq-btn-box">
+                <a href="404.html" class="view-all-faqs-floating-btn">
+                    View All FAQs <span class="btn-arrow-vector">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll-Triggered Staggered 2-Column Accordion Grid Matrix -->
+        <div class="faq-accordions-matrix-grid" id="stagger-faq-cards">
+            
+            <!-- Question 1 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">How can I place an order?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            Browse our product catalog, select your items, specify weights or volumes, and click "Add to Cart". Follow the secure checkout prompts to lock in your farm-fresh order.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">Can I return or exchange products?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            Yes, our consumer protection blueprint covers farm-gate quality guidelines. Fresh produce can be reported within 24 hours of delivery for direct replacement processing paths.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">What payment methods do you accept?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            We accept all major secure credit/debit networks, net banking tokens, mobile UPI gateways, and verified wallet channels to protect transaction integrity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">How can I become a seller (farmer)?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            Submit a digital request through our portal registration board. Our relations team will audit crop parameters and onboard you directly to fast-track market access pricing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">Do you deliver to my area?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            We dynamic route logistics networks edge-to-edge across major agricultural regions and urban hubs. Enter your area pin metric during search loops to track live delivery eligibility maps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="faq-accordion-card-node">
+                <button class="faq-accordion-trigger-header" aria-expanded="false">
+                    <span class="faq-question-text">Is my information secure?</span>
+                    <span class="faq-toggle-plus-icon">+</span>
+                </button>
+                <div class="faq-accordion-body-collapse">
+                    <div class="faq-answer-inner-padded-content">
+                        <p class="faq-answer-para">
+                            Absolute data privacy is locked under strict encryption protocol arrays. Your financial tokens, corporate preferences, and identity tags remain end-to-end sandboxed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   FAQ ACCORDION COMPONENT CORE ARCHITECTURE LAYOUT
+   ========================================================================== */
+.contact-faq-section {
+    background-color: #ffffff;
+    /* Strict layout specified padding parameters top: 50px, bottom: 30px */
+    padding: 50px 1.5rem 30px 1.5rem;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.faq-main-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Symmetrical Upper Row Header Area Split */
+.faq-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    width: 100%;
+}
+
+.header-left-col {
+    flex: 1;
+}
+
+.faq-tagline {
+    display: block;
+    color: #1b5e20; /* Primary corporate theme green accent line marker from reference image */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.85rem;
+}
+
+/* Strict Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.faq-main-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000000; /* Absolute solid black heading text matching screenshot */
+    margin: 0 0 1rem 0;
+}
+
+.faq-sub-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 145%;
+    color: #333333;
+    max-width: 540px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   FLOATING INTERACTIVE ACTION LINK ELEMENT (404 TARGET BOUNDARIES)
+   ========================================================================== */
+.header-right-col {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-right-col.is-btn-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.view-all-faqs-floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: transparent;
+    color: #1b5e20; /* Clean brand theme dark green link text */
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+    
+    /* Dynamic anti-gravity hovering drift timeline track simulation */
+    animation: faqBtnKineticFloat 3.4s ease-in-out infinite;
+}
+
+.btn-arrow-vector {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.view-all-faqs-floating-btn:hover {
+    color: #2e7d32; /* Slides upwards into lighter sprouts green illumination values */
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+    animation-play-state: paused; /* Halts automated floating drift cycle instantly on hover */
+}
+
+.view-all-faqs-floating-btn:hover .btn-arrow-vector {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   2-COLUMN ACCORDION CARDS MATRIX GRID SPECIFICATIONS WITH HOVER GLOWS
+   ========================================================================== */
+.faq-accordions-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forms exact horizontal 2-column matrix split layout row matching blueprint image */
+    gap: 1.5rem 2rem;
+    width: 100%;
+}
+
+.faq-accordion-card-node {
+    background-color: #ffffff;
+    border: 1px solid #111111; /* Clean high contrast dark border bounds fields from screenshot */
+    border-radius: 8px; /* Symmetrical crisp micro radius border box curves */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    
+    /* Scroll entry intersection stagger parameters initialization */
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* High Fidelity Interactive Hover Card Pop and Radiant Emerald Soft Halo Glow Overlay */
+.faq-accordion-card-node:hover {
+    border-color: #4caf50; /* Base changes to lively sprouts green on active selection */
+    transform: translateY(-2px);
+    /* High resolution dual-layered dynamic neon emerald glow drop projection mapping */
+    box-shadow: 0 8px 20px -6px rgba(27, 94, 32, 0.05), 
+                0 0 15px 2px rgba(76, 175, 80, 0.18);
+}
+
+/* Accordion Clickable Interactive Header Strip Trigger */
+.faq-accordion-trigger-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.faq-question-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111111; /* Stark content query text titles */
+    transition: color 0.25s ease;
+}
+
+.faq-accordion-card-node:hover .faq-question-text {
+    color: #1b5e20; /* Highlights green on trigger paths */
+}
+
+/* Stark Plus Symbol Toggle Indicator from Mockup Layout */
+.faq-toggle-plus-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #111111;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+    user-select: none;
+}
+
+.faq-accordion-card-node:hover .faq-toggle-plus-icon {
+    color: #4caf50;
+}
+
+/* Animated Smooth Collapse Height transition wrapper shell */
+.faq-accordion-body-collapse {
+    max-height: 0; /* Managed elegantly via native javascript calculations loop height engines */
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.faq-answer-inner-padded-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Strict Answer Copy Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.faq-answer-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 145%; /* Sized to protect multi-line blocks fields from text row overlapping clips */
+    letter-spacing: 0%;
+    color: #4b5563; /* Slate descriptive gray text values */
+    margin: 0;
+}
+
+/* Operational Active Expanded Toggle States Style Modifiers */
+.faq-accordion-card-node.is-expanded-active {
+    border-color: #1b5e20;
+    background-color: #fcfdfe;
+}
+
+.faq-accordion-card-node.is-expanded-active .faq-toggle-plus-icon {
+    transform: rotate(45deg); /* Transforms the plus symbol smoothly into a clean close multiplication "x" mark */
+    color: #1b5e20;
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINE LAYERS
+   ========================================================================== */
+@keyframes faqBtnKineticFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .faq-main-heading { font-size: clamp(30px, 3.5vw, 36px); }
+    .faq-accordions-matrix-grid {
+        grid-template-columns: 1fr; /* Demotes horizontal matrix split cleanly into a linear stack column on tablets */
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-faq-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+
+    .faq-header-row {
+        flex-direction: column;
+        align-items: flex-start; /* Stacks button cleanly under paragraph over mobile portrait screens */
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .header-right-col {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question-text {
+        font-size: 0.95rem;
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED FAQ STAGGERED ENTRIES & HIGH-PERFORMANCE INTERACTIVE ACCORDION ACCENT ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache BOX Elements Initialization
+        const faqBtnBox = document.getElementById("scroll-faq-btn-box");
+        const cardsGridContainer = document.getElementById("stagger-faq-cards");
+        const individualAccordionNodes = document.querySelectorAll(".faq-accordion-card-node");
+
+        if (individualAccordionNodes.length === 0) return; // Safeguard operational loop cycle parameters
+
+        // ==========================================================================
+        // STAGE 1: SMOOTH EXPANSION AND HEIGHT CALCULATION TOGGLES ENGINE
+        // ==========================================================================
+        individualAccordionNodes.forEach(cardNode => {
+            const headerTriggerButton = cardNode.querySelector(".faq-accordion-trigger-header");
+            const bodyCollapseShell = cardNode.querySelector(".faq-accordion-body-collapse");
+
+            if (!headerTriggerButton || !bodyCollapseShell) return;
+
+            headerTriggerButton.addEventListener("click", () => {
+                const isCurrentlyExpanded = cardNode.classList.contains("is-expanded-active");
+
+                // Feature Option: Auto-collapses alternative expanded nodes to clean up reading space fields
+                individualAccordionNodes.forEach(otherNode => {
+                    if (otherNode !== cardNode && otherNode.classList.contains("is-expanded-active")) {
+                        otherNode.classList.remove("is-expanded-active");
+                        const otherShell = otherNode.querySelector(".faq-accordion-body-collapse");
+                        if (otherShell) otherShell.style.maxHeight = "0";
+                        const otherButton = otherNode.querySelector(".faq-accordion-trigger-header");
+                        if (otherButton) otherButton.setAttribute("aria-expanded", "false");
+                    }
+                });
+
+                // Toggle target active modifier classes fields values
+                if (isCurrentlyExpanded) {
+                    cardNode.classList.remove("is-expanded-active");
+                    bodyCollapseShell.style.maxHeight = "0";
+                    headerTriggerButton.setAttribute("aria-expanded", "false");
+                } else {
+                    cardNode.classList.add("is-expanded-active");
+                    // Computes exact hardware bounding height scroll container footprint measurements dynamically
+                    const computedScrollHeightHeight = bodyCollapseShell.scrollHeight;
+                    bodyCollapseShell.style.maxHeight = `${computedScrollHeightHeight}px`;
+                    headerTriggerButton.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+
+        // ==========================================================================
+        // STAGE 2: SETUP SCROLL REVEAL INTERSECTION OBSERVERS TIMELINES RULES
+        // ==========================================================================
+        const faqRevealSettings = {
+            root: null,
+            threshold: 0.1, /* Runtime triggers invoke when 10% of targeted layout items enter view parameters */
+            rootMargin: "0px 0px -30px 0px"
+        };
+
+        const globalContactFaqObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    // A. Reveal Top Right Floating View Button Capsule Frame
+                    if (entry.target.id === "scroll-faq-btn-box") {
+                        entry.target.classList.add("is-btn-visible");
+                    }
+
+                    // B. Reveal 2-Column Accordion Cards Array One-By-One (Staggered Cascade Loading Window)
+                    if (entry.target.id === "stagger-faq-cards") {
+                        individualAccordionNodes.forEach((cardNode, itemPositionIndex) => {
+                            setTimeout(() => {
+                                cardNode.style.opacity = "1";
+                                cardNode.style.transform = "translateY(0)";
+                            }, itemPositionIndex * 95); // 95ms stepping separation delays interval caps separating frames
+                        });
+                    }
+
+                    // Sever data streaming connection from current target block to conserve loops engine power
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, faqRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (faqBtnBox) globalContactFaqObserver.observe(faqBtnBox);
+        if (cardsGridContainer) globalContactFaqObserver.observe(cardsGridContainer);
+    });
+})();
+
+</script>
+
+<!-- ABOUT PAGE CTA BANNER SECTION -->
+<section class="about-cta-banner-section">
+    <!-- Immersive Agricultural Field Backdrop Layer -->
+    <img src="./assests/hero bg.webp" alt="Green agricultural field texture backdrop" class="cta-banner-bg-img">
+    <div class="cta-banner-shader-overlay"></div>
+
+    <div class="cta-banner-container">
+        <!-- Letter-by-letter scroll-animated heading title -->
+        <h2 class="cta-banner-title" id="scroll-cta-title">Together for a Better Tomorrow</h2>
+        
+        <!-- Center descriptor content paragraph text -->
+        <p class="cta-banner-para" id="scroll-cta-para">
+            Join AgriMart today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
+        </p>
+
+        <!-- Floating Kinetic Hover-Reactive Action Button Frame (404 Locked) -->
+        <div class="cta-button-box" id="scroll-cta-btn-box">
+            <a href="404.html" class="cta-explore-floating-btn">
+                Explore Products <span class="btn-arrow-vector">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   ABOUT PAGE CTA BANNER WINDOW LAYOUT DEFINITIONS
+   ========================================================================== */
+.about-cta-banner-section {
+    position: relative;
+    width: 100%;
+    /* Strict layout specified padding top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    overflow: hidden;
+    background-color: #0c4e2b; /* Solid fallback organic green base */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* Slim geometric profile matching blueprint image banner context */
+}
+
+/* Hardware-Accelerated High Resolution Graphic Background Image Layer */
+.cta-banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    transform: scale(1.02);
+}
+
+/* Translucent Deep Forest Green Shader Overlay Tint */
+.cta-banner-shader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 78, 43, 0.88); /* Merges field texture with brand green overlay layer */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Flexible Horizon Aligned Interactive Core Container */
+.cta-banner-container {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Links logo content text on the left away from right button */
+    gap: 2.5rem;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC SPECIFICATIONS & KINETIC REVEALS
+   ========================================================================== */
+
+/* Title Spec: Font: Inter, Weight: 700, Style: Bold, Size: 36px, LH: 100%, LS: 0% */
+.cta-banner-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 110%; /* Boosted selectively to shield multi-word stack breaks overlays */
+    letter-spacing: 0%;
+    color: #ffffff; /* Stark absolute white heading text */
+    max-width: 380px; /* Constrained neatly to execute dual-row layouts matching mockup exactly */
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+/* Letter-by-letter kinetic spin targets inserted via script engine strings parsing */
+.cta-banner-title .char {
+    display: inline-block;
+    opacity: 0.1; /* Initial faded hidden state values */
+    transform: scale(0.95) translateY(4px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Content Para Spec: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% (From prior reference specs) */
+.cta-banner-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Balanced line height safeguards multi-line flows on tablet reflow ports */
+    letter-spacing: 0%;
+    color: #e8f5e9; /* Light high visibility cream contrast copy */
+    max-width: 480px;
+    flex: 1;
+    
+    /* Pre-scroll animation hidden properties variables */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+}
+
+.cta-banner-para.is-para-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   FLOATING KINETIC BUTTON CONTAINER MODULE (404 ROUTED) WITH GLOW ACCENTS
+   ========================================================================== */
+.cta-button-box {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-button-box.is-btn-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cta-explore-floating-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #000000; /* Rich solid absolute black backdrop button cell from mockup image */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.95rem 1.85rem;
+    border-radius: 8px; /* High crisp precision micro radius border curves */
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    
+    /* Automated infinite dynamic hovering loop timeline track simulation */
+    animation: anchorButtonKineticFloat 3.2s ease-in-out infinite;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-arrow-vector {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* High Fidelity Interactive Hover Pop and Radiant Emerald Soft Halo Glow project */
+.cta-explore-floating-btn:hover {
+    background-color: #111111;
+    /* High resolution dual-layered drops emerald soft neon glowing mesh projection overlay mapping */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 0 18px 2px rgba(46, 204, 113, 0.4);
+    animation-play-state: paused; /* Halts automated floating drift cycle instantly upon pointer hover triggers */
+}
+
+.cta-explore-floating-btn:hover .btn-arrow-vector {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   KEYFRAME TRANSITION TIMELINE LAYERS
+   ========================================================================== */
+@keyframes anchorButtonKineticFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Automated vertical anti-gravity suspension drift cycles */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM ADAPTABILITY OVERRIDES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    /* Prevent character row cuts inside narrow responsive boxes fields profiles */
+    .cta-banner-title { font-size: clamp(28px, 3.2vw, 36px); max-width: 300px; }
+    .cta-banner-para { font-size: 15px; }
+    .cta-banner-container { gap: 1.5rem; }
+}
+
+@media (max-width: 1024px) {
+    /* Transforms horizontal rows array seamlessly into a clean central stacked block on tablet screen ports */
+    .cta-banner-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1.75rem;
+    }
+
+    .cta-banner-title {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .cta-banner-para {
+        max-width: 640px;
+        flex: none;
+    }
+    
+    .cta-button-box {
+        transform: translateY(20px);
+    }
+    
+    .cta-button-box.is-btn-visible {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-cta-banner-section {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-explore-floating-btn {
+        width: 100%;
+        justify-content: center; /* Expands button cell full length across handheld display grids bounds */
+    }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-TRIGGERED CTA BANNER TYPOGRAPHY & CARDS STAGGER ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const ctaTitle = document.getElementById("scroll-cta-title");
+        const ctaPara = document.getElementById("scroll-cta-para");
+        const ctaBtnBox = document.getElementById("scroll-cta-btn-box");
+
+        // 1. Text Parsing Helper Module: Explodes literal strings into tracked character component segments
+        if (ctaTitle) {
+            const pureString = ctaTitle.textContent.trim();
+            ctaTitle.innerHTML = ""; // Flushes raw children nodes
+
+            [...pureString].forEach(character => {
+                const charSpanNode = document.createElement("span");
+                charSpanNode.classList.add("char");
+                // Securely preserves layout spacing fields gaps inside browser viewport tracking loops
+                charSpanNode.textContent = character === " " ? "\u00A0" : character;
+                ctaTitle.appendChild(charSpanNode);
+            });
+        }
+
+        // 2. Setup Core Interaction Scroll Ingress Observers Settings
+        const ctaRevealSettings = {
+            root: null,
+            threshold: 0.1, // Runtime triggers invoke when 10% of targeted layout items enter view parameters
+            rootMargin: "0px 0px -20px 0px"
+        };
+
+        const globalCtaObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Reveal Title Heading Letter-by-Letter rolling sequence waves
+                    if (entry.target.id === "scroll-cta-title") {
+                        const letterTokens = entry.target.querySelectorAll(".char");
+                        letterTokens.forEach((token, elementIndex) => {
+                            setTimeout(() => {
+                                token.style.opacity = "1";
+                                token.style.transform = "scale(1) translateY(0)";
+                            }, elementIndex * 25); // 25ms rapid cascading text string rolling reveal delays
+                        });
+                    }
+
+                    // B. Reveal Content Paragraph sliding smoothly up from below bounds
+                    if (entry.target.id === "scroll-cta-para") {
+                        entry.target.classList.add("is-para-visible");
+                    }
+
+                    // C. Reveal Right Side Black Floating CTA Button frame wrapper
+                    if (entry.target.id === "scroll-cta-btn-box") {
+                        entry.target.classList.add("is-btn-visible");
+                    }
+
+                    // Sever data tracking pipelines links to free browser execution overhead loops
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, ctaRevealSettings);
+
+        // Bind operational coordinate targets safely onto monitoring streams
+        if (ctaTitle) globalCtaObserver.observe(ctaTitle);
+        if (ctaPara) globalCtaObserver.observe(ctaPara);
+        if (ctaBtnBox) globalCtaObserver.observe(ctaBtnBox);
+    });
+})();
+
+</script>
+
+<!-- PRODUCTION READY MARKETPLACE FOOTER COMPONENT -->
+<footer class="app-footer">
+    <div class="footer-top-container">
+        
+        <!-- Column 1: Brand Info and Social Handles -->
+        <div class="footer-column brand-summary-cell">
+            <a href="#" id="footer-scroll-top-btn" class="footer-logo-wrapper" title="Back to Top">
+                <img src="./assests/footer logo agri products.webp" alt="Stackly Logo" class="footer-brand-img">
+            </a>
+            <p class="footer-brand-para">
+                Connecting farmers and consumers for a healthier and greener tomorrow.
+            </p>
+            
+            <!-- Upgraded Vector SVG Social Row Handles (All route to 404) -->
+            <div class="social-links-row">
+                <!-- Instagram -->
+                <a href="404.html" class="social-circle-icon" aria-label="Instagram">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.79.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.258 2.617 4.677 6.98 4.877 1.28.059 1.688.072 4.948.072 3.259 0 3.668-.013 4.948-.072 4.254-.2 6.672-2.617 6.872-6.98.059-1.28.072-1.688.072-4.948 0-3.259-.013-3.668-.072-4.948-.2-4.254-2.617-6.672-6.98-6.872C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4.162 4.162 0 110-8.324A4.162 4.162 0 0112 16zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="404.html" class="social-circle-icon" aria-label="YouTube">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.516 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.163zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- Twitter (X) -->
+                <a href="404.html" class="social-circle-icon" aria-label="Twitter">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M18.244 2.25h3.308l-4.716 5.39c5.542 7.32 7.422 10.518 11.558 15.75H21.72l-5.176-6.756-5.93 6.756H7.31l5.214-5.962L1.875 2.25h6.836l4.654 6.155H18.24zM16.483 21.562h1.833L7.084 4.126H5.117L16.483 21.562z"/>
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="404.html" class="social-circle-icon" aria-label="LinkedIn">
+                    <svg class="social-vector-svg" viewBox="0 0 24 24" xmlns="http://w3.org">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Quick Links</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Home</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> About Us</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Services</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Blog</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Categories Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Categories</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Fresh Vegetables & Fruits</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Grains & Cereals</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Spices & Herbs</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Dairy Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Organic Products</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Seeds & Fertilizers</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Support Directory -->
+        <div class="footer-column links-directory-cell">
+            <h3 class="footer-column-title">Support</h3>
+            <ul class="footer-links-list">
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Help Center</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Shipping Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Return Policy</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Terms & Conditions</a></li>
+                <li><a href="404.html" class="footer-nav-item"><span class="link-chevron">&gt;</span> Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 5: Contact Services Details -->
+        <div class="footer-column contact-info-cell">
+            <h3 class="footer-column-title">Our Services</h3>
+            <ul class="contact-details-list">
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📍</span>
+                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">✉️</span>
+                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                </li>
+                <li class="contact-detail-item">
+                    <span class="contact-vector-icon">📞</span>
+                    <span class="contact-text-node">+44 5286548321</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Legal Strip Copyright Line Bar Row -->
+    <div class="footer-bottom-strip">
+        <div class="footer-bottom-container">
+            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <div class="bottom-legal-links">
+                <a href="404.html" class="legal-link-item">Privacy Policy</a>
+                <a href="404.html" class="legal-link-item">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Import Google Inter Typography Suite Specifications */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   FOOTER CORE ARCHITECTURE DESIGN SYSTEM (DARK GREEN PRESETS)
+   ========================================================================== */
+.app-footer {
+    background-color: #051a0e; /* Exact deep forest dark green shade from reference image */
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-top-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* Strict layout specified padding top: 50px, bottom: 30px */
+    padding: 50px 2rem 30px 2rem;
+    display: grid;
+    /* Custom unbalanced column layout distributions matching reference template width weights perfectly */
+    grid-template-columns: 1.2fr 0.75fr 1fr 0.850fr 1.2fr;
+    gap: 2.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   STRICT TYPOGRAPHIC RULES OVERRIDES & LAYOUT FIELDS
+   ========================================================================== */
+
+/* Brand Copy Paragraph: Font: Inter, Weight: 400, Style: Regular, Size: 16px, LH: 100%, LS: 0% */
+.footer-brand-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%; /* Modestly balanced line-height to avoid text wrap box boundary overlaps */
+    letter-spacing: 0%;
+    color: #cbd5e1; /* Soft accessible light slate silver copy tint */
+    margin-bottom: 1.5rem;
+    max-width: 260px;
+}
+
+/* Titles Header Spec: Font: Inter, Weight: 700, Style: Bold, Size: 16px, LH: 100%, LS: 0% */
+.footer-column-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff; /* Absolute bright white title stamps */
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+/* ==========================================================================
+   COLUMN 1: BRAND WRAPPER & UPGRADED SVG VECTOR SOCIAL HANDLES
+   ========================================================================== */
+.footer-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.footer-brand-img {
+    height: clamp(38px, 4vw, 45px);
+    width: auto;
+    object-fit: contain;
+}
+
+.social-links-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.social-circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+/* High contrast vector icon nested path formatting scaling loops */
+.social-vector-svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff; /* High visibility pure white geometry paths */
+    transition: fill 0.25s ease, transform 0.25s ease;
+}
+
+.social-circle-icon:hover {
+    background-color: #4caf50; /* Animates smoothly into lively leaf green sprout accent fill */
+    border-color: #4caf50;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.35);
+}
+
+.social-circle-icon:hover .social-vector-svg {
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   COLUMNS 2, 3 & 4: DIRECTORY LINK NAVIGATION LIST ARRAYS (404 TARGETED)
+   ========================================================================== */
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #94a3b8; /* Muted silver navigation elements standard link color */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.link-chevron {
+    font-size: 0.8rem;
+    color: #64748b;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav-item:hover {
+    color: #ffffff; /* Swaps color directly into bright white accent fields on hover */
+    transform: translateX(4px);
+}
+
+.footer-nav-item:hover .link-chevron {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   COLUMN 5: PACKAGED DATA SERVICES DETAIL MATRIX
+   ========================================================================== */
+.contact-details-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+}
+
+.contact-vector-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-text-node {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 140%;
+    color: #cbd5e1;
+}
+
+.email-anchor {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email-anchor:hover {
+    color: #4caf50;
+}
+
+/* ==========================================================================
+   BOTTOM LEGAL STRIP COPYRIGHT LINE BAR ROW
+   ========================================================================== */
+.footer-bottom-strip {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Minimal soft horizontal separator dividing lines hair layer */
+    background-color: #04140e; /* Subtle dark emphasis shift down below borders */
+}
+
+.footer-bottom-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    box-sizing: border-box;
+}
+
+.copyright-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.bottom-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.legal-link-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-link-item:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS (MAXIMUM FLEXIBILITY ENFORCED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .footer-top-container {
+        grid-template-columns: repeat(3, 1fr); /* Forms beautiful 3-column balancing layout rules */
+        gap: 3rem 2rem;
+    }
+    .brand-summary-cell {
+        grid-column: 1 / -1; /* Permits logo description areas to expand full length up top row fields */
+        max-width: 100%;
+    }
+    .footer-brand-para {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top-container {
+        grid-template-columns: repeat(2, 1fr); /* Drops down to a balanced 2x2 matrix cluster on mobile screens */
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    
+    .footer-nav-item {
+        white-space: normal; /* Permits safe wrap reflow operations across minor tablet ports */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top-container {
+        grid-template-columns: 1fr; /* Pure minimal vertical line stream stacking flow layout sequence execution */
+        gap: 2rem;
+    }
+    
+    .footer-bottom-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 2rem;
+    }
+}
+
+</style>
+<script>
+(function () {
+
+    function scrollPageToTop() {
+
+        // Scroll the normal document
+        document.documentElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        document.body.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Also scroll any common custom scroll container
+        document.querySelectorAll("*").forEach(function (element) {
+
+            const style = window.getComputedStyle(element);
+
+            if (
+                (style.overflowY === "auto" ||
+                 style.overflowY === "scroll") &&
+                element.scrollHeight > element.clientHeight
+            ) {
+                element.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+
+        const logo = event.target.closest("#footer-scroll-top-btn");
+
+        if (!logo) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        scrollPageToTop();
+
+    });
+
+})();
+</script>
+<script>
+    // ==========================================================================
+// APPS FOOTER SMOOTH COMPONENT INTERFACE INTERACTION ENGINE
+// ==========================================================================
+(function() {
+    document.addEventListener("DOMContentLoaded", () => {
+        // DOM Cache Initialization Stores
+        const footerScrollTopBtn = document.getElementById("footer-scroll-top-btn");
+
+        if (!footerScrollTopBtn) return; // Prevent scope breakage if block is isolated
+
+        /**
+         * Smooth Back-to-Top Navigation Trigger Rule
+         * Attached securely directly onto the primary brand graphic image link frame block
+         */
+        footerScrollTopBtn.addEventListener("click", (event) => {
+            event.preventDefault(); // Suppresses empty hash jump shifts grid coordinate calculations
+            
+            // Initiates native hardware-accelerated animated scroll timeline translation vector
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+})();
+
+</script>
+</body>
+</html>
