@@ -542,3 +542,205 @@ body.mobile-menu-open {
     display: block;
     min-height: auto;
 }
+
+/* ================================================================
+   HAMBURGER MENU — 80% WIDTH + BACKGROUND SCROLL LOCK
+================================================================ */
+
+@media (max-width: 1024px) {
+
+    /* ------------------------------------------------------------
+       MOBILE DRAWER
+    ------------------------------------------------------------ */
+
+    .header-navigation-wrapper {
+        top: 70px;
+        left: auto;
+        right: 0;
+
+        width: 80%;
+        max-width: 420px;
+        height: calc(100vh - 70px);
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        transform: translateX(100%);
+        visibility: hidden;
+
+        padding: 2rem 1.5rem;
+
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+
+        z-index: 9999;
+    }
+
+
+    /* ------------------------------------------------------------
+       OPEN MENU
+    ------------------------------------------------------------ */
+
+    .header-navigation-wrapper.menu-is-open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+
+    /* ------------------------------------------------------------
+       STOP BACKGROUND PAGE SCROLL
+    ------------------------------------------------------------ */
+
+    html:has(body.mobile-menu-open),
+    body.mobile-menu-open {
+        overflow: hidden !important;
+        height: 100%;
+    }
+
+    body.mobile-menu-open {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+
+    /* ------------------------------------------------------------
+       DARK BACKGROUND AREA — 20%
+    ------------------------------------------------------------ */
+
+    body.mobile-menu-open::before {
+        content: "";
+        position: fixed;
+
+        top: 70px;
+        left: 0;
+
+        width: 20%;
+        height: calc(100vh - 70px);
+
+        background: rgba(0, 0, 0, 0.35);
+
+        z-index: 9998;
+
+        pointer-events: auto;
+    }
+
+
+    /* ------------------------------------------------------------
+       KEEP HAMBURGER / HEADER ABOVE DRAWER
+    ------------------------------------------------------------ */
+
+    .app-header {
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
+
+    .hamburger-toggle {
+        position: relative;
+        z-index: 10001;
+    }
+
+
+    /* ------------------------------------------------------------
+       MENU CONTENT
+    ------------------------------------------------------------ */
+
+    .header-navigation-wrapper .nav-links-list {
+        width: 100%;
+    }
+
+    .header-navigation-wrapper .nav-item {
+        width: 100%;
+    }
+
+    .header-navigation-wrapper .search-form-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .header-navigation-wrapper .user-actions-group {
+        width: 100%;
+    }
+
+}
+
+
+/* ================================================================
+   SMALL MOBILE
+================================================================ */
+
+@media (max-width: 600px) {
+
+    .header-navigation-wrapper {
+        width: 80%;
+        max-width: none;
+        padding: 1.5rem 1.15rem;
+    }
+
+    body.mobile-menu-open::before {
+        width: 20%;
+    }
+
+}
+
+
+/* ================================================================
+   VERY SMALL MOBILE
+================================================================ */
+
+@media (max-width: 400px) {
+
+    .header-navigation-wrapper {
+        width: 80%;
+        padding: 1.25rem 1rem;
+    }
+
+}
+
+/* =========================================================
+   MOBILE HAMBURGER - BACKGROUND SCROLL LOCK + BLUR
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* Prevent the main page from scrolling */
+    body.mobile-menu-open {
+        overflow: hidden !important;
+        height: 100vh !important;
+        touch-action: none;
+    }
+
+    html:has(body.mobile-menu-open) {
+        overflow: hidden !important;
+    }
+
+    /* Blur the page behind the hamburger menu */
+    body.mobile-menu-open > *:not(.app-header) {
+        filter: blur(5px);
+        transition: filter 0.25s ease;
+    }
+
+    /* Keep header and hamburger menu clear */
+    .app-header {
+        position: relative;
+        z-index: 10000;
+        filter: none !important;
+    }
+
+    .header-navigation-wrapper {
+        z-index: 10001;
+    }
+
+    .hamburger-toggle {
+        position: relative;
+        z-index: 10002;
+    }
+
+    /* Prevent blur from affecting the menu itself */
+    .header-navigation-wrapper,
+    .header-navigation-wrapper * {
+        filter: none !important;
+    }
+}

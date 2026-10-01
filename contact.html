@@ -209,13 +209,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // Responsive Mobile Menu Controllers
-    menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
+ menuToggleBtn.addEventListener("click", toggleMobileNavigationMenu);
 
-    function toggleMobileNavigationMenu() {
-        menuToggleBtn.classList.toggle("menu-is-open");
-        navWrapper.classList.toggle("menu-is-open");
-        document.body.style.overflow = navWrapper.classList.contains("menu-is-open") ? "hidden" : "";
+function toggleMobileNavigationMenu() {
+    const isOpening = !navWrapper.classList.contains("menu-is-open");
+
+    menuToggleBtn.classList.toggle("menu-is-open", isOpening);
+    navWrapper.classList.toggle("menu-is-open", isOpening);
+
+    if (isOpening) {
+        // Prevent background page from scrolling
+        document.body.classList.add("mobile-menu-open");
+    } else {
+        // Allow background page to scroll again
+        document.body.classList.remove("mobile-menu-open");
     }
+}
+
 })();
 
 </script>
