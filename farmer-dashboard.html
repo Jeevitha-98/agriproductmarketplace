@@ -832,7 +832,7 @@
         <!-- Crop Listing Card 1: Organic Tomatoes -->
         <article class="catalog-item-card-node" data-crop-name="tomatoes">
             <div class="catalog-media-frame">
-                <img src="./assests/veg bowl.webp" alt="Fresh ripe organic red tomatoes cluster on green vine stock" class="catalog-thumbnail-img">
+                <img src="./assests/agriculture land.webp" alt="Fresh ripe organic red tomatoes cluster on green vine stock" class="catalog-thumbnail-img">
                 <span class="catalog-ribbon-badge-label bg-organic-fill">Active Harvest</span>
             </div>
             <div class="catalog-details-content-block">
@@ -877,7 +877,7 @@
         <!-- Crop Listing Card 2: Basmati Paddy Grains -->
         <article class="catalog-item-card-node" data-crop-name="basmati rice">
             <div class="catalog-media-frame">
-                <img src="./assests/grass.webp" alt="Premium raw long grain white basmati rice stacked inside organic burlap sacks" class="catalog-thumbnail-img">
+                <img src="./assests/seed.webp" alt="Premium raw long grain white basmati rice stacked inside organic burlap sacks" class="catalog-thumbnail-img">
                 <span class="catalog-ribbon-badge-label bg-popular-fill">Active Harvest</span>
             </div>
             <div class="catalog-details-content-block">
@@ -919,7 +919,7 @@
         <!-- Crop Listing Card 3: Guntur Red Chilli -->
         <article class="catalog-item-card-node" data-crop-name="red chilli">
             <div class="catalog-media-frame">
-                <img src="./assests/red chilli.webp" alt="Authentic hot dry red chillies stacked inside an organic rustic wooden bowl background" class="catalog-thumbnail-img">
+                <img src="./assests/Irrigation.webp" alt="Authentic hot dry red chillies stacked inside an organic rustic wooden bowl background" class="catalog-thumbnail-img">
                 <span class="catalog-ribbon-badge-label bg-best-seller-fill">Active Harvest</span>
             </div>
             <div class="catalog-details-content-block">
@@ -3445,53 +3445,123 @@ body.mobile-menu-open
            LOGO -> TOP OF DASHBOARD
            ===================================================== */
 
-        function scrollDashboardToTop(event) {
+       /* =====================================================
+   DASHBOARD SECTION MEMORY
+   ===================================================== */
 
-            if (event) {
-                event.preventDefault();
-            }
-
-            const mainContent =
-                document.getElementById(
-                    "dashboard-dynamic-render-canvas-target"
-                );
-
-            if (mainContent) {
-
-                mainContent.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
+const DASHBOARD_SECTION_KEY =
+    "agrimart_current_dashboard_section";
 
 
-        if (sidebarLogo) {
+/* =====================================================
+   RESTORE LAST ACTIVE SIDEBAR SECTION
+   ===================================================== */
 
-            sidebarLogo.addEventListener(
-                "click",
-                scrollDashboardToTop
-            );
+function restoreDashboardSection() {
 
-        }
+    const savedSectionId =
+        sessionStorage.getItem(DASHBOARD_SECTION_KEY);
+
+    if (!savedSectionId) {
+        return;
+    }
+
+    const savedButton =
+        document.querySelector(
+            '.nav-menu-item-tab-node[data-section="' +
+            savedSectionId +
+            '"]'
+        );
+
+    const savedSection =
+        document.getElementById(savedSectionId);
 
 
-        if (headerLogo) {
+    if (!savedButton || !savedSection) {
+        return;
+    }
 
-            headerLogo.addEventListener(
-                "click",
-                scrollDashboardToTop
-            );
 
-        }
+    /* Remove active state from all sidebar buttons */
 
+    navButtons.forEach(function (navButton) {
+
+        navButton.classList.remove(
+            "is-active"
+        );
+
+    });
+
+
+    /* Activate saved sidebar button */
+
+    savedButton.classList.add(
+        "is-active"
+    );
+
+
+    /* Hide all dashboard sections */
+
+    sections.forEach(function (section) {
+
+        section.classList.remove(
+            "active-canvas-view"
+        );
+
+    });
+
+
+    /* Restore saved dashboard section */
+
+    savedSection.classList.add(
+        "active-canvas-view"
+    );
+
+}
+
+
+/* =====================================================
+   LOGO -> REFRESH CURRENT DASHBOARD PAGE
+   ===================================================== */
+
+function refreshCurrentDashboardPage(event) {
+
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+
+    /*
+     * The currently selected sidebar section has already
+     * been saved in sessionStorage.
+     *
+     * Reload the same dashboard page.
+     */
+
+    window.location.reload();
+
+}
+
+
+if (sidebarLogo) {
+
+    sidebarLogo.addEventListener(
+        "click",
+        refreshCurrentDashboardPage
+    );
+
+}
+
+
+if (headerLogo) {
+
+    headerLogo.addEventListener(
+        "click",
+        refreshCurrentDashboardPage
+    );
+
+}
 
         /* =====================================================
            LOGOUT
@@ -3546,5 +3616,85 @@ body.mobile-menu-open
 })();
 </script>
 
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
+})();
+</script>
 </body>
 </html>

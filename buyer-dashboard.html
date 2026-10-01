@@ -753,7 +753,7 @@
         <!-- Product Card 1: Organic Rice -->
         <article class="buyer-product-card">
             <div class="buyer-product-media-frame">
-                <img src="./assests/grass.webp" alt="Premium long grain white basmati rice stacked inside organic burlap sacks" class="buyer-thumbnail-img">
+                <img src="./assests/Irrigation.webp" alt="Premium long grain white basmati rice stacked inside organic burlap sacks" class="buyer-thumbnail-img">
                 <span class="buyer-ribbon-badge bg-organic-fill">Organic Certified</span>
             </div>
             <div class="buyer-product-body">
@@ -784,7 +784,7 @@
         <!-- Product Card 2: Fresh Tomato -->
         <article class="buyer-product-card">
             <div class="buyer-product-media-frame">
-                <img src="./assests/veg bowl.webp" alt="Lush fresh rows of agricultural tomato plants vine bearing abundant ripe red tomatoes" class="buyer-thumbnail-img">
+                <img src="./assests/seed.webp" alt="Lush fresh rows of agricultural tomato plants vine bearing abundant ripe red tomatoes" class="buyer-thumbnail-img">
                 <span class="buyer-ribbon-badge bg-fresh-fill">Farm Fresh</span>
             </div>
             <div class="buyer-product-body">
@@ -814,7 +814,7 @@
         <!-- Product Card 3: Green Chilli -->
         <article class="buyer-product-card">
             <div class="buyer-product-media-frame">
-                <img src="./assests/red chilli.webp" alt="Fresh spicy organic green chilli harvest bundle display setup layout outdoors" class="buyer-thumbnail-img">
+                <img src="./assests/onion.webp" alt="Fresh spicy organic green chilli harvest bundle display setup layout outdoors" class="buyer-thumbnail-img">
                 <span class="buyer-ribbon-badge bg-popular-fill">High Demand</span>
             </div>
             <div class="buyer-product-body">
@@ -3942,6 +3942,49 @@ body {
 
 
 
+/* =========================================================
+   RESTORE ACTIVE SECTION AFTER PAGE REFRESH
+========================================================= */
+
+const savedBuyerSection =
+    sessionStorage.getItem("buyerActiveSection");
+
+if (savedBuyerSection) {
+
+    const savedNavItem = document.querySelector(
+        '.buyer-nav-item[data-section="' +
+        savedBuyerSection +
+        '"]'
+    );
+
+    const savedSection =
+        document.getElementById(savedBuyerSection);
+
+    if (savedNavItem && savedSection) {
+
+        /* Remove current active navigation */
+        navItems.forEach(function (item) {
+
+            item.classList.remove("active");
+
+        });
+
+        /* Remove current active sections */
+        sections.forEach(function (section) {
+
+            section.classList.remove("active");
+
+        });
+
+        /* Restore selected navigation */
+        savedNavItem.classList.add("active");
+
+        /* Restore selected section */
+        savedSection.classList.add("active");
+
+    }
+
+}
         /* =========================================================
            "VIEW ALL" BUTTONS
         ========================================================== */
@@ -3987,35 +4030,50 @@ body {
            BRAND CLICK
         ========================================================== */
 
-        if (brandHome) {
+   
+/* =========================================================
+   BRAND CLICK — REFRESH CURRENT DASHBOARD SECTION
+========================================================= */
 
-            brandHome.addEventListener(
-                "click",
-                function (event) {
+if (brandHome) {
 
-                    event.preventDefault();
+    brandHome.addEventListener("click", function (event) {
 
+        event.preventDefault();
 
-                    /*
-                       Always return to Overview
-                    */
+        /*
+           Save the currently active section
+           before refreshing the page.
+        */
+        const activeNavItem = document.querySelector(
+            ".buyer-nav-item.active"
+        );
 
-                    const overviewNav =
-                        document.querySelector(
-                            '.buyer-nav-item[data-section="buyer-overview"]'
-                        );
+        if (activeNavItem) {
 
+            const currentSection =
+                activeNavItem.getAttribute("data-section");
 
-                    if (overviewNav) {
+            if (currentSection) {
 
-                        overviewNav.click();
+                sessionStorage.setItem(
+                    "buyerActiveSection",
+                    currentSection
+                );
 
-                    }
-
-                }
-            );
+            }
 
         }
+
+        /*
+           Refresh the same dashboard page.
+        */
+        window.location.reload();
+
+    });
+
+}
+
 
 
 
@@ -4107,5 +4165,85 @@ body {
 })();
    </script>
 
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
+})();
+</script>
 </body>
 </html>

@@ -5,7 +5,7 @@
         
         <!-- Left Column Sidebar Photo Banner Frame -->
         <div class="auth-left-graphic-panel">
-            <img src="https://unsplash.com" alt="Farmer carrying fresh rice crops crops harvest on an organic farm field background" class="auth-banner-img">
+            <img src="./assests/agriculture land.webp" alt="Farmer carrying fresh rice crops crops harvest on an organic farm field background" class="auth-banner-img">
             <div class="auth-sidebar-shade-overlay"></div>
             
             <div class="auth-sidebar-content">
@@ -59,7 +59,7 @@
 
             <div class="auth-form-card">
                 <h1 class="auth-main-heading">Create Your Account</h1>
-                <p class="auth-subheading-label">Sign up to get started with AgriMart and explore fresh products, services and more.</p>
+                <p class="auth-subheading-label">Sign up to get started with Stackly and explore fresh products, services and more.</p>
 
                 <!-- Dynamic Form Submission Interface -->
                 <form id="agri-signup-form" class="auth-form-element" novalidate>
@@ -70,58 +70,204 @@
                     </div>
 
                     <!-- Full Name Input Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">👤</span>
-                            <input type="text" id="auth-full-name" class="auth-input-box" placeholder="Enter your full name" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="name-error-msg">Please fill the field</span>
-                    </div>
+                   <!-- Full Name Input Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper">
 
-                    <!-- Email Address Inbox Input Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">✉️</span>
-                            <input type="email" id="auth-email-address" class="auth-input-box" placeholder="Enter your email" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="email-error-msg">Please fill the field</span>
-                    </div>
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"></path>
+            </svg>
+        </span>
 
-                    <!-- Mobile Phone Number Input Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">📞</span>
-                            <input type="tel" id="auth-phone-number" class="auth-input-box" placeholder="Enter your phone number" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="phone-error-msg">Please fill the field</span>
-                    </div>
+        <input
+            type="text"
+            id="auth-full-name"
+            class="auth-input-box"
+            placeholder="Enter your full name"
+            required
+        >
 
-                    <!-- City Settlement Verification Input Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">📍</span>
-                            <input type="text" id="auth-city-location" class="auth-input-box" placeholder="Enter your city" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="city-error-msg">Please fill the field</span>
-                    </div>
+    </div>
 
-                    <!-- Password Composition Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">🔒</span>
-                            <input type="password" id="auth-create-password" class="auth-input-box" placeholder="Create a password" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="password-error-msg">Please fill the field</span>
-                    </div>
+    <span class="auth-field-error-hint" id="name-error-msg">
+        Please fill the field
+    </span>
+</div>
 
-                    <!-- Confirm Password Verification Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">🛡️</span>
-                            <input type="password" id="auth-confirm-password" class="auth-input-box" placeholder="Confirm your password" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="confirm-error-msg">Please fill the field</span>
-                    </div>
+
+<!-- Email Address Input Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper">
+
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M3 7l9 6 9-6"></path>
+            </svg>
+        </span>
+
+        <input
+            type="email"
+            id="auth-email-address"
+            class="auth-input-box"
+            placeholder="Enter your email"
+            required
+        >
+
+    </div>
+
+    <span class="auth-field-error-hint" id="email-error-msg">
+        Please fill the field
+    </span>
+</div>
+
+
+<!-- Mobile Phone Number Input Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper">
+
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.5 3.5h3l1.5 4-2.2 1.6a13.5 13.5 0 0 0 5.1 5.1l1.6-2.2 4 1.5v3c0 1-.8 1.8-1.8 1.8C10.5 18.3 5.7 13.5 4.7 6.3 4.5 5.3 5.5 3.5 6.5 3.5Z"></path>
+            </svg>
+        </span>
+
+        <input
+            type="tel"
+            id="auth-phone-number"
+            class="auth-input-box"
+            placeholder="Enter your phone number"
+            required
+        >
+
+    </div>
+
+    <span class="auth-field-error-hint" id="phone-error-msg">
+        Please fill the field
+    </span>
+</div>
+
+
+<!-- City Settlement Verification Input Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper">
+
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+        </span>
+
+        <input
+            type="text"
+            id="auth-city-location"
+            class="auth-input-box"
+            placeholder="Enter your city"
+            required
+        >
+
+    </div>
+
+    <span class="auth-field-error-hint" id="city-error-msg">
+        Please fill the field
+    </span>
+</div>
+
+
+<!-- Password Composition Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper password-field-wrapper">
+
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+        </span>
+
+        <input
+            type="password"
+            id="auth-create-password"
+            class="auth-input-box"
+            placeholder="Create a password"
+            required
+        >
+
+        <button
+            type="button"
+            class="password-eye-toggle"
+            data-password-target="auth-create-password"
+            aria-label="Show password"
+        >
+            <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                <circle cx="12" cy="12" r="2.5"></circle>
+            </svg>
+
+            <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m3 3 18 18"></path>
+                <path d="M10.5 6.2A10 10 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-3 3.6"></path>
+                <path d="M6.2 6.2C3.5 8.2 2 12 2 12s3.5 6 10 6c1.5 0 2.9-.3 4.1-.8"></path>
+                <path d="M10 10a2.8 2.8 0 0 0 4 4"></path>
+            </svg>
+        </button>
+
+    </div>
+
+    <span class="auth-field-error-hint" id="password-error-msg">
+        Please fill the field
+    </span>
+</div>
+
+
+<!-- Confirm Password Verification Field Group -->
+<div class="auth-field-node">
+    <div class="auth-icon-wrapper password-field-wrapper">
+
+        <span class="field-avatar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3 20 6v5c0 5.2-3.3 8.4-8 10-4.7-1.6-8-4.8-8-10V6l8-3Z"></path>
+                <rect x="9" y="10" width="6" height="5" rx="1"></rect>
+                <path d="M10 10V8.5a2 2 0 0 1 4 0V10"></path>
+            </svg>
+        </span>
+
+        <input
+            type="password"
+            id="auth-confirm-password"
+            class="auth-input-box"
+            placeholder="Confirm your password"
+            required
+        >
+
+        <button
+            type="button"
+            class="password-eye-toggle"
+            data-password-target="auth-confirm-password"
+            aria-label="Show password"
+        >
+            <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                <circle cx="12" cy="12" r="2.5"></circle>
+            </svg>
+
+            <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m3 3 18 18"></path>
+                <path d="M10.5 6.2A10 10 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-3 3.6"></path>
+                <path d="M6.2 6.2C3.5 8.2 2 12 2 12s3.5 6 10 6c1.5 0 2.9-.3 4.1-.8"></path>
+                <path d="M10 10a2.8 2.8 0 0 0 4 4"></path>
+            </svg>
+        </button>
+
+    </div>
+
+    <span class="auth-field-error-hint" id="confirm-error-msg">
+        Please fill the field
+    </span>
+</div>
 
                     <!-- Options Flex Meta Horizon Row Area Links -->
                     <div class="auth-options-meta-row">
@@ -159,7 +305,309 @@
     </div>
 </section>
 
+<script>
+    /* =========================================
+   PASSWORD SHOW / HIDE CONTROLLER
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const passwordButtons =
+        document.querySelectorAll(".password-eye-toggle");
+
+    passwordButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const targetId =
+                button.getAttribute("data-password-target");
+
+            const passwordInput =
+                document.getElementById(targetId);
+
+            if (!passwordInput) {
+                return;
+            }
+
+            const currentlyHidden =
+                passwordInput.type === "password";
+
+            if (currentlyHidden) {
+
+                passwordInput.type = "text";
+
+                button.classList.add("password-visible");
+
+                button.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                passwordInput.type = "password";
+
+                button.classList.remove("password-visible");
+
+                button.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+            }
+
+            passwordInput.focus();
+        });
+
+    });
+
+});
+</script>
 <style>
+
+    /* =========================================
+   AUTH VECTOR ICONS
+   ========================================= */
+
+.auth-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.field-avatar-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 22px;
+
+    color: currentColor;
+}
+
+.field-avatar-icon svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    display: block;
+}
+
+
+/* =========================================
+   INPUT BOX
+   ========================================= */
+
+.auth-input-box {
+    min-width: 0;
+    width: 100%;
+}
+
+.password-field-wrapper .auth-input-box {
+    padding-right: 52px !important;
+}
+
+
+/* =========================================
+   PASSWORD EYE BUTTON
+   ========================================= */
+
+.password-eye-toggle {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+    color: currentColor;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.password-eye-toggle:hover {
+    background: transparent;
+}
+
+.password-eye-toggle:focus,
+.password-eye-toggle:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.password-eye-toggle svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    pointer-events: none;
+}
+
+.password-eye-toggle .eye-closed {
+    display: none;
+}
+
+.password-eye-toggle.password-visible .eye-open {
+    display: none;
+}
+
+.password-eye-toggle.password-visible .eye-closed {
+    display: block;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .auth-field-node {
+        width: 100%;
+    }
+
+    .auth-icon-wrapper {
+        width: 100%;
+    }
+
+    .field-avatar-icon {
+        width: 21px;
+        height: 21px;
+        flex-basis: 21px;
+    }
+
+    .field-avatar-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .password-eye-toggle {
+        right: 9px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .password-field-wrapper .auth-input-box {
+        padding-right: 48px !important;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .auth-field-node {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .auth-icon-wrapper {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .field-avatar-icon {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+    }
+
+    .field-avatar-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .auth-input-box {
+        width: 100%;
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    .password-field-wrapper .auth-input-box {
+        padding-right: 46px !important;
+    }
+
+    .password-eye-toggle {
+        right: 7px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .password-eye-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .field-avatar-icon {
+        width: 19px;
+        height: 19px;
+        flex-basis: 19px;
+    }
+
+    .field-avatar-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .auth-input-box {
+        font-size: 13px;
+    }
+
+    .password-field-wrapper .auth-input-box {
+        padding-right: 44px !important;
+    }
+
+    .password-eye-toggle {
+        right: 5px;
+    }
+}
     /* Import Google Inter Typography Suite Specifications */
 @import url('https://googleapis.com');
 
@@ -721,5 +1169,86 @@ font-size: 0.8rem;
         });
 
     });
+})();
+</script>
+
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
 })();
 </script>

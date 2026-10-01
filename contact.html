@@ -86,12 +86,12 @@ window.addEventListener("DOMContentLoaded", () => {
             <!-- Primary Navigation Architecture Links -->
             <nav class="main-nav">
                 <ul class="nav-links-list">
-                    <li><a href="index.html" class="nav-item active-tab">Home</a></li>
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
                     <li><a href="about.html" class="nav-item">About Us</a></li>
                     <li><a href="services.html" class="nav-item">Services</a></li>
                     <li><a href="blogs.html" class="nav-item">Blog</a></li>
                     <li><a href="products.html" class="nav-item">Products</a></li>
-                    <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+                    <li><a href="contact.html" class="nav-item active-tab">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -223,7 +223,7 @@ window.addEventListener("DOMContentLoaded", () => {
 <!-- CONTACT US HERO BANNER MODULE -->
 <section class="contact-hero-section">
     <!-- Immersive Farm Irrigation Field Background Layer -->
-    <img src="https://unsplash.com" alt="Modern automated sprinkler irrigation system watering lush rows of agricultural green crops on farm field" class="contact-hero-bg-img">
+    <img src="./assests/mobile sensor.webp" alt="Modern automated sprinkler irrigation system watering lush rows of agricultural green crops on farm field" class="contact-hero-bg-img">
     <div class="contact-hero-shader-overlay"></div>
 
     <div class="contact-hero-container">
@@ -701,7 +701,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 <!-- Submit Action Transaction Button -->
                 <button type="submit" class="form-submit-transaction-btn">
-                    <span class="btn-submit-icon">🚀</span> Transmit Requirement Request Blueprint
+                    <span class="btn-submit-icon"></span> Transmit Requirement Request Blueprint
                 </button>
 
             </form>
@@ -712,7 +712,7 @@ window.addEventListener("DOMContentLoaded", () => {
             
             <!-- Info Item Card 1: Visit Our Studio -->
             <div class="info-directory-card">
-                <span class="info-pill-badge">AGRIMART HEADQUARTERS</span>
+                <span class="info-pill-badge">Stackly HEADQUARTERS</span>
                 <h3 class="info-card-heading">Reach Our Market Architects</h3>
                 <p class="info-card-description">
                     Connect directly with our corporate agricultural wellness staff to fast-track specialized harvest bookings, logistics packaging, and custom supply chain plans.
@@ -1135,7 +1135,7 @@ gap: 3rem;
 padding-left: 0; /* Align left margins flush matching layout borders system */
 }
 .info-detail-row-node {
-max-width: 100%; /* Expands info directory elements full width across layout workspace dimensions */
+max-width: 100%; 
 }
 }
 @media (max-width: 768px) {
@@ -1160,6 +1160,515 @@ justify-content: center; /* Scales submit transaction button cell full width on 
 }
 }
 
+/* ================================================================
+   AGRIMART CONTACT SECTION
+   RESPONSIVE ADD-ON
+   Tablet + Mobile + Small Mobile
+================================================================ */
+
+/* ================================================================
+   LARGE TABLET / SMALL LAPTOP
+================================================================ */
+
+@media (max-width: 1200px) {
+
+    .contact-form-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .contact-form-container {
+        max-width: 1100px;
+        gap: 2rem;
+    }
+
+    .contact-form-card {
+        padding: 2rem;
+    }
+
+    .contact-info-panel-col {
+        padding-left: 0.75rem;
+        padding-right: 0;
+    }
+
+}
+
+
+/* ================================================================
+   TABLET
+   769px - 1100px
+================================================================ */
+
+@media (max-width: 1100px) {
+
+    .contact-form-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-form-card {
+        width: 100%;
+    }
+
+    .contact-info-panel-col {
+        width: 100%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .info-directory-card {
+        grid-column: 1 / -1;
+    }
+
+    .info-detail-row-node {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+}
+
+
+/* ================================================================
+   TABLET / LARGE MOBILE
+   768px
+================================================================ */
+
+@media (max-width: 768px) {
+
+    .contact-form-section {
+        width: 100%;
+        padding: 40px 1rem 25px;
+        overflow-x: hidden;
+    }
+
+    .contact-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* ------------------------------------------------------------
+       FORM CARD
+    ------------------------------------------------------------ */
+
+    .contact-form-card {
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 14px;
+    }
+
+    .form-badge {
+        font-size: 0.72rem;
+        padding: 0.4rem 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-main-heading {
+        font-size: 25px;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+
+    .form-sub-para {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 1.75rem;
+    }
+
+
+    /* ------------------------------------------------------------
+       FORM GRID
+    ------------------------------------------------------------ */
+
+    .form-inputs-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.15rem;
+    }
+
+    .form-field-node {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .textarea-full-span {
+        width: 100%;
+    }
+
+
+    /* ------------------------------------------------------------
+       LABELS
+    ------------------------------------------------------------ */
+
+    .input-field-label {
+        font-size: 0.74rem;
+        line-height: 1.35;
+    }
+
+
+    /* ------------------------------------------------------------
+       INPUTS
+    ------------------------------------------------------------ */
+
+    .agri-input-box,
+    .agri-textarea-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        font-size: 0.9rem;
+    }
+
+    .agri-input-box {
+        min-height: 46px;
+        padding: 0.8rem 0.85rem 0.8rem 2.35rem;
+    }
+
+    .agri-textarea-box {
+        min-height: 130px;
+        padding: 0.8rem 0.85rem 0.8rem 2.35rem;
+    }
+
+
+    /* ------------------------------------------------------------
+       ICONS
+    ------------------------------------------------------------ */
+
+    .field-icon {
+        left: 0.85rem;
+        font-size: 0.95rem;
+    }
+
+
+    /* ------------------------------------------------------------
+       SUBMIT BUTTON
+    ------------------------------------------------------------ */
+
+    .form-submit-transaction-btn {
+        width: 100%;
+        max-width: 100%;
+        min-height: 48px;
+        padding: 0.9rem 1rem;
+        font-size: 0.85rem;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.35;
+    }
+
+
+    /* ------------------------------------------------------------
+       RIGHT INFORMATION PANEL
+    ------------------------------------------------------------ */
+
+    .contact-info-panel-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .info-directory-card {
+        width: 100%;
+    }
+
+    .info-card-heading {
+        font-size: 23px;
+        line-height: 1.2;
+    }
+
+    .info-card-description {
+        max-width: 100%;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .info-detail-row-node {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.15rem;
+        gap: 1rem;
+    }
+
+}
+
+
+/* ================================================================
+   MOBILE
+   600px
+================================================================ */
+
+@media (max-width: 600px) {
+
+    .contact-form-section {
+        padding: 32px 0.75rem 22px;
+    }
+
+    .contact-form-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .form-main-heading {
+        font-size: 22px;
+    }
+
+    .form-sub-para {
+        font-size: 0.86rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .agri-form-element {
+        gap: 1.2rem;
+    }
+
+    .form-inputs-grid {
+        gap: 1rem;
+    }
+
+    .input-field-label {
+        font-size: 0.7rem;
+    }
+
+    .agri-input-box,
+    .agri-textarea-box {
+        font-size: 0.88rem;
+    }
+
+    .field-error-msg {
+        font-size: 0.72rem;
+    }
+
+    .info-card-heading {
+        font-size: 21px;
+    }
+
+    .info-card-description {
+        font-size: 0.86rem;
+    }
+
+    .info-detail-row-node {
+        padding: 1rem;
+        gap: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .info-vector-icon-avatar {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: 1rem;
+    }
+
+    .info-detail-label {
+        font-size: 0.67rem;
+    }
+
+    .info-detail-value {
+        font-size: 0.86rem;
+        line-height: 1.45;
+    }
+
+}
+
+
+/* ================================================================
+   SMALL MOBILE
+   480px
+================================================================ */
+
+@media (max-width: 480px) {
+
+    .contact-form-section {
+        padding: 28px 0.65rem 20px;
+    }
+
+    .contact-form-card {
+        padding: 1rem;
+    }
+
+    .form-badge {
+        font-size: 0.68rem;
+        padding: 0.35rem 0.65rem;
+    }
+
+    .form-main-heading {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .form-sub-para {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    .agri-form-element {
+        gap: 1rem;
+    }
+
+    .form-inputs-grid {
+        gap: 0.95rem;
+    }
+
+    .agri-input-box {
+        min-height: 44px;
+        padding-left: 2.2rem;
+    }
+
+    .agri-textarea-box {
+        min-height: 120px;
+        padding-left: 2.2rem;
+    }
+
+    .field-icon {
+        left: 0.75rem;
+    }
+
+    .form-submit-transaction-btn {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 0.85rem 0.75rem;
+    }
+
+    .info-pill-badge {
+        font-size: 0.68rem;
+    }
+
+    .info-card-heading {
+        font-size: 19px;
+    }
+
+    .info-card-description {
+        font-size: 0.82rem;
+    }
+
+    .info-detail-row-node {
+        padding: 0.9rem;
+    }
+
+    .info-detail-copy-block {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .info-detail-value {
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .target-email-anchor {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+}
+
+
+/* ================================================================
+   VERY SMALL MOBILE
+   360px
+================================================================ */
+
+@media (max-width: 360px) {
+
+    .contact-form-section {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .contact-form-card {
+        padding: 0.85rem;
+    }
+
+    .form-main-heading {
+        font-size: 18px;
+    }
+
+    .form-sub-para {
+        font-size: 0.78rem;
+    }
+
+    .input-field-label {
+        font-size: 0.66rem;
+    }
+
+    .agri-input-box,
+    .agri-textarea-box {
+        font-size: 0.82rem;
+    }
+
+    .form-submit-transaction-btn {
+        font-size: 0.76rem;
+    }
+
+    .info-detail-row-node {
+        gap: 0.7rem;
+    }
+
+    .info-vector-icon-avatar {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 0.9rem;
+    }
+
+    .info-detail-label {
+        font-size: 0.62rem;
+    }
+
+    .info-detail-value {
+        font-size: 0.78rem;
+    }
+
+}
+
+
+/* ================================================================
+   TOUCH DEVICE IMPROVEMENTS
+================================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .contact-form-card:hover {
+        border-color: #e2e8f0;
+        box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.02);
+    }
+
+    .info-detail-row-node:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: #e2e8f0;
+    }
+
+    .form-submit-transaction-btn:hover {
+        background-color: #1b5e20;
+        box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+    }
+
+}
+
+
+/* ================================================================
+   ACCESSIBILITY / REDUCED MOTION
+================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-form-card,
+    .info-detail-row-node,
+    .form-submit-transaction-btn,
+    .agri-input-box,
+    .agri-textarea-box,
+    .field-icon {
+        transition: none !important;
+    }
+
+}
 </style>
 
 <script>
@@ -1281,7 +1790,7 @@ justify-content: center; /* Scales submit transaction button cell full width on 
             
             <!-- Google Maps External Deep Link Navigation Anchor Button -->
             <div class="map-action-box">
-                <a href="https://google.com" 
+                <a href="https://maps.app.goo.gl/1iUAJLxSuFhmkqeE8" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="map-navigator-floating-btn"
@@ -1295,7 +1804,7 @@ justify-content: center; /* Scales submit transaction button cell full width on 
         <div class="map-graphic-frame-wrapper" id="scroll-map-viewport">
             <div class="map-glow-mesh-mesh">
                 <!-- High Resolution Mock Satellite Geographical Map Backdrop Layer Overlay -->
-                <img src="https://unsplash.com" 
+                <img src="./assests/map.webp" 
                      alt="Top-down structural satellite overview roadmap rendering grid coordinates paths" 
                      class="fallback-map-static-img">
                      
@@ -2123,7 +2632,7 @@ justify-content: center; /* Scales submit transaction button cell full width on 
         
         <!-- Center descriptor content paragraph text -->
         <p class="cta-banner-para" id="scroll-cta-para">
-            Join AgriMart today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
+            Join Stackly today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
         </p>
 
         <!-- Floating Kinetic Hover-Reactive Action Button Frame (404 Locked) -->
@@ -2518,15 +3027,15 @@ justify-content: center; /* Scales submit transaction button cell full width on 
             <ul class="contact-details-list">
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📍</span>
-                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                    <span class="contact-text-node">Salem, Tamil Nadu, India</span>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">✉️</span>
-                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                    <a href="mailto:support@stackly.com" class="contact-text-node email-anchor">support@stackly.com</a>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📞</span>
-                    <span class="contact-text-node">+44 5286548321</span>
+                    <span class="contact-text-node">+91 7010792745</span>
                 </li>
             </ul>
         </div>
@@ -2536,7 +3045,7 @@ justify-content: center; /* Scales submit transaction button cell full width on 
     <!-- Bottom Legal Strip Copyright Line Bar Row -->
     <div class="footer-bottom-strip">
         <div class="footer-bottom-container">
-            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <span class="copyright-text">© 2026 Stackly. All Rights Reserved.</span>
             <div class="bottom-legal-links">
                 <a href="404.html" class="legal-link-item">Privacy Policy</a>
                 <a href="404.html" class="legal-link-item">Terms of Service</a>
@@ -2922,5 +3431,87 @@ justify-content: center; /* Scales submit transaction button cell full width on 
 })();
 
 </script>
+
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
+})();
+</script>
+
 </body>
 </html>

@@ -4,11 +4,11 @@
         
         <!-- Left Column Sidebar Photo Banner Frame -->
         <div class="auth-left-graphic-panel">
-            <img src="https://unsplash.com" alt="Small green plant seedling sprout growing robustly out of rich dark organic soil soil bed" class="auth-banner-img">
+            <img src="./assests/seed copy.webp" alt="Small green plant seedling sprout growing robustly out of rich dark organic soil soil bed" class="auth-banner-img">
             <div class="auth-sidebar-shade-overlay"></div>
             
             <div class="auth-sidebar-content">
-                <h2 class="auth-sidebar-title">Join <span class="brand-highlight">AgriMart</span></h2>
+                <h2 class="auth-sidebar-title">Join <span class="brand-highlight">Stackly</span></h2>
                 <p class="auth-sidebar-subtitle">Create your account and be a part of a growing farming community.</p>
                 
                 <!-- Info Badges List Matrix Stack -->
@@ -59,7 +59,7 @@
 
             <div class="auth-form-card">
                 <h1 class="auth-main-heading">Welcome Back!</h1>
-                <p class="auth-subheading-label">Sign in to your account and continue your farming journey with AgriMart.</p>
+                <p class="auth-subheading-label">Sign in to your account and continue your farming journey with Stackly.</p>
 
                 <!-- Dynamic Form Submission Interface -->
                 <form id="agri-auth-form" class="auth-form-element" novalidate>
@@ -89,13 +89,34 @@
                     </div>
 
                     <!-- City Settlement Verification Input Field Group -->
-                    <div class="auth-field-node">
-                        <div class="auth-icon-wrapper">
-                            <span class="field-avatar-icon">📍</span>
-                            <input type="text" id="auth-city-location" class="auth-input-box" placeholder="Enter your city" required>
-                        </div>
-                        <span class="auth-field-error-hint" id="city-error-msg">Please fill the field</span>
-                    </div>
+                   <div class="auth-field-node">
+    <div class="auth-icon-wrapper password-field-wrapper">
+
+        <span class="field-avatar-icon">🔒</span>
+
+        <input
+            type="password"
+            id="auth-password"
+            class="auth-input-box"
+            placeholder="Enter your password"
+            required
+        >
+
+        <button
+            type="button"
+            id="password-eye-toggle"
+            class="password-eye-toggle"
+            aria-label="Show password"
+        >
+            <span id="password-eye-icon">👁</span>
+        </button>
+
+    </div>
+
+    <span class="auth-field-error-hint" id="password-error-msg">
+        Please fill the field
+    </span>
+</div>
 
                     <!-- Options Flex Meta Horizon Row Area Links -->
                     <div class="auth-options-meta-row">
@@ -119,14 +140,26 @@
 
                     <!-- OAuth Social Provider Networks Buttons Stack (404 Routed) -->
                     <div class="oauth-providers-buttons-stack">
-                        <a href="404.html" class="oauth-provider-btn">
-                            <img src="https://placehold.co" alt="Google brand logo vector asset" class="oauth-provider-logo">
-                            Continue With Google
-                        </a>
-                        <a href="404.html" class="oauth-provider-btn">
-                            <img src="https://placehold.co" alt="Apple brand logo vector asset" class="oauth-provider-logo">
-                            Continue With Apple
-                        </a>
+                      <a href="404.html" class="oauth-provider-btn">
+    <svg class="oauth-provider-logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#4285F4" d="M21.35 12.23c0-.78-.07-1.53-.22-2.23H12v4.22h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.38z"/>
+        <path fill="#34A853" d="M12 21.75c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.3v2.53A9.75 9.75 0 0 0 12 21.75z"/>
+        <path fill="#FBBC05" d="M6.54 13.83A5.86 5.86 0 0 1 6.23 12c0-.64.11-1.26.31-1.83V7.64H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.36l3.24-2.53z"/>
+        <path fill="#EA4335" d="M12 6.14c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.24 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.7 5.39l3.24 2.53C7.31 7.86 9.46 6.14 12 6.14z"/>
+    </svg>
+
+    Continue With Google
+</a>
+
+
+<a href="404.html" class="oauth-provider-btn">
+    <svg class="oauth-provider-logo apple-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.05 12.53c-.02-2.16 1.77-3.2 1.85-3.25a4.02 4.02 0 0 0-3.15-1.7c-1.33-.14-2.61.79-3.29.79-.69 0-1.75-.77-2.88-.75a4.24 4.24 0 0 0-3.57 2.18c-1.54 2.67-.39 6.61 1.1 8.77.74 1.06 1.61 2.24 2.76 2.2 1.11-.04 1.53-.71 2.87-.71 1.34 0 1.72.71 2.89.69 1.2-.02 1.96-1.08 2.69-2.15a8.79 8.79 0 0 0 1.22-2.5 3.87 3.87 0 0 1-2.49-3.57z"/>
+        <path d="M14.89 6.17a3.87 3.87 0 0 0 .88-2.77 3.95 3.95 0 0 0-2.54 1.32 3.69 3.69 0 0 0-.9 2.66 3.26 3.26 0 0 0 2.56-1.21z"/>
+    </svg>
+
+    Continue With Apple
+</a>
                     </div>
 
                     <!-- Toggle Interface Footer Navigation Redirection Anchor Link -->
@@ -141,7 +174,105 @@
     </div>
 </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const passwordInput = document.getElementById("auth-password");
+    const eyeButton = document.getElementById("password-eye-toggle");
+    const eyeIcon = document.getElementById("password-eye-icon");
+
+    if (!passwordInput || !eyeButton || !eyeIcon) {
+        return;
+    }
+
+    eyeButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+
+            eyeIcon.textContent = "🙈";
+            eyeButton.setAttribute("aria-label", "Hide password");
+
+        } else {
+
+            passwordInput.type = "password";
+
+            eyeIcon.textContent = "👁";
+            eyeButton.setAttribute("aria-label", "Show password");
+        }
+
+        passwordInput.focus();
+    });
+
+});
+</script>
 <style>
+
+    .password-field-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-field-wrapper .auth-input-box {
+    width: 100%;
+    padding-right: 50px !important;
+}
+
+.password-eye-toggle {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    cursor: pointer !important;
+    z-index: 100 !important;
+}
+
+.password-eye-toggle:hover {
+    background: transparent !important;
+}
+
+.password-eye-toggle:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#password-eye-icon {
+    font-size: 18px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+    .oauth-provider-logo {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    display: block;
+}
+
+.apple-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
     /* Import Google Inter Typography Suite Specifications */
 @import url('https://googleapis.com');
 
@@ -656,122 +787,281 @@ right: 1.5rem;
 </style>
 
 <script>
-    (function() {
-    document.addEventListener("DOMContentLoaded", () => {
-        // DOM Cache Initialization Stores
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
         const authForm = document.getElementById("agri-auth-form");
         const emailInput = document.getElementById("auth-email-address");
-        const cityInput = document.getElementById("auth-city-location");
+        const passwordInput = document.getElementById("auth-password");
 
-        if (!authForm) return;
+        if (!authForm || !emailInput || !passwordInput) {
+            console.error("Login form elements were not found.");
+            return;
+        }
 
-        // Stage 1: Filter alphanumeric text values out from City field
-        cityInput.addEventListener("input", (event) => {
-            const rawString = event.target.value;
-            event.target.value = rawString.replace(/[0-9]/g, "");
+
+        /* =====================================================
+           EMAIL VALIDATION
+           ===================================================== */
+
+        function validateEmail() {
+
+            const emailValue = emailInput.value.trim();
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            const emailField =
+                emailInput.closest(".auth-field-node");
+
+            if (!emailValue || !emailPattern.test(emailValue)) {
+
+                if (emailField) {
+                    emailField.classList.add("has-error-trigger");
+                }
+
+                return false;
+            }
+
+            if (emailField) {
+                emailField.classList.remove("has-error-trigger");
+            }
+
+            return true;
+        }
+
+
+        /* =====================================================
+           PASSWORD VALIDATION
+           ===================================================== */
+
+        function validatePassword() {
+
+            const passwordValue = passwordInput.value.trim();
+
+            const passwordField =
+                passwordInput.closest(".auth-field-node");
+
+            if (!passwordValue) {
+
+                if (passwordField) {
+                    passwordField.classList.add("has-error-trigger");
+                }
+
+                return false;
+            }
+
+            if (passwordField) {
+                passwordField.classList.remove("has-error-trigger");
+            }
+
+            return true;
+        }
+
+
+        /* =====================================================
+           REMOVE ERROR WHEN USER STARTS TYPING
+           ===================================================== */
+
+        emailInput.addEventListener("input", function () {
+
+            const field =
+                emailInput.closest(".auth-field-node");
+
+            if (field) {
+                field.classList.remove("has-error-trigger");
+            }
         });
 
-        // Stage 2: Verification Loop on Submit Trigger Actions
-        authForm.addEventListener("submit", (event) => {
-            event.preventDefault(); 
-            
-            let formValidationIntegrityPasses = true;
-            const validationTargetNodesList = [
-                { inputElement: emailInput, patternRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ }, 
-                { inputElement: cityInput, patternRegex: /^[a-zA-Z\s]{2,50}$/ }           
-            ];
 
-            validationTargetNodesList.forEach(target => {
-                const valueString = target.inputElement.value.trim();
-                let isCurrentFieldValid = true;
+        passwordInput.addEventListener("input", function () {
 
-                if (valueString === "") {
-                    isCurrentFieldValid = false;
-                } else if (target.patternRegex && !target.patternRegex.test(valueString)) {
-                    isCurrentFieldValid = false;
-                }
+            const field =
+                passwordInput.closest(".auth-field-node");
 
-                const parentNodeFrame = target.inputElement.closest(".auth-field-node");
-                if (parentNodeFrame) {
-                    if (!isCurrentFieldValid) {
-                        parentNodeFrame.classList.add("has-error-trigger"); 
-                        formValidationIntegrityPasses = false;
-                    } else {
-                        parentNodeFrame.classList.remove("has-error-trigger"); 
-                    }
-                }
-            });
-
-          
-if (formValidationIntegrityPasses) {
-
-    /* =====================================================
-       STORE LOGIN EMAIL FOR DASHBOARD HEADER
-       Example:
-       test@gmail.com -> stores "test@gmail.com"
-       ===================================================== */
-
-    const enteredEmail =
-        emailInput.value.trim();
-
-    localStorage.setItem(
-        "authenticated_user_email",
-        enteredEmail
-    );
-
-
-    /* =====================================================
-       STORE SELECTED USER ROLE
-       ===================================================== */
-
-    const selectedActiveRoleRadio =
-        document.querySelector(
-            'input[name="user-role-selection"]:checked'
-        );
-
-    const roleValue =
-        selectedActiveRoleRadio
-            ? selectedActiveRoleRadio.value
-            : "buyer";
-
-
-    localStorage.setItem(
-        "authenticated_user_role",
-        roleValue
-    );
-
-
-    /* =====================================================
-       DASHBOARD ROUTING
-       ===================================================== */
-
-    if (roleValue === "farmer") {
-
-        window.location.href =
-            "farmer-dashboard.html";
-
-    } else {
-
-        window.location.href =
-            "buyer-dashboard.html";
-
-    }
-
-}
-
+            if (field) {
+                field.classList.remove("has-error-trigger");
+            }
         });
 
-        // Dismiss warning text bounds immediately on click re-focus
-        const allAuthInputFields = [emailInput, cityInput];
-        allAuthInputFields.forEach(inputNode => {
-            inputNode.addEventListener("focus", () => {
-                const parentNodeFrame = inputNode.closest(".auth-field-node");
-                if (parentNodeFrame) {
-                    parentNodeFrame.classList.remove("has-error-trigger"); 
-                }
-            });
+
+        /* =====================================================
+           LOGIN FORM SUBMISSION
+           ===================================================== */
+
+        authForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const emailIsValid = validateEmail();
+            const passwordIsValid = validatePassword();
+
+            if (!emailIsValid || !passwordIsValid) {
+
+                console.log("Login validation failed.");
+
+                return;
+            }
+
+
+            /* =================================================
+               STORE LOGIN EMAIL
+               ================================================= */
+
+            const enteredEmail =
+                emailInput.value.trim();
+
+            localStorage.setItem(
+                "authenticated_user_email",
+                enteredEmail
+            );
+
+
+            /* =================================================
+               GET SELECTED ROLE
+               ================================================= */
+
+            const selectedRole =
+                document.querySelector(
+                    'input[name="user-role-selection"]:checked'
+                );
+
+            const roleValue =
+                selectedRole
+                    ? selectedRole.value
+                    : "farmer";
+
+
+            /* =================================================
+               STORE SELECTED ROLE
+               ================================================= */
+
+            localStorage.setItem(
+                "authenticated_user_role",
+                roleValue
+            );
+
+
+            /* =================================================
+               OPTIONAL LOGIN STATUS
+               ================================================= */
+
+            localStorage.setItem(
+                "authenticated_user_logged_in",
+                "true"
+            );
+
+
+            /* =================================================
+               DASHBOARD ROUTING
+               ================================================= */
+
+            console.log("Selected Role:", roleValue);
+
+            if (roleValue === "farmer") {
+
+                console.log(
+                    "Redirecting to farmer-dashboard.html"
+                );
+
+                window.location.href =
+                    "farmer-dashboard.html";
+
+            } else if (roleValue === "buyer") {
+
+                console.log(
+                    "Redirecting to buyer-dashboard.html"
+                );
+
+                window.location.href =
+                    "buyer-dashboard.html";
+            }
+
         });
 
     });
+
+})();
+</script>
+
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
 })();
 </script>

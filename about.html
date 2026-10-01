@@ -545,17 +545,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 <img src="./assests/about 2.webp" alt="Asian farmer walking through bright green agricultural rice terrace field carrying crops harvest bundle bars" class="story-banner-img">
                 
                 <!-- Graphic Typography Overlay -->
-                <div class="graphic-text-overlay">
-                    <p class="overlay-text-line">Supporting</p>
-                    <p class="overlay-text-line accent-bold">Farmers</p>
-                    <p class="overlay-text-line">Building a</p>
-                    <p class="overlay-text-line accent-green">Greener Future</p>
-                    
-                    <!-- Decorative hand-drawn minimal arc stroke vector -->
-                    <svg class="overlay-arc-svg" viewBox="0 0 100 20" xmlns="http://w3.org">
-                        <path d="M5,15 Q50,0 95,15" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                </div>
+                
             </div>
         </div>
 
@@ -1367,7 +1357,7 @@ window.addEventListener("DOMContentLoaded", () => {
         
         <!-- Left Column Sidebar Photo Banner Frame -->
         <div class="growing-left-graphic" id="scroll-growing-graphic">
-            <img src="./assests/F 3.webp" alt="Smiling elderly farmer harvesting fresh organic tomatoes into a basket outdoors" class="growing-banner-img">
+            <img src="./assests/black papper.webp" alt="Smiling elderly farmer harvesting fresh organic tomatoes into a basket outdoors" class="growing-banner-img">
         </div>
 
         <!-- Right Column Green Banner Layout Layer Container -->
@@ -2227,7 +2217,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 <span class="t-word left">The</span>
                 <span class="t-word right">People</span>
                 <span class="t-word left">Behind</span>
-                <span class="t-word right">AgriMart</span>
+                <span class="t-word right">Stackly</span>
             </h2>
             <p class="team-sub-para" id="scroll-team-para">
                 A passionate team working together to connect farmers and consumers, create value and build a sustainable future.
@@ -2619,7 +2609,7 @@ window.addEventListener("DOMContentLoaded", () => {
         
         <!-- Center descriptor content paragraph text -->
         <p class="cta-banner-para" id="scroll-cta-para">
-            Join AgriMart today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
+            Join Stackly today and be part of a growing community that supports farmers, promotes healthy living and builds a sustainable future.
         </p>
 
         <!-- Floating Kinetic Hover-Reactive Action Button Frame (404 Locked) -->
@@ -3014,15 +3004,15 @@ window.addEventListener("DOMContentLoaded", () => {
             <ul class="contact-details-list">
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📍</span>
-                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                    <span class="contact-text-node">Salem, Tamil Nadu, India</span>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">✉️</span>
-                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                    <a href="mailto:support@stackly.com" class="contact-text-node email-anchor">support@stackly.com</a>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📞</span>
-                    <span class="contact-text-node">+44 5286548321</span>
+                    <span class="contact-text-node">+91 7010792745</span>
                 </li>
             </ul>
         </div>
@@ -3032,7 +3022,7 @@ window.addEventListener("DOMContentLoaded", () => {
     <!-- Bottom Legal Strip Copyright Line Bar Row -->
     <div class="footer-bottom-strip">
         <div class="footer-bottom-container">
-            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <span class="copyright-text">© 2026 Stackly. All Rights Reserved.</span>
             <div class="bottom-legal-links">
                 <a href="404.html" class="legal-link-item">Privacy Policy</a>
                 <a href="404.html" class="legal-link-item">Terms of Service</a>
@@ -3417,6 +3407,87 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 })();
 
+</script>
+
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
+})();
 </script>
 </body>
 </html>

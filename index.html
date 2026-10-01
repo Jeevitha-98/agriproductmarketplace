@@ -1814,7 +1814,7 @@ window.addEventListener("DOMContentLoaded", () => {
             <span class="why-tagline">Why Choose Us</span>
             
             <!-- Letter-by-letter scroll-animated section title -->
-            <h2 class="why-main-title" id="scroll-why-title">Why Choose AgriMart?</h2>
+            <h2 class="why-main-title" id="scroll-why-title">Why Choose Stackly?</h2>
             
             <!-- Bottom slide-in description paragraph text -->
             <p class="why-sub-para" id="scroll-why-para">
@@ -3443,7 +3443,7 @@ window.addEventListener("DOMContentLoaded", () => {
             <!-- Testimonial Card 1: Priya Sharma -->
             <div class="testimonial-card-node">
                 <blockquote class="testimonial-quote">
-                    "AgriMart has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
+                    "Stackly has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
                 </blockquote>
                 <div class="testimonial-profile-footer">
                     <div class="profile-avatar-frame">
@@ -3459,7 +3459,7 @@ window.addEventListener("DOMContentLoaded", () => {
             <!-- Testimonial Card 2: Meena -->
             <div class="testimonial-card-node">
                 <blockquote class="testimonial-quote">
-                    "AgriMart has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
+                    "Stackly has made it so easy to get fresh, organic produce directly from farmers. The quality is excellent and delivery is always on time!"
                 </blockquote>
                 <div class="testimonial-profile-footer">
                     <div class="profile-avatar-frame">
@@ -4196,15 +4196,15 @@ window.addEventListener("DOMContentLoaded", () => {
             <ul class="contact-details-list">
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📍</span>
-                    <span class="contact-text-node">Coimbatore, Tamil Nadu, India</span>
+                    <span class="contact-text-node">Salem, Tamil Nadu, India</span>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">✉️</span>
-                    <a href="mailto:support@agrimart.com" class="contact-text-node email-anchor">support@agrimart.com</a>
+                    <a href="mailto:support@stackly.com" class="contact-text-node email-anchor">support@stackly.com</a>
                 </li>
                 <li class="contact-detail-item">
                     <span class="contact-vector-icon">📞</span>
-                    <span class="contact-text-node">+44 5286548321</span>
+                    <span class="contact-text-node">+91 7010792745</span>
                 </li>
             </ul>
         </div>
@@ -4214,7 +4214,7 @@ window.addEventListener("DOMContentLoaded", () => {
     <!-- Bottom Legal Strip Copyright Line Bar Row -->
     <div class="footer-bottom-strip">
         <div class="footer-bottom-container">
-            <span class="copyright-text">© 2026 AgriMart. All Rights Reserved.</span>
+            <span class="copyright-text">© 2026 Stackly. All Rights Reserved.</span>
             <div class="bottom-legal-links">
                 <a href="404.html" class="legal-link-item">Privacy Policy</a>
                 <a href="404.html" class="legal-link-item">Terms of Service</a>
@@ -4599,6 +4599,87 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 })();
 
+</script>
+
+<script>
+/* ============================================================
+   AGRIMART UNIVERSAL 404 RETURN SECTION MEMORY
+   Works across Service, Farmer, Buyer and other pages
+   ============================================================ */
+
+(function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ----------------------------------------------------
+           Give every major section a permanent ID
+           if it does not already have one
+           ---------------------------------------------------- */
+
+        const pageSections = document.querySelectorAll("main section, body > section");
+
+        pageSections.forEach(function (section, index) {
+
+            if (!section.id) {
+                section.id = "page-section-" + (index + 1);
+            }
+
+        });
+
+
+        /* ----------------------------------------------------
+           Detect clicks on ANY link that opens 404.html
+           ---------------------------------------------------- */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedLink = event.target.closest(
+                'a[href="404.html"], a[href="./404.html"], a[href="/404.html"]'
+            );
+
+            if (!clickedLink) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Find the exact section containing the clicked link
+               ------------------------------------------------ */
+
+            const parentSection = clickedLink.closest("section");
+
+            if (!parentSection) {
+                return;
+            }
+
+
+            /* ------------------------------------------------
+               Save page + section information
+               ------------------------------------------------ */
+
+            const returnData = {
+
+                page: window.location.href.split("#")[0],
+
+                sectionId: parentSection.id,
+
+                scrollY: window.scrollY,
+
+                timestamp: Date.now()
+
+            };
+
+
+            sessionStorage.setItem(
+                "agri404Return",
+                JSON.stringify(returnData)
+            );
+
+        });
+
+    });
+
+})();
 </script>
 </body>
 </html>
